@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "title": "博客",
-    "description": "阅读我们最新的产品功能、解决方案和更新内容。"
+    "title": "SeedVR2 博客 - AI 视频修复技巧与教程",
+    "description": "了解 AI 视频修复、超分辨率技术、去噪技巧，以及 SeedVR2 的最新动态。"
   },
   "page": {
-    "title": "ShipAny 博客",
+    "title": "SeedVR2 博客",
     "sections": {
       "blog": {
         "id": "blog",
         "title": "博客",
-        "description": "阅读我们最新的产品功能、解决方案和更新内容。"
+        "description": "AI 视频修复的技巧、教程和最新动态。"
       }
     }
   },

@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "title": "Blog",
-    "description": "Read latest product features, solutions, and updates."
+    "title": "SeedVR2 Blog - AI Video Restoration Tips & Tutorials",
+    "description": "Learn about AI video restoration, upscaling techniques, denoising tips, and the latest updates from SeedVR2."
   },
   "page": {
-    "title": "ShipAny Blog",
+    "title": "SeedVR2 Blog",
     "sections": {
       "blog": {
         "id": "blog",
         "title": "Blog",
-        "description": "Read latest product features, solutions, and updates."
+        "description": "Tips, tutorials, and updates about AI video restoration."
       }
     }
   },
