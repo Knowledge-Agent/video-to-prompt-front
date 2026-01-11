@@ -52,4 +52,13 @@ export const envConfigs: ConfigMap = {
   version: packageJson.version,
   locale_detect_enabled:
     process.env.NEXT_PUBLIC_LOCALE_DETECT_ENABLED ?? 'false',
+  // Aliyun OSS Storage
+  aliyun_oss_region: process.env.ALIYUN_OSS_REGION ?? '',
+  aliyun_oss_access_key_id: process.env.ALIYUN_OSS_ACCESS_KEY_ID ?? '',
+  aliyun_oss_access_key_secret: process.env.ALIYUN_OSS_ACCESS_KEY_SECRET ?? '',
+  aliyun_oss_bucket: process.env.ALIYUN_OSS_BUCKET ?? '',
+  aliyun_oss_public_domain: process.env.ALIYUN_OSS_PUBLIC_DOMAIN ?? '',
+  // Replicate AI
+  replicate_api_token: process.env.REPLICATE_API_TOKEN ?? '',
+  replicate_api_url: process.env.REPLICATE_API_URL ?? 'https://api.replicate.com/v1',
 };

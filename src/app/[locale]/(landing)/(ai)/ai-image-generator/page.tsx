@@ -1,3 +1,17 @@
+/**
+ * AI Image Generator Page - DISABLED
+ * This page is temporarily disabled for SeedVR2 launch.
+ * SeedVR2 focuses on video restoration only.
+ * To re-enable: uncomment the code below and remove the redirect.
+ */
+
+import { redirect } from 'next/navigation';
+
+export default function AiImageGeneratorPage() {
+  redirect('/');
+}
+
+/*
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
@@ -45,3 +59,4 @@ export default async function AiImageGeneratorPage({
 
   return <Page locale={locale} page={page} />;
 }
+*/

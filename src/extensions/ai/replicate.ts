@@ -1,5 +1,3 @@
-import Replicate from 'replicate';
-
 import { getUuid } from '@/shared/lib/hash';
 
 import { saveFiles } from '.';
@@ -27,7 +25,7 @@ export interface ReplicateConfigs extends AIConfigs {
 }
 
 /**
- * Replicate provider
+ * Replicate provider - using direct HTTP requests
  * @docs https://replicate.com/
  */
 export class ReplicateProvider implements AIProvider {
@@ -36,14 +34,29 @@ export class ReplicateProvider implements AIProvider {
   // provider configs
   configs: ReplicateConfigs;
 
-  client: Replicate;
-
   // init provider
   constructor(configs: ReplicateConfigs) {
     this.configs = configs;
-    this.client = new Replicate({
-      auth: this.configs.apiToken,
+  }
+
+  private async request(url: string, options: RequestInit = {}): Promise<any> {
+    console.log('[Replicate] Request URL:', url);
+    
+    const response = await fetch(url, {
+      ...options,
+      headers: {
+        'Authorization': `Bearer ${this.configs.apiToken}`,
+        'Content-Type': 'application/json',
+        ...options.headers,
+      },
     });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Request to ${url} failed with status ${response.status} ${response.statusText}: ${errorText}`);
+    }
+
+    return response.json();
   }
 
   // generate task
@@ -62,7 +75,9 @@ export class ReplicateProvider implements AIProvider {
       throw new Error('model is required');
     }
 
-    if (!prompt) {
+    // SeedVR2 doesn't require prompt (it's video restoration, not generation)
+    const isSeedVR2 = model.includes('seedvr2');
+    if (!prompt && !isSeedVR2) {
       throw new Error('prompt is required');
     }
 
@@ -70,7 +85,7 @@ export class ReplicateProvider implements AIProvider {
     const input: any = this.formatInput({
       mediaType,
       model,
-      prompt,
+      prompt: prompt || '',
       options,
     });
 
@@ -80,13 +95,37 @@ export class ReplicateProvider implements AIProvider {
       !callbackUrl.includes('localhost') &&
       !callbackUrl.includes('127.0.0.1');
 
-    console.log('replicate input', input);
+    console.log('[Replicate] Input:', input);
 
-    const output = await this.client.predictions.create({
-      model,
+    // SeedVR2 使用完整的 version 字符串 (owner/model:hash)
+    // 如果 model 已经包含 : 则直接使用，否则为 SeedVR2 添加默认 hash
+    let version = model;
+    if (!model.includes(':')) {
+      if (model.includes('seedvr2')) {
+        version = 'zsxkib/seedvr2:ca98249be9cb623f02a80a7851a2b1a33d5104c251a8f5a1588f251f79bf7c78';
+      }
+    }
+
+    const requestBody = {
+      version,
       input,
-      webhook: isValidCallbackUrl ? callbackUrl : undefined,
-      webhook_events_filter: isValidCallbackUrl ? ['completed'] : undefined,
+      ...(isValidCallbackUrl && {
+        webhook: callbackUrl,
+        webhook_events_filter: ['completed'],
+      }),
+    };
+
+    console.log('[Replicate] Request body:', JSON.stringify(requestBody, null, 2));
+
+    // 直接使用环境变量配置的完整 URL
+    const apiUrl = this.configs.baseUrl || 'https://api.replicate.com/v1/predictions';
+
+    const output = await this.request(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Prefer': 'wait',
+      },
+      body: JSON.stringify(requestBody),
     });
 
     return {
@@ -105,7 +144,13 @@ export class ReplicateProvider implements AIProvider {
     taskId: string;
     mediaType?: AIMediaType;
   }): Promise<AITaskResult> {
-    const data = await this.client.predictions.get(taskId);
+    // 查询任务状态 - 使用 baseUrl 替换 predictions 为 predictions/{taskId}
+    const baseUrl = this.configs.baseUrl || 'https://api.replicate.com/v1/predictions';
+    const queryUrl = `${baseUrl}/${taskId}`;
+    
+    const data = await this.request(queryUrl, {
+      method: 'GET',
+    });
 
     let images: AIImage[] | undefined = undefined;
     let videos: AIVideo[] | undefined = undefined;
@@ -257,6 +302,29 @@ export class ReplicateProvider implements AIProvider {
     prompt: string;
     options: any;
   }): any {
+    // SeedVR2 video restoration model - 严格按照 API 文档
+    // 只需要: media, fps, output_format, output_quality, apply_color_fix
+    if (model.includes('seedvr2')) {
+      // 获取 media URL
+      let media = '';
+      if (options?.video_input?.[0]) {
+        media = options.video_input[0];
+      } else if (options?.image_input?.[0]) {
+        media = options.image_input[0];
+      } else if (options?.media) {
+        media = options.media;
+      }
+
+      // 只返回 API 文档要求的参数
+      return {
+        media,
+        fps: options?.fps ?? 24,
+        output_format: options?.output_format ?? 'webp',
+        output_quality: options?.output_quality ?? 90,
+        apply_color_fix: options?.apply_color_fix ?? true,
+      };
+    }
+
     let input: any = {
       prompt,
     };

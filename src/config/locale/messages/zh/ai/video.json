@@ -24,12 +24,17 @@
       "prompt_placeholder": "描述特定的修复偏好，如「保留胶片颗粒」「增强人脸清晰度」...",
       "reference_image": "参考帧",
       "reference_image_placeholder": "上传参考帧用于风格指导（可选）",
-      "reference_video": "待修复视频",
-      "reference_video_placeholder": "输入待修复视频的链接",
+      "reference_video": "视频链接",
+      "reference_video_placeholder": "输入待修复视频的链接（如 https://example.com/video.mp4）",
       "upload_video": "上传视频",
       "upload_video_placeholder": "拖拽视频到此处，或点击浏览",
       "some_images_failed_to_upload": "文件上传失败，请删除并重新上传",
-      "prompt_too_long": "指令太长，请精简"
+      "prompt_too_long": "指令太长，请精简",
+      "settings": "设置",
+      "fps": "输出帧率",
+      "output_format": "输出格式",
+      "output_quality": "输出质量",
+      "color_correction": "颜色校正"
     },
     "generate": "开始修复",
     "checking_account": "检查账户...",
@@ -43,6 +48,6 @@
     "generated_videos": "修复结果",
     "ready_to_generate": "正在处理您的视频...",
     "ready_for_generating": "准备修复",
-    "no_videos_generated": "上传视频开始修复"
+    "no_videos_generated": "输入视频链接开始修复"
   }
 }

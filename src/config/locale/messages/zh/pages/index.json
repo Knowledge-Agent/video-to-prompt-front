@@ -1,81 +1,23 @@
 {
   "page": {
     "show_sections": [
-      "hero",
-      "logos",
-      "features",
-      "usage",
+      "hero-tool",
+      "before-after-showcase",
+      "features-demo",
+      "use-cases",
       "faq",
       "cta"
     ],
     "sections": {
-      "hero": {
-        "id": "hero",
-        "title": "单步 AI 修复任意视频",
-        "highlight_text": "单步 AI",
-        "description": "SeedVR2 是最先进的 AI 视频修复模型。<br/>支持超分至 4K、智能去噪、画质增强，一键完成。",
-        "announcement": {
-          "badge": "CVPR 2025",
-          "title": "🔬 字节跳动 Seed 团队研发",
-          "url": "https://github.com/ByteDance-Seed/SeedVR"
-        },
-        "tip": "⚡ 单步扩散技术 - 比传统方法快 10 倍",
-        "buttons": [
-          {
-            "title": "立即修复视频",
-            "icon": "Zap",
-            "url": "/ai-video-generator",
-            "target": "_self",
-            "variant": "default"
-          },
-          {
-            "title": "GitHub 开源",
-            "icon": "Github",
-            "url": "https://github.com/ByteDance-Seed/SeedVR",
-            "target": "_blank",
-            "variant": "outline"
-          }
-        ],
-        "show_avatars": false,
-        "show_award": false,
+      "hero-tool": {
+        "block": "hero-tool",
+        "id": "hero-tool",
+        "title": "用 SeedVR2 将任意视频转换为 4K",
+        "description": "专业 AI 修复，去除噪点、修复伪影、恢复细节。无需任何编辑经验。",
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
           "alt": "SeedVR2 AI 视频修复"
         }
-      },
-      "logos": {
-        "id": "logos",
-        "title": "可信赖的技术支撑",
-        "items": [
-          {
-            "title": "ByteDance",
-            "image": {
-              "src": "/imgs/logos/bytedance.svg",
-              "alt": "ByteDance"
-            }
-          },
-          {
-            "title": "PyTorch",
-            "image": {
-              "src": "/imgs/logos/pytorch.svg",
-              "alt": "PyTorch"
-            }
-          },
-          {
-            "title": "NVIDIA",
-            "image": {
-              "src": "/imgs/logos/nvidia.svg",
-              "alt": "NVIDIA"
-            }
-          },
-          {
-            "title": "Hugging Face",
-            "image": {
-              "src": "/imgs/logos/huggingface.svg",
-              "alt": "Hugging Face"
-            }
-          }
-        ]
       },
       "features": {
         "id": "features",
@@ -114,44 +56,141 @@
           }
         ]
       },
-      "usage": {
-        "block": "features-step",
-        "id": "usage",
-        "title": "如何修复您的视频",
-        "description": "三步完成 SeedVR2 视频画质增强：",
-        "image": {
-          "src": "/imgs/features/1.png",
-          "alt": "SeedVR2 视频修复流程"
-        },
-        "image_position": "left",
-        "text_align": "center",
+      "before-after-showcase": {
+        "block": "before-after-showcase",
+        "id": "before-after-showcase",
+        "title": "效果对比",
+        "description": "SeedVR2 修复的真实视频。拖动滑块对比修复前后效果。",
         "items": [
           {
-            "title": "上传视频",
-            "description": "上传任意视频文件 - 老视频、压缩视频或 AIGC 内容。支持所有常见格式。",
-            "image": {
-              "src": "/imgs/features/5.png",
-              "alt": "上传视频至 SeedVR2"
-            }
+            "id": "1",
+            "title": "老电影修复",
+            "before": "https://images.unsplash.com/photo-1542204625-ca960ca44635?w=1080",
+            "after": "https://images.unsplash.com/photo-1542204625-ca960ca44635?w=1080",
+            "improvement": "1080p → 4K",
+            "category": "经典"
           },
           {
-            "title": "选择修复模式",
-            "description": "选择超分、去噪或全面增强。AI 自动优化参数以获得最佳效果。",
-            "image": {
-              "src": "/imgs/features/6.png",
-              "alt": "选择 SeedVR2 修复模式"
-            }
+            "id": "2",
+            "title": "游戏录像",
+            "before": "https://images.unsplash.com/photo-1616757857818-5c6eea38ee17?w=1080",
+            "after": "https://images.unsplash.com/photo-1616757857818-5c6eea38ee17?w=1080",
+            "improvement": "480p → 4K",
+            "category": "游戏"
           },
           {
-            "title": "下载增强视频",
-            "description": "数分钟内获得修复后的视频。高画质下载，随处分享。",
-            "image": {
-              "src": "/imgs/features/7.png",
-              "alt": "从 SeedVR2 下载修复视频"
-            }
+            "id": "3",
+            "title": "无人机航拍",
+            "before": "https://images.unsplash.com/photo-1645544893322-866e16bc22b2?w=1080",
+            "after": "https://images.unsplash.com/photo-1645544893322-866e16bc22b2?w=1080",
+            "improvement": "噪点 → 清晰",
+            "category": "自然"
           }
         ],
-        "className": "bg-muted"
+        "cta": {
+          "text": "准备好修复您的视频了吗？",
+          "button": {
+            "title": "免费开始",
+            "url": "#hero-tool"
+          }
+        }
+      },
+      "features-demo": {
+        "block": "features-demo",
+        "id": "features-demo",
+        "title": "实时效果对比",
+        "description": "拖动滑块对比设置，查看每个功能如何增强您的视频。",
+        "items": [
+          {
+            "id": "fps",
+            "title": "帧率",
+            "subtitle": "更流畅的动作",
+            "beforeLabel": "24 FPS",
+            "afterLabel": "60 FPS",
+            "improvement": "流畅度提升 2.5 倍",
+            "icon": "Play"
+          },
+          {
+            "id": "format",
+            "title": "输出格式",
+            "subtitle": "无损画质",
+            "beforeLabel": "JPG",
+            "afterLabel": "PNG",
+            "improvement": "完美画质",
+            "icon": "Image"
+          },
+          {
+            "id": "quality",
+            "title": "画质等级",
+            "subtitle": "细节呈现",
+            "beforeLabel": "画质: 70",
+            "afterLabel": "画质: 100",
+            "improvement": "细节提升 43%",
+            "icon": "Sparkles"
+          },
+          {
+            "id": "color",
+            "title": "色彩校正",
+            "subtitle": "AI 增强",
+            "beforeLabel": "原始",
+            "afterLabel": "增强",
+            "improvement": "自然色彩",
+            "icon": "Palette"
+          },
+          {
+            "id": "photo",
+            "title": "照片修复",
+            "subtitle": "修复老照片",
+            "beforeLabel": "受损",
+            "afterLabel": "修复",
+            "improvement": "完美修复",
+            "icon": "Wand2"
+          }
+        ]
+      },
+      "use-cases": {
+        "block": "use-cases",
+        "id": "use-cases",
+        "title": "谁能从 SeedVR2 受益？",
+        "description": "从内容创作者到家庭用户，SeedVR2 帮助每个人提升视觉内容质量。",
+        "items": [
+          {
+            "title": "内容创作者",
+            "description": "提升您的 YouTube 视频、抖音和社交媒体内容，脱颖而出。",
+            "icon": "Film",
+            "examples": ["YouTube 视频", "抖音内容", "小红书"]
+          },
+          {
+            "title": "游戏玩家与主播",
+            "description": "将游戏录像和直播精彩片段提升至清晰的 4K 画质。",
+            "icon": "Gamepad2",
+            "examples": ["游戏录像", "直播精彩", "剪辑集锦"]
+          },
+          {
+            "title": "摄影师",
+            "description": "修复老照片，提升图像质量，用于打印和作品集。",
+            "icon": "Camera",
+            "examples": ["老照片", "家庭档案", "作品集"]
+          },
+          {
+            "title": "企业用户",
+            "description": "提升营销视频、产品演示和企业内容的质量。",
+            "icon": "Building2",
+            "examples": ["营销视频", "产品演示", "培训内容"]
+          },
+          {
+            "title": "家庭用户",
+            "description": "通过修复老家庭视频和照片，保存珍贵回忆。",
+            "icon": "Heart",
+            "examples": ["家庭视频", "婚礼录像", "宝宝视频"]
+          },
+          {
+            "title": "电影爱好者",
+            "description": "将经典电影和老视频修复至现代画质标准。",
+            "icon": "Tv",
+            "examples": ["经典电影", "老视频", "纪录片"]
+          }
+        ]
       },
       "faq": {
         "id": "faq",

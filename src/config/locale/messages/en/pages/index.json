@@ -1,81 +1,23 @@
 {
   "page": {
     "show_sections": [
-      "hero",
-      "logos",
-      "features",
-      "usage",
+      "hero-tool",
+      "before-after-showcase",
+      "features-demo",
+      "use-cases",
       "faq",
       "cta"
     ],
     "sections": {
-      "hero": {
-        "id": "hero",
-        "title": "Restore Any Video with One-Step AI",
-        "highlight_text": "One-Step AI",
-        "description": "SeedVR2 is the most advanced AI video restoration model.<br/>Upscale to 4K, remove noise, and enhance video quality instantly.",
-        "announcement": {
-          "badge": "CVPR 2025",
-          "title": "🔬 Powered by ByteDance Seed Research",
-          "url": "https://github.com/ByteDance-Seed/SeedVR"
-        },
-        "tip": "⚡ One-step diffusion - 10x faster than traditional methods",
-        "buttons": [
-          {
-            "title": "Restore Video Now",
-            "icon": "Zap",
-            "url": "/ai-video-generator",
-            "target": "_self",
-            "variant": "default"
-          },
-          {
-            "title": "View on GitHub",
-            "icon": "Github",
-            "url": "https://github.com/ByteDance-Seed/SeedVR",
-            "target": "_blank",
-            "variant": "outline"
-          }
-        ],
-        "show_avatars": false,
-        "show_award": false,
+      "hero-tool": {
+        "block": "hero-tool",
+        "id": "hero-tool",
+        "title": "Transform Any Video to 4K with SeedVR2",
+        "description": "Professional AI restoration that removes noise, fixes artifacts, and recovers details. No editing experience needed.",
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
           "alt": "SeedVR2 AI Video Restoration"
         }
-      },
-      "logos": {
-        "id": "logos",
-        "title": "Trusted Technology Stack",
-        "items": [
-          {
-            "title": "ByteDance",
-            "image": {
-              "src": "/imgs/logos/bytedance.svg",
-              "alt": "ByteDance"
-            }
-          },
-          {
-            "title": "PyTorch",
-            "image": {
-              "src": "/imgs/logos/pytorch.svg",
-              "alt": "PyTorch"
-            }
-          },
-          {
-            "title": "NVIDIA",
-            "image": {
-              "src": "/imgs/logos/nvidia.svg",
-              "alt": "NVIDIA"
-            }
-          },
-          {
-            "title": "Hugging Face",
-            "image": {
-              "src": "/imgs/logos/huggingface.svg",
-              "alt": "Hugging Face"
-            }
-          }
-        ]
       },
       "features": {
         "id": "features",
@@ -111,6 +53,142 @@
             "title": "AIGC Video Enhancement",
             "description": "Specially optimized for AI-generated videos. Fix common AIGC artifacts and improve quality.",
             "icon": "RiRobot2Line"
+          }
+        ]
+      },
+      "before-after-showcase": {
+        "block": "before-after-showcase",
+        "id": "before-after-showcase",
+        "title": "See the Difference",
+        "description": "Real videos restored by SeedVR2. Drag the slider to compare before and after.",
+        "items": [
+          {
+            "id": "1",
+            "title": "Old Film Restoration",
+            "before": "https://images.unsplash.com/photo-1542204625-ca960ca44635?w=1080",
+            "after": "https://images.unsplash.com/photo-1542204625-ca960ca44635?w=1080",
+            "improvement": "1080p → 4K",
+            "category": "Heritage"
+          },
+          {
+            "id": "2",
+            "title": "Gaming Footage",
+            "before": "https://images.unsplash.com/photo-1616757857818-5c6eea38ee17?w=1080",
+            "after": "https://images.unsplash.com/photo-1616757857818-5c6eea38ee17?w=1080",
+            "improvement": "480p → 4K",
+            "category": "Gaming"
+          },
+          {
+            "id": "3",
+            "title": "Drone Aerial",
+            "before": "https://images.unsplash.com/photo-1645544893322-866e16bc22b2?w=1080",
+            "after": "https://images.unsplash.com/photo-1645544893322-866e16bc22b2?w=1080",
+            "improvement": "Noisy → Clear",
+            "category": "Nature"
+          }
+        ],
+        "cta": {
+          "text": "Ready to restore your own videos?",
+          "button": {
+            "title": "Get Started for Free",
+            "url": "#hero-tool"
+          }
+        }
+      },
+      "features-demo": {
+        "block": "features-demo",
+        "id": "features-demo",
+        "title": "See the Difference in Real-Time",
+        "description": "Drag the slider to compare settings and see how each feature enhances your video.",
+        "items": [
+          {
+            "id": "fps",
+            "title": "Frame Rate",
+            "subtitle": "Smoother motion",
+            "beforeLabel": "24 FPS",
+            "afterLabel": "60 FPS",
+            "improvement": "2.5x Smoother",
+            "icon": "Play"
+          },
+          {
+            "id": "format",
+            "title": "Output Format",
+            "subtitle": "Lossless quality",
+            "beforeLabel": "JPG",
+            "afterLabel": "PNG",
+            "improvement": "Perfect Quality",
+            "icon": "Image"
+          },
+          {
+            "id": "quality",
+            "title": "Quality Level",
+            "subtitle": "Reveal details",
+            "beforeLabel": "Quality: 70",
+            "afterLabel": "Quality: 100",
+            "improvement": "+43% Detail",
+            "icon": "Sparkles"
+          },
+          {
+            "id": "color",
+            "title": "Color Correction",
+            "subtitle": "AI enhancement",
+            "beforeLabel": "Original",
+            "afterLabel": "Enhanced",
+            "improvement": "Natural Look",
+            "icon": "Palette"
+          },
+          {
+            "id": "photo",
+            "title": "Photo Restoration",
+            "subtitle": "Fix old photos",
+            "beforeLabel": "Damaged",
+            "afterLabel": "Restored",
+            "improvement": "Perfect Repair",
+            "icon": "Wand2"
+          }
+        ]
+      },
+      "use-cases": {
+        "block": "use-cases",
+        "id": "use-cases",
+        "title": "Who Benefits from SeedVR2?",
+        "description": "From content creators to families, SeedVR2 helps everyone enhance their visual content.",
+        "items": [
+          {
+            "title": "Content Creators",
+            "description": "Enhance your YouTube videos, TikToks, and social media content to stand out from the crowd.",
+            "icon": "Film",
+            "examples": ["YouTube videos", "TikTok content", "Instagram Reels"]
+          },
+          {
+            "title": "Gamers & Streamers",
+            "description": "Upscale game recordings and stream highlights to crisp 4K quality.",
+            "icon": "Gamepad2",
+            "examples": ["Game recordings", "Stream highlights", "Montages"]
+          },
+          {
+            "title": "Photographers",
+            "description": "Restore old photos and enhance image quality for prints and portfolios.",
+            "icon": "Camera",
+            "examples": ["Old photos", "Family archives", "Portfolio work"]
+          },
+          {
+            "title": "Businesses",
+            "description": "Improve marketing videos, product demos, and corporate content.",
+            "icon": "Building2",
+            "examples": ["Marketing videos", "Product demos", "Training content"]
+          },
+          {
+            "title": "Families",
+            "description": "Preserve precious memories by restoring old home videos and photos.",
+            "icon": "Heart",
+            "examples": ["Home videos", "Wedding footage", "Baby videos"]
+          },
+          {
+            "title": "Film Enthusiasts",
+            "description": "Restore classic films and vintage footage to modern quality standards.",
+            "icon": "Tv",
+            "examples": ["Classic films", "Vintage footage", "Documentaries"]
           }
         ]
       },
@@ -155,32 +233,41 @@
       },
       "faq": {
         "id": "faq",
-        "title": "Frequently Asked Questions About SeedVR2",
-        "description": "Have more questions? Contact us at support@seedvr2.ai",
+        "title": "Frequently Asked Questions",
+        "description": "Everything you need to know about SeedVR2",
+        "tip": "Still have questions? <a href='mailto:support@seedvr2.ai' class='text-primary hover:underline'>Contact Support</a>",
         "items": [
           {
-            "question": "What is SeedVR2 and how does it work?",
-            "answer": "SeedVR2 is an advanced AI video restoration model developed by ByteDance Seed team. It uses one-step diffusion technology to upscale, denoise, and enhance videos 10x faster than traditional methods while maintaining superior quality."
+            "question": "What video formats does SeedVR2 support?",
+            "answer": "SeedVR2 supports all major video formats including MP4, WebM, AVI, MOV, and MKV. You can upload videos in any of these formats and export to your preferred format. We also support various codecs like H.264, H.265, VP9, and ProRes."
           },
           {
-            "question": "What types of videos can SeedVR2 restore?",
-            "answer": "SeedVR2 can restore any type of video including old footage, compressed videos, low-resolution clips, and AI-generated content. It's specially optimized for both real-world and AIGC video restoration."
+            "question": "How long does the restoration process take?",
+            "answer": "Processing time depends on video length and resolution. Typically, a 5-minute 1080p video takes about 3-5 minutes to upscale to 4K. Longer videos may take proportionally more time, but our AI is optimized for speed without compromising quality."
           },
           {
-            "question": "How long does video restoration take?",
-            "answer": "Thanks to our one-step diffusion technology, SeedVR2 processes videos 10x faster than traditional diffusion-based methods. Most videos are restored within minutes depending on length and resolution."
+            "question": "Is my video data safe and private?",
+            "answer": "Absolutely. All video processing happens in a secure, encrypted environment. We never store your videos permanently or share them with third parties. You can also choose local processing for complete data control. Videos are automatically deleted after 24 hours."
           },
           {
-            "question": "What resolution can SeedVR2 upscale to?",
-            "answer": "SeedVR2 supports arbitrary resolution output without fixed size limitations. You can upscale videos up to 4K (2160p) or even higher depending on your subscription plan."
+            "question": "What makes SeedVR2 different from other upscalers?",
+            "answer": "SeedVR2 uses advanced neural networks specifically trained on video restoration. Unlike basic upscalers, we intelligently remove noise, fix compression artifacts, enhance details, and reconstruct missing information. Our AI understands motion, temporal consistency, and video-specific challenges."
           },
           {
-            "question": "Is SeedVR2 based on published research?",
-            "answer": "Yes, SeedVR2 is based on peer-reviewed research published at CVPR 2025 (Highlight). The technology is developed by ByteDance Seed team and the model weights are available on Hugging Face."
+            "question": "Can I process multiple videos at once?",
+            "answer": "Yes! Pro and Business plans include batch processing capabilities. You can queue multiple videos and process them simultaneously, saving significant time for large projects. Free tier users can process one video at a time."
           },
           {
-            "question": "What video formats are supported?",
-            "answer": "SeedVR2 supports all common video formats including MP4, MOV, AVI, MKV, and WebM. Output is delivered in high-quality MP4 format for maximum compatibility."
+            "question": "Do I need technical knowledge to use SeedVR2?",
+            "answer": "Not at all! SeedVR2 is designed to be user-friendly for everyone. Simply upload your video, adjust settings if needed (or use our smart Auto mode), and click Start. The AI handles all the complex restoration work automatically."
+          },
+          {
+            "question": "What is the maximum file size I can upload?",
+            "answer": "Free users can upload videos up to 500 MB. Pro users get 5 GB per video, and Business plan has no file size limits. For very large files, we recommend using our desktop app which supports local processing."
+          },
+          {
+            "question": "Can I get a refund if I'm not satisfied?",
+            "answer": "Yes, we offer a 14-day money-back guarantee for all paid plans. If you're not completely satisfied with the results, contact our support team for a full refund, no questions asked."
           }
         ]
       },

@@ -14,16 +14,6 @@
     "nav": {
       "items": [
         {
-          "title": "视频修复",
-          "url": "/ai-video-generator",
-          "icon": "Video"
-        },
-        {
-          "title": "功能特性",
-          "url": "/#features",
-          "icon": "Sparkles"
-        },
-        {
           "title": "价格",
           "url": "/pricing",
           "icon": "DollarSign"

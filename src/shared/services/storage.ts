@@ -1,11 +1,31 @@
-import { R2Provider, S3Provider, StorageManager } from '@/extensions/storage';
+import { AliyunOSSProvider, R2Provider, S3Provider, StorageManager } from '@/extensions/storage';
 import { Configs, getAllConfigs } from '@/shared/models/config';
+import { envConfigs } from '@/config';
 
 /**
  * get storage service with configs
  */
 export function getStorageServiceWithConfigs(configs: Configs) {
   const storageManager = new StorageManager();
+
+  // Add Aliyun OSS provider if configured (from env)
+  if (
+    envConfigs.aliyun_oss_region &&
+    envConfigs.aliyun_oss_access_key_id &&
+    envConfigs.aliyun_oss_access_key_secret &&
+    envConfigs.aliyun_oss_bucket
+  ) {
+    storageManager.addProvider(
+      new AliyunOSSProvider({
+        region: envConfigs.aliyun_oss_region,
+        accessKeyId: envConfigs.aliyun_oss_access_key_id,
+        accessKeySecret: envConfigs.aliyun_oss_access_key_secret,
+        bucket: envConfigs.aliyun_oss_bucket,
+        publicDomain: envConfigs.aliyun_oss_public_domain || undefined,
+      }),
+      true // Set Aliyun OSS as default when configured
+    );
+  }
 
   // Add R2 provider if configured
   if (
@@ -28,7 +48,7 @@ export function getStorageServiceWithConfigs(configs: Configs) {
         endpoint: configs.r2_endpoint, // Optional custom endpoint
         publicDomain: configs.r2_domain,
       }),
-      true // Set R2 as default
+      !envConfigs.aliyun_oss_bucket // Set R2 as default only if Aliyun OSS not configured
     );
   }
 

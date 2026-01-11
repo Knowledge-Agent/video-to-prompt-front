@@ -14,16 +14,6 @@
     "nav": {
       "items": [
         {
-          "title": "Restore Video",
-          "url": "/ai-video-generator",
-          "icon": "Video"
-        },
-        {
-          "title": "Features",
-          "url": "/#features",
-          "icon": "Sparkles"
-        },
-        {
           "title": "Pricing",
           "url": "/pricing",
           "icon": "DollarSign"

@@ -5,6 +5,7 @@ import {
   KieProvider,
   ReplicateProvider,
 } from '@/extensions/ai';
+import { envConfigs } from '@/config';
 import { Configs, getAllConfigs } from '@/shared/models/config';
 
 /**
@@ -22,10 +23,13 @@ export function getAIManagerWithConfigs(configs: Configs) {
     );
   }
 
-  if (configs.replicate_api_token) {
+  // Replicate: env vars take priority over db configs
+  const replicateApiToken = envConfigs.replicate_api_token || configs.replicate_api_token;
+  if (replicateApiToken) {
     aiManager.addProvider(
       new ReplicateProvider({
-        apiToken: configs.replicate_api_token,
+        apiToken: replicateApiToken,
+        baseUrl: envConfigs.replicate_api_url || undefined,
         customStorage: configs.replicate_custom_storage === 'true',
       })
     );

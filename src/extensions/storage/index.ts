@@ -158,6 +158,11 @@ export class StorageManager {
   getProviderNames(): string[] {
     return this.providers.map((p) => p.name);
   }
+
+  // check if any provider is configured
+  hasProvider(): boolean {
+    return this.providers.length > 0;
+  }
 }
 
 // Global storage manager instance
@@ -166,3 +171,4 @@ export const storageManager = new StorageManager();
 // Export all providers
 export * from './s3';
 export * from './r2';
+export * from './aliyun-oss';

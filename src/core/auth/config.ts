@@ -30,6 +30,12 @@ const authOptions = {
   baseURL: envConfigs.auth_url,
   secret: envConfigs.auth_secret,
   trustedOrigins: envConfigs.app_url ? [envConfigs.app_url] : [],
+  session: {
+    // Session expires in 3 days (in seconds)
+    expiresIn: 60 * 60 * 24 * 3,
+    // Update session expiration when user is active (within 1 day of expiry)
+    updateAge: 60 * 60 * 24,
+  },
   user: {
     // Allow persisting custom columns on user table.
     // Without this, better-auth may ignore extra properties during create/update.

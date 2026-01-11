@@ -24,12 +24,17 @@
       "prompt_placeholder": "Describe any specific restoration preferences, e.g., 'preserve film grain', 'sharpen faces'...",
       "reference_image": "Reference Frame",
       "reference_image_placeholder": "Upload a reference frame for style guidance (optional)",
-      "reference_video": "Video to Restore",
-      "reference_video_placeholder": "Enter the URL of the video you want to restore",
+      "reference_video": "Video URL",
+      "reference_video_placeholder": "Enter the URL of the video you want to restore (e.g., https://example.com/video.mp4)",
       "upload_video": "Upload Video",
       "upload_video_placeholder": "Drag and drop your video here, or click to browse",
       "some_images_failed_to_upload": "File failed to upload, please delete and re-upload",
-      "prompt_too_long": "Instructions are too long, please shorten"
+      "prompt_too_long": "Instructions are too long, please shorten",
+      "settings": "Settings",
+      "fps": "Output FPS",
+      "output_format": "Output Format",
+      "output_quality": "Output Quality",
+      "color_correction": "Color Correction"
     },
     "generate": "Start Restoration",
     "checking_account": "Checking Account...",
@@ -43,6 +48,6 @@
     "generated_videos": "Restored Video",
     "ready_to_generate": "Processing your video...",
     "ready_for_generating": "Ready to Restore",
-    "no_videos_generated": "Upload a video to get started"
+    "no_videos_generated": "Enter a video URL to get started"
   }
 }
