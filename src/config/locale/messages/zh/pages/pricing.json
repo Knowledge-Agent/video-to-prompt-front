@@ -1,119 +1,91 @@
 {
   "metadata": {
-    "title": "SeedVR2 价格 - AI 视频修复方案",
-    "description": "选择适合您的 SeedVR2 视频修复方案。支持 4K 超分辨率、去噪、画质增强。"
+    "title": "SeedVR2 定价 - AI 视频与图片修复",
+    "description": "简单的积分制定价。1 积分 = 1 张图片或 0.5 秒视频。无需订阅。"
   },
   "page": {
-    "title": "SeedVR2 价格",
+    "title": "SeedVR2 定价",
     "sections": {
       "pricing": {
         "id": "pricing",
         "title": "简单透明的定价",
-        "description": "选择适合您视频修复需求的方案。",
+        "description": "按需付费。1 积分 = 1 张图片或 0.5 秒视频。无需订阅。",
         "groups": [
           {
             "name": "one-time",
-            "title": "按次付费"
-          },
-          {
-            "name": "monthly",
-            "title": "包月",
-            "is_featured": true,
-            "label": "最受欢迎"
-          },
-          {
-            "name": "yearly",
-            "title": "包年"
+            "title": "积分包",
+            "is_featured": true
           }
         ],
         "items": [
           {
             "title": "入门版",
-            "description": "体验 SeedVR2 视频修复。",
+            "description": "适合初次体验 SeedVR2。",
             "features_title": "包含",
             "features": [
-              "100 积分",
-              "视频超分至 1080p",
-              "基础去噪",
-              "标准处理速度",
-              "MP4 格式下载"
+              "200 积分",
+              "200 张图片或 100 秒视频",
+              "视频超分至 4K",
+              "AI 去噪与增强",
+              "MP4/PNG 格式下载"
             ],
             "interval": "one-time",
             "amount": 900,
             "currency": "USD",
             "price": "$9",
-            "original_price": "$19",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 5900,
-                "price": "¥59",
-                "original_price": "¥129",
-                "payment_providers": ["stripe"]
-              }
-            ],
+            "original_price": "$15",
             "unit": "",
             "is_featured": false,
-            "tip": "无需订阅",
+            "tip": "90 天有效期",
             "button": {
-              "title": "立即开始",
+              "title": "立即购买",
               "url": "/#pricing",
               "icon": "RiFlashlightFill"
             },
             "product_id": "starter",
             "product_name": "SeedVR2 入门版",
-            "credits": 100,
-            "valid_days": 30,
+            "credits": 200,
+            "valid_days": 90,
             "group": "one-time"
           },
           {
             "title": "专业版",
-            "description": "满足日常视频修复需求。",
+            "description": "高频用户的最佳选择。",
             "label": "热门",
-            "features_title": "包含入门版功能，此外",
+            "features_title": "入门版全部功能，另加",
             "features": [
-              "500 积分",
-              "视频超分至 4K",
-              "高级去噪",
+              "800 积分",
+              "800 张图片或约 6 分钟视频",
               "优先处理",
-              "批量处理支持"
+              "批量处理支持",
+              "8K 超分支持"
             ],
             "interval": "one-time",
             "amount": 2900,
             "currency": "USD",
             "price": "$29",
-            "original_price": "$49",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 19900,
-                "price": "¥199",
-                "original_price": "¥349",
-                "payment_providers": ["stripe"]
-              }
-            ],
+            "original_price": "$45",
             "unit": "",
             "is_featured": true,
-            "tip": "性价比之选",
+            "tip": "180 天有效期 · 省 20%",
             "button": {
-              "title": "获取专业版",
+              "title": "立即购买",
               "url": "/#pricing",
               "icon": "RiFlashlightFill"
             },
             "product_id": "pro",
             "product_name": "SeedVR2 专业版",
-            "credits": 500,
-            "valid_days": 90,
+            "credits": 800,
+            "valid_days": 180,
             "group": "one-time"
           },
           {
             "title": "企业版",
             "description": "专业视频制作团队首选。",
-            "features_title": "包含专业版功能，此外",
+            "features_title": "专业版全部功能，另加",
             "features": [
-              "2000 积分",
-              "8K 超分支持",
-              "全套增强功能",
+              "3000 积分",
+              "3000 张图片或 25 分钟视频",
               "最快处理速度",
               "API 接口",
               "优先技术支持"
@@ -122,218 +94,27 @@
             "amount": 9900,
             "currency": "USD",
             "price": "$99",
-            "original_price": "$149",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 69900,
-                "price": "¥699",
-                "original_price": "¥999",
-                "payment_providers": ["stripe"]
-              }
-            ],
+            "original_price": "$150",
             "unit": "",
             "is_featured": false,
-            "tip": "专业用户首选",
+            "tip": "365 天有效期 · 省 34%",
             "button": {
-              "title": "获取企业版",
+              "title": "立即购买",
               "url": "/#pricing",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "enterprise",
+            "product_id": "business",
             "product_name": "SeedVR2 企业版",
-            "credits": 2000,
+            "credits": 3000,
             "valid_days": 365,
             "group": "one-time"
-          },
-          {
-            "title": "入门版",
-            "description": "体验 SeedVR2 视频修复。",
-            "features_title": "包含",
-            "features": [
-              "每月 100 积分",
-              "视频超分至 1080p",
-              "基础去噪",
-              "标准处理速度"
-            ],
-            "interval": "month",
-            "amount": 790,
-            "currency": "USD",
-            "price": "$7.9",
-            "original_price": "$9",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "随时取消",
-            "button": {
-              "title": "订阅",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-monthly",
-            "product_name": "SeedVR2 入门版包月",
-            "credits": 100,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "入门版"
-          },
-          {
-            "title": "专业版",
-            "description": "满足日常视频修复需求。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
-            "features": [
-              "每月 500 积分",
-              "视频超分至 4K",
-              "高级去噪",
-              "优先处理"
-            ],
-            "interval": "month",
-            "amount": 1990,
-            "currency": "USD",
-            "price": "$19.9",
-            "original_price": "$29",
-            "unit": "/ 月",
-            "is_featured": true,
-            "tip": "最受欢迎",
-            "button": {
-              "title": "订阅",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "pro-monthly",
-            "product_name": "SeedVR2 专业版包月",
-            "credits": 500,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "专业版"
-          },
-          {
-            "title": "企业版",
-            "description": "专业视频制作团队首选。",
-            "features_title": "包含专业版功能，此外",
-            "features": [
-              "每月 2000 积分",
-              "8K 超分支持",
-              "全套增强功能",
-              "API 接口"
-            ],
-            "interval": "month",
-            "amount": 7990,
-            "currency": "USD",
-            "price": "$79.9",
-            "original_price": "$99",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "专业用户首选",
-            "button": {
-              "title": "订阅",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "enterprise-monthly",
-            "product_name": "SeedVR2 企业版包月",
-            "credits": 2000,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "企业版"
-          },
-          {
-            "title": "入门版",
-            "description": "体验 SeedVR2 视频修复。",
-            "features_title": "包含",
-            "features": [
-              "每月 100 积分",
-              "视频超分至 1080p",
-              "基础去噪",
-              "标准处理速度"
-            ],
-            "interval": "year",
-            "amount": 5900,
-            "currency": "USD",
-            "price": "$4.9",
-            "original_price": "$7.9",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "省 38%",
-            "button": {
-              "title": "订阅",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-yearly",
-            "product_name": "SeedVR2 入门版包年",
-            "credits": 1200,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "入门版"
-          },
-          {
-            "title": "专业版",
-            "description": "满足日常视频修复需求。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
-            "features": [
-              "每月 500 积分",
-              "视频超分至 4K",
-              "高级去噪",
-              "优先处理"
-            ],
-            "interval": "year",
-            "amount": 15900,
-            "currency": "USD",
-            "price": "$13.2",
-            "original_price": "$19.9",
-            "unit": "/ 月",
-            "is_featured": true,
-            "tip": "省 34%",
-            "button": {
-              "title": "订阅",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "pro-yearly",
-            "product_name": "SeedVR2 专业版包年",
-            "credits": 6000,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "专业版"
-          },
-          {
-            "title": "企业版",
-            "description": "专业视频制作团队首选。",
-            "features_title": "包含专业版功能，此外",
-            "features": [
-              "每月 2000 积分",
-              "8K 超分支持",
-              "全套增强功能",
-              "API 接口"
-            ],
-            "interval": "year",
-            "amount": 63900,
-            "currency": "USD",
-            "price": "$53.2",
-            "original_price": "$79.9",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "省 33%",
-            "button": {
-              "title": "订阅",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "enterprise-yearly",
-            "product_name": "SeedVR2 企业版包年",
-            "credits": 24000,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "企业版"
           }
         ]
       }
     }
   },
   "messages": {
-    "current_plan": "当前方案",
+    "current_plan": "当前套餐",
     "processing": "处理中"
   }
 }

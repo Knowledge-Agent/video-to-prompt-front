@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "SeedVR2 Pricing - AI Video Restoration Plans",
-    "description": "Choose a plan to restore and enhance your videos with SeedVR2. Upscale to 4K, remove noise, and improve video quality."
+    "title": "SeedVR2 Pricing - AI Video & Image Restoration",
+    "description": "Simple credit-based pricing for video and image restoration. 1 credit = 1 image or 0.5 second video."
   },
   "page": {
     "title": "SeedVR2 Pricing",
@@ -9,21 +9,12 @@
       "pricing": {
         "id": "pricing",
         "title": "Simple, Transparent Pricing",
-        "description": "Choose a plan that fits your video restoration needs.",
+        "description": "Pay as you go. 1 credit = 1 image or 0.5 second video. No subscription required.",
         "groups": [
           {
             "name": "one-time",
-            "title": "Pay as you go"
-          },
-          {
-            "name": "monthly",
-            "title": "Monthly",
-            "is_featured": true,
-            "label": "Most Popular"
-          },
-          {
-            "name": "yearly",
-            "title": "Annually"
+            "title": "Credit Packs",
+            "is_featured": true
           }
         ],
         "items": [
@@ -32,20 +23,20 @@
             "description": "Perfect for trying out SeedVR2.",
             "features_title": "Includes",
             "features": [
-              "100 credits",
-              "Video upscaling to 1080p",
-              "Basic denoising",
-              "Standard processing speed",
-              "Download in MP4 format"
+              "200 credits",
+              "200 images or 100 seconds video",
+              "Video upscaling to 4K",
+              "AI denoising & enhancement",
+              "Download in MP4/PNG format"
             ],
             "interval": "one-time",
             "amount": 900,
             "currency": "USD",
             "price": "$9",
-            "original_price": "$19",
+            "original_price": "$15",
             "unit": "",
             "is_featured": false,
-            "tip": "No subscription required",
+            "tip": "Valid for 90 days",
             "button": {
               "title": "Get Started",
               "url": "/#pricing",
@@ -53,30 +44,30 @@
             },
             "product_id": "starter",
             "product_name": "SeedVR2 Starter",
-            "credits": 100,
-            "valid_days": 30,
+            "credits": 200,
+            "valid_days": 90,
             "group": "one-time"
           },
           {
             "title": "Pro",
-            "description": "For regular video restoration needs.",
+            "description": "Best value for regular users.",
             "label": "Popular",
             "features_title": "Everything in Starter, plus",
             "features": [
-              "500 credits",
-              "Video upscaling to 4K",
-              "Advanced denoising",
+              "800 credits",
+              "800 images or ~6 min video",
               "Priority processing",
-              "Batch processing support"
+              "Batch processing support",
+              "8K upscaling support"
             ],
             "interval": "one-time",
             "amount": 2900,
             "currency": "USD",
             "price": "$29",
-            "original_price": "$49",
+            "original_price": "$45",
             "unit": "",
             "is_featured": true,
-            "tip": "Best value for most users",
+            "tip": "Valid for 180 days • Save 20%",
             "button": {
               "title": "Get Pro",
               "url": "/#pricing",
@@ -84,18 +75,17 @@
             },
             "product_id": "pro",
             "product_name": "SeedVR2 Pro",
-            "credits": 500,
-            "valid_days": 90,
+            "credits": 800,
+            "valid_days": 180,
             "group": "one-time"
           },
           {
-            "title": "Enterprise",
+            "title": "Business",
             "description": "For professional video production.",
             "features_title": "Everything in Pro, plus",
             "features": [
-              "2000 credits",
-              "8K upscaling support",
-              "Full enhancement suite",
+              "3000 credits",
+              "3000 images or 25 min video",
               "Fastest processing",
               "API access",
               "Priority support"
@@ -104,202 +94,20 @@
             "amount": 9900,
             "currency": "USD",
             "price": "$99",
-            "original_price": "$149",
+            "original_price": "$150",
             "unit": "",
             "is_featured": false,
-            "tip": "For power users",
+            "tip": "Valid for 365 days • Save 34%",
             "button": {
-              "title": "Get Enterprise",
+              "title": "Get Business",
               "url": "/#pricing",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "enterprise",
-            "product_name": "SeedVR2 Enterprise",
-            "credits": 2000,
+            "product_id": "business",
+            "product_name": "SeedVR2 Business",
+            "credits": 3000,
             "valid_days": 365,
             "group": "one-time"
-          },
-          {
-            "title": "Starter",
-            "description": "Perfect for trying out SeedVR2.",
-            "features_title": "Includes",
-            "features": [
-              "100 credits per month",
-              "Video upscaling to 1080p",
-              "Basic denoising",
-              "Standard processing speed"
-            ],
-            "interval": "month",
-            "amount": 790,
-            "currency": "USD",
-            "price": "$7.9",
-            "original_price": "$9",
-            "unit": "/ month",
-            "is_featured": false,
-            "tip": "Cancel anytime",
-            "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-monthly",
-            "product_name": "SeedVR2 Starter Monthly",
-            "credits": 100,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "Starter"
-          },
-          {
-            "title": "Pro",
-            "description": "For regular video restoration needs.",
-            "label": "Popular",
-            "features_title": "Everything in Starter, plus",
-            "features": [
-              "500 credits per month",
-              "Video upscaling to 4K",
-              "Advanced denoising",
-              "Priority processing"
-            ],
-            "interval": "month",
-            "amount": 1990,
-            "currency": "USD",
-            "price": "$19.9",
-            "original_price": "$29",
-            "unit": "/ month",
-            "is_featured": true,
-            "tip": "Most popular choice",
-            "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "pro-monthly",
-            "product_name": "SeedVR2 Pro Monthly",
-            "credits": 500,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "Pro"
-          },
-          {
-            "title": "Enterprise",
-            "description": "For professional video production.",
-            "features_title": "Everything in Pro, plus",
-            "features": [
-              "2000 credits per month",
-              "8K upscaling support",
-              "Full enhancement suite",
-              "API access"
-            ],
-            "interval": "month",
-            "amount": 7990,
-            "currency": "USD",
-            "price": "$79.9",
-            "original_price": "$99",
-            "unit": "/ month",
-            "is_featured": false,
-            "tip": "For power users",
-            "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "enterprise-monthly",
-            "product_name": "SeedVR2 Enterprise Monthly",
-            "credits": 2000,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "Enterprise"
-          },
-          {
-            "title": "Starter",
-            "description": "Perfect for trying out SeedVR2.",
-            "features_title": "Includes",
-            "features": [
-              "100 credits per month",
-              "Video upscaling to 1080p",
-              "Basic denoising",
-              "Standard processing speed"
-            ],
-            "interval": "year",
-            "amount": 5900,
-            "currency": "USD",
-            "price": "$4.9",
-            "original_price": "$7.9",
-            "unit": "/ month",
-            "is_featured": false,
-            "tip": "Save 38%",
-            "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-yearly",
-            "product_name": "SeedVR2 Starter Annually",
-            "credits": 1200,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "Starter"
-          },
-          {
-            "title": "Pro",
-            "description": "For regular video restoration needs.",
-            "label": "Popular",
-            "features_title": "Everything in Starter, plus",
-            "features": [
-              "500 credits per month",
-              "Video upscaling to 4K",
-              "Advanced denoising",
-              "Priority processing"
-            ],
-            "interval": "year",
-            "amount": 15900,
-            "currency": "USD",
-            "price": "$13.2",
-            "original_price": "$19.9",
-            "unit": "/ month",
-            "is_featured": true,
-            "tip": "Save 34%",
-            "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "pro-yearly",
-            "product_name": "SeedVR2 Pro Annually",
-            "credits": 6000,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "Pro"
-          },
-          {
-            "title": "Enterprise",
-            "description": "For professional video production.",
-            "features_title": "Everything in Pro, plus",
-            "features": [
-              "2000 credits per month",
-              "8K upscaling support",
-              "Full enhancement suite",
-              "API access"
-            ],
-            "interval": "year",
-            "amount": 63900,
-            "currency": "USD",
-            "price": "$53.2",
-            "original_price": "$79.9",
-            "unit": "/ month",
-            "is_featured": false,
-            "tip": "Save 33%",
-            "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "enterprise-yearly",
-            "product_name": "SeedVR2 Enterprise Annually",
-            "credits": 24000,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "Enterprise"
           }
         ]
       }

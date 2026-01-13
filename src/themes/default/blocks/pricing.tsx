@@ -34,6 +34,35 @@ import {
   Pricing as PricingType,
 } from '@/shared/types/blocks/pricing';
 
+// Highlight keywords in feature text
+function highlightKeywords(text: string): string {
+  // Patterns to highlight:
+  // 1. Numbers with units (200 credits, 100 seconds, 6 min, 25 min, 4K, 8K)
+  // 2. Key features (API, Priority)
+  const patterns = [
+    // Numbers with credits/积分
+    /(\d+)\s*(credits?|积分)/gi,
+    // Numbers with images/张图片
+    /(\d+)\s*(images?|张图片?)/gi,
+    // Time durations (100 seconds, 6 min, 25 min, 秒, 分钟)
+    /(\d+)\s*(seconds?|秒|min|分钟?)/gi,
+    // Resolution (4K, 8K)
+    /\b(4K|8K)\b/gi,
+    // Key features
+    /\b(API|Priority|优先|批量|Batch)\b/gi,
+  ];
+
+  let result = text;
+  
+  patterns.forEach((pattern) => {
+    result = result.replace(pattern, (match) => {
+      return `<span class="text-orange-400 font-medium">${match}</span>`;
+    });
+  });
+
+  return result;
+}
+
 // Helper function to get all available currencies from a pricing item
 function getCurrenciesFromItem(item: PricingItem | null): PricingCurrency[] {
   if (!item) return [];
@@ -504,10 +533,14 @@ export function Pricing({
                     <p className="text-sm font-medium">{item.features_title}</p>
                   )}
                   <ul className="list-outside space-y-3 text-sm">
-                    {item.features?.map((item, index) => (
+                    {item.features?.map((feature, index) => (
                       <li key={index} className="flex items-center gap-2">
-                        <Check className="size-3" />
-                        {item}
+                        <Check className="size-3 text-orange-500 flex-shrink-0" />
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: highlightKeywords(feature),
+                          }}
+                        />
                       </li>
                     ))}
                   </ul>
