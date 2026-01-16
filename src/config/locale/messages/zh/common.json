@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "SeedVR2 - AI 视频修复与画质增强",
-    "description": "SeedVR2 是最先进的 AI 视频修复工具。支持视频超分至 4K、去噪、模糊修复、画质增强，基于单步扩散技术，速度提升 10 倍。",
-    "keywords": "SeedVR2, AI视频修复, 视频超分, 视频增强, 视频去噪, 4K超分辨率, AI画质增强, 视频清晰化, 老视频修复"
+    "title": "SeedVR2 在线版：AI 视频与图片增强工具（无需 GPU）",
+    "description": "专业的 AI 视频和图片增强工具。支持 4K/8K 超分、修复伪影、恢复细节。无需 GPU，无需安装 ComfyUI。",
+    "keywords": "SeedVR2, AI视频增强, 图片增强, 视频修复, 照片修复, 无需GPU, 在线增强, 4K超分, 8K超分, 修复伪影"
   },
   "sign": {
     "sign_in_title": "登录",

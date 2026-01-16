@@ -2,9 +2,9 @@
   "page": {
     "show_sections": [
       "hero-tool",
-      "before-after-showcase",
-      "features-demo",
-      "use-cases",
+      "video-upscaler",
+      "image-upscaler",
+      "why-online",
       "faq",
       "cta"
     ],
@@ -12,12 +12,112 @@
       "hero-tool": {
         "block": "hero-tool",
         "id": "hero-tool",
-        "title": "用 SeedVR2 将任意视频转换为 4K",
-        "description": "专业 AI 修复，去除噪点、修复伪影、恢复细节。无需任何编辑经验。",
+        "title": "在线运行 SeedVR2：终极 AI 视频和图片增强工具",
+        "description": "专业 AI 修复，去除噪点、修复伪影、恢复细节",
+        "switchLabel": {
+          "video": "🎬 增强视频",
+          "image": "🖼️ 增强图片"
+        },
+        "hint": "免费在线访问，无需本地安装",
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
-          "alt": "SeedVR2 AI 视频修复"
+          "alt": "SeedVR2 AI 视频和图片增强工具"
         }
+      },
+      "video-upscaler": {
+        "block": "video-upscaler",
+        "id": "video-upscaler",
+        "title": "专业 SeedVR2 视频增强器",
+        "description": "将视频提升至 4K/8K，保持完美的运动一致性。AI 驱动的专业视频修复。",
+        "items": [
+          {
+            "title": "4K/8K 超分辨率",
+            "description": "使用 AI 超分辨率技术，将低分辨率视频转换为惊艳的 4K 或 8K 画质。",
+            "icon": "Sparkles",
+            "keywords": ["4K", "8K", "视频超分"]
+          },
+          {
+            "title": "运动一致性",
+            "description": "保持流畅的运动和帧间时序一致性，实现无闪烁的效果。",
+            "icon": "Film",
+            "keywords": ["运动一致性", "时序一致性"]
+          },
+          {
+            "title": "视频修复",
+            "description": "修复老视频、增强动漫视频内容，轻松修复压缩伪影。",
+            "icon": "Video",
+            "keywords": ["视频修复", "动漫视频增强"]
+          }
+        ],
+        "comparisons": [
+          {
+            "before": "/videos/video_before.mp4",
+            "after": "/videos/video_after.mp4",
+            "alt": "SeedVR2 视频增强器对比示例"
+          },
+          {
+            "before": "/videos/before_other.mp4",
+            "after": "/videos/after_other_1.mp4",
+            "alt": "SeedVR2 视频增强器另一个对比示例"
+          }
+        ]
+      },
+      "image-upscaler": {
+        "block": "image-upscaler",
+        "id": "image-upscaler",
+        "title": "高保真 SeedVR2 图片增强器",
+        "description": "AI 精准修复伪影，增强图片细节。专业照片修复，适用于任何图片。",
+        "items": [
+          {
+            "title": "伪影修复",
+            "description": "修复 AI 生成图片中的对角线条纹。精准去除压缩伪影。",
+            "icon": "Wand2",
+            "keywords": ["修复伪影", "修复对角线", "修复条纹"]
+          },
+          {
+            "title": "细节增强",
+            "description": "恢复照片中的精细细节和纹理。AI 驱动的专业照片修复。",
+            "icon": "Sparkles",
+            "keywords": ["照片修复", "图片细节增强"]
+          },
+          {
+            "title": "高保真输出",
+            "description": "生成专业级打印质量图片。无损放大至任意分辨率。",
+            "icon": "Layers",
+            "keywords": ["高保真", "专业品质", "图片放大"]
+          }
+        ],
+        "comparison": {
+          "before": "https://b2.upsampler.com/_static/blog/billie_eilish_seedvr2_before.jpg",
+          "after": "https://b2.upsampler.com/_static/blog/billie_eilish_seedvr2_after.jpg",
+          "alt": "SeedVR2 图片增强器伪影修复示例"
+        }
+      },
+      "why-online": {
+        "block": "why-online",
+        "id": "why-online",
+        "title": "为什么选择在线版 SeedVR2？（无需 GPU，告别 OOM）",
+        "description": "跳过本地安装和硬件配置的烦恼。在云端即时处理视频和图片。",
+        "items": [
+          {
+            "title": "无需高端显卡",
+            "description": "不用担心显存不足或 OOM（内存溢出）错误。使用我们的云端 GPU 无缝处理。",
+            "icon": "Cpu",
+            "keywords": ["无需 GPU", "OOM", "低显存", "云端 GPU"]
+          },
+          {
+            "title": "无需配置 ComfyUI 工作流",
+            "description": "告别复杂的节点配置。无需安装 Python 或 ComfyUI。直接拖放文件即可。",
+            "icon": "Zap",
+            "keywords": ["无需 ComfyUI", "工作流", "免安装", "无需 Python"]
+          },
+          {
+            "title": "极速处理",
+            "description": "借助优化的云端基础设施，秒级获得结果。无需等待，无需排队。",
+            "icon": "Clock",
+            "keywords": ["快速", "即时", "秒级处理"]
+          }
+        ]
       },
       "features": {
         "id": "features",
@@ -195,31 +295,40 @@
       "faq": {
         "id": "faq",
         "title": "关于 SeedVR2 的常见问题",
-        "description": "更多问题请联系 support@seedvr2.ai",
+        "description": "关于 SeedVR2 在线视频和图片增强工具的一切",
+        "tip": "还有问题？<a href='mailto:support@seedvr2.ai' class='text-primary hover:underline'>联系客服</a>",
         "items": [
+          {
+            "question": "SeedVR2 在线版是免费的吗？",
+            "answer": "是的！SeedVR2 提供免费版本，允许您免费增强 720p 以下的视频和图片，无需信用卡即可开始使用。高级版解锁 4K/8K 超分、更快的处理速度和批量操作，适合专业用户。"
+          },
+          {
+            "question": "SeedVR2 可以增强动漫视频吗？",
+            "answer": "当然可以！SeedVR2 专门针对动漫视频增强进行了优化。我们的 AI 在提升分辨率和去除压缩伪影的同时，完美保留动漫独特的画风、干净的线条和鲜艳的色彩。非常适合修复老动漫或增强 AI 生成的动漫视频。"
+          },
+          {
+            "question": "SeedVR2 与 FlashVSR 相比如何？",
+            "answer": "SeedVR2 采用单步扩散技术，比 FlashVSR 等传统多步方法快约 10 倍。FlashVSR 需要多次推理步骤，而 SeedVR2 仅需一步即可实现更优质量。此外，SeedVR2 在视频超分时具有更好的时序一致性，能有效处理真实世界和 AIGC 内容。"
+          },
           {
             "question": "SeedVR2 是什么？如何工作？",
             "answer": "SeedVR2 是字节跳动 Seed 团队开发的先进 AI 视频修复模型。采用单步扩散技术，实现视频超分、去噪和增强，速度比传统方法快 10 倍，同时保持卓越画质。"
           },
           {
-            "question": "SeedVR2 可以修复哪些类型的视频？",
-            "answer": "SeedVR2 可修复各类视频，包括老视频、压缩视频、低分辨率片段和 AI 生成内容。针对真实世界和 AIGC 视频修复均有专门优化。"
-          },
-          {
             "question": "视频修复需要多长时间？",
-            "answer": "得益于单步扩散技术，SeedVR2 处理速度比传统扩散方法快 10 倍。大多数视频可在数分钟内完成修复，具体取决于时长和分辨率。"
+            "answer": "得益于单步扩散技术，SeedVR2 处理速度比传统扩散方法快 10 倍。5 分钟的 1080p 视频通常只需 3-5 分钟即可超分至 4K。更长的视频处理时间会相应增加。"
           },
           {
-            "question": "SeedVR2 可以超分到什么分辨率？",
-            "answer": "SeedVR2 支持任意分辨率输出，无固定尺寸限制。根据订阅方案，可将视频超分至 4K (2160p) 甚至更高。"
+            "question": "我的视频数据安全吗？",
+            "answer": "绝对安全。所有视频处理都在安全加密的环境中进行。我们不会永久存储您的视频或与第三方共享。视频会在 24 小时后自动删除，保护您的隐私。"
           },
           {
-            "question": "SeedVR2 基于已发表的研究吗？",
-            "answer": "是的，SeedVR2 基于 CVPR 2025（Highlight）发表的同行评审研究。技术由字节跳动 Seed 团队开发，模型权重已在 Hugging Face 开源。"
+            "question": "使用 SeedVR2 需要显卡或技术知识吗？",
+            "answer": "完全不需要！SeedVR2 完全在云端运行，您无需高端显卡，也不用担心显存不足或 OOM 错误。无需配置 ComfyUI，无需安装 Python。只需上传视频或图片，我们的 AI 会自动处理一切。"
           },
           {
-            "question": "支持哪些视频格式？",
-            "answer": "SeedVR2 支持所有常见视频格式，包括 MP4、MOV、AVI、MKV 和 WebM。输出为高质量 MP4 格式，兼容性最佳。"
+            "question": "可以同时处理多个视频吗？",
+            "answer": "可以！专业版和企业版包含批量处理功能。您可以排队多个视频并同时处理，大大节省大型项目的时间。免费版用户每次可处理一个视频。"
           }
         ]
       },

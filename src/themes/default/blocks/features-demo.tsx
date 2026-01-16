@@ -5,9 +5,9 @@
  */
 'use client';
 
-import { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight, Image as ImageIcon, Palette, Play, Sparkles, Wand2 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { Play, Image as ImageIcon, Sparkles, Palette, Wand2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRef, useState } from 'react';
 
 import { cn } from '@/shared/lib/utils';
 import { Section } from '@/shared/types/blocks/landing';

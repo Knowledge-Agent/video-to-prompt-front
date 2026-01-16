@@ -1,0 +1,9 @@
+# 博客图片目录
+
+此目录用于存放博客文章的图片资源。
+
+开发阶段可以使用在线占位图服务：
+- https://via.placeholder.com/1200x630
+- https://source.unsplash.com/1200x630/?technology
+
+生产环境请替换为真实图片。

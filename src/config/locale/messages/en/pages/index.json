@@ -2,9 +2,9 @@
   "page": {
     "show_sections": [
       "hero-tool",
-      "before-after-showcase",
-      "features-demo",
-      "use-cases",
+      "video-upscaler",
+      "image-upscaler",
+      "why-online",
       "faq",
       "cta"
     ],
@@ -12,12 +12,112 @@
       "hero-tool": {
         "block": "hero-tool",
         "id": "hero-tool",
-        "title": "Transform Any Video to 4K with SeedVR2",
-        "description": "Professional AI restoration that removes noise, fixes artifacts, and recovers details. No editing experience needed.",
+        "title": "Run SeedVR2 Online: The Ultimate AI Upscaler for Video and Images",
+        "description": "Professional AI restoration to remove noise, fix artifacts, and restore details",
+        "switchLabel": {
+          "video": "🎬 Upscale Video",
+          "image": "🖼️ Upscale Image"
+        },
+        "hint": "Free online access, no local installation needed",
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
-          "alt": "SeedVR2 AI Video Restoration"
+          "alt": "SeedVR2 AI video and image upscaler"
         }
+      },
+      "video-upscaler": {
+        "block": "video-upscaler",
+        "id": "video-upscaler",
+        "title": "Professional SeedVR2 Video Upscaler",
+        "description": "Upscale videos to 4K/8K with perfect motion consistency. Professional video restoration powered by AI.",
+        "items": [
+          {
+            "title": "4K/8K Upscaling",
+            "description": "Transform low-resolution videos to stunning 4K or 8K quality with AI-powered super resolution.",
+            "icon": "Sparkles",
+            "keywords": ["4K", "8K", "video upscaling"]
+          },
+          {
+            "title": "Motion Consistency",
+            "description": "Maintain smooth motion and frame-to-frame temporal coherence for flicker-free results.",
+            "icon": "Film",
+            "keywords": ["motion consistency", "temporal coherence"]
+          },
+          {
+            "title": "Video Restoration",
+            "description": "Restore old videos, upscale anime video content, and fix compression artifacts with ease.",
+            "icon": "Video",
+            "keywords": ["video restoration", "upscale anime video"]
+          }
+        ],
+        "comparisons": [
+          {
+            "before": "/videos/video_before.mp4",
+            "after": "/videos/video_after.mp4",
+            "alt": "SeedVR2 video upscaler comparison example"
+          },
+          {
+            "before": "/videos/before_other.mp4",
+            "after": "/videos/after_other_1.mp4",
+            "alt": "SeedVR2 video upscaler another comparison example"
+          }
+        ]
+      },
+      "image-upscaler": {
+        "block": "image-upscaler",
+        "id": "image-upscaler",
+        "title": "High-Fidelity SeedVR2 Image Upscaler",
+        "description": "Fix artifacts and enhance image details with AI precision. Professional photo restoration for any image.",
+        "items": [
+          {
+            "title": "Artifact Removal",
+            "description": "Fix diagonal lines and stripes in AI-generated images. Remove compression artifacts with precision.",
+            "icon": "Wand2",
+            "keywords": ["fix artifacts", "fix diagonal lines", "fix stripes"]
+          },
+          {
+            "title": "Detail Enhancement",
+            "description": "Restore fine details and textures in photos. Professional photo restoration powered by AI.",
+            "icon": "Sparkles",
+            "keywords": ["photo restoration", "image detail enhancement"]
+          },
+          {
+            "title": "High-Fidelity Output",
+            "description": "Produce professional-quality images for printing. Upscale to any resolution without quality loss.",
+            "icon": "Layers",
+            "keywords": ["high fidelity", "professional quality", "image upscaling"]
+          }
+        ],
+        "comparison": {
+          "before": "https://b2.upsampler.com/_static/blog/billie_eilish_seedvr2_before.jpg",
+          "after": "https://b2.upsampler.com/_static/blog/billie_eilish_seedvr2_after.jpg",
+          "alt": "SeedVR2 image upscaler fixing artifacts example"
+        }
+      },
+      "why-online": {
+        "block": "why-online",
+        "id": "why-online",
+        "title": "Why Use SeedVR2 Online? (No GPU & No OOM)",
+        "description": "Skip the hassle of local installation and hardware requirements. Process videos and images instantly in the cloud.",
+        "items": [
+          {
+            "title": "No High-End GPU Needed",
+            "description": "Don't worry about VRAM or OOM (Out of Memory) errors. Use our cloud GPU for seamless processing.",
+            "icon": "Cpu",
+            "keywords": ["no GPU", "OOM", "low vram", "cloud GPU"]
+          },
+          {
+            "title": "No ComfyUI Workflow Setup",
+            "description": "Forget complex nodes. No need to install Python or ComfyUI. Just drag and drop your files.",
+            "icon": "Zap",
+            "keywords": ["no ComfyUI", "workflow", "no installation", "no python"]
+          },
+          {
+            "title": "Fast Processing",
+            "description": "Get results in seconds with our optimized cloud infrastructure. No waiting, no queues.",
+            "icon": "Clock",
+            "keywords": ["fast", "quick", "instant", "seconds"]
+          }
+        ]
       },
       "features": {
         "id": "features",
@@ -233,41 +333,41 @@
       },
       "faq": {
         "id": "faq",
-        "title": "Frequently Asked Questions",
-        "description": "Everything you need to know about SeedVR2",
+        "title": "Frequently Asked Questions About SeedVR2",
+        "description": "Everything you need to know about SeedVR2 online video and image upscaler",
         "tip": "Still have questions? <a href='mailto:support@seedvr2.ai' class='text-primary hover:underline'>Contact Support</a>",
         "items": [
+          {
+            "question": "Is SeedVR2 free to use online?",
+            "answer": "Yes! SeedVR2 offers a free tier that allows you to upscale videos up to 720p and images without any cost. No credit card required to get started. Premium plans unlock 4K/8K upscaling, faster processing, and batch operations for professional users."
+          },
+          {
+            "question": "Can I upscale anime videos with SeedVR2?",
+            "answer": "Absolutely! SeedVR2 is specially optimized for anime video upscaling. Our AI preserves the unique art style, clean lines, and vibrant colors of anime content while enhancing resolution and removing compression artifacts. It's perfect for restoring old anime series or enhancing AI-generated anime videos."
+          },
+          {
+            "question": "How does SeedVR2 compare to FlashVSR?",
+            "answer": "SeedVR2 uses single-step diffusion technology, making it approximately 10x faster than traditional multi-step methods like FlashVSR. While FlashVSR requires multiple inference steps, SeedVR2 achieves superior quality in just one step. Additionally, SeedVR2 offers better temporal consistency for video upscaling and handles both real-world and AIGC content effectively."
+          },
           {
             "question": "What video formats does SeedVR2 support?",
             "answer": "SeedVR2 supports all major video formats including MP4, WebM, AVI, MOV, and MKV. You can upload videos in any of these formats and export to your preferred format. We also support various codecs like H.264, H.265, VP9, and ProRes."
           },
           {
             "question": "How long does the restoration process take?",
-            "answer": "Processing time depends on video length and resolution. Typically, a 5-minute 1080p video takes about 3-5 minutes to upscale to 4K. Longer videos may take proportionally more time, but our AI is optimized for speed without compromising quality."
+            "answer": "Processing time depends on video length and resolution. Typically, a 5-minute 1080p video takes about 3-5 minutes to upscale to 4K. Thanks to our single-step diffusion technology, SeedVR2 is 10x faster than traditional methods. Longer videos may take proportionally more time."
           },
           {
             "question": "Is my video data safe and private?",
-            "answer": "Absolutely. All video processing happens in a secure, encrypted environment. We never store your videos permanently or share them with third parties. You can also choose local processing for complete data control. Videos are automatically deleted after 24 hours."
+            "answer": "Absolutely. All video processing happens in a secure, encrypted environment. We never store your videos permanently or share them with third parties. Videos are automatically deleted after 24 hours for your privacy."
           },
           {
-            "question": "What makes SeedVR2 different from other upscalers?",
-            "answer": "SeedVR2 uses advanced neural networks specifically trained on video restoration. Unlike basic upscalers, we intelligently remove noise, fix compression artifacts, enhance details, and reconstruct missing information. Our AI understands motion, temporal consistency, and video-specific challenges."
+            "question": "Do I need a GPU or technical knowledge to use SeedVR2?",
+            "answer": "Not at all! SeedVR2 runs entirely in the cloud, so you don't need a high-end GPU or worry about VRAM/OOM errors. No ComfyUI setup, no Python installation required. Simply upload your video or image, and our AI handles everything automatically."
           },
           {
             "question": "Can I process multiple videos at once?",
             "answer": "Yes! Pro and Business plans include batch processing capabilities. You can queue multiple videos and process them simultaneously, saving significant time for large projects. Free tier users can process one video at a time."
-          },
-          {
-            "question": "Do I need technical knowledge to use SeedVR2?",
-            "answer": "Not at all! SeedVR2 is designed to be user-friendly for everyone. Simply upload your video, adjust settings if needed (or use our smart Auto mode), and click Start. The AI handles all the complex restoration work automatically."
-          },
-          {
-            "question": "What is the maximum file size I can upload?",
-            "answer": "Free users can upload videos up to 500 MB. Pro users get 5 GB per video, and Business plan has no file size limits. For very large files, we recommend using our desktop app which supports local processing."
-          },
-          {
-            "question": "Can I get a refund if I'm not satisfied?",
-            "answer": "Yes, we offer a 14-day money-back guarantee for all paid plans. If you're not completely satisfied with the results, contact our support team for a full refund, no questions asked."
           }
         ]
       },

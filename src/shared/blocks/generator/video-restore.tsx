@@ -5,43 +5,45 @@
  */
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
 import {
-  ChevronDown,
-  Download,
-  Image as ImageIcon,
-  Link2,
-  Loader2,
-  Settings2,
-  Sparkles,
-  Upload,
-  Video,
-  X,
+    ChevronDown,
+    Download,
+    Image as ImageIcon,
+    Link2,
+    Loader2,
+    Settings2,
+    Sparkles,
+    Upload,
+    Video,
+    X,
 } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
 
 import { Button } from '@/shared/components/ui/button';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger,
+} from '@/shared/components/ui/collapsible';
 import { Label } from '@/shared/components/ui/label';
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
 } from '@/shared/components/ui/select';
 import { Switch } from '@/shared/components/ui/switch';
 import { Tabs, TabsList, TabsTrigger } from '@/shared/components/ui/tabs';
 import { Textarea } from '@/shared/components/ui/textarea';
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/shared/components/ui/collapsible';
 import { useAppContext } from '@/shared/contexts/app';
 
 interface VideoRestoreProps {
   srOnlyTitle?: string;
   srOnlyDescription?: string;
+  mediaMode?: 'video' | 'image';
+  hideTitle?: boolean;
 }
 
 const RESTORE_CREDITS = 10;
@@ -95,7 +97,7 @@ function getMediaType(file: File | null, url: string): MediaType {
   return null;
 }
 
-export function VideoRestore({ srOnlyTitle, srOnlyDescription }: VideoRestoreProps) {
+export function VideoRestore({ srOnlyTitle, srOnlyDescription, mediaMode, hideTitle }: VideoRestoreProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [inputMode, setInputMode] = useState<InputMode>('upload');
@@ -372,15 +374,17 @@ export function VideoRestore({ srOnlyTitle, srOnlyDescription }: VideoRestorePro
   // 上传/处理状态 UI
   return (
     <div className="container w-full">
-      {/* 标题 - 纯白色 */}
-      <div className="mx-auto max-w-3xl text-center mb-8">
-        <h1 className="text-4xl font-bold tracking-tight md:text-5xl text-white">
-          {srOnlyTitle || 'Transform Any Video to 4K with SeedVR2'}
-        </h1>
-        <p className="text-gray-400 mt-4 text-lg">
-          {srOnlyDescription || 'Professional AI restoration that removes noise, fixes artifacts, and recovers details. No editing experience needed.'}
-        </p>
-      </div>
+      {/* 标题 - 纯白色 - 仅在 hideTitle 为 false 时显示 */}
+      {!hideTitle && (
+        <div className="mx-auto max-w-3xl text-center mb-8">
+          <h1 className="text-4xl font-bold tracking-tight md:text-5xl text-white">
+            {srOnlyTitle || 'Transform Any Video to 4K with SeedVR2'}
+          </h1>
+          <p className="text-gray-400 mt-4 text-lg">
+            {srOnlyDescription || 'Professional AI restoration that removes noise, fixes artifacts, and recovers details. No editing experience needed.'}
+          </p>
+        </div>
+      )}
 
       <div className="mx-auto max-w-2xl">
         {/* Layer 2: 白色内容框 */}
@@ -439,12 +443,24 @@ export function VideoRestore({ srOnlyTitle, srOnlyDescription }: VideoRestorePro
                         className="border-white/10 hover:border-orange-500/50 bg-black/30 flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed py-12 transition-colors"
                       >
                         <div className="rounded-full bg-white/5 p-3 mb-3">
-                          <div className="flex gap-1">
-                            <Video className="text-gray-400 h-5 w-5" />
-                            <ImageIcon className="text-gray-400 h-5 w-5" />
-                          </div>
+                          {mediaMode === 'image' ? (
+                            <ImageIcon className="text-gray-400 h-8 w-8" />
+                          ) : mediaMode === 'video' ? (
+                            <Video className="text-gray-400 h-8 w-8" />
+                          ) : (
+                            <div className="flex gap-1">
+                              <Video className="text-gray-400 h-5 w-5" />
+                              <ImageIcon className="text-gray-400 h-5 w-5" />
+                            </div>
+                          )}
                         </div>
-                        <p className="text-white text-sm font-medium">Click to upload a video or image</p>
+                        <p className="text-white text-sm font-medium">
+                          {mediaMode === 'image' 
+                            ? 'Click to upload an image' 
+                            : mediaMode === 'video'
+                            ? 'Click to upload a video'
+                            : 'Click to upload a video or image'}
+                        </p>
                         <p className="text-gray-500 text-xs mt-1">or drag and drop</p>
                       </div>
                     ) : (
