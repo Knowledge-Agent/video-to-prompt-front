@@ -14,6 +14,16 @@
     "nav": {
       "items": [
         {
+          "title": "Video Upscaler",
+          "url": "/#video-upscaler",
+          "icon": "Video"
+        },
+        {
+          "title": "Image Upscaler",
+          "url": "/#image-upscaler",
+          "icon": "Image"
+        },
+        {
           "title": "Pricing",
           "url": "/pricing",
           "icon": "DollarSign"
@@ -66,18 +76,18 @@
           "title": "Product",
           "children": [
             {
-              "title": "Features",
-              "url": "/#features",
+              "title": "Video Upscaler",
+              "url": "/#video-upscaler",
+              "target": "_self"
+            },
+            {
+              "title": "Image Upscaler",
+              "url": "/#image-upscaler",
               "target": "_self"
             },
             {
               "title": "Pricing",
               "url": "/pricing",
-              "target": "_self"
-            },
-            {
-              "title": "Video Upscaler",
-              "url": "/#features",
               "target": "_self"
             }
           ]

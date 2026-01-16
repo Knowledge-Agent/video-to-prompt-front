@@ -14,6 +14,16 @@
     "nav": {
       "items": [
         {
+          "title": "视频超分",
+          "url": "/#video-upscaler",
+          "icon": "Video"
+        },
+        {
+          "title": "图片超分",
+          "url": "/#image-upscaler",
+          "icon": "Image"
+        },
+        {
           "title": "价格",
           "url": "/pricing",
           "icon": "DollarSign"
@@ -66,18 +76,18 @@
           "title": "产品",
           "children": [
             {
-              "title": "功能特性",
-              "url": "/#features",
+              "title": "视频超分",
+              "url": "/#video-upscaler",
+              "target": "_self"
+            },
+            {
+              "title": "图片超分",
+              "url": "/#image-upscaler",
               "target": "_self"
             },
             {
               "title": "价格",
               "url": "/pricing",
-              "target": "_self"
-            },
-            {
-              "title": "视频超分",
-              "url": "/#features",
               "target": "_self"
             }
           ]

@@ -1,29 +1,29 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
 
 import { Link, usePathname } from '@/core/i18n/navigation';
 import {
-  BrandLogo,
-  LocaleSelector,
-  SignUser,
-  SmartIcon,
-  ThemeToggler,
+    BrandLogo,
+    LocaleSelector,
+    SignUser,
+    SmartIcon,
+    ThemeToggler,
 } from '@/shared/blocks/common';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from '@/shared/components/ui/accordion';
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger as RawNavigationMenuTrigger,
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger as RawNavigationMenuTrigger,
 } from '@/shared/components/ui/navigation-menu';
 import { useMedia } from '@/shared/hooks/use-media';
 import { cn } from '@/shared/lib/utils';
@@ -43,6 +43,48 @@ function NavigationMenuTrigger(
   return <RawNavigationMenuTrigger {...props} />;
 }
 
+/**
+ * 处理锚点链接点击，实现平滑滚动并更新 URL
+ */
+function useAnchorNavigation() {
+  const handleAnchorClick = useCallback((e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    // 检查是否是锚点链接
+    const isAnchorLink = href.includes('#');
+    
+    if (!isAnchorLink) {
+      return false; // 非锚点链接，使用默认行为
+    }
+
+    // 解析锚点
+    const hashIndex = href.indexOf('#');
+    const path = href.slice(0, hashIndex) || '/';
+    const hash = href.slice(hashIndex + 1);
+
+    // 检查是否是当前页面的锚点
+    const currentPath = window.location.pathname;
+    const isCurrentPage = path === '/' || path === '' || currentPath === path || currentPath.endsWith(path);
+
+    if (isCurrentPage && hash) {
+      e.preventDefault();
+      // 同页面锚点，直接滚动
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // 更新 URL 中的锚点，不刷新页面
+        window.history.pushState(null, '', `#${hash}`);
+      }
+      return true; // 已处理
+    }
+
+    return false; // 跨页面锚点，使用默认行为
+  }, []);
+
+  return { handleAnchorClick };
+}
+
 export function Header({ header }: { header: HeaderType }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,6 +92,7 @@ export function Header({ header }: { header: HeaderType }) {
   const scrollRafRef = useRef<number | null>(null);
   const isLarge = useMedia('(min-width: 64rem)');
   const pathname = usePathname();
+  const { handleAnchorClick } = useAnchorNavigation();
 
   useEffect(() => {
     // Listen to scroll event to enable header styles on scroll
@@ -94,6 +137,7 @@ export function Header({ header }: { header: HeaderType }) {
                   <Link
                     href={item.url || ''}
                     target={item.target || '_self'}
+                    onClick={(e) => handleAnchorClick(e as unknown as MouseEvent<HTMLAnchorElement>, item.url || '')}
                     className={`flex flex-row items-center gap-2 px-4 py-1.5 text-sm ${
                       item.is_active || pathname.endsWith(item.url as string)
                         ? 'bg-muted/40 text-muted-foreground'
@@ -172,7 +216,10 @@ export function Header({ header }: { header: HeaderType }) {
                           <li key={iidx}>
                             <Link
                               href={subItem.url || ''}
-                              onClick={closeMenu}
+                              onClick={(e) => {
+                                handleAnchorClick(e as unknown as MouseEvent<HTMLAnchorElement>, subItem.url || '');
+                                closeMenu();
+                              }}
                               className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-4 py-2"
                             >
                               <div
@@ -193,7 +240,10 @@ export function Header({ header }: { header: HeaderType }) {
                 ) : (
                   <Link
                     href={item.url || ''}
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                      handleAnchorClick(e as unknown as MouseEvent<HTMLAnchorElement>, item.url || '');
+                      closeMenu();
+                    }}
                     className="data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg **:!font-normal"
                   >
                     {item.title}

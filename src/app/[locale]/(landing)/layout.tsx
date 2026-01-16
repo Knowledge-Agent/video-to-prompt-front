@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
 import { getTranslations } from 'next-intl/server';
+import { ReactNode } from 'react';
 
 import { getThemeLayout } from '@/core/theme';
-import { LocaleDetector, TopBanner } from '@/shared/blocks/common';
+import { AnchorScrollHandler, LocaleDetector, TopBanner } from '@/shared/blocks/common';
 import {
-  Footer as FooterType,
-  Header as HeaderType,
+    Footer as FooterType,
+    Header as HeaderType,
 } from '@/shared/types/blocks/landing';
 
 export default async function LandingLayout({
@@ -26,6 +26,7 @@ export default async function LandingLayout({
   return (
     <Layout header={header} footer={footer}>
       <LocaleDetector />
+      <AnchorScrollHandler />
       {header.topbanner && header.topbanner.text && (
         <TopBanner
           id="topbanner"
