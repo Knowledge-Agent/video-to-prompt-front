@@ -15,8 +15,8 @@
         "title": "在线运行 SeedVR2：终极 AI 视频和图片增强工具",
         "description": "专业 AI 修复，去除噪点、修复伪影、恢复细节",
         "switchLabel": {
-          "video": "🎬 增强视频",
-          "image": "🖼️ 增强图片"
+          "video": "增强视频",
+          "image": "增强图片"
         },
         "hint": "免费在线访问，无需本地安装",
         "background_image": {

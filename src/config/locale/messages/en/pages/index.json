@@ -15,8 +15,8 @@
         "title": "Run SeedVR2 Online: The Ultimate AI Upscaler for Video and Images",
         "description": "Professional AI restoration to remove noise, fix artifacts, and restore details",
         "switchLabel": {
-          "video": "🎬 Upscale Video",
-          "image": "🖼️ Upscale Image"
+          "video": "Upscale Video",
+          "image": "Upscale Image"
         },
         "hint": "Free online access, no local installation needed",
         "background_image": {
@@ -84,7 +84,11 @@
             "title": "High-Fidelity Output",
             "description": "Produce professional-quality images for printing. Upscale to any resolution without quality loss.",
             "icon": "Layers",
-            "keywords": ["high fidelity", "professional quality", "image upscaling"]
+            "keywords": [
+              "high fidelity",
+              "professional quality",
+              "image upscaling"
+            ]
           }
         ],
         "comparison": {
@@ -109,7 +113,12 @@
             "title": "No ComfyUI Workflow Setup",
             "description": "Forget complex nodes. No need to install Python or ComfyUI. Just drag and drop your files.",
             "icon": "Zap",
-            "keywords": ["no ComfyUI", "workflow", "no installation", "no python"]
+            "keywords": [
+              "no ComfyUI",
+              "workflow",
+              "no installation",
+              "no python"
+            ]
           },
           {
             "title": "Fast Processing",
@@ -276,7 +285,11 @@
             "title": "Businesses",
             "description": "Improve marketing videos, product demos, and corporate content.",
             "icon": "Building2",
-            "examples": ["Marketing videos", "Product demos", "Training content"]
+            "examples": [
+              "Marketing videos",
+              "Product demos",
+              "Training content"
+            ]
           },
           {
             "title": "Families",
