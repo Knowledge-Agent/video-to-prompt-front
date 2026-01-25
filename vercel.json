@@ -10,16 +10,16 @@
   },
   "functions": {
     "src/app/api/**/*.ts": {
-      "maxDuration": 30
+      "maxDuration": 300
     },
     "src/app/api/ai/**/*.ts": {
-      "maxDuration": 60
+      "maxDuration": 300
     },
     "src/app/api/payment/**/*.ts": {
-      "maxDuration": 30
+      "maxDuration": 300
     },
     "src/app/api/storage/**/*.ts": {
-      "maxDuration": 30
+      "maxDuration": 300
     }
   },
   "crons": []
