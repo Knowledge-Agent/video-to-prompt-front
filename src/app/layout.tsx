@@ -81,8 +81,12 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <link rel="icon" href={envConfigs.app_favicon} />
-        <link rel="alternate icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${envConfigs.app_favicon}?v=2`}
+        />
+        <link rel="shortcut icon" href={`${envConfigs.app_favicon}?v=2`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* inject locales */}
