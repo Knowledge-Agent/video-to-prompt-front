@@ -189,16 +189,23 @@ export async function getAuthOptions(configs: Record<string, string>) {
                 const logoUrl = envConfigs.app_logo?.startsWith('http')
                   ? envConfigs.app_logo
                   : `${envConfigs.app_url}${envConfigs.app_logo?.startsWith('/') ? '' : '/'}${envConfigs.app_logo || ''}`;
-                // Avoid blocking auth response on email sending.
-                await emailService.sendEmail({
-                  to: user.email,
-                  subject: `Verify your email - ${envConfigs.app_name}`,
-                  react: VerifyEmail({
-                    appName: envConfigs.app_name,
-                    logoUrl,
-                    url,
-                  }),
-                });
+                // Fire-and-forget: do NOT await to avoid blocking auth response.
+                void emailService
+                  .sendEmail({
+                    to: user.email,
+                    subject: `Verify your email - ${envConfigs.app_name}`,
+                    react: VerifyEmail({
+                      appName: envConfigs.app_name,
+                      logoUrl,
+                      url,
+                    }),
+                  })
+                  .catch((e) => {
+                    console.error(
+                      'Background verification email send failed:',
+                      e
+                    );
+                  });
               } catch (e) {
                 console.log('send verification email failed:', e);
               }

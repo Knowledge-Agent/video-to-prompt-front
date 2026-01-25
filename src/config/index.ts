@@ -23,7 +23,7 @@ export const envConfigs: ConfigMap = {
   app_url: process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000',
   app_name: process.env.NEXT_PUBLIC_APP_NAME ?? 'ShipAny App',
   app_description: process.env.NEXT_PUBLIC_APP_DESCRIPTION ?? '',
-  app_logo: process.env.NEXT_PUBLIC_APP_LOGO ?? '/logo.png',
+  app_logo: process.env.NEXT_PUBLIC_APP_LOGO ?? '/imgs/logos/seedvr2_logo.png',
   app_favicon: process.env.NEXT_PUBLIC_APP_FAVICON ?? '/favicon.ico',
   app_preview_image:
     process.env.NEXT_PUBLIC_APP_PREVIEW_IMAGE ?? '/preview.png',
@@ -60,5 +60,6 @@ export const envConfigs: ConfigMap = {
   aliyun_oss_public_domain: process.env.ALIYUN_OSS_PUBLIC_DOMAIN ?? '',
   // Replicate AI
   replicate_api_token: process.env.REPLICATE_API_TOKEN ?? '',
-  replicate_api_url: process.env.REPLICATE_API_URL ?? 'https://api.replicate.com/v1',
+  replicate_api_url:
+    process.env.REPLICATE_API_URL ?? 'https://api.replicate.com/v1',
 };

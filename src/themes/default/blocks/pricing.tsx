@@ -7,6 +7,7 @@ import { toast } from 'sonner';
 
 import { SmartIcon } from '@/shared/blocks/common';
 import { PaymentModal } from '@/shared/blocks/payment/payment-modal';
+import { SignModal } from '@/shared/blocks/sign/sign-modal';
 import { Badge } from '@/shared/components/ui/badge';
 import { Button } from '@/shared/components/ui/button';
 import {
@@ -53,7 +54,7 @@ function highlightKeywords(text: string): string {
   ];
 
   let result = text;
-  
+
   patterns.forEach((pattern) => {
     result = result.replace(pattern, (match) => {
       return `<span class="text-orange-400 font-medium">${match}</span>`;
@@ -535,7 +536,7 @@ export function Pricing({
                   <ul className="list-outside space-y-3 text-sm">
                     {item.features?.map((feature, index) => (
                       <li key={index} className="flex items-center gap-2">
-                        <Check className="size-3 text-orange-500 flex-shrink-0" />
+                        <Check className="size-3 flex-shrink-0 text-orange-500" />
                         <span
                           dangerouslySetInnerHTML={{
                             __html: highlightKeywords(feature),
@@ -558,6 +559,7 @@ export function Pricing({
           handleCheckout(item, paymentProvider)
         }
       />
+      <SignModal callbackUrl="/pricing" />
     </section>
   );
 }

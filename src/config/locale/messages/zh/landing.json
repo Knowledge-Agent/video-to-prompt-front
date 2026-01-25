@@ -4,7 +4,7 @@
     "brand": {
       "title": "SeedVR2",
       "logo": {
-        "src": "/logo.png",
+        "src": "/imgs/logos/seedvr2_logo.png",
         "alt": "SeedVR2 - AI 视频修复",
         "width": 100,
         "height": 100
@@ -63,7 +63,7 @@
       "title": "SeedVR2",
       "description": "SeedVR2 是最先进的 AI 视频修复工具。基于字节跳动 Seed 团队的单步扩散技术，实现视频超分、去噪、画质增强。",
       "logo": {
-        "src": "/logo.png",
+        "src": "/imgs/logos/seedvr2_logo.png",
         "alt": "SeedVR2 - AI 视频修复",
         "width": 1024,
         "height": 1024
@@ -134,20 +134,8 @@
         {
           "title": "X",
           "icon": "RiTwitterXFill",
-          "url": "https://x.com/seedvr2",
+          "url": "https://x.com/zhihaoli_tech?s=21&t=vQjCDjs5nh-fnfZGUO02rQ",
           "target": "_blank"
-        },
-        {
-          "title": "Github",
-          "icon": "Github",
-          "url": "https://github.com/ByteDance-Seed/SeedVR",
-          "target": "_blank"
-        },
-        {
-          "title": "邮箱",
-          "icon": "Mail",
-          "url": "mailto:support@seedvr2.ai",
-          "target": "_self"
         }
       ]
     },

@@ -1,9 +1,11 @@
 import { getTranslations } from 'next-intl/server';
 
+import { redirect } from '@/core/i18n/navigation';
 import { AITaskStatus } from '@/extensions/ai';
 import { AudioPlayer, Empty, LazyImage } from '@/shared/blocks/common';
 import { TableCard } from '@/shared/blocks/table';
 import { AITask, getAITasks, getAITasksCount } from '@/shared/models/ai_task';
+import { getAllConfigs } from '@/shared/models/config';
 import { getUserInfo } from '@/shared/models/user';
 import { Button, Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
@@ -13,6 +15,11 @@ export default async function AiTasksPage({
 }: {
   searchParams: Promise<{ page?: number; pageSize?: number; type?: string }>;
 }) {
+  const configs = await getAllConfigs();
+  if (configs.activity_ai_tasks_enabled === 'false') {
+    redirect({ href: '/activity', locale: configs.default_locale || 'en' });
+  }
+
   const { page: pageNum, pageSize, type } = await searchParams;
   const page = pageNum || 1;
   const limit = pageSize || 20;

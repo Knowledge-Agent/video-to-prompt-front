@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 
+import { redirect } from '@/core/i18n/navigation';
 import { Empty } from '@/shared/blocks/common';
 import { TableCard } from '@/shared/blocks/table';
 import {
@@ -8,6 +9,7 @@ import {
   getChats,
   getChatsCount,
 } from '@/shared/models/chat';
+import { getAllConfigs } from '@/shared/models/config';
 import { getUserInfo } from '@/shared/models/user';
 import { Button, Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
@@ -17,6 +19,11 @@ export default async function ChatsPage({
 }: {
   searchParams: Promise<{ page?: number; pageSize?: number }>;
 }) {
+  const configs = await getAllConfigs();
+  if (configs.activity_ai_chats_enabled === 'false') {
+    redirect({ href: '/activity', locale: configs.default_locale || 'en' });
+  }
+
   const { page: pageNum, pageSize } = await searchParams;
   const page = pageNum || 1;
   const limit = pageSize || 20;

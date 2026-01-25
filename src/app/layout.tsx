@@ -1,6 +1,5 @@
 import '@/config/style/global.css';
 
-import { Inter, JetBrains_Mono } from 'next/font/google';
 import { getLocale, setRequestLocale } from 'next-intl/server';
 import NextTopLoader from 'nextjs-toploader';
 
@@ -12,22 +11,6 @@ import { getAdsService } from '@/shared/services/ads';
 import { getAffiliateService } from '@/shared/services/affiliate';
 import { getAnalyticsService } from '@/shared/services/analytics';
 import { getCustomerService } from '@/shared/services/customer_service';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
-  preload: false,
-  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  display: 'swap',
-  preload: false,
-  fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
-});
 
 export default async function RootLayout({
   children,
@@ -96,11 +79,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html
-      lang={locale}
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="icon" href={envConfigs.app_favicon} />
         <link rel="alternate icon" href="/favicon.ico" />

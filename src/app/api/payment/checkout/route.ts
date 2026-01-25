@@ -59,8 +59,19 @@ export async function POST(req: Request) {
     if (!paymentProviderName) {
       paymentProviderName = configs.default_payment_provider;
     }
+    // Fallback: if default provider is missing but Stripe is clearly enabled/configured.
+    if (
+      !paymentProviderName &&
+      configs.stripe_enabled === 'true' &&
+      !!configs.stripe_secret_key &&
+      !!configs.stripe_publishable_key
+    ) {
+      paymentProviderName = 'stripe';
+    }
     if (!paymentProviderName) {
-      return respErr('no payment provider configured');
+      return respErr(
+        `no payment provider configured (default_payment_provider is empty; stripe_enabled=${configs.stripe_enabled}; creem_enabled=${configs.creem_enabled}; paypal_enabled=${configs.paypal_enabled})`
+      );
     }
 
     // Validate payment provider against allowed providers
@@ -97,7 +108,9 @@ export async function POST(req: Request) {
 
     const paymentProvider = paymentService.getProvider(paymentProviderName);
     if (!paymentProvider || !paymentProvider.name) {
-      return respErr('no payment provider configured');
+      return respErr(
+        `no payment provider configured (provider=${paymentProviderName}; stripe_enabled=${configs.stripe_enabled}; creem_enabled=${configs.creem_enabled}; paypal_enabled=${configs.paypal_enabled})`
+      );
     }
 
     // checkout currency and amount - calculate from server-side data only (never trust client input)

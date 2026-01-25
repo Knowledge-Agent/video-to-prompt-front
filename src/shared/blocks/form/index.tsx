@@ -390,16 +390,16 @@ export function Form({
             disabled={loading}
             size={submit.button.size || 'sm'}
           >
-            {loading ? (
-              <Loader className="mr-2 h-4 w-4 animate-spin" />
-            ) : (
-              submit.button.icon && (
+            <span className="inline-flex size-4 items-center justify-center">
+              {loading ? (
+                <Loader className="size-4 animate-spin" />
+              ) : submit.button.icon ? (
                 <SmartIcon
                   name={submit.button.icon as string}
                   className="size-4"
                 />
-              )
-            )}
+              ) : null}
+            </span>
             {submit.button.title}
           </Button>
         )}

@@ -1,11 +1,5 @@
 import { Link } from '@/core/i18n/navigation';
-import {
-  BrandLogo,
-  BuiltWith,
-  Copyright,
-  LocaleSelector,
-  ThemeToggler,
-} from '@/shared/blocks/common';
+import { BrandLogo, Copyright, LocaleSelector } from '@/shared/blocks/common';
 import { SmartIcon } from '@/shared/blocks/common/smart-icon';
 import { NavItem } from '@/shared/types/blocks/common';
 import { Footer as FooterType } from '@/shared/types/blocks/landing';
@@ -55,9 +49,7 @@ export function Footer({ footer }: { footer: FooterType }) {
         </div>
 
         <div className="flex min-w-0 flex-wrap items-center gap-4 sm:gap-8">
-          {footer.show_built_with !== false ? <BuiltWith /> : null}
           <div className="min-w-0 flex-1" />
-          {footer.show_theme !== false ? <ThemeToggler type="toggle" /> : null}
           {footer.show_locale !== false ? (
             <LocaleSelector type="button" />
           ) : null}

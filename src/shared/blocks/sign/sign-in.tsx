@@ -78,6 +78,8 @@ export function SignIn({
     // Set loading immediately to avoid duplicate submits before request hooks fire.
     setLoading(true);
 
+    const safeCallbackPath = stripLocalePrefix(callbackUrl);
+
     try {
       await signIn.email(
         {
@@ -93,7 +95,9 @@ export function SignIn({
             // Do NOT reset loading here; navigation may not have completed yet.
           },
           onSuccess: (ctx) => {
-            // Keep loading=true until navigation completes.
+            // If auth lib doesn't auto-redirect (or redirect is slow), ensure UI doesn't get stuck.
+            router.push(safeCallbackPath);
+            setLoading(false);
           },
           onError: (e: any) => {
             const status = e?.error?.status;
@@ -115,6 +119,7 @@ export function SignIn({
 
               // i18n router will prefix locale automatically; do NOT include locale here.
               router.push(verifyPath);
+              setLoading(false);
               return;
             }
 

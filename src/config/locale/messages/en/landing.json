@@ -4,7 +4,7 @@
     "brand": {
       "title": "SeedVR2",
       "logo": {
-        "src": "/logo.png",
+        "src": "/imgs/logos/seedvr2_logo.png",
         "alt": "SeedVR2 - AI Video Restoration",
         "width": 100,
         "height": 100
@@ -63,7 +63,7 @@
       "title": "SeedVR2",
       "description": "SeedVR2 is the most advanced AI video restoration tool. Upscale, denoise, and enhance your videos with one-step diffusion technology from ByteDance Seed team.",
       "logo": {
-        "src": "/logo.png",
+        "src": "/imgs/logos/seedvr2_logo.png",
         "alt": "SeedVR2 - AI Video Restoration",
         "width": 1024,
         "height": 1024
@@ -134,20 +134,8 @@
         {
           "title": "X",
           "icon": "RiTwitterXFill",
-          "url": "https://x.com/seedvr2",
+          "url": "https://x.com/zhihaoli_tech?s=21&t=vQjCDjs5nh-fnfZGUO02rQ",
           "target": "_blank"
-        },
-        {
-          "title": "Github",
-          "icon": "Github",
-          "url": "https://github.com/ByteDance-Seed/SeedVR",
-          "target": "_blank"
-        },
-        {
-          "title": "Email",
-          "icon": "Mail",
-          "url": "mailto:support@seedvr2.ai",
-          "target": "_self"
         }
       ]
     },

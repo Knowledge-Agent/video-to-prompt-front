@@ -1,29 +1,28 @@
 'use client';
 
-import { Menu, X } from 'lucide-react';
 import { MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 import { Link, usePathname } from '@/core/i18n/navigation';
 import {
-    BrandLogo,
-    LocaleSelector,
-    SignUser,
-    SmartIcon,
-    ThemeToggler,
+  BrandLogo,
+  LocaleSelector,
+  SignUser,
+  SmartIcon,
 } from '@/shared/blocks/common';
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from '@/shared/components/ui/accordion';
 import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger as RawNavigationMenuTrigger,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger as RawNavigationMenuTrigger,
 } from '@/shared/components/ui/navigation-menu';
 import { useMedia } from '@/shared/hooks/use-media';
 import { cn } from '@/shared/lib/utils';
@@ -47,40 +46,47 @@ function NavigationMenuTrigger(
  * 处理锚点链接点击，实现平滑滚动并更新 URL
  */
 function useAnchorNavigation() {
-  const handleAnchorClick = useCallback((e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    // 检查是否是锚点链接
-    const isAnchorLink = href.includes('#');
-    
-    if (!isAnchorLink) {
-      return false; // 非锚点链接，使用默认行为
-    }
+  const handleAnchorClick = useCallback(
+    (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+      // 检查是否是锚点链接
+      const isAnchorLink = href.includes('#');
 
-    // 解析锚点
-    const hashIndex = href.indexOf('#');
-    const path = href.slice(0, hashIndex) || '/';
-    const hash = href.slice(hashIndex + 1);
-
-    // 检查是否是当前页面的锚点
-    const currentPath = window.location.pathname;
-    const isCurrentPage = path === '/' || path === '' || currentPath === path || currentPath.endsWith(path);
-
-    if (isCurrentPage && hash) {
-      e.preventDefault();
-      // 同页面锚点，直接滚动
-      const element = document.getElementById(hash);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-        // 更新 URL 中的锚点，不刷新页面
-        window.history.pushState(null, '', `#${hash}`);
+      if (!isAnchorLink) {
+        return false; // 非锚点链接，使用默认行为
       }
-      return true; // 已处理
-    }
 
-    return false; // 跨页面锚点，使用默认行为
-  }, []);
+      // 解析锚点
+      const hashIndex = href.indexOf('#');
+      const path = href.slice(0, hashIndex) || '/';
+      const hash = href.slice(hashIndex + 1);
+
+      // 检查是否是当前页面的锚点
+      const currentPath = window.location.pathname;
+      const isCurrentPage =
+        path === '/' ||
+        path === '' ||
+        currentPath === path ||
+        currentPath.endsWith(path);
+
+      if (isCurrentPage && hash) {
+        e.preventDefault();
+        // 同页面锚点，直接滚动
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+          // 更新 URL 中的锚点，不刷新页面
+          window.history.pushState(null, '', `#${hash}`);
+        }
+        return true; // 已处理
+      }
+
+      return false; // 跨页面锚点，使用默认行为
+    },
+    []
+  );
 
   return { handleAnchorClick };
 }
@@ -137,7 +143,12 @@ export function Header({ header }: { header: HeaderType }) {
                   <Link
                     href={item.url || ''}
                     target={item.target || '_self'}
-                    onClick={(e) => handleAnchorClick(e as unknown as MouseEvent<HTMLAnchorElement>, item.url || '')}
+                    onClick={(e) =>
+                      handleAnchorClick(
+                        e as unknown as MouseEvent<HTMLAnchorElement>,
+                        item.url || ''
+                      )
+                    }
                     className={`flex flex-row items-center gap-2 px-4 py-1.5 text-sm ${
                       item.is_active || pathname.endsWith(item.url as string)
                         ? 'bg-muted/40 text-muted-foreground'
@@ -217,7 +228,10 @@ export function Header({ header }: { header: HeaderType }) {
                             <Link
                               href={subItem.url || ''}
                               onClick={(e) => {
-                                handleAnchorClick(e as unknown as MouseEvent<HTMLAnchorElement>, subItem.url || '');
+                                handleAnchorClick(
+                                  e as unknown as MouseEvent<HTMLAnchorElement>,
+                                  subItem.url || ''
+                                );
                                 closeMenu();
                               }}
                               className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-4 py-2"
@@ -241,7 +255,10 @@ export function Header({ header }: { header: HeaderType }) {
                   <Link
                     href={item.url || ''}
                     onClick={(e) => {
-                      handleAnchorClick(e as unknown as MouseEvent<HTMLAnchorElement>, item.url || '');
+                      handleAnchorClick(
+                        e as unknown as MouseEvent<HTMLAnchorElement>,
+                        item.url || ''
+                      );
                       closeMenu();
                     }}
                     className="data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg **:!font-normal"
@@ -335,7 +352,7 @@ export function Header({ header }: { header: HeaderType }) {
                 <MobileMenu closeMenu={() => setIsMobileMenuOpen(false)} />
               )}
 
-              {/* Header right section: theme toggler, locale selector, sign, buttons */}
+              {/* Header right section: locale selector, sign, buttons */}
               <div className="mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 in-data-[state=active]:flex max-lg:in-data-[state=active]:mt-6 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
                 <div className="flex w-full flex-row items-center gap-4 sm:flex-row sm:gap-6 sm:space-y-0 md:w-fit">
                   {header.buttons &&
@@ -361,8 +378,6 @@ export function Header({ header }: { header: HeaderType }) {
                         <span>{button.title}</span>
                       </Link>
                     ))}
-
-                  {header.show_theme ? <ThemeToggler /> : null}
                   {header.show_locale ? <LocaleSelector /> : null}
                   <div className="flex-1 md:hidden"></div>
                   {header.show_sign ? (

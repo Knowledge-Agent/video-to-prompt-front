@@ -88,16 +88,10 @@ export async function getAllConfigs(): Promise<Configs> {
     }
   }
 
-  const settingNames = await getAllSettingNames();
-  settingNames.forEach((key) => {
-    const upperKey = key.toUpperCase();
-    // use env configs if available
-    if (process.env[upperKey]) {
-      dbConfigs[key] = process.env[upperKey] ?? '';
-    } else if (process.env[key]) {
-      dbConfigs[key] = process.env[key] ?? '';
-    }
-  });
+  // NOTE:
+  // For settings stored in DB (admin-configurable), we intentionally do NOT
+  // override them with process.env to ensure the app behaves exactly as the
+  // admin dashboard configuration.
 
   const configs = {
     ...envConfigs,

@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode } from 'react';
 
 import { SidebarInset, SidebarProvider } from '@/shared/components/ui/sidebar';

@@ -1,9 +1,5 @@
 import { envConfigs } from '@/config';
-import {
-  BrandLogo,
-  LocaleSelector,
-  ThemeToggler,
-} from '@/shared/blocks/common';
+import { BrandLogo, LocaleSelector } from '@/shared/blocks/common';
 
 export default function AuthLayout({
   children,
@@ -27,7 +23,6 @@ export default function AuthLayout({
         />
       </div>
       <div className="absolute top-4 right-4 flex items-center gap-4">
-        <ThemeToggler />
         <LocaleSelector type="button" />
       </div>
       <div className="w-full px-4">{children}</div>
