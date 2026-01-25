@@ -320,22 +320,69 @@ export function VideoRestore({
     setUploadProgress(0);
 
     try {
-      const formData = new FormData();
-      formData.append('file', file);
-      // 使用统一的媒体上传 API
-      const resp = await fetch('/api/storage/upload-media', {
+      // Step 1: Get presigned upload credentials from backend
+      const presignResp = await fetch('/api/storage/presign', {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          filename: file.name,
+          contentType: file.type,
+          fileSize: file.size,
+        }),
       });
-      if (!resp.ok) throw new Error(`Upload failed: ${resp.status}`);
-      const { code, message, data } = await resp.json();
-      console.log('[MediaRestore] Upload response:', { code, message, data });
-      if (code !== 0) throw new Error(message || 'Upload failed');
-      if (!data?.url) throw new Error('No URL returned from upload');
-      setUploadedUrl(data.url);
+      if (!presignResp.ok)
+        throw new Error(`Presign failed: ${presignResp.status}`);
+      const presignResult = await presignResp.json();
+      if (presignResult.code !== 0)
+        throw new Error(presignResult.message || 'Presign failed');
+
+      const { uploadUrl, formFields, publicUrl } = presignResult.data;
+      console.log(
+        '[MediaRestore] Got presign credentials, uploading directly to OSS...'
+      );
+
+      // Step 2: Upload directly to OSS (bypasses Vercel 4.5MB limit)
+      const formData = new FormData();
+      // Add all form fields first (order matters for OSS)
+      Object.entries(formFields).forEach(([key, value]) => {
+        formData.append(key, value as string);
+      });
+      // Add file last
+      formData.append('file', file);
+
+      // Use XMLHttpRequest for progress tracking
+      await new Promise<void>((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', uploadUrl, true);
+
+        xhr.upload.onprogress = (event) => {
+          if (event.lengthComputable) {
+            const percent = Math.round((event.loaded / event.total) * 100);
+            setUploadProgress(percent);
+          }
+        };
+
+        xhr.onload = () => {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve();
+          } else {
+            reject(
+              new Error(`OSS upload failed: ${xhr.status} ${xhr.statusText}`)
+            );
+          }
+        };
+
+        xhr.onerror = () => reject(new Error('Network error during upload'));
+        xhr.ontimeout = () => reject(new Error('Upload timeout'));
+
+        xhr.send(formData);
+      });
+
+      console.log('[MediaRestore] Direct OSS upload success:', publicUrl);
+      setUploadedUrl(publicUrl);
 
       if (isVideo) {
-        const duration = await getVideoDurationSecondsFromUrl(data.url);
+        const duration = await getVideoDurationSecondsFromUrl(publicUrl);
         setUploadedDurationSeconds(duration);
       }
 

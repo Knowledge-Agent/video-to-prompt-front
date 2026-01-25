@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "SeedVR2 Pricing - AI Video & Image Restoration",
-    "description": "Simple credit-based pricing for video and image restoration. 1 credit = 1 image or 0.5 second video."
+    "description": "Flexible subscription plans for video and image restoration. Cancel anytime."
   },
   "page": {
     "title": "SeedVR2 Pricing",
@@ -9,12 +9,18 @@
       "pricing": {
         "id": "pricing",
         "title": "Simple, Transparent Pricing",
-        "description": "Pay as you go. 1 credit = 1 image or 0.5 second video. No subscription required.",
+        "description": "Choose a plan that fits your needs. 1 credit = 1 image or 0.5 second video.",
         "groups": [
           {
-            "name": "one-time",
-            "title": "Credit Packs",
+            "name": "monthly",
+            "title": "Monthly",
             "is_featured": true
+          },
+          {
+            "name": "yearly",
+            "title": "Yearly",
+            "description": "Save 20%",
+            "is_featured": false
           }
         ],
         "items": [
@@ -23,30 +29,58 @@
             "description": "Perfect for trying out SeedVR2.",
             "features_title": "Includes",
             "features": [
-              "200 credits",
+              "200 credits/month",
               "200 images or 100 seconds video",
               "Video upscaling to 4K",
               "AI denoising & enhancement",
               "Download in MP4/PNG format"
             ],
-            "interval": "one-time",
+            "interval": "month",
             "amount": 900,
             "currency": "USD",
             "price": "$9",
             "original_price": "$15",
-            "unit": "",
+            "unit": "/month",
             "is_featured": false,
-            "tip": "Valid for 90 days",
+            "tip": "Cancel anytime",
             "button": {
-              "title": "Get Started",
+              "title": "Subscribe",
               "url": "/#pricing",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "starter",
-            "product_name": "SeedVR2 Starter",
+            "product_id": "starter_monthly",
+            "product_name": "SeedVR2 Starter Monthly",
             "credits": 200,
-            "valid_days": 90,
-            "group": "one-time"
+            "group": "monthly"
+          },
+          {
+            "title": "Starter",
+            "description": "Perfect for trying out SeedVR2.",
+            "features_title": "Includes",
+            "features": [
+              "200 credits/month",
+              "200 images or 100 seconds video",
+              "Video upscaling to 4K",
+              "AI denoising & enhancement",
+              "Download in MP4/PNG format"
+            ],
+            "interval": "year",
+            "amount": 8600,
+            "currency": "USD",
+            "price": "$86",
+            "original_price": "$108",
+            "unit": "/year",
+            "is_featured": false,
+            "tip": "Save 20% · Cancel anytime",
+            "button": {
+              "title": "Subscribe",
+              "url": "/#pricing",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "starter_yearly",
+            "product_name": "SeedVR2 Starter Yearly",
+            "credits": 200,
+            "group": "yearly"
           },
           {
             "title": "Pro",
@@ -54,60 +88,117 @@
             "label": "Popular",
             "features_title": "Everything in Starter, plus",
             "features": [
-              "800 credits",
+              "800 credits/month",
               "800 images or ~6 min video",
               "Priority processing",
               "Batch processing support",
               "8K upscaling support"
             ],
-            "interval": "one-time",
+            "interval": "month",
             "amount": 2900,
             "currency": "USD",
             "price": "$29",
             "original_price": "$45",
-            "unit": "",
+            "unit": "/month",
             "is_featured": true,
-            "tip": "Valid for 180 days • Save 20%",
+            "tip": "Cancel anytime",
             "button": {
-              "title": "Get Pro",
+              "title": "Subscribe",
               "url": "/#pricing",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "pro",
-            "product_name": "SeedVR2 Pro",
+            "product_id": "pro_monthly",
+            "product_name": "SeedVR2 Pro Monthly",
             "credits": 800,
-            "valid_days": 180,
-            "group": "one-time"
+            "group": "monthly"
+          },
+          {
+            "title": "Pro",
+            "description": "Best value for regular users.",
+            "label": "Popular",
+            "features_title": "Everything in Starter, plus",
+            "features": [
+              "800 credits/month",
+              "800 images or ~6 min video",
+              "Priority processing",
+              "Batch processing support",
+              "8K upscaling support"
+            ],
+            "interval": "year",
+            "amount": 27800,
+            "currency": "USD",
+            "price": "$278",
+            "original_price": "$348",
+            "unit": "/year",
+            "is_featured": true,
+            "tip": "Save 20% · Cancel anytime",
+            "button": {
+              "title": "Subscribe",
+              "url": "/#pricing",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "pro_yearly",
+            "product_name": "SeedVR2 Pro Yearly",
+            "credits": 800,
+            "group": "yearly"
           },
           {
             "title": "Business",
             "description": "For professional video production.",
             "features_title": "Everything in Pro, plus",
             "features": [
-              "3000 credits",
+              "3000 credits/month",
               "3000 images or 25 min video",
               "Fastest processing",
               "API access",
               "Priority support"
             ],
-            "interval": "one-time",
+            "interval": "month",
             "amount": 9900,
             "currency": "USD",
             "price": "$99",
             "original_price": "$150",
-            "unit": "",
+            "unit": "/month",
             "is_featured": false,
-            "tip": "Valid for 365 days • Save 34%",
+            "tip": "Cancel anytime",
             "button": {
-              "title": "Get Business",
+              "title": "Subscribe",
               "url": "/#pricing",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "business",
-            "product_name": "SeedVR2 Business",
+            "product_id": "business_monthly",
+            "product_name": "SeedVR2 Business Monthly",
             "credits": 3000,
-            "valid_days": 365,
-            "group": "one-time"
+            "group": "monthly"
+          },
+          {
+            "title": "Business",
+            "description": "For professional video production.",
+            "features_title": "Everything in Pro, plus",
+            "features": [
+              "3000 credits/month",
+              "3000 images or 25 min video",
+              "Fastest processing",
+              "API access",
+              "Priority support"
+            ],
+            "interval": "year",
+            "amount": 95000,
+            "currency": "USD",
+            "price": "$950",
+            "original_price": "$1188",
+            "unit": "/year",
+            "is_featured": false,
+            "tip": "Save 20% · Cancel anytime",
+            "button": {
+              "title": "Subscribe",
+              "url": "/#pricing",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "business_yearly",
+            "product_name": "SeedVR2 Business Yearly",
+            "credits": 3000,
+            "group": "yearly"
           }
         ]
       }
