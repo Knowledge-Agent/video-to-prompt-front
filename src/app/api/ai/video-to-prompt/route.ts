@@ -1,11 +1,8 @@
 import { envConfigs } from '@/config';
 import { respData, respErr } from '@/shared/lib/resp';
-import { getRemainingCredits, consumeCredits } from '@/shared/models/credit';
-import { getUserInfo } from '@/shared/models/user';
 
 export const runtime = 'nodejs';
 
-const DEFAULT_FALLBACK_CREDITS = 6;
 const MAX_INPUT_DURATION_SECONDS = 60 * 60;
 const EXTERNAL_STATUS_OK = new Set(['completed', 'success', 'done']);
 
@@ -52,10 +49,6 @@ function clampDurationSeconds(value: unknown): number | null {
   return Math.min(Math.max(value, 1), MAX_INPUT_DURATION_SECONDS);
 }
 
-function calcCreditsByDurationSeconds(durationSeconds: number): number {
-  return Math.max(3, Math.ceil(durationSeconds / 20) + 2);
-}
-
 function ensureString(value: unknown, fallback = ''): string {
   return typeof value === 'string' && value.trim() ? value.trim() : fallback;
 }
@@ -79,8 +72,8 @@ function extractShots(finalPrompt: string): string[] {
       .slice(0, 8);
   }
 
-  const enMatches = [...
-    normalized.matchAll(/(?:shot|scene)\s*\d*\s*[：:]\s*([^\n]+)(?=\n|$)/gi),
+  const enMatches = [
+    ...normalized.matchAll(/(?:shot|scene)\s*\d*\s*[：:]\s*([^\n]+)(?=\n|$)/gi),
   ];
   if (enMatches.length > 0) {
     return enMatches
@@ -96,9 +89,14 @@ function extractShots(finalPrompt: string): string[] {
     .slice(0, 5);
 }
 
-function extractNegativePrompt(finalPrompt: string, language: PromptLanguage): string {
+function extractNegativePrompt(
+  finalPrompt: string,
+  language: PromptLanguage
+): string {
   if (!finalPrompt) {
-    return language === 'zh' ? '避免主体变形、画面抖动和无关元素。' : 'Avoid subject distortion, flicker, and irrelevant objects.';
+    return language === 'zh'
+      ? '避免主体变形、画面抖动和无关元素。'
+      : 'Avoid subject distortion, flicker, and irrelevant objects.';
   }
 
   const cn = [...finalPrompt.matchAll(/禁止[^，。；\n]+/g)].map((match) => match[0]);
@@ -162,7 +160,10 @@ function buildShortPrompt(finalPrompt: string, language: PromptLanguage): string
     : firstLine;
 }
 
-function normalizeAnalyzeResponse(payload: unknown, language: PromptLanguage): AnalyzeResult {
+function normalizeAnalyzeResponse(
+  payload: unknown,
+  language: PromptLanguage
+): AnalyzeResult {
   if (!payload || typeof payload !== 'object') {
     throw new Error('invalid analyze response payload');
   }
@@ -174,9 +175,7 @@ function normalizeAnalyzeResponse(payload: unknown, language: PromptLanguage): A
       : candidate;
 
   const status = ensureString(root.status).toLowerCase();
-  const finalPrompt = ensureString(
-    root.final_prompt ?? root.finalPrompt ?? root.prompt
-  );
+  const finalPrompt = ensureString(root.final_prompt ?? root.finalPrompt ?? root.prompt);
   const primaryCategory = ensureString(
     root.primary_category ?? root.primaryCategory ?? root.category
   );
@@ -252,51 +251,15 @@ export async function POST(request: Request) {
     const normalizedLanguage = normalizeLanguage(language);
     const durationSeconds = clampDurationSeconds(inputDurationSeconds);
 
-    const user = await getUserInfo();
-    if (!user) {
-      throw new Error('Please sign in');
-    }
-
-    const costCredits = durationSeconds
-      ? calcCreditsByDurationSeconds(durationSeconds)
-      : DEFAULT_FALLBACK_CREDITS;
-
-    const remainingCredits = await getRemainingCredits(user.id);
-    if (remainingCredits < costCredits) {
-      throw new Error(
-        `Insufficient credits. Need ${costCredits}, have ${remainingCredits}`
-      );
-    }
-
     const analyzePayload = await callAnalyzeApi(mediaUrl);
     const analyzeResult = normalizeAnalyzeResponse(
       analyzePayload,
       normalizedLanguage
     );
 
-    await consumeCredits({
-      userId: user.id,
-      credits: costCredits,
-      scene: 'video-to-prompt',
-      description: durationSeconds
-        ? `Video-to-prompt (${durationSeconds.toFixed(2)}s)`
-        : 'Video-to-prompt',
-      metadata: JSON.stringify({
-        media: mediaUrl,
-        language: normalizedLanguage,
-        durationSeconds,
-        source: 'video-to-prompt-api',
-        endpoint: envConfigs.video_to_prompt_api_url,
-        status: analyzeResult.status,
-        primaryCategory: analyzeResult.primaryCategory,
-        costCredits,
-      }),
-    });
-
     return respData({
       promptPackage: analyzeResult.promptPackage,
       usage: {
-        costCredits,
         durationSeconds,
       },
     });

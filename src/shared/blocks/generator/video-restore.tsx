@@ -6,7 +6,6 @@ import {
   Link2,
   Loader2,
   Sparkles,
-  Upload,
   Video,
   X,
 } from 'lucide-react';
@@ -17,7 +16,6 @@ import { toast } from 'sonner';
 import { Button } from '@/shared/components/ui/button';
 import { Input } from '@/shared/components/ui/input';
 import { Textarea } from '@/shared/components/ui/textarea';
-import { useAppContext } from '@/shared/contexts/app';
 import { cn } from '@/shared/lib/utils';
 
 interface VideoRestoreProps {
@@ -36,16 +34,10 @@ interface PromptPackage {
   shots: string[];
 }
 
-interface PromptUsage {
-  costCredits: number;
-  durationSeconds: number | null;
-}
-
 type PromptLanguage = 'en' | 'zh';
 type DurationStatus = 'idle' | 'detecting' | 'ready' | 'error';
 
 const MAX_FILE_SIZE = 500 * 1024 * 1024;
-const DEFAULT_FALLBACK_CREDITS = 6;
 const ACCEPTED_VIDEO_TYPES =
   'video/mp4,video/webm,video/quicktime,video/x-msvideo,video/x-matroska,video/mpeg,video/3gpp,video/x-flv';
 
@@ -76,19 +68,12 @@ const UI_TEXT = {
     urlHint: 'If upload is blocked, you can use a public direct file URL.',
 
     needVideo: 'Please upload a video or provide a video URL',
-
-    estimatedCost: 'Estimated cost',
-    credits: 'credits',
-    remaining: 'Remaining',
     detected: 'detected',
     detecting: 'Detecting duration...',
     unavailable: 'Duration unavailable',
-    fallbackCost: 'Fallback billing is applied',
 
     generate: 'Analyze Video',
     generating: 'Analyzing video and generating prompts...',
-    insufficientPrefix: 'Insufficient credits. Need',
-    insufficientMiddle: 'have',
 
     analysisDone: 'Analysis complete',
     packageReady: 'Prompt Package Ready for Imitation',
@@ -137,19 +122,12 @@ const UI_TEXT = {
     urlHint: '如果本地上传受限，可使用公网直链视频。',
 
     needVideo: '请先上传视频或提供视频链接',
-
-    estimatedCost: '预计消耗',
-    credits: '积分',
-    remaining: '剩余',
     detected: '已识别',
     detecting: '正在识别时长...',
     unavailable: '时长识别失败',
-    fallbackCost: '使用兜底计费',
 
     generate: '开始分析视频',
     generating: '正在分析视频并生成提示词包...',
-    insufficientPrefix: '积分不足，需要',
-    insufficientMiddle: '当前',
 
     analysisDone: '分析完成',
     packageReady: '可直接仿拍的提示词包已就绪',
@@ -184,10 +162,6 @@ function formatFileSize(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-}
-
-function calcCreditsByDurationSeconds(durationSeconds: number): number {
-  return Math.max(3, Math.ceil(durationSeconds / 20) + 2);
 }
 
 function isLikelyVideoUrl(url: string): boolean {
@@ -366,12 +340,8 @@ export function VideoRestore({
 
   const [isGenerating, setIsGenerating] = useState(false);
   const [result, setResult] = useState<PromptPackage | null>(null);
-  const [usage, setUsage] = useState<PromptUsage | null>(null);
   const [copiedField, setCopiedField] = useState('');
   const [isDraggingUpload, setIsDraggingUpload] = useState(false);
-
-  const { user, setIsShowSignModal, fetchUserCredits } = useAppContext();
-  const remainingCredits = user?.credits?.remainingCredits ?? 0;
 
   useEffect(() => {
     setIsMounted(true);
@@ -416,14 +386,6 @@ export function VideoRestore({
   const selectedDurationSeconds = uploadedUrl
     ? uploadedDurationSeconds
     : urlDurationSeconds;
-
-  const estimatedCredits = useMemo(() => {
-    if (!selectedDurationSeconds) {
-      return DEFAULT_FALLBACK_CREDITS;
-    }
-    return calcCreditsByDurationSeconds(selectedDurationSeconds);
-  }, [selectedDurationSeconds]);
-
   const shootPlanText = useMemo(() => {
     if (!result) {
       return '';
@@ -451,7 +413,6 @@ export function VideoRestore({
     setUploadedUrl('');
     setUploadedDurationSeconds(null);
     setResult(null);
-    setUsage(null);
     setIsUploading(true);
     setUploadProgress(0);
 
@@ -539,33 +500,19 @@ export function VideoRestore({
     setUploadedDurationSeconds(null);
     setUploadProgress(0);
     setResult(null);
-    setUsage(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
   };
 
   const analyzeVideo = async () => {
-    if (!user) {
-      setIsShowSignModal(true);
-      return;
-    }
-
     if (!hasValidInput) {
       toast.error(text.needVideo);
       return;
     }
 
-    if (remainingCredits < estimatedCredits) {
-      toast.error(
-        `${text.insufficientPrefix} ${estimatedCredits} ${text.credits}，${text.insufficientMiddle} ${remainingCredits} ${text.credits}`
-      );
-      return;
-    }
-
     setIsGenerating(true);
     setResult(null);
-    setUsage(null);
 
     try {
       const response = await fetch(toApiUrl('/api/ai/video-to-prompt'), {
@@ -589,7 +536,6 @@ export function VideoRestore({
         message: string;
         data?: {
           promptPackage?: PromptPackage;
-          usage?: PromptUsage;
         };
       };
 
@@ -598,8 +544,6 @@ export function VideoRestore({
       }
 
       setResult(payload.data.promptPackage);
-      setUsage(payload.data.usage ?? null);
-      await fetchUserCredits();
       toast.success(text.promptGenerated);
     } catch (error) {
       console.error('Generate prompt failed:', error);
@@ -664,7 +608,6 @@ export function VideoRestore({
 
   const resetAll = () => {
     setResult(null);
-    setUsage(null);
     setMediaUrl('');
     clearFile();
   };
@@ -906,14 +849,6 @@ export function VideoRestore({
                 />
               </div>
 
-              {usage && (
-                <div className="rounded-lg border border-white/10 bg-black/20 p-3 text-xs text-gray-300">
-                  {text.estimatedCost}: {usage.costCredits} {text.credits}
-                  {usage.durationSeconds
-                    ? ` · ${text.detected} ${usage.durationSeconds.toFixed(2)}s`
-                    : ''}
-                </div>
-              )}
             </div>
           ) : (
             <div className="space-y-5">
@@ -1007,25 +942,16 @@ export function VideoRestore({
                 />
               </div>
 
-              <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-xs text-gray-400">
-                <div className="flex items-center gap-2">
-                  <span className="rounded bg-primary/15 px-2 py-1 font-medium text-primary">
-                    {estimatedCredits} {text.credits}
-                  </span>
-                  <span>
-                    {selectedDurationSeconds
-                      ? `${selectedDurationSeconds.toFixed(2)}s ${text.detected}`
-                      : mediaUrl.trim() && urlDurationStatus === 'detecting'
-                        ? text.detecting
-                        : mediaUrl.trim() && urlDurationStatus === 'error'
-                          ? text.unavailable
-                          : text.fallbackCost}
-                  </span>
-                </div>
-
-                <span>
-                  {text.remaining}: <span className="text-gray-200">{remainingCredits}</span>
-                </span>
+              <div className="rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-xs text-gray-400">
+                {selectedDurationSeconds
+                  ? `${selectedDurationSeconds.toFixed(2)}s ${text.detected}`
+                  : mediaUrl.trim() && urlDurationStatus === 'detecting'
+                    ? text.detecting
+                    : mediaUrl.trim() && urlDurationStatus === 'error'
+                      ? text.unavailable
+                      : language === 'zh'
+                        ? '准备就绪，可直接开始分析'
+                        : 'Ready. Upload or paste a video URL to start analysis.'}
               </div>
 
               <Button
