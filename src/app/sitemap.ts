@@ -7,7 +7,6 @@ import { getLocalPostsAndCategories, PostType } from '@/shared/models/post';
 const ROOT_ROUTES = [
   '/',
   '/blog',
-  '/pricing',
   '/ai-video-generator',
   '/showcases',
   '/updates',

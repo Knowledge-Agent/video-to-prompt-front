@@ -170,13 +170,6 @@
             "url": "#hero-tool",
             "target": "_self",
             "icon": "Zap"
-          },
-          {
-            "title": "See Pricing",
-            "url": "/pricing",
-            "target": "_self",
-            "variant": "outline",
-            "icon": "FileText"
           }
         ],
         "className": ""

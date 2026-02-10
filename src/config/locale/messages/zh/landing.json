@@ -29,11 +29,6 @@
           "icon": "Workflow"
         },
         {
-          "title": "价格",
-          "url": "/pricing",
-          "icon": "DollarSign"
-        },
-        {
           "title": "博客",
           "url": "/blog",
           "icon": "Newspaper"
@@ -43,7 +38,7 @@
     "buttons": [],
     "user_nav": {
       "show_name": true,
-      "show_credits": true,
+      "show_credits": false,
       "show_sign_out": true,
       "items": [
         {
@@ -88,11 +83,6 @@
             {
               "title": "应用场景",
               "url": "/#use-cases",
-              "target": "_self"
-            },
-            {
-              "title": "价格",
-              "url": "/pricing",
               "target": "_self"
             }
           ]
