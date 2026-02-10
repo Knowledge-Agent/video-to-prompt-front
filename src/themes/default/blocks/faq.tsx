@@ -18,51 +18,43 @@ export function Faq({
   className?: string;
 }) {
   return (
-    <section id={section.id} className={cn('flex min-h-screen flex-col justify-center py-16 md:py-24', section.className, className)}>
-      <div className={`mx-auto max-w-full px-4 md:max-w-3xl md:px-8`}>
+    <section id={section.id} className={cn('relative py-20 md:py-28', section.className, className)}>
+      <div className="container mx-auto max-w-4xl px-4 md:px-8">
         <ScrollAnimation>
-          <div className="mx-auto max-w-2xl text-center text-balance">
-            <h2 className="text-foreground mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-5xl">
               {section.title}
             </h2>
-            <p className="text-muted-foreground mb-6 md:mb-12 lg:mb-16">
+            <p className="text-muted-foreground text-base md:text-lg">
               {section.description}
             </p>
           </div>
         </ScrollAnimation>
 
         <ScrollAnimation delay={0.2}>
-          <div className="mx-auto mt-12 max-w-full">
-            <Accordion
-              type="single"
-              collapsible
-              className="bg-muted dark:bg-muted/50 w-full rounded-2xl p-1"
-            >
+          <div className="mt-10 rounded-2xl border border-border/70 bg-card/55 p-2 backdrop-blur md:p-3">
+            <Accordion type="single" collapsible className="w-full">
               {section.items?.map((item, idx) => (
-                <div className="group" key={idx}>
-                  <AccordionItem
-                    value={item.question || item.title || ''}
-                    className="data-[state=open]:bg-card dark:data-[state=open]:bg-muted peer rounded-xl border-none px-7 py-1 data-[state=open]:border-none data-[state=open]:shadow-sm"
-                  >
-                    <AccordionTrigger className="cursor-pointer text-base hover:no-underline">
-                      {item.question || item.title || ''}
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <p className="text-base">
-                        {item.answer || item.description || ''}
-                      </p>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <hr className="mx-7 border-dashed group-last:hidden peer-data-[state=open]:opacity-0" />
-                </div>
+                <AccordionItem
+                  key={idx}
+                  value={item.question || item.title || `faq-${idx}`}
+                  className="rounded-xl border-b border-border/60 px-4 py-1 last:border-b-0 md:px-5"
+                >
+                  <AccordionTrigger className="cursor-pointer text-left text-base font-medium hover:no-underline">
+                    {item.question || item.title || ''}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm leading-7 text-muted-foreground md:text-base">
+                    {item.answer || item.description || ''}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
             </Accordion>
-
-            <p
-              className="text-muted-foreground mt-6 px-8"
-              dangerouslySetInnerHTML={{ __html: section.tip || '' }}
-            />
           </div>
+
+          <p
+            className="text-muted-foreground mt-6 text-center text-sm"
+            dangerouslySetInnerHTML={{ __html: section.tip || '' }}
+          />
         </ScrollAnimation>
       </div>
     </section>

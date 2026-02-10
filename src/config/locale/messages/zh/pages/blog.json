@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "title": "SeedVR2 博客 - AI 视频修复技巧与教程",
-    "description": "了解 AI 视频修复、超分辨率技术、去噪技巧，以及 SeedVR2 的最新动态。"
+    "title": "Video to Prompt 博客 - 提示词体系、镜头策略与工作流",
+    "description": "学习如何搭建可复用的视频转提示词流程，优化场景提示词质量，并提升 AI 视频生产效率。"
   },
   "page": {
-    "title": "SeedVR2 博客",
+    "title": "Video to Prompt 博客",
     "sections": {
       "blog": {
         "id": "blog",
-        "title": "博客",
-        "description": "AI 视频修复的技巧、教程和最新动态。"
+        "title": "指南、方法论与提示词打法",
+        "description": "聚焦场景解析、提示词结构设计与可落地的 AI 视频生产流程。"
       }
     }
   },

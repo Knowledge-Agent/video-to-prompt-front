@@ -2,26 +2,31 @@
   "header": {
     "id": "header",
     "brand": {
-      "title": "SeedVR2",
+      "title": "Video to Prompt",
       "logo": {
-        "src": "/imgs/logos/seedvr2_logo.png",
-        "alt": "SeedVR2 - AI 视频修复",
-        "width": 100,
-        "height": 100
+        "src": "/imgs/logos/video-to-prompt-logo.svg",
+        "alt": "Video to Prompt 标志",
+        "width": 128,
+        "height": 128
       },
       "url": "/"
     },
     "nav": {
       "items": [
         {
-          "title": "视频超分",
-          "url": "/#video-upscaler",
+          "title": "工具",
+          "url": "/#hero-tool",
           "icon": "Video"
         },
         {
-          "title": "图片超分",
-          "url": "/#image-upscaler",
-          "icon": "Image"
+          "title": "应用场景",
+          "url": "/#use-cases",
+          "icon": "LayoutGrid"
+        },
+        {
+          "title": "工作流",
+          "url": "/#usage",
+          "icon": "Workflow"
         },
         {
           "title": "价格",
@@ -60,13 +65,13 @@
   "footer": {
     "id": "footer",
     "brand": {
-      "title": "SeedVR2",
-      "description": "SeedVR2 是最先进的 AI 视频修复工具。基于字节跳动 Seed 团队的单步扩散技术，实现视频超分、去噪、画质增强。",
+      "title": "Video to Prompt",
+      "description": "从一段原始视频到完整提示词包。自动提取场景语义、镜头运动、光线风格与可复用镜头描述。",
       "logo": {
-        "src": "/imgs/logos/seedvr2_logo.png",
-        "alt": "SeedVR2 - AI 视频修复",
-        "width": 1024,
-        "height": 1024
+        "src": "/imgs/logos/video-to-prompt-logo.svg",
+        "alt": "Video to Prompt 标志",
+        "width": 128,
+        "height": 128
       },
       "url": "/"
     },
@@ -76,13 +81,13 @@
           "title": "产品",
           "children": [
             {
-              "title": "视频超分",
-              "url": "/#video-upscaler",
+              "title": "生成工具",
+              "url": "/#hero-tool",
               "target": "_self"
             },
             {
-              "title": "图片超分",
-              "url": "/#image-upscaler",
+              "title": "应用场景",
+              "url": "/#use-cases",
               "target": "_self"
             },
             {
@@ -101,11 +106,12 @@
               "target": "_self"
             },
             {
-              "title": "GitHub",
-              "url": "https://github.com/ByteDance-Seed/SeedVR",
-              "target": "_blank"
+              "title": "提示词框架",
+              "url": "/#usage",
+              "target": "_self"
             },
             {
+<<<<<<< Updated upstream
               "title": "研究论文",
               "url": "https://arxiv.org/abs/2506.05301",
               "target": "_blank"
@@ -121,14 +127,26 @@
           "title": "关于",
           "children": [
             {
+=======
+>>>>>>> Stashed changes
               "title": "常见问题",
               "url": "/#faq",
               "target": "_self"
-            },
+            }
+          ]
+        },
+        {
+          "title": "联系",
+          "children": [
             {
               "title": "联系我们",
-              "url": "mailto:support@seedvr2.ai",
+              "url": "mailto:support@videotoprompt.ai",
               "target": "_self"
+            },
+            {
+              "title": "X (Twitter)",
+              "url": "https://x.com/zhihaoli_tech?s=21&t=vQjCDjs5nh-fnfZGUO02rQ",
+              "target": "_blank"
             }
           ]
         }

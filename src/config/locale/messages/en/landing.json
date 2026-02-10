@@ -2,26 +2,31 @@
   "header": {
     "id": "header",
     "brand": {
-      "title": "SeedVR2",
+      "title": "Video to Prompt",
       "logo": {
-        "src": "/imgs/logos/seedvr2_logo.png",
-        "alt": "SeedVR2 - AI Video Restoration",
-        "width": 100,
-        "height": 100
+        "src": "/imgs/logos/video-to-prompt-logo.svg",
+        "alt": "Video to Prompt logo",
+        "width": 128,
+        "height": 128
       },
       "url": "/"
     },
     "nav": {
       "items": [
         {
-          "title": "Video Upscaler",
-          "url": "/#video-upscaler",
+          "title": "Tool",
+          "url": "/#hero-tool",
           "icon": "Video"
         },
         {
-          "title": "Image Upscaler",
-          "url": "/#image-upscaler",
-          "icon": "Image"
+          "title": "Use Cases",
+          "url": "/#use-cases",
+          "icon": "LayoutGrid"
+        },
+        {
+          "title": "Workflow",
+          "url": "/#usage",
+          "icon": "Workflow"
         },
         {
           "title": "Pricing",
@@ -60,13 +65,13 @@
   "footer": {
     "id": "footer",
     "brand": {
-      "title": "SeedVR2",
-      "description": "SeedVR2 is the most advanced AI video restoration tool. Upscale, denoise, and enhance your videos with one-step diffusion technology from ByteDance Seed team.",
+      "title": "Video to Prompt",
+      "description": "Turn one raw clip into a complete prompt package. Extract scene language, camera motion, lighting style, and reusable shot directions in seconds.",
       "logo": {
-        "src": "/imgs/logos/seedvr2_logo.png",
-        "alt": "SeedVR2 - AI Video Restoration",
-        "width": 1024,
-        "height": 1024
+        "src": "/imgs/logos/video-to-prompt-logo.svg",
+        "alt": "Video to Prompt logo",
+        "width": 128,
+        "height": 128
       },
       "url": "/"
     },
@@ -76,13 +81,13 @@
           "title": "Product",
           "children": [
             {
-              "title": "Video Upscaler",
-              "url": "/#video-upscaler",
+              "title": "Generator",
+              "url": "/#hero-tool",
               "target": "_self"
             },
             {
-              "title": "Image Upscaler",
-              "url": "/#image-upscaler",
+              "title": "Use Cases",
+              "url": "/#use-cases",
               "target": "_self"
             },
             {
@@ -101,11 +106,12 @@
               "target": "_self"
             },
             {
-              "title": "GitHub",
-              "url": "https://github.com/ByteDance-Seed/SeedVR",
-              "target": "_blank"
+              "title": "Prompt Frameworks",
+              "url": "/#usage",
+              "target": "_self"
             },
             {
+<<<<<<< Updated upstream
               "title": "Research Paper",
               "url": "https://arxiv.org/abs/2506.05301",
               "target": "_blank"
@@ -114,6 +120,11 @@
               "title": "AI Tools Directory",
               "url": "https://toolsaiapp.com/",
               "target": "_blank"
+=======
+              "title": "FAQ",
+              "url": "/#faq",
+              "target": "_self"
+>>>>>>> Stashed changes
             }
           ]
         },
@@ -121,14 +132,14 @@
           "title": "Company",
           "children": [
             {
-              "title": "About",
-              "url": "/#faq",
+              "title": "Contact",
+              "url": "mailto:support@videotoprompt.ai",
               "target": "_self"
             },
             {
-              "title": "Contact",
-              "url": "mailto:support@seedvr2.ai",
-              "target": "_self"
+              "title": "X (Twitter)",
+              "url": "https://x.com/zhihaoli_tech?s=21&t=vQjCDjs5nh-fnfZGUO02rQ",
+              "target": "_blank"
             }
           ]
         }

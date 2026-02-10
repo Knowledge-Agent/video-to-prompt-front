@@ -1,0 +1,57 @@
+---
+title: "Video-to-Prompt 系统设计：从原始视频到可复用提示词包"
+description: "一套可落地的方法：把单条视频转为结构化提示词包，沉淀场景、镜头语言与可直接生成的提示词模块。"
+created_at: "2026-02-06"
+author_name: "Video to Prompt 团队"
+author_image: "/imgs/logos/video-to-prompt-logo.svg"
+image: "/imgs/blog/generative-process-diagram.png"
+---
+
+# Video-to-Prompt 系统设计
+
+如果你的团队还在从零手写提示词，你可能忽略了最重要的数据源：**真实视频参考素材**。
+
+成熟的 AI 视频工作流，应该把每条可用视频都转成结构化提示词包，至少包含：
+
+- 场景摘要（summary）
+- 主提示词（master prompt）
+- 短提示词（short prompt）
+- 负面提示词（negative prompt）
+- 镜头清单（shot list）
+- 关键词（keywords）
+
+## 为什么要结构化
+
+没有结构，提示词质量很难稳定；有结构，团队可以：
+
+1. 更快复现风格
+2. 统一创作者与运营之间的语言
+3. 构建可检索提示词库
+4. 明显降低每条素材的迭代成本
+
+## 推荐输出格式
+
+建议统一 JSON 结构，便于复制、检索和自动化接入：
+
+```json
+{
+  "summary": "...",
+  "masterPrompt": "...",
+  "shortPrompt": "...",
+  "negativePrompt": "...",
+  "keywords": ["..."],
+  "shots": ["..."]
+}
+```
+
+## 生产实践建议
+
+- `masterPrompt` 保持完整叙述与视觉约束
+- `shortPrompt` 控制字数，适配平台上限
+- `negativePrompt` 聚焦常见失败点
+- `shots` 按镜头顺序组织，便于分镜复用
+- `keywords` 用于后续索引与召回
+
+## 总结
+
+把 video-to-prompt 当作**系统能力**而不是单次生成技巧。每条视频都结构化后，整体产能会更稳定、更快、更可规模化。

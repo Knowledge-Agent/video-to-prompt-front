@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "title": "SeedVR2 Blog - AI Video Restoration Tips & Tutorials",
-    "description": "Learn about AI video restoration, upscaling techniques, denoising tips, and the latest updates from SeedVR2."
+    "title": "Video to Prompt Blog - Prompt Systems, Shot Strategy, Workflow Design",
+    "description": "Learn how to build repeatable video-to-prompt workflows, write better scene prompts, and improve AI video production quality."
   },
   "page": {
-    "title": "SeedVR2 Blog",
+    "title": "Video to Prompt Blog",
     "sections": {
       "blog": {
         "id": "blog",
-        "title": "Blog",
-        "description": "Tips, tutorials, and updates about AI video restoration."
+        "title": "Guides, Frameworks, and Prompt Playbooks",
+        "description": "Actionable articles on scene analysis, prompt structure, and production-ready AI video workflows."
       }
     }
   },

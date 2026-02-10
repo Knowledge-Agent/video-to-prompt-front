@@ -17,26 +17,17 @@ module.exports = {
     '/no-permission',
     '/chat/*',
   ],
-  // 多语言支持
-  alternateRefs: [
-    {
-      href: process.env.NEXT_PUBLIC_APP_URL || 'https://your-domain.com',
-      hreflang: 'en',
-    },
-    {
-      href: `${process.env.NEXT_PUBLIC_APP_URL || 'https://your-domain.com'}/zh`,
-      hreflang: 'zh',
-    },
-  ],
+  // 按 URL 动态生成 alternateRefs，避免路径重复前缀
+  alternateRefs: [],
   // 自定义路径
   additionalPaths: async (config) => {
     const result = [];
     
     // 添加博客文章路径
     const blogPosts = [
-      'fix-diagonal-artifacts-seedvr2',
-      'seedvr2-out-of-memory-fix',
-      'seedvr2-workflow-no-comfyui',
+      'video-to-prompt-system-design',
+      'video-prompt-shot-language-framework',
+      'video-to-prompt-quality-checklist',
     ];
     
     blogPosts.forEach(slug => {
@@ -74,13 +65,32 @@ module.exports = {
     return result;
   },
   transform: async (config, path) => {
-    // 自定义路径转换
+    const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://your-domain.com';
+
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+
+    const withoutLocalePrefix =
+      normalizedPath === '/zh'
+        ? '/'
+        : normalizedPath.startsWith('/zh/')
+          ? normalizedPath.replace('/zh', '')
+          : normalizedPath;
+
+    const enHref = `${siteUrl}${withoutLocalePrefix}`;
+    const zhHref =
+      withoutLocalePrefix === '/'
+        ? `${siteUrl}/zh`
+        : `${siteUrl}/zh${withoutLocalePrefix}`;
+
     return {
       loc: path,
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-      alternateRefs: config.alternateRefs ?? [],
+      alternateRefs: [
+        { href: enHref, hreflang: 'en' },
+        { href: zhHref, hreflang: 'zh' },
+      ],
     };
   },
 };

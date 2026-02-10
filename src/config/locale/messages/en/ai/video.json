@@ -1,53 +1,39 @@
 {
   "metadata": {
-    "title": "SeedVR2 - AI Video Restoration Online",
-    "description": "Restore and enhance your videos with SeedVR2. Upscale to 4K, remove noise, fix blurry footage with one-step AI diffusion technology."
+    "title": "Video to Prompt - Analyze, Decompose, Copy",
+    "description": "Upload one video, analyze it, and get a structured prompt package you can copy for imitation shooting."
   },
   "page": {
-    "title": "AI Video Restoration",
-    "description": "Upscale, denoise, and enhance your videos with SeedVR2 one-step diffusion technology."
+    "title": "Video to Prompt",
+    "description": "One core flow: upload video, decompose prompts, copy and execute."
   },
   "generator": {
-    "title": "Video Restoration",
-    "description": "Upload your video and choose a restoration mode to enhance quality.",
+    "title": "Video to Prompt",
+    "description": "Upload your reference clip and generate a copy-ready prompt package for reenactment.",
     "tabs": {
-      "text-to-video": "Upscale",
-      "image-to-video": "Denoise", 
-      "video-to-video": "Enhance"
+      "text-to-video": "Prompt",
+      "image-to-video": "Shot List",
+      "video-to-video": "Keywords"
     },
     "form": {
-      "provider": "Provider",
-      "model": "Model",
-      "select_provider": "Select Provider",
-      "select_model": "Select Model",
-      "prompt": "Instructions (Optional)",
-      "prompt_placeholder": "Describe any specific restoration preferences, e.g., 'preserve film grain', 'sharpen faces'...",
-      "reference_image": "Reference Frame",
-      "reference_image_placeholder": "Upload a reference frame for style guidance (optional)",
       "reference_video": "Video URL",
-      "reference_video_placeholder": "Enter the URL of the video you want to restore (e.g., https://example.com/video.mp4)",
+      "reference_video_placeholder": "Paste a direct video URL",
       "upload_video": "Upload Video",
-      "upload_video_placeholder": "Drag and drop your video here, or click to browse",
-      "some_images_failed_to_upload": "File failed to upload, please delete and re-upload",
-      "prompt_too_long": "Instructions are too long, please shorten",
-      "settings": "Settings",
-      "fps": "Output FPS",
-      "output_format": "Output Format",
-      "output_quality": "Output Quality",
-      "color_correction": "Color Correction"
+      "upload_video_placeholder": "Drag and drop a video",
+      "some_images_failed_to_upload": "File upload failed, please retry"
     },
-    "generate": "Start Restoration",
+    "generate": "Analyze Video",
     "checking_account": "Checking Account...",
     "loading": "Loading...",
-    "generating": "Restoring...",
-    "sign_in_to_generate": "Sign In to Restore Video",
+    "generating": "Generating...",
+    "sign_in_to_generate": "Sign In to Analyze",
     "credits_cost": "Cost {credits} credits",
     "credits_remaining": "Remaining {credits} credits",
     "buy_credits": "Buy Credits",
     "progress": "Progress",
-    "generated_videos": "Restored Video",
-    "ready_to_generate": "Processing your video...",
-    "ready_for_generating": "Ready to Restore",
-    "no_videos_generated": "Enter a video URL to get started"
+    "generated_videos": "Prompt Package",
+    "ready_to_generate": "Analyzing your video...",
+    "ready_for_generating": "Ready",
+    "no_videos_generated": "Provide a video to start"
   }
 }

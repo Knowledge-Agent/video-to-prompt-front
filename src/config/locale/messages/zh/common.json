@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "SeedVR2",
-    "description": "专业的 AI 视频和图片增强工具。支持 4K/8K 超分、修复伪影、恢复细节。无需 GPU，无需安装 ComfyUI。",
-    "keywords": "SeedVR2, AI视频增强, 图片增强, 视频修复, 照片修复, 无需GPU, 在线增强, 4K超分, 8K超分, 修复伪影"
+    "title": "Video to Prompt",
+    "description": "将任意视频转换为结构化、可直接生产的提示词包。数秒生成主提示词、短提示词、负面提示词、关键词与镜头清单。",
+    "keywords": "视频转提示词, AI提示词生成, 提示词包, 镜头清单生成, 场景提示词工程, AI视频工作流"
   },
   "sign": {
     "sign_in_title": "登录",

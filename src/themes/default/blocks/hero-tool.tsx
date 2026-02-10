@@ -1,19 +1,11 @@
-/**
- * Hero Tool Block - First screen with video/image restoration tool
- * Full viewport height layout for homepage with SEO-optimized H1 title
- * pos: src/themes/default/blocks/hero-tool.tsx
- */
 'use client';
 
-import { Image as ImageIcon, Video } from 'lucide-react';
+import { Sparkles, Video } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
 
 import { VideoRestore } from '@/shared/blocks/generator/video-restore';
 import { cn } from '@/shared/lib/utils';
 import { Section } from '@/shared/types/blocks/landing';
-
-type MediaMode = 'video' | 'image';
 
 export function HeroTool({
   section,
@@ -22,90 +14,69 @@ export function HeroTool({
   section: Section;
   className?: string;
 }) {
-  const [mediaMode, setMediaMode] = useState<MediaMode>('video');
-
   return (
     <section
       id={section.id}
       className={cn(
-        'relative flex min-h-screen flex-col pt-16 md:pt-20',
+        'relative flex min-h-screen flex-col overflow-hidden pt-18 md:pt-24',
         section.className,
         className
       )}
     >
-      {/* Background Image */}
       {section.background_image?.src && (
-        <div className="absolute inset-0 -z-10 hidden h-full w-full overflow-hidden md:block">
-          <div className="from-background/95 via-background/90 to-background absolute inset-0 z-10 bg-gradient-to-b" />
+        <div className="absolute inset-0 -z-20 hidden h-full w-full overflow-hidden md:block">
           <Image
             src={section.background_image.src}
             alt={section.background_image.alt || ''}
-            className="object-cover opacity-30 blur-[0px]"
+            className="object-cover opacity-35"
             fill
             loading="lazy"
             sizes="(max-width: 768px) 0vw, 100vw"
             quality={70}
             unoptimized={section.background_image.src.startsWith('http')}
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/78 via-background/92 to-background" />
         </div>
       )}
 
-      {/* Hero Content - centered vertically */}
-      <div className="flex flex-1 flex-col items-center justify-center">
-        <div className="container w-full">
-          {/* SEO-optimized H1 Title */}
-          <div className="mx-auto max-w-3xl text-center mb-6">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl text-white mb-4">
-              {section.title}
-            </h1>
-            <p className="text-gray-400 text-lg mb-6">
-              {section.description}
-            </p>
+      <div className="from-primary/18 pointer-events-none absolute -top-30 left-1/2 -z-10 h-70 w-70 -translate-x-1/2 rounded-full bg-radial blur-3xl" />
+      <div className="from-accent/16 pointer-events-none absolute right-10 bottom-24 -z-10 h-50 w-50 rounded-full bg-radial blur-3xl" />
 
-            {/* Media Type Toggle */}
-            {section.switchLabel && (
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <button
-                  onClick={() => setMediaMode('video')}
-                  className={cn(
-                    'flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all',
-                    mediaMode === 'video'
-                      ? 'bg-gradient-to-r from-orange-500 to-red-600 text-black shadow-lg shadow-orange-500/50'
-                      : 'bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10'
-                  )}
-                >
-                  <Video className="h-5 w-5" />
-                  {section.switchLabel.video}
-                </button>
-                <button
-                  onClick={() => setMediaMode('image')}
-                  className={cn(
-                    'flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all',
-                    mediaMode === 'image'
-                      ? 'bg-gradient-to-r from-orange-500 to-red-600 text-black shadow-lg shadow-orange-500/50'
-                      : 'bg-white/5 text-gray-400 hover:bg-white/10 border border-white/10'
-                  )}
-                >
-                  <ImageIcon className="h-5 w-5" />
-                  {section.switchLabel.image}
-                </button>
-              </div>
-            )}
+      <div className="container relative z-10 flex flex-1 flex-col justify-center pb-18">
+        <div className="mx-auto mb-8 max-w-4xl text-center">
+          {section.badge && (
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              <Sparkles className="h-3.5 w-3.5" />
+              {section.badge}
+            </div>
+          )}
 
-            {/* Hint Text */}
-            {section.hint && (
-              <p className="text-sm text-gray-500 mb-8">
-                {section.hint}
-              </p>
-            )}
+          <h1 className="mb-4 bg-gradient-to-b from-white via-white to-primary/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl">
+            {section.title}
+          </h1>
+
+          <p className="mx-auto mb-5 max-w-3xl text-base text-foreground/85 md:text-xl">
+            {section.description}
+          </p>
+
+          <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-4 py-2 text-xs text-muted-foreground backdrop-blur">
+            <Video className="h-3.5 w-3.5 text-primary" />
+            {section.tagline ||
+              'Video to Prompt · Upload once, get structured prompts instantly'}
           </div>
 
-          {/* Video/Image Restore Tool */}
-          <VideoRestore 
-            mediaMode={mediaMode}
-            hideTitle={true}
-          />
+          {section.hint && (
+            <p className="mb-4 text-sm text-muted-foreground">{section.hint}</p>
+          )}
+
+          {section.description2 && (
+            <p className="mx-auto max-w-2xl text-sm text-muted-foreground/90 md:text-base">
+              {section.description2}
+            </p>
+          )}
         </div>
+
+        <VideoRestore hideTitle />
       </div>
     </section>
   );

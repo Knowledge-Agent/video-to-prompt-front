@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "title": "SeedVR2 Pricing - AI Video & Image Restoration",
-    "description": "Flexible subscription plans for video and image restoration. Cancel anytime."
+    "title": "Video to Prompt Pricing",
+    "description": "Flexible plans for video-to-prompt generation. Scale from solo creators to production teams."
   },
   "page": {
-    "title": "SeedVR2 Pricing",
+    "title": "Video to Prompt Pricing",
     "sections": {
       "pricing": {
         "id": "pricing",
         "title": "Simple, Transparent Pricing",
-        "description": "Choose a plan that fits your needs. 1 credit = 1 image or 0.5 second video.",
+        "description": "Choose a plan that fits your workflow. Credits are consumed by video duration and analysis complexity.",
         "groups": [
           {
             "name": "monthly",
@@ -26,14 +26,14 @@
         "items": [
           {
             "title": "Starter",
-            "description": "Perfect for trying out SeedVR2.",
+            "description": "For solo creators testing video-to-prompt workflows.",
             "features_title": "Includes",
             "features": [
               "200 credits/month",
-              "200 images or 100 seconds video",
-              "Video upscaling to 4K",
-              "AI denoising & enhancement",
-              "Download in MP4/PNG format"
+              "Supports upload + URL input",
+              "English and Chinese prompt output",
+              "Prompt package export (master/short/negative)",
+              "Keyword + shot list generation"
             ],
             "interval": "month",
             "amount": 900,
@@ -49,20 +49,20 @@
               "icon": "RiFlashlightFill"
             },
             "product_id": "starter_monthly",
-            "product_name": "SeedVR2 Starter Monthly",
+            "product_name": "Video to Prompt Starter Monthly",
             "credits": 200,
             "group": "monthly"
           },
           {
             "title": "Starter",
-            "description": "Perfect for trying out SeedVR2.",
+            "description": "For solo creators testing video-to-prompt workflows.",
             "features_title": "Includes",
             "features": [
               "200 credits/month",
-              "200 images or 100 seconds video",
-              "Video upscaling to 4K",
-              "AI denoising & enhancement",
-              "Download in MP4/PNG format"
+              "Supports upload + URL input",
+              "English and Chinese prompt output",
+              "Prompt package export (master/short/negative)",
+              "Keyword + shot list generation"
             ],
             "interval": "year",
             "amount": 8600,
@@ -78,21 +78,21 @@
               "icon": "RiFlashlightFill"
             },
             "product_id": "starter_yearly",
-            "product_name": "SeedVR2 Starter Yearly",
+            "product_name": "Video to Prompt Starter Yearly",
             "credits": 200,
             "group": "yearly"
           },
           {
             "title": "Pro",
-            "description": "Best value for regular users.",
+            "description": "For teams producing prompt variants daily.",
             "label": "Popular",
             "features_title": "Everything in Starter, plus",
             "features": [
               "800 credits/month",
-              "800 images or ~6 min video",
-              "Priority processing",
-              "Batch processing support",
-              "8K upscaling support"
+              "Faster generation queue",
+              "Advanced style presets",
+              "Batch-friendly workflow",
+              "Priority support"
             ],
             "interval": "month",
             "amount": 2900,
@@ -108,21 +108,21 @@
               "icon": "RiFlashlightFill"
             },
             "product_id": "pro_monthly",
-            "product_name": "SeedVR2 Pro Monthly",
+            "product_name": "Video to Prompt Pro Monthly",
             "credits": 800,
             "group": "monthly"
           },
           {
             "title": "Pro",
-            "description": "Best value for regular users.",
+            "description": "For teams producing prompt variants daily.",
             "label": "Popular",
             "features_title": "Everything in Starter, plus",
             "features": [
               "800 credits/month",
-              "800 images or ~6 min video",
-              "Priority processing",
-              "Batch processing support",
-              "8K upscaling support"
+              "Faster generation queue",
+              "Advanced style presets",
+              "Batch-friendly workflow",
+              "Priority support"
             ],
             "interval": "year",
             "amount": 27800,
@@ -138,20 +138,20 @@
               "icon": "RiFlashlightFill"
             },
             "product_id": "pro_yearly",
-            "product_name": "SeedVR2 Pro Yearly",
+            "product_name": "Video to Prompt Pro Yearly",
             "credits": 800,
             "group": "yearly"
           },
           {
             "title": "Business",
-            "description": "For professional video production.",
+            "description": "For agencies and multi-project creative pipelines.",
             "features_title": "Everything in Pro, plus",
             "features": [
               "3000 credits/month",
-              "3000 images or 25 min video",
-              "Fastest processing",
-              "API access",
-              "Priority support"
+              "Team-level throughput",
+              "Workflow consultation",
+              "API-ready roadmap access",
+              "Dedicated support"
             ],
             "interval": "month",
             "amount": 9900,
@@ -167,20 +167,20 @@
               "icon": "RiFlashlightFill"
             },
             "product_id": "business_monthly",
-            "product_name": "SeedVR2 Business Monthly",
+            "product_name": "Video to Prompt Business Monthly",
             "credits": 3000,
             "group": "monthly"
           },
           {
             "title": "Business",
-            "description": "For professional video production.",
+            "description": "For agencies and multi-project creative pipelines.",
             "features_title": "Everything in Pro, plus",
             "features": [
               "3000 credits/month",
-              "3000 images or 25 min video",
-              "Fastest processing",
-              "API access",
-              "Priority support"
+              "Team-level throughput",
+              "Workflow consultation",
+              "API-ready roadmap access",
+              "Dedicated support"
             ],
             "interval": "year",
             "amount": 95000,
@@ -196,7 +196,7 @@
               "icon": "RiFlashlightFill"
             },
             "product_id": "business_yearly",
-            "product_name": "SeedVR2 Business Yearly",
+            "product_name": "Video to Prompt Business Yearly",
             "credits": 3000,
             "group": "yearly"
           }

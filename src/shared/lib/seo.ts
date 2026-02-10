@@ -70,7 +70,7 @@ export function getMetadata(
     // app name
     let appName = options.appName;
     if (!appName) {
-      appName = envConfigs.app_name || '';
+      appName = defaultMetadata.title || envConfigs.app_name || '';
     }
 
     return {

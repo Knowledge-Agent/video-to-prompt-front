@@ -1,7 +1,5 @@
 'use client';
 
-import { ArrowBigRight } from 'lucide-react';
-
 import { SmartIcon } from '@/shared/blocks/common';
 import { ScrollAnimation } from '@/shared/components/ui/scroll-animation';
 import { cn } from '@/shared/lib/utils';
@@ -15,54 +13,50 @@ export function FeaturesStep({
   className?: string;
 }) {
   return (
-    <section
-      id={section.id}
-      className={cn('flex min-h-screen flex-col justify-center py-16 md:py-24', section.className, className)}
-    >
-      <div className="m-4 rounded-[2rem]">
-        <div className="@container relative container">
-          <ScrollAnimation>
-            <div className="mx-auto max-w-2xl text-center">
-              <span className="text-primary">{section.label}</span>
-              <h2 className="text-foreground mt-4 text-4xl font-semibold">
-                {section.title}
-              </h2>
-              <p className="text-muted-foreground mt-4 text-lg text-balance">
-                {section.description}
-              </p>
-            </div>
-          </ScrollAnimation>
+    <section id={section.id} className={cn('relative py-20 md:py-28', section.className, className)}>
+      <div className="container">
+        <ScrollAnimation>
+          <div className="mx-auto max-w-3xl text-center">
+            {section.label && (
+              <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary uppercase">
+                {section.label}
+              </span>
+            )}
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
+              {section.title}
+            </h2>
+            <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-base md:text-lg">
+              {section.description}
+            </p>
+          </div>
+        </ScrollAnimation>
 
-          <ScrollAnimation delay={0.2}>
-            <div className="mt-20 grid gap-12 @3xl:grid-cols-4">
-              {section.items?.map((item, idx) => (
-                <div className="space-y-6" key={idx}>
-                  <div className="text-center">
-                    <span className="mx-auto flex size-6 items-center justify-center rounded-full bg-zinc-500/15 text-sm font-medium">
-                      {idx + 1}
-                    </span>
-                    <div className="relative">
-                      <div className="mx-auto my-6 w-fit">
-                        {item.icon && (
-                          <SmartIcon name={item.icon as string} size={24} />
-                        )}
-                      </div>
-                      {idx < (section.items?.length ?? 0) - 1 && (
-                        <ArrowBigRight className="fill-muted stroke-primary absolute inset-y-0 right-0 my-auto mt-1 hidden translate-x-[150%] drop-shadow @3xl:block" />
-                      )}
-                    </div>
-                    <h3 className="text-foreground mb-4 text-lg font-semibold">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted-foreground text-balance">
-                      {item.description}
-                    </p>
+        <ScrollAnimation delay={0.15}>
+          <div className="relative mx-auto mt-12 grid max-w-6xl gap-5 md:grid-cols-3">
+            <div className="absolute top-9 left-1/2 hidden h-px w-[70%] -translate-x-1/2 bg-gradient-to-r from-primary/0 via-primary/35 to-primary/0 md:block" />
+
+            {section.items?.map((item, idx) => (
+              <div
+                key={idx}
+                className="relative rounded-2xl border border-border/70 bg-card/60 p-6 backdrop-blur"
+              >
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="inline-flex size-8 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-xs font-semibold text-primary">
+                    {idx + 1}
+                  </span>
+                  <div className="inline-flex size-10 items-center justify-center rounded-lg bg-primary/15 text-primary">
+                    {item.icon && <SmartIcon name={item.icon as string} size={20} />}
                   </div>
                 </div>
-              ))}
-            </div>
-          </ScrollAnimation>
-        </div>
+
+                <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
+                <p className="text-sm leading-6 text-muted-foreground md:text-base">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

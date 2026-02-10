@@ -2,9 +2,9 @@
   "page": {
     "show_sections": [
       "hero-tool",
-      "video-upscaler",
-      "image-upscaler",
-      "why-online",
+      "features",
+      "use-cases",
+      "usage",
       "faq",
       "cta"
     ],
@@ -12,347 +12,180 @@
       "hero-tool": {
         "block": "hero-tool",
         "id": "hero-tool",
-        "title": "在线运行 SeedVR2：终极 AI 视频和图片增强工具",
-        "description": "专业 AI 修复，去除噪点、修复伪影、恢复细节",
-        "switchLabel": {
-          "video": "增强视频",
-          "image": "增强图片"
-        },
-        "hint": "免费在线访问，无需本地安装",
+        "title": "把原始视频变成可直接生产的提示词包",
+        "description": "上传一段参考视频，自动拆解为可直接复制的提示词包，用于仿拍执行。",
+        "badge": "新功能：视频提示词智能解析",
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
-          "alt": "SeedVR2 AI 视频和图片增强工具"
+          "alt": "Video to Prompt 工作台"
         }
-      },
-      "video-upscaler": {
-        "block": "video-upscaler",
-        "id": "video-upscaler",
-        "title": "专业 SeedVR2 视频增强器",
-        "description": "将视频提升至 4K/8K，保持完美的运动一致性。AI 驱动的专业视频修复。",
-        "items": [
-          {
-            "title": "4K/8K 超分辨率",
-            "description": "使用 AI 超分辨率技术，将低分辨率视频转换为惊艳的 4K 或 8K 画质。",
-            "icon": "Sparkles",
-            "keywords": ["4K", "8K", "视频超分"]
-          },
-          {
-            "title": "运动一致性",
-            "description": "保持流畅的运动和帧间时序一致性，实现无闪烁的效果。",
-            "icon": "Film",
-            "keywords": ["运动一致性", "时序一致性"]
-          },
-          {
-            "title": "视频修复",
-            "description": "修复老视频、增强动漫视频内容，轻松修复压缩伪影。",
-            "icon": "Video",
-            "keywords": ["视频修复", "动漫视频增强"]
-          }
-        ],
-        "comparisons": [
-          {
-            "before": "/videos/video_before.mp4",
-            "after": "/videos/video_after.mp4",
-            "alt": "SeedVR2 视频增强器对比示例"
-          },
-          {
-            "before": "/videos/before_other.mp4",
-            "after": "/videos/after_other_1.mp4",
-            "alt": "SeedVR2 视频增强器另一个对比示例"
-          }
-        ]
-      },
-      "image-upscaler": {
-        "block": "image-upscaler",
-        "id": "image-upscaler",
-        "title": "高保真 SeedVR2 图片增强器",
-        "description": "AI 精准修复伪影，增强图片细节。专业照片修复，适用于任何图片。",
-        "items": [
-          {
-            "title": "伪影修复",
-            "description": "修复 AI 生成图片中的对角线条纹。精准去除压缩伪影。",
-            "icon": "Wand2",
-            "keywords": ["修复伪影", "修复对角线", "修复条纹"]
-          },
-          {
-            "title": "细节增强",
-            "description": "恢复照片中的精细细节和纹理。AI 驱动的专业照片修复。",
-            "icon": "Sparkles",
-            "keywords": ["照片修复", "图片细节增强"]
-          },
-          {
-            "title": "高保真输出",
-            "description": "生成专业级打印质量图片。无损放大至任意分辨率。",
-            "icon": "Layers",
-            "keywords": ["高保真", "专业品质", "图片放大"]
-          }
-        ],
-        "comparison": {
-          "before": "https://b2.upsampler.com/_static/blog/billie_eilish_seedvr2_before.jpg",
-          "after": "https://b2.upsampler.com/_static/blog/billie_eilish_seedvr2_after.jpg",
-          "alt": "SeedVR2 图片增强器伪影修复示例"
-        }
-      },
-      "why-online": {
-        "block": "why-online",
-        "id": "why-online",
-        "title": "为什么选择在线版 SeedVR2？（无需 GPU，告别 OOM）",
-        "description": "跳过本地安装和硬件配置的烦恼。在云端即时处理视频和图片。",
-        "items": [
-          {
-            "title": "无需高端显卡",
-            "description": "不用担心显存不足或 OOM（内存溢出）错误。使用我们的云端 GPU 无缝处理。",
-            "icon": "Cpu",
-            "keywords": ["无需 GPU", "OOM", "低显存", "云端 GPU"]
-          },
-          {
-            "title": "无需配置 ComfyUI 工作流",
-            "description": "告别复杂的节点配置。无需安装 Python 或 ComfyUI。直接拖放文件即可。",
-            "icon": "Zap",
-            "keywords": ["无需 ComfyUI", "工作流", "免安装", "无需 Python"]
-          },
-          {
-            "title": "极速处理",
-            "description": "借助优化的云端基础设施，秒级获得结果。无需等待，无需排队。",
-            "icon": "Clock",
-            "keywords": ["快速", "即时", "秒级处理"]
-          }
-        ]
       },
       "features": {
         "id": "features",
-        "title": "为什么选择 SeedVR2 修复视频",
-        "description": "基于扩散 Transformer 技术的顶尖 AI 视频增强方案。",
+        "title": "专注一件事：快速拆解提示词",
+        "description": "从一段参考视频到一套可复制执行的提示词包，让仿拍流程稳定可复用。",
         "items": [
           {
-            "title": "视频超分辨率",
-            "description": "将低分辨率视频提升至 4K 画质。适用于老视频、压缩视频和 AIGC 内容。",
-            "icon": "RiVideoLine"
+            "title": "视频结构解析",
+            "description": "自动提取主体、运动、光线、节奏与构图信息。",
+            "icon": "RiMovie2Line"
           },
           {
-            "title": "AI 智能去噪",
-            "description": "去除噪点、压缩伪影，同时保留精细纹理和细节。",
-            "icon": "RiMagicLine"
+            "title": "提示词包拆解",
+            "description": "一次输出主提示词、短提示词、负面提示词、关键词与镜头清单。",
+            "icon": "RiFileList3Line"
           },
           {
-            "title": "单步处理",
-            "description": "比传统扩散模型快 10 倍。数秒内完成视频修复，而非数分钟。",
+            "title": "可直接仿拍执行",
+            "description": "复制后即可按镜头顺序执行复现，团队协作更清晰。",
+            "icon": "RiCameraLensLine"
+          },
+          {
+            "title": "可复用提示词资产",
+            "description": "把有效结果沉淀为后续项目可复用的参考模板。",
+            "icon": "RiFolderOpenLine"
+          },
+          {
+            "title": "快速迭代循环",
+            "description": "替换素材后可快速生成新一版拆解提示词包。",
             "icon": "RiFlashlightLine"
           },
           {
-            "title": "任意分辨率支持",
-            "description": "处理任意分辨率视频，无画质损失，无固定尺寸限制。",
-            "icon": "RiFullscreenLine"
-          },
-          {
-            "title": "时序一致性",
-            "description": "保持流畅运动和帧间一致性，无闪烁和伪影。",
-            "icon": "RiFilmLine"
-          },
-          {
-            "title": "AIGC 视频增强",
-            "description": "专为 AI 生成视频优化，修复常见 AIGC 伪影，提升画质。",
-            "icon": "RiRobot2Line"
-          }
-        ]
-      },
-      "before-after-showcase": {
-        "block": "before-after-showcase",
-        "id": "before-after-showcase",
-        "title": "效果对比",
-        "description": "SeedVR2 修复的真实视频。拖动滑块对比修复前后效果。",
-        "items": [
-          {
-            "id": "1",
-            "title": "老电影修复",
-            "before": "https://images.unsplash.com/photo-1542204625-ca960ca44635?w=1080",
-            "after": "https://images.unsplash.com/photo-1542204625-ca960ca44635?w=1080",
-            "improvement": "1080p → 4K",
-            "category": "经典"
-          },
-          {
-            "id": "2",
-            "title": "游戏录像",
-            "before": "https://images.unsplash.com/photo-1616757857818-5c6eea38ee17?w=1080",
-            "after": "https://images.unsplash.com/photo-1616757857818-5c6eea38ee17?w=1080",
-            "improvement": "480p → 4K",
-            "category": "游戏"
-          },
-          {
-            "id": "3",
-            "title": "无人机航拍",
-            "before": "https://images.unsplash.com/photo-1645544893322-866e16bc22b2?w=1080",
-            "after": "https://images.unsplash.com/photo-1645544893322-866e16bc22b2?w=1080",
-            "improvement": "噪点 → 清晰",
-            "category": "自然"
-          }
-        ],
-        "cta": {
-          "text": "准备好修复您的视频了吗？",
-          "button": {
-            "title": "免费开始",
-            "url": "#hero-tool"
-          }
-        }
-      },
-      "features-demo": {
-        "block": "features-demo",
-        "id": "features-demo",
-        "title": "实时效果对比",
-        "description": "拖动滑块对比设置，查看每个功能如何增强您的视频。",
-        "items": [
-          {
-            "id": "fps",
-            "title": "帧率",
-            "subtitle": "更流畅的动作",
-            "beforeLabel": "24 FPS",
-            "afterLabel": "60 FPS",
-            "improvement": "流畅度提升 2.5 倍",
-            "icon": "Play"
-          },
-          {
-            "id": "format",
-            "title": "输出格式",
-            "subtitle": "无损画质",
-            "beforeLabel": "JPG",
-            "afterLabel": "PNG",
-            "improvement": "完美画质",
-            "icon": "Image"
-          },
-          {
-            "id": "quality",
-            "title": "画质等级",
-            "subtitle": "细节呈现",
-            "beforeLabel": "画质: 70",
-            "afterLabel": "画质: 100",
-            "improvement": "细节提升 43%",
-            "icon": "Sparkles"
-          },
-          {
-            "id": "color",
-            "title": "色彩校正",
-            "subtitle": "AI 增强",
-            "beforeLabel": "原始",
-            "afterLabel": "增强",
-            "improvement": "自然色彩",
-            "icon": "Palette"
-          },
-          {
-            "id": "photo",
-            "title": "照片修复",
-            "subtitle": "修复老照片",
-            "beforeLabel": "受损",
-            "afterLabel": "修复",
-            "improvement": "完美修复",
-            "icon": "Wand2"
+            "title": "平台无关复制格式",
+            "description": "可粘贴到 Runway、Kling、Pika、Sora 或内部工作流。",
+            "icon": "RiRocketLine"
           }
         ]
       },
       "use-cases": {
         "block": "use-cases",
         "id": "use-cases",
-        "title": "谁能从 SeedVR2 受益？",
-        "description": "从内容创作者到家庭用户，SeedVR2 帮助每个人提升视觉内容质量。",
+        "title": "用户场景",
+        "description": "图文/视频结合，少文字，直接看场景。",
         "items": [
           {
-            "title": "内容创作者",
-            "description": "提升您的 YouTube 视频、抖音和社交媒体内容，脱颖而出。",
-            "icon": "Film",
-            "examples": ["YouTube 视频", "抖音内容", "小红书"]
+            "title": "创作者仿拍",
+            "description": "一段参考视频，快速转成可复制提示词包。",
+            "tag": "创作者",
+            "video": "/videos/video_before.mp4",
+            "image": {
+              "src": "/imgs/features/landing-page.png",
+              "alt": "创作者仿拍"
+            }
           },
           {
-            "title": "游戏玩家与主播",
-            "description": "将游戏录像和直播精彩片段提升至清晰的 4K 画质。",
-            "icon": "Gamepad2",
-            "examples": ["游戏录像", "直播精彩", "剪辑集锦"]
+            "title": "广告变体生产",
+            "description": "从一个高表现素材生成多个可测试提示词。",
+            "tag": "营销",
+            "video": "/videos/video_after.mp4",
+            "image": {
+              "src": "/imgs/features/1.png",
+              "alt": "广告变体生产"
+            }
           },
           {
-            "title": "摄影师",
-            "description": "修复老照片，提升图像质量，用于打印和作品集。",
-            "icon": "Camera",
-            "examples": ["老照片", "家庭档案", "作品集"]
+            "title": "镜头规划",
+            "description": "自动提取场景结构与镜头顺序用于执行。",
+            "tag": "制作",
+            "image": {
+              "src": "/imgs/features/2.png",
+              "alt": "镜头规划"
+            }
           },
           {
-            "title": "企业用户",
-            "description": "提升营销视频、产品演示和企业内容的质量。",
-            "icon": "Building2",
-            "examples": ["营销视频", "产品演示", "培训内容"]
-          },
-          {
-            "title": "家庭用户",
-            "description": "通过修复老家庭视频和照片，保存珍贵回忆。",
-            "icon": "Heart",
-            "examples": ["家庭视频", "婚礼录像", "宝宝视频"]
-          },
-          {
-            "title": "电影爱好者",
-            "description": "将经典电影和老视频修复至现代画质标准。",
-            "icon": "Tv",
-            "examples": ["经典电影", "老视频", "纪录片"]
+            "title": "提示词资产运营",
+            "description": "把团队输入素材标准化为可检索资产。",
+            "tag": "团队",
+            "image": {
+              "src": "/imgs/features/3.png",
+              "alt": "提示词资产运营"
+            }
           }
         ]
       },
-      "faq": {
-        "id": "faq",
-        "title": "关于 SeedVR2 的常见问题",
-        "description": "关于 SeedVR2 在线视频和图片增强工具的一切",
-        "tip": "还有问题？<a href='mailto:support@seedvr2.ai' class='text-primary hover:underline'>联系客服</a>",
+      "usage": {
+        "block": "features-step",
+        "id": "usage",
+        "label": "3 步工作流",
+        "title": "一段素材到一套可执行仿拍包",
+        "description": "聚焦仿拍的 3 步闭环。",
         "items": [
           {
-            "question": "SeedVR2 在线版是免费的吗？",
-            "answer": "是的！SeedVR2 提供免费版本，允许您免费增强 720p 以下的视频和图片，无需信用卡即可开始使用。高级版解锁 4K/8K 超分、更快的处理速度和批量操作，适合专业用户。"
+            "icon": "RiUploadCloud2Line",
+            "title": "上传视频",
+            "description": "上传参考素材，或粘贴可访问的视频直链。"
           },
           {
-            "question": "SeedVR2 可以增强动漫视频吗？",
-            "answer": "当然可以！SeedVR2 专门针对动漫视频增强进行了优化。我们的 AI 在提升分辨率和去除压缩伪影的同时，完美保留动漫独特的画风、干净的线条和鲜艳的色彩。非常适合修复老动漫或增强 AI 生成的动漫视频。"
+            "icon": "RiSearchEyeLine",
+            "title": "自动分析拆解",
+            "description": "自动提取场景语言、机位运动与镜头顺序。"
           },
           {
-            "question": "SeedVR2 与 FlashVSR 相比如何？",
-            "answer": "SeedVR2 采用单步扩散技术，比 FlashVSR 等传统多步方法快约 10 倍。FlashVSR 需要多次推理步骤，而 SeedVR2 仅需一步即可实现更优质量。此外，SeedVR2 在视频超分时具有更好的时序一致性，能有效处理真实世界和 AIGC 内容。"
+            "icon": "RiFileCopyLine",
+            "title": "复制并执行仿拍",
+            "description": "复制完整提示词包后，直接进入仿拍执行。"
+          }
+        ],
+        "className": ""
+      },
+      "faq": {
+        "id": "faq",
+        "title": "常见问题",
+        "description": "关于 Video to Prompt 单一仿拍功能的常见问题。",
+        "tip": "需要接入建议？<a href='mailto:support@videotoprompt.ai' class='text-primary hover:underline'>联系我们</a>",
+        "items": [
+          {
+            "question": "Video to Prompt 会输出哪些内容？",
+            "answer": "每次生成都会提供完整提示词包：主提示词、短提示词、负面提示词、关键词与镜头清单。"
           },
           {
-            "question": "SeedVR2 是什么？如何工作？",
-            "answer": "SeedVR2 是字节跳动 Seed 团队开发的先进 AI 视频修复模型。采用单步扩散技术，实现视频超分、去噪和增强，速度比传统方法快 10 倍，同时保持卓越画质。"
+            "question": "支持哪些输入格式？",
+            "answer": "支持 MP4、WebM、MOV、AVI、MKV，以及公开视频 URL。"
           },
           {
-            "question": "视频修复需要多长时间？",
-            "answer": "得益于单步扩散技术，SeedVR2 处理速度比传统扩散方法快 10 倍。5 分钟的 1080p 视频通常只需 3-5 分钟即可超分至 4K。更长的视频处理时间会相应增加。"
+            "question": "可以生成中文提示词吗？",
+            "answer": "可以。输出语言自动跟随当前站点语言（中文或英文）。"
           },
           {
-            "question": "我的视频数据安全吗？",
-            "answer": "绝对安全。所有视频处理都在安全加密的环境中进行。我们不会永久存储您的视频或与第三方共享。视频会在 24 小时后自动删除，保护您的隐私。"
+            "question": "积分是如何计算的？",
+            "answer": "主要基于视频时长与解析复杂度估算，执行前会显示预计消耗。"
           },
           {
-            "question": "使用 SeedVR2 需要显卡或技术知识吗？",
-            "answer": "完全不需要！SeedVR2 完全在云端运行，您无需高端显卡，也不用担心显存不足或 OOM 错误。无需配置 ComfyUI，无需安装 Python。只需上传视频或图片，我们的 AI 会自动处理一切。"
+            "question": "可用于其他 AI 工具吗？",
+            "answer": "可以。输出为纯文本结构，适配 Runway、Kling、Pika、Sora 及内部流程。"
           },
           {
-            "question": "可以同时处理多个视频吗？",
-            "answer": "可以！专业版和企业版包含批量处理功能。您可以排队多个视频并同时处理，大大节省大型项目的时间。免费版用户每次可处理一个视频。"
+            "question": "适合团队协作吗？",
+            "answer": "非常适合。可用于统一风格语言并提升创意迭代速度。"
           }
         ]
       },
       "cta": {
         "id": "cta",
-        "title": "准备好修复您的视频了吗？",
-        "description": "体验 SeedVR2 单步 AI 视频修复的强大能力。",
+        "title": "把参考视频变成可复用的仿拍执行手册",
+        "description": "上传、拆解、复制、执行——专注且稳定的仿拍工作流。",
         "buttons": [
           {
-            "title": "立即开始修复",
-            "url": "/pricing",
+            "title": "立即生成",
+            "url": "#hero-tool",
             "target": "_self",
             "icon": "Zap"
           },
           {
-            "title": "查看研究论文",
-            "url": "https://arxiv.org/abs/2506.05301",
-            "target": "_blank",
+            "title": "查看价格",
+            "url": "/pricing",
+            "target": "_self",
             "variant": "outline",
             "icon": "FileText"
           }
         ],
-        "className": "bg-muted"
+        "className": ""
       }
     }
+  },
+  "metadata": {
+    "title": "Video to Prompt",
+    "description": "将任意视频自动拆解为结构化提示词包，提取场景、风格、镜头语言与镜头清单，支持快速复制仿拍。",
+    "keywords": "视频转提示词, AI提示词生成, 镜头清单, 视频分析, 仿拍提示词, AI视频工作流"
   }
 }

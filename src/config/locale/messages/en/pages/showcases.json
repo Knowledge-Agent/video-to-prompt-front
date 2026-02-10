@@ -1,43 +1,35 @@
 {
   "metadata": {
-    "title": "Showcases",
-    "description": "Awesome projects built with ShipAny"
+    "title": "Video to Prompt Use Cases and Team Workflows",
+    "description": "Explore practical Video to Prompt workflows for creators, marketing teams, and production operators."
   },
   "page": {
-    "title": "Showcases",
+    "title": "Use Cases",
     "sections": {
       "showcases": {
         "id": "showcases",
-        "title": "AI SaaS Startups built with ShipAny",
-        "description": "Easy to use and fast to ship.",
+        "title": "How Teams Use Video to Prompt",
+        "description": "A focused gallery of real-world usage patterns.",
         "groups": [
           {
             "name": "all",
             "title": "All"
           },
           {
-            "name": "ai-chatbot",
-            "title": "AI Chatbot"
+            "name": "creator",
+            "title": "Creator"
           },
           {
-            "name": "ai-image",
-            "title": "AI Image"
+            "name": "marketing",
+            "title": "Marketing"
           },
           {
-            "name": "ai-video",
-            "title": "AI Video"
+            "name": "production",
+            "title": "Production"
           },
           {
-            "name": "ai-audio",
-            "title": "AI Audio"
-          },
-          {
-            "name": "ai-music",
-            "title": "AI Music"
-          },
-          {
-            "name": "ai-coding",
-            "title": "AI Coding"
+            "name": "ops",
+            "title": "Ops"
           },
           {
             "name": "other",
@@ -46,103 +38,103 @@
         ],
         "items": [
           {
-            "title": "ThinkAny",
-            "description": "AI Search Engine",
-            "url": "https://thinkany.ai",
+            "title": "Short-form Creator Sprint",
+            "description": "Turn trending clips into reusable prompt templates in one workflow.",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/7.png",
+              "src": "/imgs/features/landing-page.png",
               "alt": "showcases"
             },
-            "group": "ai-chatbot"
+            "group": "creator"
           },
           {
-            "title": "HeyBeauty",
-            "description": "AI Virtual Try On",
-            "url": "https://heybeauty.ai",
+            "title": "Ad Creative Iteration",
+            "description": "Extract shot logic from winning ads and generate prompt variants quickly.",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/5.png",
+              "src": "/imgs/features/1.png",
               "alt": "showcases"
             },
-            "group": "ai-image"
+            "group": "marketing"
           },
           {
-            "title": "AI Wallpaper",
-            "description": "AI Wallpaper Generator",
-            "url": "https://aiwallpaper.shop",
+            "title": "Pre-visualization Planning",
+            "description": "Convert reference footage to shot-ready prompts for directors and editors.",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/1.png",
+              "src": "/imgs/features/2.png",
               "alt": "showcases"
             },
-            "group": "ai-image"
+            "group": "production"
           },
           {
-            "title": "AI Cover",
-            "description": "AI Cover Generator",
-            "url": "https://aicover.design",
+            "title": "Prompt Library Operations",
+            "description": "Standardize incoming videos into structured prompt assets for teams.",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/2.png",
+              "src": "/imgs/features/3.png",
               "alt": "showcases"
             },
-            "group": "ai-image"
+            "group": "ops"
           },
           {
-            "title": "GPTs Works",
-            "description": "GPTs Directory",
-            "url": "https://gpts.works",
+            "title": "Learning by Imitation",
+            "description": "Use one reference video to teach prompt structure and shot sequencing.",
+            "url": "/blog/video-prompt-shot-language-framework",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/3.png",
+              "src": "/imgs/features/4.png",
               "alt": "showcases"
             },
             "group": "other"
           },
           {
-            "title": "Melodisco",
-            "description": "AI Music Player",
-            "url": "https://melodis.co",
+            "title": "Batch Prompt Preparation",
+            "description": "Prepare multiple scene prompts for campaign production planning.",
+            "url": "/blog/video-to-prompt-system-design",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/4.png",
+              "src": "/imgs/features/5.png",
               "alt": "showcases"
             },
-            "group": "ai-music"
+            "group": "ops"
           },
           {
-            "title": "Pagen",
-            "description": "AI Landing Page Generator",
-            "url": "https://pagen.so",
+            "title": "Prompt QA Workflow",
+            "description": "Run quality checks before handing prompts to production execution.",
+            "url": "/blog/video-to-prompt-quality-checklist",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/6.png",
+              "src": "/imgs/features/6.png",
               "alt": "showcases"
             },
-            "group": "ai-coding"
+            "group": "production"
           },
           {
-            "title": "SoraFM",
-            "description": "AI Video Generator",
-            "url": "https://sorafm.trys.ai",
+            "title": "Storyboard-to-Prompt Bridge",
+            "description": "Bridge creative storyboard ideas with generation-ready prompt packages.",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/8.png",
+              "src": "/imgs/features/7.png",
               "alt": "showcases"
             },
-            "group": "ai-video"
+            "group": "creator"
           },
           {
-            "title": "PodLM",
-            "description": "AI Podcast Generator",
-            "url": "https://podlm.ai",
+            "title": "Cross-Team Prompt Handoff",
+            "description": "Use structured output for clear collaboration between strategy and editing teams.",
+            "url": "/pricing",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/9.png",
+              "src": "/imgs/features/8.png",
               "alt": "showcases"
             },
-            "group": "ai-audio"
+            "group": "marketing"
           }
         ]
       }

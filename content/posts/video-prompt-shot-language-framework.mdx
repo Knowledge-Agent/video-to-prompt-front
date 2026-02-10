@@ -1,0 +1,40 @@
+---
+title: "A Shot-Language Framework for Better Video Prompts"
+description: "How to encode framing, movement, lens intent, and pacing into prompt structures that produce more controllable AI video outputs."
+created_at: "2026-02-04"
+author_name: "Video to Prompt Team"
+author_image: "/imgs/logos/video-to-prompt-logo.svg"
+image: "/imgs/blog/architecture-comparison.png"
+---
+
+# A Shot-Language Framework for Better Video Prompts
+
+Many prompts fail because they describe "what" but not "how". Shot language solves that.
+
+A useful prompt should not only say the subject and environment. It should also encode:
+
+- Framing (wide, medium, close)
+- Camera motion (pan, dolly, handheld)
+- Lens intent (compression, depth, distortion)
+- Rhythm (slow drift vs. fast cuts)
+
+## A practical shot prompt template
+
+Use this sentence pattern:
+
+> Subject + Setting + Camera Action + Lens/Depth + Lighting + Mood + Temporal Cue
+
+Example:
+
+> A runner enters a rain-soaked alley at dusk, handheld medium tracking shot, shallow depth with a 50mm feel, neon rim light and wet reflections, tense cinematic mood, slow acceleration into a final close-up.
+
+## Common errors to avoid
+
+- Only describing objects, no motion
+- No lens/depth clues (results look flat)
+- Contradictory tone tags (e.g., "documentary" + "hyper-polished ad")
+- Missing temporal progression
+
+## Final takeaway
+
+Shot language is the bridge between reference footage and controllable generation. If your prompts include shot logic, outputs become dramatically more predictable.

@@ -1,7 +1,9 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
+import { JsonLd } from '@/shared/components/seo/json-ld';
 import { getMetadata } from '@/shared/lib/seo';
+import { getShowcasesJsonLd } from '@/shared/lib/structured-data';
 import { DynamicPage } from '@/shared/types/blocks/landing';
 
 export const revalidate = 3600;
@@ -34,5 +36,12 @@ export default async function ShowcasesPage({
   // load page component
   const Page = await getThemePage('dynamic-page');
 
-  return <Page locale={locale} page={page} />;
+  const showcasesJsonLd = getShowcasesJsonLd(locale);
+
+  return (
+    <>
+      <JsonLd data={showcasesJsonLd} />
+      <Page locale={locale} page={page} />
+    </>
+  );
 }

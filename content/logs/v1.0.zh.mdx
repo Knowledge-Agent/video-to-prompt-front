@@ -1,51 +1,39 @@
 ---
-title: 'ShipAny One 发布'
-description: '一小时上线你的 AI SaaS 项目'
-date: '2024-11-24'
-tags: ['ShipAny One', 'Next.js 15', 'AI SaaS', 'Boilerplate']
+title: 'Video to Prompt v1.0 发布'
+description: 'Video to Prompt 首次上线，支持上传视频、场景拆解与可复制提示词包输出。'
+date: '2026-01-20'
+tags: ['Video to Prompt', '上线', '提示词工程', 'AI视频']
 version: '1.0.0'
 ---
 
-![ShipAny Two](/imgs/features/one.png)
+![Video to Prompt](/imgs/logos/video-to-prompt-logo.svg)
 
-ShipAny 是一个基于 NextJS 的 AI SaaS 开发框架，内置丰富的组件和 AI SDK，帮助你快速完成 AI SaaS 项目开发。
+Video to Prompt 1.0 正式发布。
 
-<Accordion type="multiple" className="not-prose w-full">
-    <AccordionItem value="features">
-        <AccordionTrigger>核心功能</AccordionTrigger>
-        <AccordionContent className="flex flex-col gap-4 text-balance">
-        <ul className="list-disc space-y-2 pl-4">
-            <li>一个精美的 Landing Page</li>
-            <li>20+ 页面组件</li>
-            <li>用户登录（谷歌登录 / Github 登录）</li>
-            <li>数据统计（Google Analytics / OpenPanel）</li>
-            <li>i18n 多语言</li>
-            <li>数据存储（基于 Supabase）</li>
-            <li>支付（基于 Stripe）</li>
-            <li>部署（支持 Vercel / Cloudflare）</li>
-        </ul>
-        </AccordionContent>
-    </AccordionItem>
+首个版本聚焦一个核心工作流：
 
-    <AccordionItem value="admin">
-        <AccordionTrigger>管理后台</AccordionTrigger>
-        <AccordionContent className="flex flex-col gap-4 text-balance">
-        <ul className="list-disc space-y-2 pl-4">
-            <li>用户管理</li>
-            <li>用户积分管理</li>
-            <li>支付订单管理</li>
-            <li>API Keys 管理</li>
-            <li>CMS（内容管理系统）</li>
-        </ul>
-        </AccordionContent>
-    </AccordionItem>
+1. 上传参考视频
+2. 自动分析并拆解场景语言
+3. 复制结构化提示词包用于仿拍执行
 
-</Accordion>
+## 首发能力
 
-> 快速开始
+- 提示词包输出（主提示词 / 短提示词 / 负面提示词）
+- 关键词提取，便于检索管理
+- 镜头清单生成，支持执行落地
+- 中英文输出
+- 基于积分的使用模式
 
-```bash
-git clone git@github.com:shipanyai/shipany-template-one.git
-```
+## 为什么 v1.0 重要
 
-[ShipAny One 文档](https://docs.shipany.ai/zh)
+相比从零写提示词，团队现在可以把真实参考片快速转为可复用资产。
+
+这让提示词质量更稳定，也让协作更可控。
+
+## 下一步方向
+
+后续迭代将重点投入：
+
+- 提升场景切分与拆解质量
+- 提升分析速度
+- 增强团队级提示词协作能力

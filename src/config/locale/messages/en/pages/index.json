@@ -2,9 +2,9 @@
   "page": {
     "show_sections": [
       "hero-tool",
-      "video-upscaler",
-      "image-upscaler",
-      "why-online",
+      "features",
+      "use-cases",
+      "usage",
       "faq",
       "cta"
     ],
@@ -12,399 +12,180 @@
       "hero-tool": {
         "block": "hero-tool",
         "id": "hero-tool",
-        "title": "Run SeedVR2 Online: The Ultimate AI Upscaler for Video and Images",
-        "description": "Professional AI restoration to remove noise, fix artifacts, and restore details",
-        "switchLabel": {
-          "video": "Upscale Video",
-          "image": "Upscale Image"
-        },
-        "hint": "Free online access, no local installation needed",
+        "title": "Turn Raw Video Into Production-Ready Prompts",
+        "description": "Upload one clip and get a decomposed prompt package you can copy for imitation shooting.",
+        "badge": "New: Video Prompt Intelligence",
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
-          "alt": "SeedVR2 AI video and image upscaler"
+          "alt": "Video to Prompt workspace"
         }
-      },
-      "video-upscaler": {
-        "block": "video-upscaler",
-        "id": "video-upscaler",
-        "title": "Professional SeedVR2 Video Upscaler",
-        "description": "Upscale videos to 4K/8K with perfect motion consistency. Professional video restoration powered by AI.",
-        "items": [
-          {
-            "title": "4K/8K Upscaling",
-            "description": "Transform low-resolution videos to stunning 4K or 8K quality with AI-powered super resolution.",
-            "icon": "Sparkles",
-            "keywords": ["4K", "8K", "video upscaling"]
-          },
-          {
-            "title": "Motion Consistency",
-            "description": "Maintain smooth motion and frame-to-frame temporal coherence for flicker-free results.",
-            "icon": "Film",
-            "keywords": ["motion consistency", "temporal coherence"]
-          },
-          {
-            "title": "Video Restoration",
-            "description": "Restore old videos, upscale anime video content, and fix compression artifacts with ease.",
-            "icon": "Video",
-            "keywords": ["video restoration", "upscale anime video"]
-          }
-        ],
-        "comparisons": [
-          {
-            "before": "/videos/video_before.mp4",
-            "after": "/videos/video_after.mp4",
-            "alt": "SeedVR2 video upscaler comparison example"
-          },
-          {
-            "before": "/videos/before_other.mp4",
-            "after": "/videos/after_other_1.mp4",
-            "alt": "SeedVR2 video upscaler another comparison example"
-          }
-        ]
-      },
-      "image-upscaler": {
-        "block": "image-upscaler",
-        "id": "image-upscaler",
-        "title": "High-Fidelity SeedVR2 Image Upscaler",
-        "description": "Fix artifacts and enhance image details with AI precision. Professional photo restoration for any image.",
-        "items": [
-          {
-            "title": "Artifact Removal",
-            "description": "Fix diagonal lines and stripes in AI-generated images. Remove compression artifacts with precision.",
-            "icon": "Wand2",
-            "keywords": ["fix artifacts", "fix diagonal lines", "fix stripes"]
-          },
-          {
-            "title": "Detail Enhancement",
-            "description": "Restore fine details and textures in photos. Professional photo restoration powered by AI.",
-            "icon": "Sparkles",
-            "keywords": ["photo restoration", "image detail enhancement"]
-          },
-          {
-            "title": "High-Fidelity Output",
-            "description": "Produce professional-quality images for printing. Upscale to any resolution without quality loss.",
-            "icon": "Layers",
-            "keywords": [
-              "high fidelity",
-              "professional quality",
-              "image upscaling"
-            ]
-          }
-        ],
-        "comparison": {
-          "before": "https://b2.upsampler.com/_static/blog/billie_eilish_seedvr2_before.jpg",
-          "after": "https://b2.upsampler.com/_static/blog/billie_eilish_seedvr2_after.jpg",
-          "alt": "SeedVR2 image upscaler fixing artifacts example"
-        }
-      },
-      "why-online": {
-        "block": "why-online",
-        "id": "why-online",
-        "title": "Why Use SeedVR2 Online? (No GPU & No OOM)",
-        "description": "Skip the hassle of local installation and hardware requirements. Process videos and images instantly in the cloud.",
-        "items": [
-          {
-            "title": "No High-End GPU Needed",
-            "description": "Don't worry about VRAM or OOM (Out of Memory) errors. Use our cloud GPU for seamless processing.",
-            "icon": "Cpu",
-            "keywords": ["no GPU", "OOM", "low vram", "cloud GPU"]
-          },
-          {
-            "title": "No ComfyUI Workflow Setup",
-            "description": "Forget complex nodes. No need to install Python or ComfyUI. Just drag and drop your files.",
-            "icon": "Zap",
-            "keywords": [
-              "no ComfyUI",
-              "workflow",
-              "no installation",
-              "no python"
-            ]
-          },
-          {
-            "title": "Fast Processing",
-            "description": "Get results in seconds with our optimized cloud infrastructure. No waiting, no queues.",
-            "icon": "Clock",
-            "keywords": ["fast", "quick", "instant", "seconds"]
-          }
-        ]
       },
       "features": {
         "id": "features",
-        "title": "Why Choose SeedVR2 for Video Restoration",
-        "description": "State-of-the-art AI video enhancement powered by diffusion transformer technology.",
+        "title": "Built for One Job: Fast Prompt Decomposition",
+        "description": "From one reference video to one copy-ready package. Keep reenactment execution clear and repeatable.",
         "items": [
           {
-            "title": "Video Super Resolution",
-            "description": "Upscale low-resolution videos to 4K quality. Perfect for old footage, compressed videos, and AIGC content.",
-            "icon": "RiVideoLine"
+            "title": "Video Structure Parsing",
+            "description": "Extract subject, movement, lighting, rhythm, and framing from a single clip.",
+            "icon": "RiMovie2Line"
           },
           {
-            "title": "AI Denoising",
-            "description": "Remove grain, compression artifacts, and noise while preserving fine details and textures.",
-            "icon": "RiMagicLine"
+            "title": "Prompt Package Decomposition",
+            "description": "Generate master prompt, short prompt, negative prompt, keywords, and ordered shot list.",
+            "icon": "RiFileList3Line"
           },
           {
-            "title": "One-Step Processing",
-            "description": "10x faster than traditional diffusion models. Restore videos in seconds, not minutes.",
+            "title": "Imitation Shooting Ready",
+            "description": "Copy the package directly and execute shot-by-shot recreation with your team.",
+            "icon": "RiCameraLensLine"
+          },
+          {
+            "title": "Reusable Prompt Assets",
+            "description": "Store proven packages as reusable references for future projects.",
+            "icon": "RiFolderOpenLine"
+          },
+          {
+            "title": "Fast Iteration Loop",
+            "description": "Swap source clips and quickly generate new decomposed prompt packs.",
             "icon": "RiFlashlightLine"
           },
           {
-            "title": "Any Resolution Support",
-            "description": "Process videos at any resolution without quality loss. No fixed size limitations.",
-            "icon": "RiFullscreenLine"
-          },
-          {
-            "title": "Temporal Consistency",
-            "description": "Maintain smooth motion and consistent quality across all frames. No flickering or artifacts.",
-            "icon": "RiFilmLine"
-          },
-          {
-            "title": "AIGC Video Enhancement",
-            "description": "Specially optimized for AI-generated videos. Fix common AIGC artifacts and improve quality.",
-            "icon": "RiRobot2Line"
-          }
-        ]
-      },
-      "before-after-showcase": {
-        "block": "before-after-showcase",
-        "id": "before-after-showcase",
-        "title": "See the Difference",
-        "description": "Real videos restored by SeedVR2. Drag the slider to compare before and after.",
-        "items": [
-          {
-            "id": "1",
-            "title": "Old Film Restoration",
-            "before": "https://images.unsplash.com/photo-1542204625-ca960ca44635?w=1080",
-            "after": "https://images.unsplash.com/photo-1542204625-ca960ca44635?w=1080",
-            "improvement": "1080p → 4K",
-            "category": "Heritage"
-          },
-          {
-            "id": "2",
-            "title": "Gaming Footage",
-            "before": "https://images.unsplash.com/photo-1616757857818-5c6eea38ee17?w=1080",
-            "after": "https://images.unsplash.com/photo-1616757857818-5c6eea38ee17?w=1080",
-            "improvement": "480p → 4K",
-            "category": "Gaming"
-          },
-          {
-            "id": "3",
-            "title": "Drone Aerial",
-            "before": "https://images.unsplash.com/photo-1645544893322-866e16bc22b2?w=1080",
-            "after": "https://images.unsplash.com/photo-1645544893322-866e16bc22b2?w=1080",
-            "improvement": "Noisy → Clear",
-            "category": "Nature"
-          }
-        ],
-        "cta": {
-          "text": "Ready to restore your own videos?",
-          "button": {
-            "title": "Get Started for Free",
-            "url": "#hero-tool"
-          }
-        }
-      },
-      "features-demo": {
-        "block": "features-demo",
-        "id": "features-demo",
-        "title": "See the Difference in Real-Time",
-        "description": "Drag the slider to compare settings and see how each feature enhances your video.",
-        "items": [
-          {
-            "id": "fps",
-            "title": "Frame Rate",
-            "subtitle": "Smoother motion",
-            "beforeLabel": "24 FPS",
-            "afterLabel": "60 FPS",
-            "improvement": "2.5x Smoother",
-            "icon": "Play"
-          },
-          {
-            "id": "format",
-            "title": "Output Format",
-            "subtitle": "Lossless quality",
-            "beforeLabel": "JPG",
-            "afterLabel": "PNG",
-            "improvement": "Perfect Quality",
-            "icon": "Image"
-          },
-          {
-            "id": "quality",
-            "title": "Quality Level",
-            "subtitle": "Reveal details",
-            "beforeLabel": "Quality: 70",
-            "afterLabel": "Quality: 100",
-            "improvement": "+43% Detail",
-            "icon": "Sparkles"
-          },
-          {
-            "id": "color",
-            "title": "Color Correction",
-            "subtitle": "AI enhancement",
-            "beforeLabel": "Original",
-            "afterLabel": "Enhanced",
-            "improvement": "Natural Look",
-            "icon": "Palette"
-          },
-          {
-            "id": "photo",
-            "title": "Photo Restoration",
-            "subtitle": "Fix old photos",
-            "beforeLabel": "Damaged",
-            "afterLabel": "Restored",
-            "improvement": "Perfect Repair",
-            "icon": "Wand2"
+            "title": "Tool-Agnostic Copy Format",
+            "description": "Paste into Runway, Kling, Pika, Sora, or your internal generation workflow.",
+            "icon": "RiRocketLine"
           }
         ]
       },
       "use-cases": {
         "block": "use-cases",
         "id": "use-cases",
-        "title": "Who Benefits from SeedVR2?",
-        "description": "From content creators to families, SeedVR2 helps everyone enhance their visual content.",
+        "title": "Use Cases",
+        "description": "Visual scenarios, minimal text, same workflow.",
         "items": [
           {
-            "title": "Content Creators",
-            "description": "Enhance your YouTube videos, TikToks, and social media content to stand out from the crowd.",
-            "icon": "Film",
-            "examples": ["YouTube videos", "TikTok content", "Instagram Reels"]
+            "title": "Creator Reenactment",
+            "description": "Turn a reference clip into a copy-ready prompt package.",
+            "tag": "Creator",
+            "video": "/videos/video_before.mp4",
+            "image": {
+              "src": "/imgs/features/landing-page.png",
+              "alt": "Creator reenactment"
+            }
           },
           {
-            "title": "Gamers & Streamers",
-            "description": "Upscale game recordings and stream highlights to crisp 4K quality.",
-            "icon": "Gamepad2",
-            "examples": ["Game recordings", "Stream highlights", "Montages"]
+            "title": "Ad Variant Production",
+            "description": "Generate prompt variants from one winning ad video.",
+            "tag": "Marketing",
+            "video": "/videos/video_after.mp4",
+            "image": {
+              "src": "/imgs/features/1.png",
+              "alt": "Ad variant production"
+            }
           },
           {
-            "title": "Photographers",
-            "description": "Restore old photos and enhance image quality for prints and portfolios.",
-            "icon": "Camera",
-            "examples": ["Old photos", "Family archives", "Portfolio work"]
+            "title": "Shot Planning",
+            "description": "Extract scene structure and shot order for execution.",
+            "tag": "Production",
+            "image": {
+              "src": "/imgs/features/2.png",
+              "alt": "Shot planning"
+            }
           },
           {
-            "title": "Businesses",
-            "description": "Improve marketing videos, product demos, and corporate content.",
-            "icon": "Building2",
-            "examples": [
-              "Marketing videos",
-              "Product demos",
-              "Training content"
-            ]
-          },
-          {
-            "title": "Families",
-            "description": "Preserve precious memories by restoring old home videos and photos.",
-            "icon": "Heart",
-            "examples": ["Home videos", "Wedding footage", "Baby videos"]
-          },
-          {
-            "title": "Film Enthusiasts",
-            "description": "Restore classic films and vintage footage to modern quality standards.",
-            "icon": "Tv",
-            "examples": ["Classic films", "Vintage footage", "Documentaries"]
+            "title": "Prompt Library Ops",
+            "description": "Standardize team prompt assets from incoming videos.",
+            "tag": "Team",
+            "image": {
+              "src": "/imgs/features/3.png",
+              "alt": "Prompt library ops"
+            }
           }
         ]
       },
       "usage": {
         "block": "features-step",
         "id": "usage",
-        "title": "How to Restore Your Videos",
-        "description": "Three simple steps to enhance your video quality with SeedVR2:",
-        "image": {
-          "src": "/imgs/features/1.png",
-          "alt": "SeedVR2 video restoration process"
-        },
-        "image_position": "left",
-        "text_align": "center",
+        "label": "3-Step Workflow",
+        "title": "From One Clip to One Executable Prompt Pack",
+        "description": "A focused 3-step loop for imitation shooting.",
         "items": [
           {
-            "title": "Upload Your Video",
-            "description": "Upload any video file - old footage, compressed videos, or AIGC content. We support all common formats.",
-            "image": {
-              "src": "/imgs/features/5.png",
-              "alt": "Upload video to SeedVR2"
-            }
+            "icon": "RiUploadCloud2Line",
+            "title": "Upload Video",
+            "description": "Upload your reference clip or paste a direct video URL."
           },
           {
-            "title": "Choose Restoration Mode",
-            "description": "Select from upscaling, denoising, or full enhancement. Our AI automatically optimizes settings for best results.",
-            "image": {
-              "src": "/imgs/features/6.png",
-              "alt": "Choose SeedVR2 restoration mode"
-            }
+            "icon": "RiSearchEyeLine",
+            "title": "Analyze and Decompose",
+            "description": "Automatically break down scene language, camera movement, and shot order."
           },
           {
-            "title": "Download Enhanced Video",
-            "description": "Get your restored video in minutes. Download in high quality and share anywhere.",
-            "image": {
-              "src": "/imgs/features/7.png",
-              "alt": "Download restored video from SeedVR2"
-            }
+            "icon": "RiFileCopyLine",
+            "title": "Copy and Execute",
+            "description": "Copy the full prompt package and run imitation shooting directly."
           }
         ],
-        "className": "bg-muted"
+        "className": ""
       },
       "faq": {
         "id": "faq",
-        "title": "Frequently Asked Questions About SeedVR2",
-        "description": "Everything you need to know about SeedVR2 online video and image upscaler",
-        "tip": "Still have questions? <a href='mailto:support@seedvr2.ai' class='text-primary hover:underline'>Contact Support</a>",
+        "title": "Frequently Asked Questions",
+        "description": "Everything about using Video to Prompt as a single-purpose imitation shooting tool.",
+        "tip": "Need implementation help? <a href='mailto:support@videotoprompt.ai' class='text-primary hover:underline'>Talk to support</a>",
         "items": [
           {
-            "question": "Is SeedVR2 free to use online?",
-            "answer": "Yes! SeedVR2 offers a free tier that allows you to upscale videos up to 720p and images without any cost. No credit card required to get started. Premium plans unlock 4K/8K upscaling, faster processing, and batch operations for professional users."
+            "question": "What does Video to Prompt generate?",
+            "answer": "Each run returns a complete package: master prompt, short prompt, negative prompt, keyword tags, and shot list."
           },
           {
-            "question": "Can I upscale anime videos with SeedVR2?",
-            "answer": "Absolutely! SeedVR2 is specially optimized for anime video upscaling. Our AI preserves the unique art style, clean lines, and vibrant colors of anime content while enhancing resolution and removing compression artifacts. It's perfect for restoring old anime series or enhancing AI-generated anime videos."
+            "question": "Which input formats are supported?",
+            "answer": "You can upload MP4, WebM, MOV, AVI, and MKV, or provide a public video URL."
           },
           {
-            "question": "How does SeedVR2 compare to FlashVSR?",
-            "answer": "SeedVR2 uses single-step diffusion technology, making it approximately 10x faster than traditional multi-step methods like FlashVSR. While FlashVSR requires multiple inference steps, SeedVR2 achieves superior quality in just one step. Additionally, SeedVR2 offers better temporal consistency for video upscaling and handles both real-world and AIGC content effectively."
+            "question": "Can I output prompts in Chinese?",
+            "answer": "Yes. Output language follows your current site language (English or Chinese)."
           },
           {
-            "question": "What video formats does SeedVR2 support?",
-            "answer": "SeedVR2 supports all major video formats including MP4, WebM, AVI, MOV, and MKV. You can upload videos in any of these formats and export to your preferred format. We also support various codecs like H.264, H.265, VP9, and ProRes."
+            "question": "How is credit usage calculated?",
+            "answer": "Credit cost is estimated mainly from video duration and analysis complexity. Estimated cost is shown before you run."
           },
           {
-            "question": "How long does the restoration process take?",
-            "answer": "Processing time depends on video length and resolution. Typically, a 5-minute 1080p video takes about 3-5 minutes to upscale to 4K. Thanks to our single-step diffusion technology, SeedVR2 is 10x faster than traditional methods. Longer videos may take proportionally more time."
+            "question": "Can I reuse prompts in other AI tools?",
+            "answer": "Yes. Output is plain text and designed for direct copy into Runway, Kling, Pika, Sora, and internal workflows."
           },
           {
-            "question": "Is my video data safe and private?",
-            "answer": "Absolutely. All video processing happens in a secure, encrypted environment. We never store your videos permanently or share them with third parties. Videos are automatically deleted after 24 hours for your privacy."
-          },
-          {
-            "question": "Do I need a GPU or technical knowledge to use SeedVR2?",
-            "answer": "Not at all! SeedVR2 runs entirely in the cloud, so you don't need a high-end GPU or worry about VRAM/OOM errors. No ComfyUI setup, no Python installation required. Simply upload your video or image, and our AI handles everything automatically."
-          },
-          {
-            "question": "Can I process multiple videos at once?",
-            "answer": "Yes! Pro and Business plans include batch processing capabilities. You can queue multiple videos and process them simultaneously, saving significant time for large projects. Free tier users can process one video at a time."
+            "question": "Is this suitable for teams?",
+            "answer": "Absolutely. Teams use Video to Prompt to keep style language consistent and speed up campaign iteration."
           }
         ]
       },
       "cta": {
         "id": "cta",
-        "title": "Ready to Restore Your Videos?",
-        "description": "Experience the power of one-step AI video restoration with SeedVR2.",
+        "title": "Turn Reference Videos into Reusable Shooting Playbooks",
+        "description": "Upload, decompose, copy, and execute—one focused workflow for reliable reenactment.",
         "buttons": [
           {
-            "title": "Start Restoring Now",
-            "url": "/pricing",
+            "title": "Start Generating",
+            "url": "#hero-tool",
             "target": "_self",
             "icon": "Zap"
           },
           {
-            "title": "View Research Paper",
-            "url": "https://arxiv.org/abs/2506.05301",
-            "target": "_blank",
+            "title": "See Pricing",
+            "url": "/pricing",
+            "target": "_self",
             "variant": "outline",
             "icon": "FileText"
           }
         ],
-        "className": "bg-muted"
+        "className": ""
       }
     }
+  },
+  "metadata": {
+    "title": "Video to Prompt",
+    "description": "Turn any video into structured prompts for AI video generation. Extract scene, style, camera language, and shot list in seconds.",
+    "keywords": "video to prompt, AI prompt generator, video prompt builder, shot list generator, prompt engineering, AI video workflow"
   }
 }

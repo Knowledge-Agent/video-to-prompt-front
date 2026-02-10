@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "SeedVR2",
-    "description": "Professional AI upscaler for videos and images. Upscale to 4K/8K, fix artifacts, restore details. No GPU, no ComfyUI setup needed.",
-    "keywords": "SeedVR2, AI video upscaler, image upscaler, video restoration, photo restoration, no GPU, online upscaler, 4K upscaling, 8K upscaling, fix artifacts"
+    "title": "Video to Prompt",
+    "description": "Turn any video into structured, production-ready prompts. Generate master prompts, short prompts, negative prompts, keywords, and shot lists in seconds.",
+    "keywords": "video to prompt, ai prompt generator, prompt package, shot list generator, scene prompt engineering, ai video workflow"
   },
   "sign": {
     "sign_in_title": "Sign In",

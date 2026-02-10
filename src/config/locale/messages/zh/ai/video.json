@@ -1,53 +1,39 @@
 {
   "metadata": {
-    "title": "SeedVR2 - 在线 AI 视频修复",
-    "description": "使用 SeedVR2 修复和增强您的视频。支持超分至 4K、去噪、模糊修复，基于单步 AI 扩散技术。"
+    "title": "Video to Prompt - 分析、拆解、复制",
+    "description": "上传一段视频并自动拆解为结构化提示词包，可直接复制用于仿拍执行。"
   },
   "page": {
-    "title": "AI 视频修复",
-    "description": "使用 SeedVR2 单步扩散技术，实现视频超分、去噪和画质增强。"
+    "title": "Video to Prompt",
+    "description": "单一核心流程：上传视频、拆解提示词、复制执行。"
   },
   "generator": {
-    "title": "视频修复",
-    "description": "上传视频并选择修复模式，提升画质。",
+    "title": "Video to Prompt",
+    "description": "上传参考视频后，一键生成可直接复制的仿拍提示词包。",
     "tabs": {
-      "text-to-video": "超分辨率",
-      "image-to-video": "去噪",
-      "video-to-video": "画质增强"
+      "text-to-video": "提示词",
+      "image-to-video": "镜头清单",
+      "video-to-video": "关键词"
     },
     "form": {
-      "provider": "服务商",
-      "model": "模型",
-      "select_provider": "选择服务商",
-      "select_model": "选择模型",
-      "prompt": "修复指令（可选）",
-      "prompt_placeholder": "描述特定的修复偏好，如「保留胶片颗粒」「增强人脸清晰度」...",
-      "reference_image": "参考帧",
-      "reference_image_placeholder": "上传参考帧用于风格指导（可选）",
       "reference_video": "视频链接",
-      "reference_video_placeholder": "输入待修复视频的链接（如 https://example.com/video.mp4）",
+      "reference_video_placeholder": "粘贴可访问的视频直链",
       "upload_video": "上传视频",
-      "upload_video_placeholder": "拖拽视频到此处，或点击浏览",
-      "some_images_failed_to_upload": "文件上传失败，请删除并重新上传",
-      "prompt_too_long": "指令太长，请精简",
-      "settings": "设置",
-      "fps": "输出帧率",
-      "output_format": "输出格式",
-      "output_quality": "输出质量",
-      "color_correction": "颜色校正"
+      "upload_video_placeholder": "拖拽视频到此处",
+      "some_images_failed_to_upload": "文件上传失败，请重试"
     },
-    "generate": "开始修复",
+    "generate": "开始分析视频",
     "checking_account": "检查账户...",
     "loading": "加载中...",
-    "generating": "修复中...",
-    "sign_in_to_generate": "登录修复视频",
+    "generating": "生成中...",
+    "sign_in_to_generate": "登录后分析",
     "credits_cost": "消耗 {credits} 积分",
     "credits_remaining": "剩余 {credits} 积分",
     "buy_credits": "购买积分",
     "progress": "进度",
-    "generated_videos": "修复结果",
-    "ready_to_generate": "正在处理您的视频...",
-    "ready_for_generating": "准备修复",
-    "no_videos_generated": "输入视频链接开始修复"
+    "generated_videos": "提示词包",
+    "ready_to_generate": "正在分析视频...",
+    "ready_for_generating": "准备就绪",
+    "no_videos_generated": "请先提供视频"
   }
 }

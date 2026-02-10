@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "title": "更新日志",
-    "description": "查看产品更新日志，了解产品最新功能和改进。"
+    "title": "Video to Prompt 更新日志",
+    "description": "查看 Video to Prompt 的功能迭代，包括分析质量提升、工作流优化与体验改进。"
   },
   "page": {
     "sections": {
       "updates": {
         "id": "updates",
         "title": "更新日志",
-        "description": "查看产品更新日志，了解产品最新功能和改进。"
+        "description": "持续跟踪产品版本、能力升级与体验优化。"
       }
     }
   }

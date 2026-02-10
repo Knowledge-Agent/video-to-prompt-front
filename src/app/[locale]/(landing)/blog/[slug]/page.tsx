@@ -3,6 +3,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getThemePage } from '@/core/theme';
 import { envConfigs } from '@/config';
 import { Empty } from '@/shared/blocks/common';
+import { JsonLd } from '@/shared/components/seo/json-ld';
+import { getBlogPostingJsonLd } from '@/shared/lib/structured-data';
 import { getPost } from '@/shared/models/post';
 import { DynamicPage } from '@/shared/types/blocks/landing';
 
@@ -55,6 +57,17 @@ export default async function BlogDetailPage({
     return <Empty message={`Post not found`} />;
   }
 
+  const blogPostingJsonLd = getBlogPostingJsonLd({
+    locale,
+    slug,
+    title: post.title,
+    description: post.description,
+    authorName: post.author_name,
+    image: post.image,
+    publishedAt: post.date || post.created_at,
+    updatedAt: post.created_at,
+  });
+
   // build page sections
   const page: DynamicPage = {
     sections: {
@@ -69,5 +82,10 @@ export default async function BlogDetailPage({
 
   const Page = await getThemePage('dynamic-page');
 
-  return <Page locale={locale} page={page} />;
+  return (
+    <>
+      <JsonLd data={blogPostingJsonLd} />
+      <Page locale={locale} page={page} />
+    </>
+  );
 }

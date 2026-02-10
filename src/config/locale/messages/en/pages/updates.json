@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "title": "Update Logs",
-    "description": "View product update logs, including latest features and improvements."
+    "title": "Video to Prompt Changelog",
+    "description": "Track product updates for Video to Prompt, including analysis quality improvements, workflow upgrades, and UX refinements."
   },
   "page": {
     "sections": {
       "updates": {
         "id": "updates",
-        "title": "Update Logs",
-        "description": "View product update logs, including latest features and improvements."
+        "title": "Changelog",
+        "description": "Track product updates, improvements, and release milestones."
       }
     }
   }

@@ -1,0 +1,57 @@
+---
+title: "Video-to-Prompt System Design: From Raw Clip to Reusable Prompt Package"
+description: "A practical system for turning one video into a reusable prompt package with scene notes, shot language, and generation-ready prompt blocks."
+created_at: "2026-02-06"
+author_name: "Video to Prompt Team"
+author_image: "/imgs/logos/video-to-prompt-logo.svg"
+image: "/imgs/blog/generative-process-diagram.png"
+---
+
+# Video-to-Prompt System Design
+
+If your team still writes prompts from scratch, you're wasting your best visual source: **real video references**.
+
+A modern AI video workflow should convert every useful clip into a reusable prompt package. That package should include:
+
+- A concise **scene summary**
+- A robust **master prompt**
+- A short **execution prompt** for fast generation
+- A **negative prompt** to avoid artifacts
+- A **shot list** that captures camera logic
+- A **keyword set** for indexing and retrieval
+
+## Why this matters
+
+Without structure, prompt quality becomes random and hard to scale. With a structured package, teams can:
+
+1. Reproduce style faster
+2. Align editors, creators, and operators
+3. Build a searchable prompt library
+4. Reduce iteration cost per deliverable
+
+## Recommended package format
+
+Use a fixed schema so every output is directly usable:
+
+```json
+{
+  "summary": "...",
+  "masterPrompt": "...",
+  "shortPrompt": "...",
+  "negativePrompt": "...",
+  "keywords": ["..."],
+  "shots": ["..."]
+}
+```
+
+## Operational best practices
+
+- Keep `masterPrompt` expressive and production-level
+- Keep `shortPrompt` under platform limits
+- Keep `negativePrompt` focused on common failure modes
+- Keep `shots` ordered by sequence or narrative progression
+- Keep `keywords` concise for downstream indexing
+
+## Final takeaway
+
+Treat video-to-prompt as a **system**, not a one-off generation trick. Once every clip becomes structured prompt data, your creative output becomes faster, more consistent, and easier to scale.

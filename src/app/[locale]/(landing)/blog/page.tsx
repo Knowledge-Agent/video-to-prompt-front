@@ -1,7 +1,9 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
+import { JsonLd } from '@/shared/components/seo/json-ld';
 import { getMetadata } from '@/shared/lib/seo';
+import { getBlogListJsonLd } from '@/shared/lib/structured-data';
 import { getPostsAndCategories } from '@/shared/models/post';
 import {
   Category as CategoryType,
@@ -78,5 +80,12 @@ export default async function BlogPage({
   // load page component
   const Page = await getThemePage('dynamic-page');
 
-  return <Page locale={locale} page={page} />;
+  const blogListJsonLd = getBlogListJsonLd(locale);
+
+  return (
+    <>
+      <JsonLd data={blogListJsonLd} />
+      <Page locale={locale} page={page} />
+    </>
+  );
 }

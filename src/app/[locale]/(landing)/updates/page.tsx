@@ -1,7 +1,9 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
+import { JsonLd } from '@/shared/components/seo/json-ld';
 import { getMetadata } from '@/shared/lib/seo';
+import { getUpdatesJsonLd } from '@/shared/lib/structured-data';
 import {
   getLocalPostsAndCategories,
   PostType as PostDataType,
@@ -74,5 +76,12 @@ export default async function UpdatesPage({
   // load page component
   const Page = await getThemePage('dynamic-page');
 
-  return <Page locale={locale} page={page} />;
+  const updatesJsonLd = getUpdatesJsonLd(locale);
+
+  return (
+    <>
+      <JsonLd data={updatesJsonLd} />
+      <Page locale={locale} page={page} />
+    </>
+  );
 }

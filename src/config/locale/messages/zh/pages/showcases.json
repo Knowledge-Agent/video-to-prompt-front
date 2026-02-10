@@ -1,43 +1,35 @@
 {
   "metadata": {
-    "title": "案例展示",
-    "description": "用 ShipAny 打造的精彩项目"
+    "title": "Video to Prompt 应用场景与团队工作流",
+    "description": "查看创作者、营销与制作团队如何使用 Video to Prompt 完成高效仿拍与提示词生产。"
   },
   "page": {
-    "title": "案例展示",
+    "title": "应用场景",
     "sections": {
       "showcases": {
         "id": "showcases",
-        "title": "用 ShipAny 构建的 AI SaaS 创业项目",
-        "description": "简单、快速、高效。",
+        "title": "团队如何使用 Video to Prompt",
+        "description": "聚焦真实可执行的视频拆解与仿拍场景。",
         "groups": [
           {
             "name": "all",
             "title": "所有项目"
           },
           {
-            "name": "ai-chatbot",
-            "title": "AI 聊天机器人"
+            "name": "creator",
+            "title": "创作者"
           },
           {
-            "name": "ai-image",
-            "title": "AI 图片"
+            "name": "marketing",
+            "title": "营销"
           },
           {
-            "name": "ai-video",
-            "title": "AI 视频"
+            "name": "production",
+            "title": "制作"
           },
           {
-            "name": "ai-audio",
-            "title": "AI 音频"
-          },
-          {
-            "name": "ai-music",
-            "title": "AI 音乐"
-          },
-          {
-            "name": "ai-coding",
-            "title": "AI 编程"
+            "name": "ops",
+            "title": "运营"
           },
           {
             "name": "other",
@@ -46,103 +38,103 @@
         ],
         "items": [
           {
-            "title": "ThinkAny",
-            "description": "AI 搜索引擎",
-            "url": "https://thinkany.ai",
+            "title": "短视频创作冲刺",
+            "description": "将热门参考片快速转成可复用提示词模板，提高出片效率。",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/7.png",
+              "src": "/imgs/features/landing-page.png",
               "alt": "案例展示"
             },
-            "group": "ai-chatbot"
+            "group": "creator"
           },
           {
-            "title": "HeyBeauty",
-            "description": "AI 虚拟试妆",
-            "url": "https://heybeauty.ai",
+            "title": "广告素材快速迭代",
+            "description": "拆解高表现广告镜头逻辑，批量生成可测试的提示词变体。",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/5.png",
+              "src": "/imgs/features/1.png",
               "alt": "案例展示"
             },
-            "group": "ai-image"
+            "group": "marketing"
           },
           {
-            "title": "AI Wallpaper",
-            "description": "AI 壁纸生成器",
-            "url": "https://aiwallpaper.shop",
+            "title": "预演与镜头规划",
+            "description": "把参考片转为镜头可执行提示词，方便导演与剪辑对齐。",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/1.png",
+              "src": "/imgs/features/2.png",
               "alt": "案例展示"
             },
-            "group": "ai-image"
+            "group": "production"
           },
           {
-            "title": "AI Cover",
-            "description": "AI 封面生成器",
-            "url": "https://aicover.design",
+            "title": "提示词资产运营",
+            "description": "将输入视频标准化为结构化提示词资产，便于团队复用。",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/2.png",
+              "src": "/imgs/features/3.png",
               "alt": "案例展示"
             },
-            "group": "ai-image"
+            "group": "ops"
           },
           {
-            "title": "GPTs Works",
-            "description": "GPTs 导航",
-            "url": "https://gpts.works",
+            "title": "仿拍教学演示",
+            "description": "基于一个参考视频演示提示词结构与镜头拆解方法。",
+            "url": "/blog/video-prompt-shot-language-framework",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/3.png",
+              "src": "/imgs/features/4.png",
               "alt": "案例展示"
             },
             "group": "other"
           },
           {
-            "title": "Melodisco",
-            "description": "AI 音乐播放器",
-            "url": "https://melodis.co",
+            "title": "批量提示词准备",
+            "description": "为内容项目提前拆解多个场景，形成稳定生产输入。",
+            "url": "/blog/video-to-prompt-system-design",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/4.png",
+              "src": "/imgs/features/5.png",
               "alt": "案例展示"
             },
-            "group": "ai-music"
+            "group": "ops"
           },
           {
-            "title": "Pagen",
-            "description": "AI 落地页生成器",
-            "url": "https://pagen.so",
+            "title": "提示词质检流程",
+            "description": "上线前做结构化 QA，保证可复制性与执行稳定性。",
+            "url": "/blog/video-to-prompt-quality-checklist",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/6.png",
+              "src": "/imgs/features/6.png",
               "alt": "案例展示"
             },
-            "group": "ai-coding"
+            "group": "production"
           },
           {
-            "title": "SoraFM",
-            "description": "AI 视频生成器",
-            "url": "https://sorafm.trys.ai",
+            "title": "分镜到提示词桥接",
+            "description": "将创意分镜转为模型可执行的提示词包，减少沟通损耗。",
+            "url": "/ai-video-generator",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/8.png",
+              "src": "/imgs/features/7.png",
               "alt": "案例展示"
             },
-            "group": "ai-video"
+            "group": "creator"
           },
           {
-            "title": "PodLM",
-            "description": "AI 播客生成器",
-            "url": "https://podlm.ai",
+            "title": "跨团队协作交付",
+            "description": "结构化输出便于策略、创意、剪辑团队统一执行。",
+            "url": "/pricing",
             "target": "_blank",
             "image": {
-              "src": "/imgs/cases/9.png",
+              "src": "/imgs/features/8.png",
               "alt": "案例展示"
             },
-            "group": "ai-audio"
+            "group": "marketing"
           }
         ]
       }

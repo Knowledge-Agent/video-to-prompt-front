@@ -1,5 +1,9 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
+@source "../../**/*.{ts,tsx,js,jsx,md,mdx}";
+@source "../../../content/**/*.{md,mdx}";
 @import './theme.css';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
 
 @custom-variant dark (&:is(.dark *));
 

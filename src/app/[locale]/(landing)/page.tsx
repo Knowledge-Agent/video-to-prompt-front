@@ -1,20 +1,20 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
+import { JsonLd } from '@/shared/components/seo/json-ld';
+import {
+  getFaqJsonLd,
+  getHowToJsonLd,
+  getWebsiteJsonLd,
+} from '@/shared/lib/structured-data';
 import { getMetadata } from '@/shared/lib/seo';
 import { DynamicPage } from '@/shared/types/blocks/landing';
 
 export const revalidate = 3600;
 
 export const generateMetadata = getMetadata({
-  metadataKey: 'common.metadata',
+  metadataKey: 'pages.index.metadata',
   canonicalUrl: '/',
-  // SEO 优化：同时包含视频和图片关键词，标题控制在 60 字符以内
-  title: 'SeedVR2',
-  description:
-    'Professional AI upscaler for videos and images. Upscale to 4K/8K, fix artifacts, restore details. No GPU, no ComfyUI setup needed.',
-  keywords:
-    'SeedVR2, AI video upscaler, image upscaler, video restoration, photo restoration, no GPU, online upscaler, 4K upscaling, 8K upscaling, fix artifacts',
 });
 
 export default async function LandingPage({
@@ -33,5 +33,19 @@ export default async function LandingPage({
   // load page component
   const Page = await getThemePage('dynamic-page');
 
-  return <Page locale={locale} page={page} />;
+  const websiteJsonLd = getWebsiteJsonLd(locale);
+  const faqItems = (page.sections?.faq as { items?: Array<{ question?: string; answer?: string }> })?.items || [];
+  const usageItems = (page.sections?.usage as { items?: Array<{ title?: string; description?: string }> })?.items || [];
+
+  const faqJsonLd = getFaqJsonLd(locale, faqItems);
+  const howToJsonLd = getHowToJsonLd(locale, usageItems);
+
+  return (
+    <>
+      <JsonLd data={websiteJsonLd} />
+      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
+      {howToJsonLd ? <JsonLd data={howToJsonLd} /> : null}
+      <Page locale={locale} page={page} />
+    </>
+  );
 }
