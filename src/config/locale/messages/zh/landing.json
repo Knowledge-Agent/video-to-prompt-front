@@ -111,24 +111,6 @@
               "target": "_self"
             },
             {
-<<<<<<< Updated upstream
-              "title": "研究论文",
-              "url": "https://arxiv.org/abs/2506.05301",
-              "target": "_blank"
-            },
-            {
-              "title": "AI 工具导航",
-              "url": "https://toolsaiapp.com/",
-              "target": "_blank"
-            }
-          ]
-        },
-        {
-          "title": "关于",
-          "children": [
-            {
-=======
->>>>>>> Stashed changes
               "title": "常见问题",
               "url": "/#faq",
               "target": "_self"

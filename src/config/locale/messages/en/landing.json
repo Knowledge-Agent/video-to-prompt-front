@@ -111,7 +111,6 @@
               "target": "_self"
             },
             {
-<<<<<<< Updated upstream
               "title": "Research Paper",
               "url": "https://arxiv.org/abs/2506.05301",
               "target": "_blank"
@@ -120,11 +119,11 @@
               "title": "AI Tools Directory",
               "url": "https://toolsaiapp.com/",
               "target": "_blank"
-=======
+            },
+            {
               "title": "FAQ",
               "url": "/#faq",
               "target": "_self"
->>>>>>> Stashed changes
             }
           ]
         },
