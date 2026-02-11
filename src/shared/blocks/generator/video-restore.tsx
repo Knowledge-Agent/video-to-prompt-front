@@ -16,6 +16,7 @@ import { toast } from 'sonner';
 import { Button } from '@/shared/components/ui/button';
 import { Input } from '@/shared/components/ui/input';
 import { Textarea } from '@/shared/components/ui/textarea';
+import { useAppContext } from '@/shared/contexts/app';
 import { cn } from '@/shared/lib/utils';
 
 interface VideoRestoreProps {
@@ -68,6 +69,7 @@ const UI_TEXT = {
     urlHint: 'If upload is blocked, you can use a public direct file URL.',
 
     needVideo: 'Please upload a video or provide a video URL',
+    signInRequired: 'Please sign in to analyze the video',
     detected: 'detected',
     detecting: 'Detecting duration...',
     unavailable: 'Duration unavailable',
@@ -122,6 +124,7 @@ const UI_TEXT = {
     urlHint: '如果本地上传受限，可使用公网直链视频。',
 
     needVideo: '请先上传视频或提供视频链接',
+    signInRequired: '请先登录再开始分析视频',
     detected: '已识别',
     detecting: '正在识别时长...',
     unavailable: '时长识别失败',
@@ -343,6 +346,8 @@ export function VideoRestore({
   const [copiedField, setCopiedField] = useState('');
   const [isDraggingUpload, setIsDraggingUpload] = useState(false);
 
+  const { user, isCheckSign, setIsShowSignModal } = useAppContext();
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -506,6 +511,16 @@ export function VideoRestore({
   };
 
   const analyzeVideo = async () => {
+    if (isCheckSign) {
+      return;
+    }
+
+    if (!user) {
+      setIsShowSignModal(true);
+      toast.error(text.signInRequired);
+      return;
+    }
+
     if (!hasValidInput) {
       toast.error(text.needVideo);
       return;
@@ -956,7 +971,13 @@ export function VideoRestore({
 
               <Button
                 onClick={analyzeVideo}
-                disabled={!isMounted || !hasValidInput || isUploading || isGenerating}
+                disabled={
+                  !isMounted ||
+                  isCheckSign ||
+                  !hasValidInput ||
+                  isUploading ||
+                  isGenerating
+                }
                 className="w-full bg-gradient-to-r from-primary to-accent font-medium text-primary-foreground shadow-lg shadow-primary/35 hover:from-primary/90 hover:to-accent/90"
                 size="lg"
               >

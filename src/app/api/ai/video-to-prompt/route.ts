@@ -1,5 +1,6 @@
 import { envConfigs } from '@/config';
 import { respData, respErr } from '@/shared/lib/resp';
+import { getUserInfo } from '@/shared/models/user';
 
 export const runtime = 'nodejs';
 
@@ -246,6 +247,11 @@ export async function POST(request: Request) {
   try {
     const { media, durationSeconds: inputDurationSeconds, language } =
       await request.json();
+
+    const user = await getUserInfo();
+    if (!user) {
+      throw new Error('Please sign in');
+    }
 
     const mediaUrl = normalizeMediaUrl(media);
     const normalizedLanguage = normalizeLanguage(language);
