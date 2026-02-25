@@ -4,7 +4,6 @@
       "hero-tool",
       "features",
       "use-cases",
-      "usage",
       "faq",
       "cta"
     ],
@@ -61,72 +60,49 @@
         "block": "use-cases",
         "id": "use-cases",
         "title": "用户场景",
-        "description": "图文/视频结合，少文字，直接看场景。",
+        "description": "围绕 YouTube 场景设计，直接看演示视频。",
         "items": [
           {
-            "title": "创作者仿拍",
-            "description": "一段参考视频，快速转成可复制提示词包。",
-            "tag": "创作者",
-            "video": "/videos/video_before.mp4",
+            "title": "YouTube Shorts 开场钩子",
+            "description": "拆解前 3 秒开场结构，快速复用到仿拍执行。",
+            "tag": "Shorts",
+            "video": "/videos/use-cases/youtube-shorts-hook.mp4",
             "image": {
               "src": "/imgs/features/landing-page.png",
-              "alt": "创作者仿拍"
+              "alt": "YouTube Shorts 开场钩子"
             }
           },
           {
-            "title": "广告变体生产",
-            "description": "从一个高表现素材生成多个可测试提示词。",
-            "tag": "营销",
-            "video": "/videos/video_after.mp4",
+            "title": "教程片段蓝图",
+            "description": "把讲解段落转成可复用的 A-Roll / B-Roll 提示词包。",
+            "tag": "教程",
+            "video": "/videos/use-cases/youtube-tutorial-segment.mp4",
             "image": {
               "src": "/imgs/features/1.png",
-              "alt": "广告变体生产"
+              "alt": "教程片段蓝图"
             }
           },
           {
-            "title": "镜头规划",
-            "description": "自动提取场景结构与镜头顺序用于执行。",
-            "tag": "制作",
+            "title": "产品测评演示",
+            "description": "提取特写与对比镜头，形成可直接复制的提示词。",
+            "tag": "测评",
+            "video": "/videos/use-cases/youtube-product-review.mp4",
             "image": {
               "src": "/imgs/features/2.png",
-              "alt": "镜头规划"
+              "alt": "产品测评演示"
             }
           },
           {
-            "title": "提示词资产运营",
-            "description": "把团队输入素材标准化为可检索资产。",
-            "tag": "团队",
+            "title": "Vlog 段落复刻",
+            "description": "保持运动轨迹和情绪转场一致，提升仿拍稳定性。",
+            "tag": "Vlog",
+            "video": "/videos/use-cases/youtube-vlog-sequence.mp4",
             "image": {
               "src": "/imgs/features/3.png",
-              "alt": "提示词资产运营"
+              "alt": "Vlog 段落复刻"
             }
           }
         ]
-      },
-      "usage": {
-        "block": "features-step",
-        "id": "usage",
-        "label": "3 步工作流",
-        "title": "一段素材到一套可执行仿拍包",
-        "description": "聚焦仿拍的 3 步闭环。",
-        "items": [
-          {
-            "icon": "RiUploadCloud2Line",
-            "title": "上传视频",
-            "description": "上传参考素材，或粘贴可访问的视频直链。"
-          },
-          {
-            "icon": "RiSearchEyeLine",
-            "title": "自动分析拆解",
-            "description": "自动提取场景语言、机位运动与镜头顺序。"
-          },
-          {
-            "icon": "RiFileCopyLine",
-            "title": "复制并执行仿拍",
-            "description": "复制完整提示词包后，直接进入仿拍执行。"
-          }
-        ],
-        "className": ""
       },
       "faq": {
         "id": "faq",

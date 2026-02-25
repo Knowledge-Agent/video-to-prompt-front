@@ -28,6 +28,7 @@ import { useMedia } from '@/shared/hooks/use-media';
 import { cn } from '@/shared/lib/utils';
 import { NavItem } from '@/shared/types/blocks/common';
 import { Header as HeaderType } from '@/shared/types/blocks/landing';
+import { locales } from '@/config/locale';
 
 // For Next.js hydration mismatch warning, conditionally render NavigationMenuTrigger only after mount to avoid inconsistency between server/client render
 function NavigationMenuTrigger(
@@ -46,6 +47,31 @@ function NavigationMenuTrigger(
  * 处理锚点链接点击，实现平滑滚动并更新 URL
  */
 function useAnchorNavigation() {
+  const localePrefixPattern = new RegExp(`^/(${locales.join('|')})(?=/|$)`);
+
+  const normalizePath = useCallback((path: string) => {
+    if (!path || path === '') {
+      return '/';
+    }
+
+    const withLeadingSlash = path.startsWith('/') ? path : `/${path}`;
+
+    if (withLeadingSlash === '/') {
+      return '/';
+    }
+
+    return withLeadingSlash.replace(/\/+$/, '');
+  }, []);
+
+  const stripLocalePrefix = useCallback(
+    (path: string) => {
+      const normalizedPath = normalizePath(path);
+      const withoutLocale = normalizedPath.replace(localePrefixPattern, '');
+      return withoutLocale === '' ? '/' : withoutLocale;
+    },
+    [localePrefixPattern, normalizePath]
+  );
+
   const handleAnchorClick = useCallback(
     (e: MouseEvent<HTMLAnchorElement>, href: string) => {
       // 检查是否是锚点链接
@@ -60,13 +86,11 @@ function useAnchorNavigation() {
       const path = href.slice(0, hashIndex) || '/';
       const hash = href.slice(hashIndex + 1);
 
-      // 检查是否是当前页面的锚点
-      const currentPath = window.location.pathname;
+      // 检查是否是当前页面的锚点（支持 locale 前缀）
+      const currentPath = normalizePath(window.location.pathname);
+      const targetPath = normalizePath(path || '/');
       const isCurrentPage =
-        path === '/' ||
-        path === '' ||
-        currentPath === path ||
-        currentPath.endsWith(path);
+        stripLocalePrefix(currentPath) === stripLocalePrefix(targetPath);
 
       if (isCurrentPage && hash) {
         e.preventDefault();
@@ -78,14 +102,18 @@ function useAnchorNavigation() {
             block: 'start',
           });
           // 更新 URL 中的锚点，不刷新页面
-          window.history.pushState(null, '', `#${hash}`);
+          window.history.pushState(
+            null,
+            '',
+            `${window.location.pathname}#${hash}`
+          );
         }
         return true; // 已处理
       }
 
       return false; // 跨页面锚点，使用默认行为
     },
-    []
+    [normalizePath, stripLocalePrefix]
   );
 
   return { handleAnchorClick };

@@ -10,10 +10,12 @@ const ROOT_ROUTES = [
   '/ai-video-generator',
   '/showcases',
   '/updates',
+  '/privacy-policy',
+  '/terms-of-service',
 ] as const;
 
 function normalizeBaseUrl() {
-  return (envConfigs.app_url || 'http://localhost:3000').replace(/\/$/, '');
+  return (envConfigs.app_url || 'https://videotoprompt.ai').replace(/\/$/, '');
 }
 
 function getLocalizedPath(path: string, locale: string) {

@@ -4,7 +4,6 @@
       "hero-tool",
       "features",
       "use-cases",
-      "usage",
       "faq",
       "cta"
     ],
@@ -61,72 +60,49 @@
         "block": "use-cases",
         "id": "use-cases",
         "title": "Use Cases",
-        "description": "Visual scenarios, minimal text, same workflow.",
+        "description": "YouTube-first scenarios with ready demo clips.",
         "items": [
           {
-            "title": "Creator Reenactment",
-            "description": "Turn a reference clip into a copy-ready prompt package.",
-            "tag": "Creator",
-            "video": "/videos/video_before.mp4",
+            "title": "YouTube Shorts Hook",
+            "description": "Copy the first 3-second hook structure for rapid reenactment.",
+            "tag": "Shorts",
+            "video": "/videos/use-cases/youtube-shorts-hook.mp4",
             "image": {
               "src": "/imgs/features/landing-page.png",
-              "alt": "Creator reenactment"
+              "alt": "YouTube Shorts hook reenactment"
             }
           },
           {
-            "title": "Ad Variant Production",
-            "description": "Generate prompt variants from one winning ad video.",
-            "tag": "Marketing",
-            "video": "/videos/video_after.mp4",
+            "title": "Tutorial Segment Blueprint",
+            "description": "Turn one explain-video section into reusable A-roll/B-roll prompts.",
+            "tag": "Tutorial",
+            "video": "/videos/use-cases/youtube-tutorial-segment.mp4",
             "image": {
               "src": "/imgs/features/1.png",
-              "alt": "Ad variant production"
+              "alt": "Tutorial segment blueprint"
             }
           },
           {
-            "title": "Shot Planning",
-            "description": "Extract scene structure and shot order for execution.",
-            "tag": "Production",
+            "title": "Product Review Demo",
+            "description": "Extract close-up and comparison shots into a copy-ready prompt pack.",
+            "tag": "Review",
+            "video": "/videos/use-cases/youtube-product-review.mp4",
             "image": {
               "src": "/imgs/features/2.png",
-              "alt": "Shot planning"
+              "alt": "Product review demo"
             }
           },
           {
-            "title": "Prompt Library Ops",
-            "description": "Standardize team prompt assets from incoming videos.",
-            "tag": "Team",
+            "title": "Vlog Sequence Rebuild",
+            "description": "Keep movement path and mood transitions consistent across reenacted shots.",
+            "tag": "Vlog",
+            "video": "/videos/use-cases/youtube-vlog-sequence.mp4",
             "image": {
               "src": "/imgs/features/3.png",
-              "alt": "Prompt library ops"
+              "alt": "Vlog sequence rebuild"
             }
           }
         ]
-      },
-      "usage": {
-        "block": "features-step",
-        "id": "usage",
-        "label": "3-Step Workflow",
-        "title": "From One Clip to One Executable Prompt Pack",
-        "description": "A focused 3-step loop for imitation shooting.",
-        "items": [
-          {
-            "icon": "RiUploadCloud2Line",
-            "title": "Upload Video",
-            "description": "Upload your reference clip or paste a direct video URL."
-          },
-          {
-            "icon": "RiSearchEyeLine",
-            "title": "Analyze and Decompose",
-            "description": "Automatically break down scene language, camera movement, and shot order."
-          },
-          {
-            "icon": "RiFileCopyLine",
-            "title": "Copy and Execute",
-            "description": "Copy the full prompt package and run imitation shooting directly."
-          }
-        ],
-        "className": ""
       },
       "faq": {
         "id": "faq",

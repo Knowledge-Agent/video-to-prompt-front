@@ -24,11 +24,6 @@
           "icon": "LayoutGrid"
         },
         {
-          "title": "工作流",
-          "url": "/#usage",
-          "icon": "Workflow"
-        },
-        {
           "title": "博客",
           "url": "/blog",
           "icon": "Newspaper"
@@ -93,11 +88,6 @@
             {
               "title": "博客",
               "url": "/blog",
-              "target": "_self"
-            },
-            {
-              "title": "提示词框架",
-              "url": "/#usage",
               "target": "_self"
             },
             {

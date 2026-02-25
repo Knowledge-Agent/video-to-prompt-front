@@ -60,7 +60,10 @@ export function getPostgresDb() {
     client = postgres(databaseUrl, {
       prepare: false,
       max: Number(envConfigs.db_max_connections) || 1, // Maximum connections in pool (default 1)
-      idle_timeout: 30, // Idle connection timeout (seconds)
+      // Keep singleton connection stable to avoid postgres.js reconnect path
+      // that may emit TimeoutNegativeWarning in newer Node versions.
+      idle_timeout: 0,
+      max_lifetime: 0,
       connect_timeout: 10, // Connection timeout (seconds)
       ...connectionSchemaOptions,
     });

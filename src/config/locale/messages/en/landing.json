@@ -24,11 +24,6 @@
           "icon": "LayoutGrid"
         },
         {
-          "title": "Workflow",
-          "url": "/#usage",
-          "icon": "Workflow"
-        },
-        {
           "title": "Blog",
           "url": "/blog",
           "icon": "Newspaper"
@@ -93,11 +88,6 @@
             {
               "title": "Blog",
               "url": "/blog",
-              "target": "_self"
-            },
-            {
-              "title": "Prompt Frameworks",
-              "url": "/#usage",
               "target": "_self"
             },
             {

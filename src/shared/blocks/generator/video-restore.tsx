@@ -1,23 +1,22 @@
 'use client';
 
-import {
-  Check,
-  Copy,
-  Link2,
-  Loader2,
-  Sparkles,
-  Video,
-  X,
-} from 'lucide-react';
 import { useLocale } from 'next-intl';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
 
-import { Button } from '@/shared/components/ui/button';
-import { Input } from '@/shared/components/ui/input';
-import { Textarea } from '@/shared/components/ui/textarea';
 import { useAppContext } from '@/shared/contexts/app';
-import { cn } from '@/shared/lib/utils';
+import {
+  getActiveTemplateContext,
+  trackTemplateEvent,
+} from '@/shared/lib/template-analytics';
+
+import {
+  buildShotListText,
+  PromptLanguage,
+  PromptPackage,
+  VideoRestoreResultView,
+  VideoRestoreUploadView,
+} from './video-restore-view';
 
 interface VideoRestoreProps {
   srOnlyTitle?: string;
@@ -26,16 +25,6 @@ interface VideoRestoreProps {
   hideTitle?: boolean;
 }
 
-interface PromptPackage {
-  summary: string;
-  masterPrompt: string;
-  shortPrompt: string;
-  negativePrompt: string;
-  keywords: string[];
-  shots: string[];
-}
-
-type PromptLanguage = 'en' | 'zh';
 type DurationStatus = 'idle' | 'detecting' | 'ready' | 'error';
 
 const MAX_FILE_SIZE = 500 * 1024 * 1024;
@@ -54,8 +43,6 @@ const UI_TEXT = {
     title: 'Video to Prompt',
     subtitle:
       'Upload one reference video, analyze it, and copy a production-ready prompt package for imitation shooting.',
-
-
     uploadHintTitle: 'Click to upload a video',
     uploadHintSub: 'or drag and drop',
     uploading: 'Uploading',
@@ -109,8 +96,6 @@ const UI_TEXT = {
     title: 'Video to Prompt',
     subtitle:
       '上传一段参考视频，自动分析并拆解为可复制的提示词包，直接用于仿拍执行。',
-
-
     uploadHintTitle: '点击上传视频',
     uploadHintSub: '或拖拽到此处',
     uploading: '上传中',
@@ -173,14 +158,6 @@ function isLikelyVideoUrl(url: string): boolean {
 
 function getErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error ? error.message : fallback;
-}
-
-function buildShotListText(shots: string[], language: PromptLanguage): string {
-  if (shots.length === 0) {
-    return language === 'zh' ? '未返回镜头清单。' : 'No shot list returned.';
-  }
-
-  return shots.map((shot, index) => `${index + 1}. ${shot}`).join('\n');
 }
 
 function buildCombinedPrompt(pkg: PromptPackage, language: PromptLanguage): string {
@@ -397,6 +374,22 @@ export function VideoRestore({
     }
     return buildShootPlan(result, language);
   }, [result, language]);
+  const uploadedFileView = uploadedFile
+    ? {
+        name: uploadedFile.name,
+        sizeText: formatFileSize(uploadedFile.size),
+        isReady: Boolean(uploadedUrl),
+      }
+    : null;
+  const statusText = selectedDurationSeconds
+    ? `${selectedDurationSeconds.toFixed(2)}s ${text.detected}`
+    : mediaUrl.trim() && urlDurationStatus === 'detecting'
+      ? text.detecting
+      : mediaUrl.trim() && urlDurationStatus === 'error'
+        ? text.unavailable
+        : language === 'zh'
+          ? '准备就绪，可直接开始分析'
+          : 'Ready. Upload or paste a video URL to start analysis.';
 
   const handleFileSelect = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -526,6 +519,22 @@ export function VideoRestore({
       return;
     }
 
+    const templateContext = getActiveTemplateContext('hero_tool');
+
+    void trackTemplateEvent({
+      eventName: 'template_analyze_start',
+      templateId: templateContext.templateId,
+      templateName: templateContext.templateName,
+      styleTag: templateContext.styleTag,
+      source: templateContext.source || 'hero_tool',
+      locale,
+      metadata: {
+        inputType: uploadedUrl ? 'upload' : 'url',
+        hasDuration: typeof selectedDurationSeconds === 'number',
+        durationSeconds: selectedDurationSeconds ?? null,
+      },
+    });
+
     setIsGenerating(true);
     setResult(null);
 
@@ -559,6 +568,22 @@ export function VideoRestore({
       }
 
       setResult(payload.data.promptPackage);
+
+      void trackTemplateEvent({
+        eventName: 'template_analyze_success',
+        templateId: templateContext.templateId,
+        templateName: templateContext.templateName,
+        styleTag: templateContext.styleTag,
+        source: templateContext.source || 'hero_tool',
+        locale,
+        metadata: {
+          inputType: uploadedUrl ? 'upload' : 'url',
+          keywordCount: payload.data.promptPackage.keywords.length,
+          shotCount: payload.data.promptPackage.shots.length,
+          hasNegativePrompt: !!payload.data.promptPackage.negativePrompt,
+        },
+      });
+
       toast.success(text.promptGenerated);
     } catch (error) {
       console.error('Generate prompt failed:', error);
@@ -575,6 +600,21 @@ export function VideoRestore({
 
     try {
       await copyText(content);
+
+      const templateContext = getActiveTemplateContext('hero_tool');
+      void trackTemplateEvent({
+        eventName: 'template_copy',
+        templateId: templateContext.templateId,
+        templateName: templateContext.templateName,
+        styleTag: templateContext.styleTag,
+        source: templateContext.source || 'hero_tool',
+        locale,
+        metadata: {
+          copyKey: key,
+          charCount: content.length,
+        },
+      });
+
       setCopiedField(key);
       toast.success(text.copySuccess);
       window.setTimeout(() => {
@@ -642,358 +682,55 @@ export function VideoRestore({
 
       <div className="mx-auto max-w-5xl">
         <div className="rounded-2xl border border-white/20 bg-white/5 p-5 backdrop-blur md:p-6">
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept={ACCEPTED_VIDEO_TYPES}
+            onChange={handleFileSelect}
+            className="hidden"
+          />
           {result ? (
-            <div className="space-y-5">
-              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                <div>
-                  <p className="text-sm text-primary">{text.analysisDone}</p>
-                  <h3 className="text-xl font-semibold text-white md:text-2xl">
-                    {text.packageReady}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-300">{result.summary}</p>
-                </div>
-
-                <Button
-                  variant="outline"
-                  onClick={resetAll}
-                  className="border-white/20 hover:bg-white/5"
-                >
-                  {text.newVideo}
-                </Button>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => handleCopy('master', result.masterPrompt)}
-                  className="border-white/20 text-xs text-gray-100 hover:bg-white/5"
-                >
-                  {copiedField === 'master' ? (
-                    <Check className="mr-1 h-3.5 w-3.5" />
-                  ) : (
-                    <Copy className="mr-1 h-3.5 w-3.5" />
-                  )}
-                  {text.copyMaster}
-                </Button>
-
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() =>
-                    handleCopy('shots', buildShotListText(result.shots, language))
-                  }
-                  className="border-white/20 text-xs text-gray-100 hover:bg-white/5"
-                >
-                  {copiedField === 'shots' ? (
-                    <Check className="mr-1 h-3.5 w-3.5" />
-                  ) : (
-                    <Copy className="mr-1 h-3.5 w-3.5" />
-                  )}
-                  {text.copyShots}
-                </Button>
-
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => handleCopy('shoot-plan', shootPlanText)}
-                  className="border-white/20 text-xs text-gray-100 hover:bg-white/5"
-                >
-                  {copiedField === 'shoot-plan' ? (
-                    <Check className="mr-1 h-3.5 w-3.5" />
-                  ) : (
-                    <Copy className="mr-1 h-3.5 w-3.5" />
-                  )}
-                  {text.copyShootPlan}
-                </Button>
-
-                <Button
-                  size="sm"
-                  variant="default"
-                  onClick={handleCopyAll}
-                  className="bg-primary text-xs text-primary-foreground hover:bg-primary/90"
-                >
-                  {copiedField === 'all' ? (
-                    <Check className="mr-1 h-3.5 w-3.5" />
-                  ) : (
-                    <Copy className="mr-1 h-3.5 w-3.5" />
-                  )}
-                  {text.copyAll}
-                </Button>
-              </div>
-
-              <div className="space-y-2 rounded-xl border border-white/10 bg-black/30 p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-medium text-white">{text.masterPrompt}</p>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="h-7 px-2 text-xs text-gray-300 hover:bg-white/5"
-                    onClick={() => handleCopy('master-inline', result.masterPrompt)}
-                  >
-                    {copiedField === 'master-inline' ? (
-                      <Check className="mr-1 h-3.5 w-3.5" />
-                    ) : (
-                      <Copy className="mr-1 h-3.5 w-3.5" />
-                    )}
-                    {text.copy}
-                  </Button>
-                </div>
-                <Textarea
-                  readOnly
-                  value={result.masterPrompt}
-                  className="min-h-[170px] border-white/10 bg-black/20 text-gray-100"
-                />
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-2 rounded-xl border border-white/10 bg-black/25 p-4">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-sm font-medium text-white">{text.shortPrompt}</p>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="h-7 px-2 text-xs text-gray-300 hover:bg-white/5"
-                      onClick={() => handleCopy('short', result.shortPrompt)}
-                    >
-                      {copiedField === 'short' ? (
-                        <Check className="mr-1 h-3.5 w-3.5" />
-                      ) : (
-                        <Copy className="mr-1 h-3.5 w-3.5" />
-                      )}
-                      {text.copy}
-                    </Button>
-                  </div>
-                  <Textarea
-                    readOnly
-                    value={result.shortPrompt}
-                    className="min-h-[120px] border-white/10 bg-black/20 text-gray-100"
-                  />
-                </div>
-
-                <div className="space-y-2 rounded-xl border border-white/10 bg-black/25 p-4">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-sm font-medium text-white">{text.negativePrompt}</p>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="h-7 px-2 text-xs text-gray-300 hover:bg-white/5"
-                      onClick={() => handleCopy('negative', result.negativePrompt)}
-                    >
-                      {copiedField === 'negative' ? (
-                        <Check className="mr-1 h-3.5 w-3.5" />
-                      ) : (
-                        <Copy className="mr-1 h-3.5 w-3.5" />
-                      )}
-                      {text.copy}
-                    </Button>
-                  </div>
-                  <Textarea
-                    readOnly
-                    value={result.negativePrompt}
-                    className="min-h-[120px] border-white/10 bg-black/20 text-gray-100"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-3 rounded-xl border border-white/10 bg-black/25 p-4">
-                  <p className="text-sm font-medium text-white">{text.shots}</p>
-                  <ul className="space-y-2 text-sm text-gray-300">
-                    {result.shots.length > 0 ? (
-                      result.shots.map((shot, index) => (
-                        <li
-                          key={`${shot}-${index}`}
-                          className="rounded-lg border border-white/10 bg-black/25 px-3 py-2"
-                        >
-                          <span className="mr-2 text-primary">{index + 1}.</span>
-                          {shot}
-                        </li>
-                      ))
-                    ) : (
-                      <li className="text-gray-500">{text.noShots}</li>
-                    )}
-                  </ul>
-                </div>
-
-                <div className="space-y-3 rounded-xl border border-white/10 bg-black/25 p-4">
-                  <p className="text-sm font-medium text-white">{text.keywords}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {result.keywords.length > 0 ? (
-                      result.keywords.map((keyword) => (
-                        <span
-                          key={keyword}
-                          className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs text-gray-200"
-                        >
-                          {keyword}
-                        </span>
-                      ))
-                    ) : (
-                      <span className="text-xs text-gray-500">{text.noKeywords}</span>
-                    )}
-                  </div>
-
-                  <div className="rounded-lg border border-primary/20 bg-primary/10 p-3">
-                    <p className="text-xs font-medium text-primary">{text.shootPlan}</p>
-                    <p className="mt-1 text-xs text-gray-300">{text.shootPlanHint}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-2 rounded-xl border border-white/10 bg-black/25 p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-medium text-white">{text.shootPlan}</p>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="h-7 px-2 text-xs text-gray-300 hover:bg-white/5"
-                    onClick={() => handleCopy('shoot-plan-inline', shootPlanText)}
-                  >
-                    {copiedField === 'shoot-plan-inline' ? (
-                      <Check className="mr-1 h-3.5 w-3.5" />
-                    ) : (
-                      <Copy className="mr-1 h-3.5 w-3.5" />
-                    )}
-                    {text.copy}
-                  </Button>
-                </div>
-                <Textarea
-                  readOnly
-                  value={shootPlanText}
-                  className="min-h-[200px] border-white/10 bg-black/20 text-gray-100"
-                />
-              </div>
-
-            </div>
+            <VideoRestoreResultView
+              result={result}
+              text={text}
+              copiedField={copiedField}
+              language={language}
+              shootPlanText={shootPlanText}
+              onReset={resetAll}
+              onCopy={(key, content) => {
+                void handleCopy(key, content);
+              }}
+              onCopyAll={handleCopyAll}
+            />
           ) : (
-            <div className="space-y-5">
-              <div>
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept={ACCEPTED_VIDEO_TYPES}
-                  onChange={handleFileSelect}
-                  className="hidden"
-                />
-
-                {!uploadedFile ? (
-                  <div
-                    className={cn(
-                      'flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed bg-black/30 py-12 transition-colors',
-                      isDraggingUpload
-                        ? 'border-primary/70 bg-primary/10'
-                        : 'border-white/10 hover:border-primary/50'
-                    )}
-                    onClick={() => fileInputRef.current?.click()}
-                    onDragOver={handleDropZoneDragOver}
-                    onDragLeave={handleDropZoneDragLeave}
-                    onDrop={handleDropZoneDrop}
-                  >
-                    <div className="mb-3 rounded-full bg-white/5 p-3">
-                      <Video className="h-8 w-8 text-gray-400" />
-                    </div>
-                    <p className="text-sm font-medium text-white">{text.uploadHintTitle}</p>
-                    <p className="mt-1 text-xs text-gray-500">{text.uploadHintSub}</p>
-                  </div>
-                ) : (
-                  <div className="rounded-xl border border-white/10 bg-black/30 p-4">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="min-w-0">
-                        <p className="truncate text-sm font-medium text-white">
-                          {uploadedFile.name}
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          {formatFileSize(uploadedFile.size)}
-                          {uploadedUrl ? (
-                            <span className="ml-2 text-emerald-400">✓ {text.uploadReady}</span>
-                          ) : null}
-                        </p>
-                      </div>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={clearFile}
-                        disabled={isUploading}
-                        className="hover:bg-white/5"
-                      >
-                        <X className="h-4 w-4" />
-                      </Button>
-                    </div>
-
-                    {isUploading && (
-                      <div className="mt-3">
-                        <div className="h-1 overflow-hidden rounded-full bg-white/10">
-                          <div
-                            className="h-full bg-primary transition-all"
-                            style={{ width: `${uploadProgress}%` }}
-                          />
-                        </div>
-                        <p className="mt-1 text-center text-xs text-gray-500">
-                          {text.uploading} {uploadProgress}%
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                <p className="mt-2 text-xs text-gray-500">
-                  {text.urlHint} · {formatFileSize(MAX_FILE_SIZE)}
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs text-gray-400">
-                  <Link2 className="h-3.5 w-3.5" />
-                  {text.urlFallbackTitle}
-                </div>
-                <Input
-                  value={mediaUrl}
-                  onChange={(event) => {
-                    setMediaUrl(event.target.value);
-                    setResult(null);
-                  }}
-                  placeholder={text.urlFallbackPlaceholder}
-                  className="h-11 border-white/10 bg-black/30 text-white placeholder:text-gray-500"
-                />
-              </div>
-
-              <div className="rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-xs text-gray-400">
-                {selectedDurationSeconds
-                  ? `${selectedDurationSeconds.toFixed(2)}s ${text.detected}`
-                  : mediaUrl.trim() && urlDurationStatus === 'detecting'
-                    ? text.detecting
-                    : mediaUrl.trim() && urlDurationStatus === 'error'
-                      ? text.unavailable
-                      : language === 'zh'
-                        ? '准备就绪，可直接开始分析'
-                        : 'Ready. Upload or paste a video URL to start analysis.'}
-              </div>
-
-              <Button
-                onClick={analyzeVideo}
-                disabled={
-                  !isMounted ||
-                  isCheckSign ||
-                  !hasValidInput ||
-                  isUploading ||
-                  isGenerating
-                }
-                className="w-full bg-gradient-to-r from-primary to-accent font-medium text-primary-foreground shadow-lg shadow-primary/35 hover:from-primary/90 hover:to-accent/90"
-                size="lg"
-              >
-                {isGenerating ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    {text.generating}
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="mr-2 h-4 w-4" />
-                    {text.generate}
-                  </>
-                )}
-              </Button>
-            </div>
+            <VideoRestoreUploadView
+              text={text}
+              uploadedFile={uploadedFileView}
+              uploadProgress={uploadProgress}
+              isUploading={isUploading}
+              isDraggingUpload={isDraggingUpload}
+              mediaUrl={mediaUrl}
+              statusText={statusText}
+              maxFileSizeText={formatFileSize(MAX_FILE_SIZE)}
+              isGenerateDisabled={
+                !isMounted ||
+                isCheckSign ||
+                !hasValidInput ||
+                isUploading ||
+                isGenerating
+              }
+              isGenerating={isGenerating}
+              onDropZoneClick={() => fileInputRef.current?.click()}
+              onDropZoneDragOver={handleDropZoneDragOver}
+              onDropZoneDragLeave={handleDropZoneDragLeave}
+              onDropZoneDrop={handleDropZoneDrop}
+              onClearFile={clearFile}
+              onMediaUrlChange={(value) => {
+                setMediaUrl(value);
+                setResult(null);
+              }}
+              onGenerate={analyzeVideo}
+            />
           )}
         </div>
       </div>
