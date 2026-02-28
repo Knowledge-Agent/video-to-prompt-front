@@ -41,10 +41,36 @@ function toAbsoluteUrl(pathname: string) {
   return `${normalizeBaseUrl()}${pathname}`;
 }
 
-function getAlternateLanguages(pathname: string) {
-  return Object.fromEntries(
-    locales.map((locale) => [locale, toAbsoluteUrl(getLocalizedPath(pathname, locale))])
-  );
+function getAlternateLanguages(path: string) {
+  const localizedEntries = locales.map((locale) => [
+    locale,
+    toAbsoluteUrl(getLocalizedPath(path, locale)),
+  ]);
+
+  return Object.fromEntries([
+    ...localizedEntries,
+    ['x-default', toAbsoluteUrl(getLocalizedPath(path, defaultLocale))],
+  ]);
+}
+
+function getUpdatePath(slug: string) {
+  const normalizedSlug = slug.replace(/^\/+|\/+$/g, '');
+
+  if (!normalizedSlug) {
+    return '/updates';
+  }
+
+  if (normalizedSlug.startsWith('logs/')) {
+    return `/updates/${normalizedSlug.replace(/^logs\//, '')}`;
+  }
+
+  const logsSegmentIndex = normalizedSlug.indexOf('/logs/');
+  if (logsSegmentIndex >= 0) {
+    return `/updates/${normalizedSlug.slice(logsSegmentIndex + '/logs/'.length)}`;
+  }
+
+  return `/updates/${normalizedSlug}`;
+}
 }
 
 function toValidDate(dateLike?: string | Date | null) {
@@ -259,6 +285,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
               ? normalizedPath.replace(new RegExp(`^/${locale}`), '') || '/'
               : normalizedPath
           ),
+        },
+      });
+    });
+
+    const { posts: updatePosts } = await getLocalPostsAndCategories({
+      locale,
+      postPrefix: '/updates/',
+      type: PostType.LOG,
+    });
+
+    updatePosts.forEach((post) => {
+      if (!post.slug) {
+        return;
+      }
+
+      const path = getUpdatePath(post.slug);
+      const lastModified = maxDate(
+        toValidDate(post.date || post.created_at),
+        getFileModifiedDate(
+          `content/logs/${post.slug}${locale === defaultLocale ? '' : `.${locale}`}.mdx`
+        )
+      );
+
+      addEntry(getLocalizedPath(path, locale), {
+        lastModified,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: {
+          languages: getAlternateLanguages(path),
         },
       });
     });
