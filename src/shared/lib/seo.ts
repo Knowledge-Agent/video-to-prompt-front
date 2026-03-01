@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { envConfigs } from '@/config';
-import { defaultLocale } from '@/config/locale';
+import { defaultLocale, locales } from '@/config/locale';
 
 // get metadata for page component
 export function getMetadata(
@@ -51,6 +51,7 @@ export function getMetadata(
       options.canonicalUrl || '',
       locale || ''
     );
+    const languageAlternates = getLanguageAlternates(options.canonicalUrl || '');
 
     const title =
       passedMetadata.title || translatedMetadata.title || defaultMetadata.title;
@@ -88,6 +89,7 @@ export function getMetadata(
         defaultMetadata.keywords,
       alternates: {
         canonical: canonicalUrl,
+        languages: languageAlternates,
       },
 
       openGraph: {
@@ -127,6 +129,47 @@ async function getTranslatedMetadata(metadataKey: string, locale: string) {
     description: t.has('description') ? t('description') : '',
     keywords: t.has('keywords') ? t('keywords') : '',
   };
+}
+
+function normalizeRelativeCanonicalPath(canonicalUrl: string) {
+  if (!canonicalUrl || canonicalUrl.startsWith('http')) {
+    return '/';
+  }
+
+  if (!canonicalUrl.startsWith('/')) {
+    return `/${canonicalUrl}`;
+  }
+
+  return canonicalUrl;
+}
+
+function getLocalizedPath(path: string, locale: string) {
+  const normalizedPath = path === '/' ? '' : path;
+
+  if (!locale || locale === defaultLocale) {
+    return normalizedPath || '/';
+  }
+
+  return normalizedPath ? `/${locale}${normalizedPath}` : `/${locale}`;
+}
+
+function getLanguageAlternates(canonicalUrl: string) {
+  if (canonicalUrl.startsWith('http')) {
+    return undefined;
+  }
+
+  const path = normalizeRelativeCanonicalPath(canonicalUrl);
+  const baseUrl = envConfigs.app_url.replace(/\/$/, '');
+
+  const localizedEntries = locales.map((locale) => [
+    locale,
+    `${baseUrl}${getLocalizedPath(path, locale)}`,
+  ]);
+
+  return Object.fromEntries([
+    ...localizedEntries,
+    ['x-default', `${baseUrl}${getLocalizedPath(path, defaultLocale)}`],
+  ]);
 }
 
 async function getCanonicalUrl(canonicalUrl: string, locale: string) {

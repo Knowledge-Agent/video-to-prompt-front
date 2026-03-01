@@ -1,7 +1,8 @@
 {
   "metadata": {
-    "title": "Video to Prompt 博客 - 提示词体系、镜头策略与工作流",
-    "description": "学习如何搭建可复用的视频转提示词流程，优化场景提示词质量，并提升 AI 视频生产效率。"
+    "title": "Video to Prompt 博客 | 提示词工程实战",
+    "description": "学习可复用的视频转提示词流程、镜头策略与场景提示词写法，提升 AI 视频生产效率。",
+    "keywords": "提示词工程, 视频转提示词教程, 镜头策略, AI视频工作流, 提示词包实战"
   },
   "page": {
     "title": "Video to Prompt 博客",

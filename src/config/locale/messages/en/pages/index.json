@@ -11,7 +11,7 @@
       "hero-tool": {
         "block": "hero-tool",
         "id": "hero-tool",
-        "title": "Turn Raw Video Into Production-Ready Prompts",
+        "title": "Video to Prompt Generator for Production-Ready Prompt Packages",
         "description": "Upload one clip and get a decomposed prompt package you can copy for imitation shooting.",
         "badge": "New: Video Prompt Intelligence",
         "background_image": {
@@ -153,8 +153,8 @@
     }
   },
   "metadata": {
-    "title": "Video to Prompt",
-    "description": "Turn any video into structured prompts for AI video generation. Extract scene, style, camera language, and shot list in seconds.",
-    "keywords": "video to prompt, AI prompt generator, video prompt builder, shot list generator, prompt engineering, AI video workflow"
+    "title": "Video to Prompt Generator | AI Scene Breakdown Tool",
+    "description": "Convert any reference video into a copy-ready prompt package with master prompt, short prompt, negative prompt, keywords, and shot list.",
+    "keywords": "video to prompt generator, ai video prompt generator, scene breakdown tool, shot list generator, prompt package, ai video workflow, runway prompt generator, kling prompt generator"
   }
 }

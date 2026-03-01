@@ -11,7 +11,7 @@
       "hero-tool": {
         "block": "hero-tool",
         "id": "hero-tool",
-        "title": "把原始视频变成可直接生产的提示词包",
+        "title": "Video to Prompt 生成器：把原始视频变成可直接生产的提示词包",
         "description": "上传一段参考视频，自动拆解为可直接复制的提示词包，用于仿拍执行。",
         "badge": "新功能：视频提示词智能解析",
         "background_image": {
@@ -153,8 +153,8 @@
     }
   },
   "metadata": {
-    "title": "Video to Prompt",
-    "description": "将任意视频自动拆解为结构化提示词包，提取场景、风格、镜头语言与镜头清单，支持快速复制仿拍。",
-    "keywords": "视频转提示词, AI提示词生成, 镜头清单, 视频分析, 仿拍提示词, AI视频工作流"
+    "title": "Video to Prompt 生成器 | AI 视频提示词拆解工具",
+    "description": "将参考视频自动拆解为可直接复制的提示词包，输出主提示词、短提示词、负面提示词、关键词与镜头清单。",
+    "keywords": "视频转提示词生成器, AI视频提示词生成, 视频提示词拆解, 镜头清单生成, 仿拍提示词, AI视频工作流, Runway提示词, Kling提示词"
   }
 }
