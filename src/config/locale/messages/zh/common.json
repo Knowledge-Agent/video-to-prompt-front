@@ -1,47 +1,47 @@
 {
   "metadata": {
-    "title": "Video to Prompt",
-    "description": "把任意视频拆解为可直接复用的 AI 提示词包。快速提取场景结构、镜头语言、风格描述与 shot list。",
-    "keywords": "video to prompt, 视频转提示词, ai 提示词生成, shot list 生成, prompt package, ai 视频工作流"
+    "title": "Video to Prompt 生成器",
+    "description": "将任意视频转为结构化、可直接执行的提示词包，快速生成主提示词、短提示词、负面提示词、关键词与镜头清单。",
+    "keywords": "视频转提示词生成器, AI视频提示词生成, 提示词包, 镜头清单, 场景提示词, AI视频工作流"
   },
   "sign": {
     "sign_in_title": "登录",
-    "sign_in_description": "登录您的账户",
+    "sign_in_description": "登录你的账户",
     "sign_up_title": "注册",
     "sign_up_description": "创建新账户",
     "email_title": "邮箱",
     "email_placeholder": "请输入邮箱",
     "password_title": "密码",
     "password_placeholder": "请输入密码",
-    "forgot_password": "忘记密码？",
+    "forgot_password": "忘记密码?",
     "or": "或",
     "continue": "继续",
-    "no_account": "还没有账户？",
-    "already_have_account": "已有账户？",
+    "no_account": "没有账户?",
+    "already_have_account": "已有账户?",
     "email_sign_in": "邮箱登录",
-    "google_sign_in_title": "Google 登录",
-    "github_sign_in_title": "GitHub 登录",
+    "google_sign_in_title": "使用 Google 登录",
+    "github_sign_in_title": "使用 GitHub 登录",
     "close_title": "关闭",
     "cancel_title": "取消",
     "sign_out_title": "退出登录",
     "billing_title": "账单",
-    "name_title": "姓名",
-    "name_placeholder": "请输入姓名",
-    "email_verification_hint": "请使用可访问的邮箱，注册后需验证邮箱。",
-    "admin_title": "管理后台",
+    "name_title": "名称",
+    "name_placeholder": "请输入名称",
+    "email_verification_hint": "请使用可接收邮件的地址。注册后需验证邮箱。",
+    "admin_title": "管理系统",
     "credits_title": "积分: {credits}",
-    "verify_email_sent": "验证邮件已发送，请查收。",
+    "verify_email_sent": "验证邮件已发送，请检查邮箱。",
     "verify_email_required": "请先验证邮箱再登录。",
     "resend_verification": "重新发送验证邮件",
-    "resend_verification_sent": "验证邮件已重新发送，请查收。",
-    "verify_email_page_title": "请查收邮件",
-    "verify_email_page_description": "点击发送至以下邮箱的链接继续",
+    "resend_verification_sent": "验证邮件已重新发送，请检查邮箱。",
+    "verify_email_page_title": "检查邮箱",
+    "verify_email_page_description": "请点击发送到以下地址的链接以继续",
     "verify_email_continue": "继续",
-    "verify_email_tip": "验证后点击「继续」。",
+    "verify_email_tip": "验证后点击 \"继续\"。",
     "verify_email_not_verified_yet": "尚未验证，请先点击邮件中的链接。",
-    "verify_email_account_mismatch": "当前登录账户为 {current}，此页面等待 {expected} 验证。",
+    "verify_email_account_mismatch": "当前为 {current}，该页面等待 {expected}。",
     "resend_verification_countdown": "重新发送验证邮件 ({seconds}s)",
-    "resend_verification_wait": "请等待 {seconds} 秒后再重新发送。",
+    "resend_verification_wait": "请等待 {seconds}s 再发送。",
     "back_to_sign_in": "返回登录"
   },
   "payment": {
@@ -50,7 +50,7 @@
     "cancel_title": "取消"
   },
   "locale_detector": {
-    "title": "检测到您的浏览器语言为 {locale}，是否切换？",
-    "switch_to": "切换至 {locale}"
+    "title": "检测到浏览器语言为 {locale}，是否切换?",
+    "switch_to": "切换到 {locale}"
   }
 }

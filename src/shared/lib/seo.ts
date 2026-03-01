@@ -29,25 +29,6 @@ function normalizeRelativePath(pathOrUrl?: string) {
   return value || '/';
 }
 
-export function getAlternateLanguageUrls(pathOrUrl?: string) {
-  const normalizedPath = normalizeRelativePath(pathOrUrl);
-  const languages = Object.fromEntries(
-    locales.map((locale) => {
-      const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
-      const localizedPath =
-        normalizedPath === '/'
-          ? `${envConfigs.app_url}${localePrefix || '/'}`
-          : `${envConfigs.app_url}${localePrefix}${normalizedPath}`;
-
-      return [locale, localizedPath];
-    })
-  ) as Record<string, string>;
-
-  languages['x-default'] = languages[defaultLocale];
-
-  return languages;
-}
-
 export function getMetadata(
   options: {
     title?: string;
@@ -91,6 +72,7 @@ export function getMetadata(
       options.canonicalUrl || '',
       locale || ''
     );
+    const languageAlternates = getLanguageAlternates(options.canonicalUrl || '');
 
     const title =
       passedMetadata.title || translatedMetadata.title || defaultMetadata.title;
@@ -118,7 +100,7 @@ export function getMetadata(
         defaultMetadata.keywords,
       alternates: {
         canonical: canonicalUrl,
-        languages: getAlternateLanguageUrls(options.canonicalUrl || '/'),
+        languages: languageAlternates,
       },
       openGraph: {
         type: 'website',
@@ -155,6 +137,47 @@ async function getTranslatedMetadata(metadataKey: string, locale: string) {
     description: t.has('description') ? t('description') : '',
     keywords: t.has('keywords') ? t('keywords') : '',
   };
+}
+
+function normalizeRelativeCanonicalPath(canonicalUrl: string) {
+  if (!canonicalUrl || canonicalUrl.startsWith('http')) {
+    return '/';
+  }
+
+  if (!canonicalUrl.startsWith('/')) {
+    return `/${canonicalUrl}`;
+  }
+
+  return canonicalUrl;
+}
+
+function getLocalizedPath(path: string, locale: string) {
+  const normalizedPath = path === '/' ? '' : path;
+
+  if (!locale || locale === defaultLocale) {
+    return normalizedPath || '/';
+  }
+
+  return normalizedPath ? `/${locale}${normalizedPath}` : `/${locale}`;
+}
+
+function getLanguageAlternates(canonicalUrl: string) {
+  if (canonicalUrl.startsWith('http')) {
+    return undefined;
+  }
+
+  const path = normalizeRelativeCanonicalPath(canonicalUrl);
+  const baseUrl = envConfigs.app_url.replace(/\/$/, '');
+
+  const localizedEntries = locales.map((locale) => [
+    locale,
+    `${baseUrl}${getLocalizedPath(path, locale)}`,
+  ]);
+
+  return Object.fromEntries([
+    ...localizedEntries,
+    ['x-default', `${baseUrl}${getLocalizedPath(path, defaultLocale)}`],
+  ]);
 }
 
 async function getCanonicalUrl(canonicalUrl: string, locale: string) {

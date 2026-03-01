@@ -1,207 +1,169 @@
 {
-  "metadata": {
-    "title": "Video to Prompt",
-    "description": "Turn any video into structured prompts for AI video generation. Extract scene, style, camera language, and shot list in seconds.",
-    "keywords": "video to prompt, AI prompt generator, video prompt builder, shot list generator, prompt engineering, AI video workflow"
-  },
   "page": {
     "show_sections": [
       "hero-tool",
       "features",
       "use-cases",
-      "usage",
       "faq",
+      "blog",
       "cta"
     ],
     "sections": {
       "hero-tool": {
         "block": "hero-tool",
         "id": "hero-tool",
-        "title": "Turn Raw Video Into Production-Ready Prompts",
-        "description": "Upload one reference clip and get a reusable prompt package with scene summary, master prompt, short prompt, negative prompt, and shot list.",
-        "description2": "Analyze visual language, camera movement, subject action, lighting, and composition — then copy a prompt package your team can actually reuse.",
-        "tagline": "Video to Prompt · Upload once, decompose once, reuse everywhere",
-        "hint": "Built for prompt engineering, reenactment planning, and AI video production workflows.",
+        "title": "Video to Prompt Generator: Get Prompt from Video in Minutes",
+        "description": "Upload any clip and generate prompt from video output, including master prompt, short prompt, negative prompt, keywords, and shot list.",
+        "description2": "Use one workflow to turn reference footage into reusable AI video prompts for Runway, Kling, Pika, and Sora.",
+        "badge": "Video to Prompt AI Workflow",
+        "tagline": "video to prompt · get prompt from video, then create faster",
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
-          "alt": "Video to Prompt workspace"
-        },
-        "badge": "New · Prompt Package Generator"
+          "alt": "Video to Prompt generator workspace"
+        }
       },
       "features": {
         "id": "features",
-        "title": "What You Actually Get From One Video",
-        "description": "Instead of vague inspiration, you get structured assets your team can copy into real generation and production workflows.",
+        "title": "How This Video Prompt Generator Works",
+        "description": "A repeatable video to prompt workflow for creators and teams who need controllable video generation prompts.",
         "items": [
           {
-            "title": "Scene Summary",
-            "description": "Condense the clip into a clear scene brief before anyone starts prompting.",
-            "icon": "FileText"
+            "title": "Extract Prompt from Video Scenes",
+            "description": "Parse subject, camera movement, lighting, rhythm, and framing so you can get prompt from video footage with structure.",
+            "icon": "RiMovie2Line"
           },
           {
-            "title": "Master Prompt",
-            "description": "Generate a detailed baseline prompt that captures visual intent and execution logic.",
-            "icon": "Sparkles"
+            "title": "Generate AI Video Prompts",
+            "description": "Create master prompt, short prompt, negative prompt, keyword sets, and ordered shot lists for video prompts AI workflows.",
+            "icon": "RiFileList3Line"
           },
           {
-            "title": "Short Prompt",
-            "description": "Get a compressed prompt version for faster iteration and lightweight experiments.",
-            "icon": "MessageSquareText"
+            "title": "Prompt from Video by Shot",
+            "description": "Break one clip into step-by-step shot prompts so teams can reproduce style with less guesswork.",
+            "icon": "RiCameraLensLine"
           },
           {
-            "title": "Negative Prompt",
-            "description": "Reduce drift by explicitly listing what should not appear in the generated output.",
-            "icon": "ShieldAlert"
+            "title": "Prompt QA Before Production",
+            "description": "Standardize prompt clarity and consistency before you hand the package to operators or editors.",
+            "icon": "RiFolderOpenLine"
           },
           {
-            "title": "Keyword Stack",
-            "description": "Extract the visual vocabulary — style, mood, lighting, materials, pacing, and subject cues.",
-            "icon": "Tags"
+            "title": "Fast Iteration Loop",
+            "description": "Swap source clips and regenerate prompt packages quickly to test new video generation directions.",
+            "icon": "RiFlashlightLine"
           },
           {
-            "title": "Shot List",
-            "description": "Break the clip into actionable camera and scene directions you can recreate or adapt.",
-            "icon": "Clapperboard"
+            "title": "Prompt Generator for AI Video Tools",
+            "description": "Copy and paste output into Runway, Kling, Pika, Sora, or your internal generation stack.",
+            "icon": "RiRocketLine"
           }
         ]
       },
       "use-cases": {
         "block": "use-cases",
         "id": "use-cases",
-        "title": "Where Video to Prompt Fits Best",
-        "description": "Map the workflow to four common YouTube production scenarios and reuse the same prompt system.",
+        "title": "Video to Prompt Use Cases",
+        "description": "Real creator scenarios where teams generate prompt from video and reuse the result as production playbooks.",
         "items": [
           {
-            "tag": "YouTube Shorts",
-            "title": "Shorts Hook Breakdown",
-            "description": "Decompose high-retention hook clips into pacing, framing, and promptable action cues.",
-            "image": {
-              "src": "/videos/use-cases/posters/youtube-shorts-hook.jpg",
-              "alt": "YouTube Shorts hook breakdown poster"
-            },
+            "title": "YouTube Shorts Hook",
+            "description": "Capture the first 3-second hook pattern and rebuild it with reusable video prompt blocks.",
+            "tag": "Shorts",
             "video": "/videos/use-cases/youtube-shorts-hook.mp4",
-            "highlights": ["strong hook", "pacing beat", "retention cue"]
+            "image": {
+              "src": "/imgs/features/landing-page.png",
+              "alt": "Get prompt from video for YouTube Shorts hooks"
+            }
           },
           {
+            "title": "Tutorial Segment Blueprint",
+            "description": "Turn explain-video sections into repeatable A-roll and B-roll prompt structures.",
             "tag": "Tutorial",
-            "title": "Tutorial Segment Rebuild",
-            "description": "Turn instructional clips into reusable prompt structures for repeatable talk-through scenes.",
-            "image": {
-              "src": "/videos/use-cases/posters/youtube-tutorial-segment.jpg",
-              "alt": "Tutorial segment breakdown poster"
-            },
             "video": "/videos/use-cases/youtube-tutorial-segment.mp4",
-            "highlights": ["talk-through", "insert shot", "clear steps"]
+            "image": {
+              "src": "/imgs/features/1.png",
+              "alt": "Generate prompt from video tutorial segments"
+            }
           },
           {
-            "tag": "Product Review",
-            "title": "Review Shot Planning",
-            "description": "Extract close-ups, transitions, and narrative beats into a clean shot-by-shot prompt pack.",
-            "image": {
-              "src": "/videos/use-cases/posters/youtube-product-review.jpg",
-              "alt": "Product review shot planning poster"
-            },
+            "title": "Product Review Demo",
+            "description": "Extract close-up and comparison shots into a copy-ready prompt package for review videos.",
+            "tag": "Review",
             "video": "/videos/use-cases/youtube-product-review.mp4",
-            "highlights": ["close-up", "comparison beat", "selling point"]
-          },
-          {
-            "tag": "Vlog",
-            "title": "Vlog Sequence Library",
-            "description": "Convert daily footage into searchable prompt assets your team can reuse across episodes.",
             "image": {
-              "src": "/videos/use-cases/posters/youtube-vlog-sequence.jpg",
-              "alt": "Vlog prompt library poster"
-            },
+              "src": "/imgs/features/2.png",
+              "alt": "Video prompt generator for product review clips"
+            }
+          },
+          {
+            "title": "Vlog Sequence Rebuild",
+            "description": "Keep camera path and mood transitions consistent across reenacted vlog shots.",
+            "tag": "Vlog",
             "video": "/videos/use-cases/youtube-vlog-sequence.mp4",
-            "highlights": ["daily sequence", "transition link", "voiceover end"]
-          }
-        ]
-      },
-      "usage": {
-        "block": "features-step",
-        "id": "usage",
-        "label": "3-step workflow",
-        "title": "How the Workflow Runs",
-        "description": "From reference video to reusable prompt pack, keep the flow to three necessary moves.",
-        "items": [
-          {
-            "title": "Upload Reference Video",
-            "description": "Choose a clip that already contains the framing, pace, and visual language you want.",
-            "icon": "Upload"
-          },
-          {
-            "title": "Analyze Shot Structure",
-            "description": "Get scene logic, keywords, master prompt, and shot-by-shot instructions.",
-            "icon": "ScanSearch"
-          },
-          {
-            "title": "Copy Prompt Package",
-            "description": "Move the output straight into reenactment, prompting, or your internal prompt library.",
-            "icon": "Copy"
+            "image": {
+              "src": "/imgs/features/3.png",
+              "alt": "Prompt from video workflow for vlog sequences"
+            }
           }
         ]
       },
       "faq": {
         "id": "faq",
-        "title": "Frequently Asked Questions About Video to Prompt",
-        "description": "Questions about prompt packages, supported use cases, and how the workflow fits real production teams.",
+        "title": "Video to Prompt Generator FAQ",
+        "description": "Answers for teams who want to get prompt from video quickly and improve AI video prompt quality.",
+        "tip": "Need implementation help? <a href='mailto:support@videotoprompt.ai' class='text-primary hover:underline'>Talk to support</a>",
         "items": [
           {
-            "question": "What does Video to Prompt generate from one clip?",
-            "answer": "It turns one reference video into a structured prompt package that typically includes a scene summary, master prompt, short prompt, negative prompt, keyword stack, and shot list."
+            "question": "How do I get prompt from video in one run?",
+            "answer": "Upload a reference clip, then the system outputs a full package: master prompt, short prompt, negative prompt, keyword tags, and shot list."
           },
           {
-            "question": "Is this for AI video generation or for editing existing footage?",
-            "answer": "It is primarily for prompt preparation. The goal is to study a reference clip and convert it into reusable prompt assets that support generation, reenactment, and pre-production planning."
+            "question": "Can this video prompt generator work with different input formats?",
+            "answer": "Yes. You can upload MP4, WebM, MOV, AVI, and MKV, or provide a public video URL."
           },
           {
-            "question": "Who is this product for?",
-            "answer": "It is useful for creators, prompt engineers, ad teams, short-form operators, and production teams who repeatedly translate reference videos into prompt systems."
+            "question": "Can I generate AI video prompts in Chinese and English?",
+            "answer": "Yes. Output language follows your current site language so teams can build bilingual prompt libraries."
           },
           {
-            "question": "Do I need a local GPU or editing pipeline?",
-            "answer": "No. The workflow is cloud-based. You upload the clip, let the system analyze the visual language, and then copy the resulting prompt package."
+            "question": "How is credit usage calculated for video to prompt jobs?",
+            "answer": "Credit cost is estimated mainly from video duration and analysis complexity, and the estimate is shown before you run."
           },
           {
-            "question": "Does it return one prompt or multiple layers?",
-            "answer": "Multiple layers. The product is designed around prompt packages, not one-line prompts, so teams can preserve creative intent and reuse it across iterations."
+            "question": "Can I use prompt from video output in other tools?",
+            "answer": "Yes. Output is plain text and designed for direct copy into Runway, Kling, Pika, Sora, and internal generation workflows."
           },
           {
-            "question": "Can I use this for imitation shooting and shot planning?",
-            "answer": "Yes. That is one of the most practical use cases. The shot list and keyword stack make it easier to translate a reference clip into reproducible direction for filming or generation."
-          },
-          {
-            "question": "Can I build a reusable internal prompt library with it?",
-            "answer": "Yes. A strong use case is converting incoming reference videos into searchable prompt assets for teams, clients, or repeated production workflows."
-          },
-          {
-            "question": "How do I get access?",
-            "answer": "Use the homepage tool or join the waitlist. We are using early access to refine the workflow around real prompt engineering use cases."
+            "question": "Is this suitable for team collaboration?",
+            "answer": "Yes. Teams use Video to Prompt to standardize prompt language, reduce ambiguity, and speed up campaign iteration."
           }
-        ],
-        "tip": "Still have questions? <a href='mailto:support@videotoprompt.ai' class='text-primary hover:underline'>Contact support</a>."
+        ]
+      },
+      "blog": {
+        "id": "blog",
+        "block": "blog",
+        "title": "Video to Prompt Guides and Tutorials",
+        "description": "Learn how to generate prompt from video, design video generation prompts, and scale a repeatable workflow."
       },
       "cta": {
         "id": "cta",
-        "title": "Ready to Turn Reference Videos Into Prompt Packages?",
-        "description": "Upload one clip, extract the visual logic, and keep a reusable prompt system your team can build on.",
+        "title": "Start Your Video to Prompt Workflow",
+        "description": "Upload a clip, get prompt from video output, and ship faster. Need playbooks first? Explore the <a href='/blog' class='text-primary hover:underline'>video prompt blog</a>.",
         "buttons": [
           {
-            "title": "Try the Generator",
-            "url": "/ai-video-generator",
+            "title": "Get Prompt from Video",
+            "url": "#hero-tool",
             "target": "_self",
-            "icon": "ArrowRight",
-            "variant": "default"
-          },
-          {
-            "title": "Read the Workflow Guide",
-            "url": "/blog/video-to-prompt-system-design",
-            "target": "_self",
-            "icon": "BookOpen",
-            "variant": "outline"
+            "icon": "Zap"
           }
-        ]
+        ],
+        "className": ""
       }
     }
+  },
+  "metadata": {
+    "title": "Video to Prompt Generator | Get Prompt from Video",
+    "description": "Use this video to prompt generator to upload any clip and get prompt from video output with master prompt, shot list, negative prompt, and reusable AI video prompts.",
+    "keywords": "video to prompt, video to prompt generator, get prompt from video, generate prompt from video, prompt from video, video prompt generator, ai video prompt, ai video prompts, video generation prompts, videotoprompt"
   }
 }
