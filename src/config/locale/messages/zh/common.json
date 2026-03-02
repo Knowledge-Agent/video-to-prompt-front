@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "Video to Prompt",
+    "title": "Video to Prompt 生成器",
     "description": "将任意视频转换为结构化、可直接生产的提示词包。数秒生成主提示词、短提示词、负面提示词、关键词与镜头清单。",
-    "keywords": "视频转提示词, AI提示词生成, 提示词包, 镜头清单生成, 场景提示词工程, AI视频工作流"
+    "keywords": "视频转提示词生成器, AI视频提示词生成, 提示词包, 镜头清单生成, 场景提示词工程, AI视频工作流"
   },
   "sign": {
     "sign_in_title": "登录",

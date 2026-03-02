@@ -1,10 +1,11 @@
 {
   "metadata": {
-    "title": "Video to Prompt - Analyze, Decompose, Copy",
-    "description": "Upload one video, analyze it, and get a structured prompt package you can copy for imitation shooting."
+    "title": "AI Video Prompt Generator | Video to Prompt",
+    "description": "Upload one video, analyze every scene, and get a structured prompt package you can copy for reenactment and AI video generation.",
+    "keywords": "ai video prompt generator, video scene analysis, video to prompt tool, shot list prompt, runway prompt, kling prompt"
   },
   "page": {
-    "title": "Video to Prompt",
+    "title": "AI Video Prompt Generator",
     "description": "One core flow: upload video, decompose prompts, copy and execute."
   },
   "generator": {

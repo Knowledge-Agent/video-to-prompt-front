@@ -19,8 +19,25 @@ if (
 
 export type ConfigMap = Record<string, string>;
 
+const DEFAULT_APP_URL = 'https://www.videotopromptgenerator.com';
+
+function getFallbackAppUrl() {
+  const vercelUrl =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || '';
+
+  if (!vercelUrl) {
+    return DEFAULT_APP_URL;
+  }
+
+  const normalized = vercelUrl
+    .replace(/^https?:\/\//, '')
+    .replace(/\/$/, '');
+
+  return `https://${normalized}`;
+}
+
 export const envConfigs: ConfigMap = {
-  app_url: process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000',
+  app_url: process.env.NEXT_PUBLIC_APP_URL ?? getFallbackAppUrl(),
   app_name: process.env.NEXT_PUBLIC_APP_NAME ?? 'Video to Prompt',
   app_description:
     process.env.NEXT_PUBLIC_APP_DESCRIPTION ??

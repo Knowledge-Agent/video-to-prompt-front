@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getThemePage } from '@/core/theme';
 import { JsonLd } from '@/shared/components/seo/json-ld';
 import {
+  getAiVideoGeneratorJsonLd,
   getFaqJsonLd,
   getHowToJsonLd,
   getWebsiteJsonLd,
@@ -34,6 +35,7 @@ export default async function LandingPage({
   const Page = await getThemePage('dynamic-page');
 
   const websiteJsonLd = getWebsiteJsonLd(locale);
+  const softwareJsonLd = getAiVideoGeneratorJsonLd(locale);
   const faqItems = (page.sections?.faq as { items?: Array<{ question?: string; answer?: string }> })?.items || [];
   const usageItems = (page.sections?.usage as { items?: Array<{ title?: string; description?: string }> })?.items || [];
 
@@ -43,6 +45,7 @@ export default async function LandingPage({
   return (
     <>
       <JsonLd data={websiteJsonLd} />
+      <JsonLd data={softwareJsonLd} />
       {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
       {howToJsonLd ? <JsonLd data={howToJsonLd} /> : null}
       <Page locale={locale} page={page} />

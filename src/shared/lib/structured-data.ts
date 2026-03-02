@@ -218,6 +218,33 @@ export function getBlogPostingJsonLd(args: {
   };
 }
 
+export function getBlogBreadcrumbJsonLd(args: {
+  locale: Locale;
+  slug: string;
+  title?: string;
+}) {
+  const { locale, slug, title } = args;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Blog',
+        item: toAbsoluteUrl(getLocalizedPath('/blog', locale)),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: title || 'Article',
+        item: toAbsoluteUrl(getLocalizedPath(`/blog/${slug}`, locale)),
+      },
+    ],
+  };
+}
+
 export function getPricingJsonLd(locale: Locale) {
   const currentPath = getLocalizedPath('/pricing', locale);
   const currentUrl = toAbsoluteUrl(currentPath);

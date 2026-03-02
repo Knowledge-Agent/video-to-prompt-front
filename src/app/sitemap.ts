@@ -38,9 +38,34 @@ function toAbsoluteUrl(path: string) {
 }
 
 function getAlternateLanguages(path: string) {
-  return Object.fromEntries(
-    locales.map((locale) => [locale, toAbsoluteUrl(getLocalizedPath(path, locale))])
-  );
+  const localizedEntries = locales.map((locale) => [
+    locale,
+    toAbsoluteUrl(getLocalizedPath(path, locale)),
+  ]);
+
+  return Object.fromEntries([
+    ...localizedEntries,
+    ['x-default', toAbsoluteUrl(getLocalizedPath(path, defaultLocale))],
+  ]);
+}
+
+function getUpdatePath(slug: string) {
+  const normalizedSlug = slug.replace(/^\/+|\/+$/g, '');
+
+  if (!normalizedSlug) {
+    return '/updates';
+  }
+
+  if (normalizedSlug.startsWith('logs/')) {
+    return `/updates/${normalizedSlug.replace(/^logs\//, '')}`;
+  }
+
+  const logsSegmentIndex = normalizedSlug.indexOf('/logs/');
+  if (logsSegmentIndex >= 0) {
+    return `/updates/${normalizedSlug.slice(logsSegmentIndex + '/logs/'.length)}`;
+  }
+
+  return `/updates/${normalizedSlug}`;
 }
 
 function getLastModified(dateLike?: string) {
@@ -109,7 +134,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         return;
       }
 
-      const path = `/updates/${post.slug}`;
+      const path = getUpdatePath(post.slug);
 
       sitemapEntries.push({
         url: toAbsoluteUrl(getLocalizedPath(path, locale)),

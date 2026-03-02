@@ -1,10 +1,11 @@
 {
   "metadata": {
-    "title": "Video to Prompt - 分析、拆解、复制",
-    "description": "上传一段视频并自动拆解为结构化提示词包，可直接复制用于仿拍执行。"
+    "title": "AI 视频提示词生成器 | Video to Prompt",
+    "description": "上传一段视频，自动完成场景解析并输出结构化提示词包，可直接复制用于仿拍与 AI 视频生成。",
+    "keywords": "AI视频提示词生成器, 视频场景解析, 视频转提示词工具, 镜头清单提示词, Runway提示词, Kling提示词"
   },
   "page": {
-    "title": "Video to Prompt",
+    "title": "AI 视频提示词生成器",
     "description": "单一核心流程：上传视频、拆解提示词、复制执行。"
   },
   "generator": {
