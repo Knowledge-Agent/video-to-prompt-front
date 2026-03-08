@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "title": "Video to Prompt Use Cases and Team Workflows",
-    "description": "Explore practical Video to Prompt workflows for creators, marketing teams, and production operators."
+    "title": "Video to Prompt Use Cases",
+    "description": "Explore practical ways creators, marketing teams, and production operators use video-to-prompt workflows."
   },
   "page": {
     "title": "Use Cases",
     "sections": {
       "showcases": {
         "id": "showcases",
-        "title": "How Teams Use Video to Prompt",
-        "description": "A focused gallery of real-world usage patterns.",
+        "title": "Practical Video-to-Prompt Use Cases",
+        "description": "Four common ways teams turn raw reference clips into reusable prompt assets.",
         "groups": [
           {
             "name": "all",
@@ -26,115 +26,52 @@
           {
             "name": "production",
             "title": "Production"
-          },
-          {
-            "name": "ops",
-            "title": "Ops"
-          },
-          {
-            "name": "other",
-            "title": "Other"
           }
         ],
         "items": [
           {
-            "title": "Short-form Creator Sprint",
-            "description": "Turn trending clips into reusable prompt templates in one workflow.",
+            "title": "Reenact a Creator Reference Clip",
+            "description": "Turn one creator video into a reusable prompt package for style transfer, reenactment, and faster prompt iteration.",
             "url": "/ai-video-generator",
-            "target": "_blank",
+            "target": "_self",
+            "image": {
+              "src": "/preview.png",
+              "alt": "Creator reference to prompt package"
+            },
+            "group": "creator"
+          },
+          {
+            "title": "Translate Winning Ads Into Variants",
+            "description": "Analyze high-performing ad footage and convert it into prompt building blocks for new variations and testing loops.",
+            "url": "/blog/video-to-prompt-system-design",
+            "target": "_self",
+            "image": {
+              "src": "/imgs/blog/generative-process-diagram.png",
+              "alt": "Ad variant production workflow"
+            },
+            "group": "marketing"
+          },
+          {
+            "title": "Create Shot Lists for Production Teams",
+            "description": "Break a reference video into scene logic and shot order so producers can align planning with generation output.",
+            "url": "/blog/video-prompt-shot-language-framework",
+            "target": "_self",
             "image": {
               "src": "/imgs/features/landing-page.png",
-              "alt": "showcases"
+              "alt": "Shot planning and prompt framework"
             },
-            "group": "creator"
+            "group": "production"
           },
           {
-            "title": "Ad Creative Iteration",
-            "description": "Extract shot logic from winning ads and generate prompt variants quickly.",
-            "url": "/ai-video-generator",
-            "target": "_blank",
+            "title": "Build a Reusable Prompt Library",
+            "description": "Standardize incoming references into searchable prompt assets for teams that need consistency across projects.",
+            "url": "/blog/video-to-prompt-quality-checklist",
+            "target": "_self",
             "image": {
               "src": "/imgs/features/1.png",
-              "alt": "showcases"
-            },
-            "group": "marketing"
-          },
-          {
-            "title": "Pre-visualization Planning",
-            "description": "Convert reference footage to shot-ready prompts for directors and editors.",
-            "url": "/ai-video-generator",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/2.png",
-              "alt": "showcases"
+              "alt": "Prompt library operations"
             },
             "group": "production"
-          },
-          {
-            "title": "Prompt Library Operations",
-            "description": "Standardize incoming videos into structured prompt assets for teams.",
-            "url": "/ai-video-generator",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/3.png",
-              "alt": "showcases"
-            },
-            "group": "ops"
-          },
-          {
-            "title": "Learning by Imitation",
-            "description": "Use one reference video to teach prompt structure and shot sequencing.",
-            "url": "/blog/video-prompt-shot-language-framework",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/4.png",
-              "alt": "showcases"
-            },
-            "group": "other"
-          },
-          {
-            "title": "Batch Prompt Preparation",
-            "description": "Prepare multiple scene prompts for campaign production planning.",
-            "url": "/blog/video-to-prompt-system-design",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/5.png",
-              "alt": "showcases"
-            },
-            "group": "ops"
-          },
-          {
-            "title": "Prompt QA Workflow",
-            "description": "Run quality checks before handing prompts to production execution.",
-            "url": "/blog/video-to-prompt-quality-checklist",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/6.png",
-              "alt": "showcases"
-            },
-            "group": "production"
-          },
-          {
-            "title": "Storyboard-to-Prompt Bridge",
-            "description": "Bridge creative storyboard ideas with generation-ready prompt packages.",
-            "url": "/ai-video-generator",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/7.png",
-              "alt": "showcases"
-            },
-            "group": "creator"
-          },
-          {
-            "title": "Cross-Team Prompt Handoff",
-            "description": "Use structured output for clear collaboration between strategy and editing teams.",
-            "url": "/ai-video-generator",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/8.png",
-              "alt": "showcases"
-            },
-            "group": "marketing"
           }
         ]
       }

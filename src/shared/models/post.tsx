@@ -237,9 +237,13 @@ export async function getLocalPost({
           locale,
         })
       : '',
+    date: frontmatter.date || frontmatter.created_at || '',
+    image: frontmatter.image || '',
     author_name: frontmatter.author_name || '',
     author_image: frontmatter.author_image || '',
     author_role: '',
+    categories: frontmatter.categories || [],
+    tags: frontmatter.tags || [],
     url: `${postPrefix}${slug}`,
   };
 
@@ -311,62 +315,70 @@ export async function getPostsAndCategories({
   let posts: BlogPostType[] = [];
   let categories: BlogCategoryType[] = [];
 
-  // merge posts from both locale and remote, remove duplicates by slug
-  // remote posts have higher priority
   const postsMap = new Map<string, BlogPostType>();
+  const categoryMap = new Map<string, BlogCategoryType>();
 
-  // 1. get local posts
-  const {
-    posts: localPosts,
-    postsCount: localPostsCount,
-    categories: localCategories,
-    categoriesCount: localCategoriesCount,
-  } = await getLocalPostsAndCategories({
-    locale,
-    postPrefix,
-    categoryPrefix,
-  });
+  const { posts: localPosts, categories: localCategories } =
+    await getLocalPostsAndCategories({
+      locale,
+      postPrefix,
+      categoryPrefix,
+    });
 
-  // add local posts to postsMap
   localPosts.forEach((post) => {
     if (post.slug) {
       postsMap.set(post.slug, post);
     }
   });
 
-  // 2. get remote posts
-  const {
-    posts: remotePosts,
-    postsCount: remotePostsCount,
-    categories: remoteCategories,
-    categoriesCount: remoteCategoriesCount,
-  } = await getRemotePostsAndCategories({
-    page,
-    limit,
-    locale,
-    postPrefix,
-    categoryPrefix,
+  localCategories.forEach((category) => {
+    if (category.slug) {
+      categoryMap.set(category.slug, category);
+    }
   });
 
-  // add remote posts to postsMap
+  const { posts: remotePosts, categories: remoteCategories } =
+    await getRemotePostsAndCategories({
+      page,
+      limit,
+      locale,
+      postPrefix,
+      categoryPrefix,
+    });
+
   remotePosts.forEach((post) => {
     if (post.slug) {
       postsMap.set(post.slug, post);
     }
   });
 
-  // Convert map to array and sort by created_at desc
+  remoteCategories.forEach((category) => {
+    if (category.slug) {
+      categoryMap.set(category.slug, category);
+    }
+  });
+
+  const toTimestamp = (value?: string) => {
+    if (!value) return 0;
+    const parsed = new Date(value).getTime();
+    return Number.isNaN(parsed) ? 0 : parsed;
+  };
+
   posts = Array.from(postsMap.values()).sort((a, b) => {
-    const dateA = a.created_at ? new Date(a.created_at).getTime() : 0;
-    const dateB = b.created_at ? new Date(b.created_at).getTime() : 0;
+    const dateA = toTimestamp(a.date || a.created_at);
+    const dateB = toTimestamp(b.date || b.created_at);
     return dateB - dateA;
   });
+
+  categories = Array.from(categoryMap.values()).sort((a, b) =>
+    (a.title || '').localeCompare(b.title || '')
+  );
 
   return {
     posts,
     postsCount: posts.length,
-    categories: remoteCategories, // todo: merge local categories
-    categoriesCount: remoteCategoriesCount, // todo: merge local categories count
+    categories,
+    categoriesCount: categories.length,
   };
 }
 
@@ -462,14 +474,13 @@ export async function getLocalPostsAndCategories({
   type?: PostType;
 }) {
   const localPostsList: BlogPostType[] = [];
+  const localCategoriesMap = new Map<string, BlogCategoryType>();
 
-  // get posts from local files
   let localPosts = postsSource.getPages(locale);
   if (type === PostType.LOG) {
     localPosts = logsSource.getPages(locale);
   }
 
-  // no local posts
   if (!localPosts || localPosts.length === 0) {
     return {
       posts: [],
@@ -479,7 +490,13 @@ export async function getLocalPostsAndCategories({
     };
   }
 
-  // Build posts data from local content
+  const toCategoryTitle = (slug: string) =>
+    slug
+      .split(/[-_]/g)
+      .filter(Boolean)
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(' ');
+
   localPostsList.push(
     ...localPosts.map((post) => {
       const frontmatter = post.data as any;
@@ -502,6 +519,21 @@ export async function getLocalPostsAndCategories({
           })
         : '';
 
+      const postCategories = Array.isArray(frontmatter.categories)
+        ? frontmatter.categories.filter(Boolean)
+        : [];
+
+      postCategories.forEach((categorySlug: string) => {
+        if (!localCategoriesMap.has(categorySlug)) {
+          localCategoriesMap.set(categorySlug, {
+            id: categorySlug,
+            slug: categorySlug,
+            title: toCategoryTitle(categorySlug),
+            url: `${categoryPrefix}${categorySlug}`,
+          });
+        }
+      });
+
       return {
         id: post.path,
         slug: slug,
@@ -510,22 +542,26 @@ export async function getLocalPostsAndCategories({
         author_name: frontmatter.author_name || '',
         author_image: frontmatter.author_image || '',
         created_at: createdAt,
-        date: frontmatter.date || createdAt,
+        date: frontmatter.date || frontmatter.created_at || createdAt,
         image: frontmatter.image || '',
         url: `${postPrefix}${slug}`,
         version: frontmatter.version || '',
         tags: frontmatter.tags || [],
-        categories: frontmatter.categories || [],
+        categories: postCategories,
         body,
       };
     })
   );
 
+  const categories = Array.from(localCategoriesMap.values()).sort((a, b) =>
+    (a.title || '').localeCompare(b.title || '')
+  );
+
   return {
     posts: localPostsList,
     postsCount: localPostsList.length,
-    categories: [],
-    categoriesCount: 0,
+    categories,
+    categoriesCount: categories.length,
   };
 }
 

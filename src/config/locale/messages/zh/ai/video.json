@@ -1,39 +1,14 @@
 {
   "metadata": {
-    "title": "Video to Prompt - 分析、拆解、复制",
-    "description": "上传一段视频并自动拆解为结构化提示词包，可直接复制用于仿拍执行。"
+    "title": "Video to Prompt Generator - 把参考视频拆成提示词包",
+    "description": "上传一段参考视频，自动生成场景摘要、主提示词、负面提示词、关键词与镜头清单。"
   },
   "page": {
-    "title": "Video to Prompt",
-    "description": "单一核心流程：上传视频、拆解提示词、复制执行。"
+    "title": "Video to Prompt Generator",
+    "description": "把一段参考视频拆成可复用的 prompt package，用于 AI 视频生成、仿拍规划与内部 prompt library。"
   },
   "generator": {
-    "title": "Video to Prompt",
-    "description": "上传参考视频后，一键生成可直接复制的仿拍提示词包。",
-    "tabs": {
-      "text-to-video": "提示词",
-      "image-to-video": "镜头清单",
-      "video-to-video": "关键词"
-    },
-    "form": {
-      "reference_video": "视频链接",
-      "reference_video_placeholder": "粘贴可访问的视频直链",
-      "upload_video": "上传视频",
-      "upload_video_placeholder": "拖拽视频到此处",
-      "some_images_failed_to_upload": "文件上传失败，请重试"
-    },
-    "generate": "开始分析视频",
-    "checking_account": "检查账户...",
-    "loading": "加载中...",
-    "generating": "生成中...",
-    "sign_in_to_generate": "登录后分析",
-    "credits_cost": "消耗 {credits} 积分",
-    "credits_remaining": "剩余 {credits} 积分",
-    "buy_credits": "购买积分",
-    "progress": "进度",
-    "generated_videos": "提示词包",
-    "ready_to_generate": "正在分析视频...",
-    "ready_for_generating": "准备就绪",
-    "no_videos_generated": "请先提供视频"
+    "title": "提示词包生成器",
+    "description": "上传一条视频，即可获得可直接复制到工作流中的结构化提示词输出。"
   }
 }

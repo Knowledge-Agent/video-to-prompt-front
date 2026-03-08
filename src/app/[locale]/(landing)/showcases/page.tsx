@@ -21,7 +21,6 @@ export default async function ShowcasesPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  // get page data
   const t = await getTranslations('pages.showcases');
 
   const page: DynamicPage = {
@@ -33,14 +32,11 @@ export default async function ShowcasesPage({
     },
   };
 
-  // load page component
   const Page = await getThemePage('dynamic-page');
-
-  const showcasesJsonLd = getShowcasesJsonLd(locale);
 
   return (
     <>
-      <JsonLd data={showcasesJsonLd} />
+      <JsonLd data={getShowcasesJsonLd(locale)} />
       <Page locale={locale} page={page} />
     </>
   );

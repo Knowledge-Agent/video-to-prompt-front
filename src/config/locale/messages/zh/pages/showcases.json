@@ -1,19 +1,19 @@
 {
   "metadata": {
-    "title": "Video to Prompt 应用场景与团队工作流",
-    "description": "查看创作者、营销与制作团队如何使用 Video to Prompt 完成高效仿拍与提示词生产。"
+    "title": "Video to Prompt 使用场景",
+    "description": "查看创作者、营销团队与制作团队如何把参考视频转成可复用的提示词资产。"
   },
   "page": {
-    "title": "应用场景",
+    "title": "使用场景",
     "sections": {
       "showcases": {
         "id": "showcases",
-        "title": "团队如何使用 Video to Prompt",
-        "description": "聚焦真实可执行的视频拆解与仿拍场景。",
+        "title": "Video to Prompt 的典型使用方式",
+        "description": "四种常见场景，帮助团队把原始参考视频变成可持续复用的 prompt assets。",
         "groups": [
           {
             "name": "all",
-            "title": "所有项目"
+            "title": "全部"
           },
           {
             "name": "creator",
@@ -26,115 +26,52 @@
           {
             "name": "production",
             "title": "制作"
-          },
-          {
-            "name": "ops",
-            "title": "运营"
-          },
-          {
-            "name": "other",
-            "title": "其他"
           }
         ],
         "items": [
           {
-            "title": "短视频创作冲刺",
-            "description": "将热门参考片快速转成可复用提示词模板，提高出片效率。",
+            "title": "把创作者参考视频拆成可仿拍提示词包",
+            "description": "把一条参考视频转换成可复用的提示词结构，用于风格迁移、仿拍执行与多轮迭代。",
             "url": "/ai-video-generator",
-            "target": "_blank",
+            "target": "_self",
+            "image": {
+              "src": "/preview.png",
+              "alt": "创作者参考视频转提示词包"
+            },
+            "group": "creator"
+          },
+          {
+            "title": "把高表现广告素材转成提示词变体",
+            "description": "分析高表现广告视频，把镜头语言和视觉结构转成后续测试可复用的 prompt building blocks。",
+            "url": "/blog/video-to-prompt-system-design",
+            "target": "_self",
+            "image": {
+              "src": "/imgs/blog/generative-process-diagram.png",
+              "alt": "广告素材变体工作流"
+            },
+            "group": "marketing"
+          },
+          {
+            "title": "为制作团队生成镜头清单",
+            "description": "把参考视频拆成场景逻辑和镜头顺序，方便制作团队把规划与生成结果对齐。",
+            "url": "/blog/video-prompt-shot-language-framework",
+            "target": "_self",
             "image": {
               "src": "/imgs/features/landing-page.png",
-              "alt": "案例展示"
+              "alt": "镜头规划与提示词框架"
             },
-            "group": "creator"
+            "group": "production"
           },
           {
-            "title": "广告素材快速迭代",
-            "description": "拆解高表现广告镜头逻辑，批量生成可测试的提示词变体。",
-            "url": "/ai-video-generator",
-            "target": "_blank",
+            "title": "搭建团队内部 Prompt Library",
+            "description": "把进入团队的参考素材统一结构化，沉淀为可搜索、可复用的提示词资产库。",
+            "url": "/blog/video-to-prompt-quality-checklist",
+            "target": "_self",
             "image": {
               "src": "/imgs/features/1.png",
-              "alt": "案例展示"
-            },
-            "group": "marketing"
-          },
-          {
-            "title": "预演与镜头规划",
-            "description": "把参考片转为镜头可执行提示词，方便导演与剪辑对齐。",
-            "url": "/ai-video-generator",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/2.png",
-              "alt": "案例展示"
+              "alt": "Prompt library 运营"
             },
             "group": "production"
-          },
-          {
-            "title": "提示词资产运营",
-            "description": "将输入视频标准化为结构化提示词资产，便于团队复用。",
-            "url": "/ai-video-generator",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/3.png",
-              "alt": "案例展示"
-            },
-            "group": "ops"
-          },
-          {
-            "title": "仿拍教学演示",
-            "description": "基于一个参考视频演示提示词结构与镜头拆解方法。",
-            "url": "/blog/video-prompt-shot-language-framework",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/4.png",
-              "alt": "案例展示"
-            },
-            "group": "other"
-          },
-          {
-            "title": "批量提示词准备",
-            "description": "为内容项目提前拆解多个场景，形成稳定生产输入。",
-            "url": "/blog/video-to-prompt-system-design",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/5.png",
-              "alt": "案例展示"
-            },
-            "group": "ops"
-          },
-          {
-            "title": "提示词质检流程",
-            "description": "上线前做结构化 QA，保证可复制性与执行稳定性。",
-            "url": "/blog/video-to-prompt-quality-checklist",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/6.png",
-              "alt": "案例展示"
-            },
-            "group": "production"
-          },
-          {
-            "title": "分镜到提示词桥接",
-            "description": "将创意分镜转为模型可执行的提示词包，减少沟通损耗。",
-            "url": "/ai-video-generator",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/7.png",
-              "alt": "案例展示"
-            },
-            "group": "creator"
-          },
-          {
-            "title": "跨团队协作交付",
-            "description": "结构化输出便于策略、创意、剪辑团队统一执行。",
-            "url": "/ai-video-generator",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/features/8.png",
-              "alt": "案例展示"
-            },
-            "group": "marketing"
           }
         ]
       }

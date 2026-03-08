@@ -1,39 +1,14 @@
 {
   "metadata": {
-    "title": "Video to Prompt - Analyze, Decompose, Copy",
-    "description": "Upload one video, analyze it, and get a structured prompt package you can copy for imitation shooting."
+    "title": "Video to Prompt Generator - Turn Reference Video Into Prompt Package",
+    "description": "Upload a reference video and generate a structured prompt package with scene summary, master prompt, negative prompt, keywords, and shot list."
   },
   "page": {
-    "title": "Video to Prompt",
-    "description": "One core flow: upload video, decompose prompts, copy and execute."
+    "title": "Video to Prompt Generator",
+    "description": "Turn one reference clip into a reusable prompt package for AI video generation, reenactment planning, and prompt libraries."
   },
   "generator": {
-    "title": "Video to Prompt",
-    "description": "Upload your reference clip and generate a copy-ready prompt package for reenactment.",
-    "tabs": {
-      "text-to-video": "Prompt",
-      "image-to-video": "Shot List",
-      "video-to-video": "Keywords"
-    },
-    "form": {
-      "reference_video": "Video URL",
-      "reference_video_placeholder": "Paste a direct video URL",
-      "upload_video": "Upload Video",
-      "upload_video_placeholder": "Drag and drop a video",
-      "some_images_failed_to_upload": "File upload failed, please retry"
-    },
-    "generate": "Analyze Video",
-    "checking_account": "Checking Account...",
-    "loading": "Loading...",
-    "generating": "Generating...",
-    "sign_in_to_generate": "Sign In to Analyze",
-    "credits_cost": "Cost {credits} credits",
-    "credits_remaining": "Remaining {credits} credits",
-    "buy_credits": "Buy Credits",
-    "progress": "Progress",
-    "generated_videos": "Prompt Package",
-    "ready_to_generate": "Analyzing your video...",
-    "ready_for_generating": "Ready",
-    "no_videos_generated": "Provide a video to start"
+    "title": "Prompt Package Generator",
+    "description": "Upload one video and receive a structured prompt package you can copy into your workflow."
   }
 }

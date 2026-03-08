@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Loader2, Mail, SendHorizonal } from 'lucide-react';
+import { useLocale } from 'next-intl';
 import { toast } from 'sonner';
 
 import { Button } from '@/shared/components/ui/button';
@@ -16,6 +17,7 @@ export function Subscribe({
   section: Section;
   className?: string;
 }) {
+  const locale = useLocale();
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -24,27 +26,32 @@ export function Subscribe({
       return;
     }
 
-    if (!section.submit?.action) {
-      return;
-    }
-
     try {
       setLoading(true);
-      const resp = await fetch(section.submit.action, {
+      const endpoint = section.submit?.action || '/api/newsletter/subscribe';
+      const resp = await fetch(endpoint, {
         method: 'POST',
-        body: JSON.stringify({ email }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          source: section.id || 'landing_subscribe',
+          locale,
+        }),
       });
 
       if (!resp.ok) {
         throw new Error(`request failed with status ${resp.status}`);
       }
 
-      const { code, message, data } = await resp.json();
+      const { code, message } = await resp.json();
       if (code !== 0) {
         throw new Error(message);
       }
 
       setLoading(false);
+      setEmail('');
 
       if (message) {
         toast.success(message);

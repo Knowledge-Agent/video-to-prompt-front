@@ -26,7 +26,6 @@ export default async function UpdatesPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  // load updates data
   const t = await getTranslations('pages.updates');
 
   let posts: PostType[] = [];
@@ -39,19 +38,16 @@ export default async function UpdatesPage({
     });
 
     posts = allPosts
-      // sort posts by date desc
       .sort((a, b) => {
         const dateA = new Date(a.date || '').getTime();
         const dateB = new Date(b.date || '').getTime();
         return dateB - dateA;
       })
-      // sort posts by created_at desc
       .sort((a, b) => {
         const createdAtA = new Date(a.created_at || '').getTime();
         const createdAtB = new Date(b.created_at || '').getTime();
         return createdAtB - createdAtA;
       })
-      // sort posts by version desc
       .sort((a, b) => {
         const versionA = a.version || '';
         const versionB = b.version || '';
@@ -61,7 +57,6 @@ export default async function UpdatesPage({
     console.log('getting posts failed:', error);
   }
 
-  // build page sections
   const page: DynamicPage = {
     sections: {
       updates: {
@@ -73,14 +68,11 @@ export default async function UpdatesPage({
     },
   };
 
-  // load page component
   const Page = await getThemePage('dynamic-page');
-
-  const updatesJsonLd = getUpdatesJsonLd(locale);
 
   return (
     <>
-      <JsonLd data={updatesJsonLd} />
+      <JsonLd data={getUpdatesJsonLd(locale)} />
       <Page locale={locale} page={page} />
     </>
   );

@@ -8,6 +8,9 @@ import {
   DocsTitle,
 } from 'fumadocs-ui/page';
 
+import { envConfigs } from '@/config';
+import { defaultLocale } from '@/config/locale';
+import { getAlternateLanguageUrls } from '@/shared/lib/seo';
 import { source } from '@/core/docs/source';
 
 export const revalidate = 86400;
@@ -37,7 +40,6 @@ export default async function DocsContentPage(props: {
       <DocsBody>
         <MDXContent
           components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
             a: createRelativeLink(source, page),
           })}
         />
@@ -57,8 +59,20 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug, params.locale);
   if (!page) notFound();
 
+  const locale = params.locale || defaultLocale;
+  const relativePath = params.slug?.length
+    ? `/docs/${params.slug.join('/')}`
+    : '/docs';
+  const canonical = `${envConfigs.app_url}${
+    locale === defaultLocale ? '' : `/${locale}`
+  }${relativePath}`;
+
   return {
     title: page.data.title,
     description: page.data.description,
+    alternates: {
+      canonical,
+      languages: getAlternateLanguageUrls(relativePath),
+    },
   };
 }

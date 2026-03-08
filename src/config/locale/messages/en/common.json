@@ -1,8 +1,8 @@
 {
   "metadata": {
     "title": "Video to Prompt",
-    "description": "Turn any video into structured, production-ready prompts. Generate master prompts, short prompts, negative prompts, keywords, and shot lists in seconds.",
-    "keywords": "video to prompt, ai prompt generator, prompt package, shot list generator, scene prompt engineering, ai video workflow"
+    "description": "Turn any video into structured, production-ready prompts for AI video generation. Extract scene, style, camera language, and shot list in seconds.",
+    "keywords": "video to prompt, ai prompt generator, video prompt builder, prompt package generator, shot list generator, ai video workflow"
   },
   "sign": {
     "sign_in_title": "Sign In",

@@ -1,186 +1,173 @@
 {
   "metadata": {
     "title": "Video to Prompt Pricing",
-    "description": "Flexible plans for video-to-prompt generation. Scale from solo creators to production teams."
+    "description": "Pricing plans for creators and teams who need repeatable prompt package generation from reference videos."
   },
   "page": {
     "title": "Video to Prompt Pricing",
     "sections": {
       "pricing": {
         "id": "pricing",
-        "title": "Simple, Transparent Pricing",
-        "description": "Choose a plan that fits your workflow. Credits are consumed by video duration and analysis complexity.",
+        "title": "Pricing",
+        "description": "If pricing is re-enabled, these plans are designed around prompt package generation rather than image restoration or generic credits.",
         "groups": [
           {
             "name": "monthly",
-            "title": "Monthly",
-            "is_featured": true
+            "title": "Monthly"
           },
           {
             "name": "yearly",
             "title": "Yearly",
-            "description": "Save 20%",
-            "is_featured": false
+            "label": "Save 20%"
           }
         ],
         "items": [
           {
-            "title": "Starter",
-            "description": "For solo creators testing video-to-prompt workflows.",
+            "title": "Creator",
+            "description": "For solo creators validating a repeatable prompt workflow.",
             "features_title": "Includes",
             "features": [
-              "200 credits/month",
-              "Supports upload + URL input",
-              "English and Chinese prompt output",
-              "Prompt package export (master/short/negative)",
-              "Keyword + shot list generation"
+              "100 prompt packages / month",
+              "Scene summary + master prompt + short prompt",
+              "Keyword extraction",
+              "Shot list export"
             ],
             "interval": "month",
-            "amount": 900,
+            "amount": 1200,
             "currency": "USD",
-            "price": "$9",
-            "original_price": "$15",
+            "price": "$12",
             "unit": "/month",
             "is_featured": false,
             "tip": "Cancel anytime",
             "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
+              "title": "Join Waitlist",
+              "url": "/",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "starter_monthly",
-            "product_name": "Video to Prompt Starter Monthly",
-            "credits": 200,
+            "product_id": "creator_monthly",
+            "product_name": "Video to Prompt Creator Monthly",
+            "credits": 100,
             "group": "monthly"
           },
           {
-            "title": "Starter",
-            "description": "For solo creators testing video-to-prompt workflows.",
-            "features_title": "Includes",
+            "title": "Team",
+            "description": "For operators who need a reusable prompt library across projects.",
+            "features_title": "Everything in Creator, plus",
             "features": [
-              "200 credits/month",
-              "Supports upload + URL input",
-              "English and Chinese prompt output",
-              "Prompt package export (master/short/negative)",
-              "Keyword + shot list generation"
-            ],
-            "interval": "year",
-            "amount": 8600,
-            "currency": "USD",
-            "price": "$86",
-            "original_price": "$108",
-            "unit": "/year",
-            "is_featured": false,
-            "tip": "Save 20% · Cancel anytime",
-            "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter_yearly",
-            "product_name": "Video to Prompt Starter Yearly",
-            "credits": 200,
-            "group": "yearly"
-          },
-          {
-            "title": "Pro",
-            "description": "For teams producing prompt variants daily.",
-            "label": "Popular",
-            "features_title": "Everything in Starter, plus",
-            "features": [
-              "800 credits/month",
-              "Faster generation queue",
-              "Advanced style presets",
-              "Batch-friendly workflow",
-              "Priority support"
+              "500 prompt packages / month",
+              "Negative prompt generation",
+              "Reusable prompt library workflow",
+              "Priority processing"
             ],
             "interval": "month",
-            "amount": 2900,
+            "amount": 3900,
             "currency": "USD",
-            "price": "$29",
-            "original_price": "$45",
+            "price": "$39",
             "unit": "/month",
             "is_featured": true,
-            "tip": "Cancel anytime",
+            "tip": "Best for small teams",
             "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
+              "title": "Join Waitlist",
+              "url": "/",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "pro_monthly",
-            "product_name": "Video to Prompt Pro Monthly",
-            "credits": 800,
+            "product_id": "team_monthly",
+            "product_name": "Video to Prompt Team Monthly",
+            "credits": 500,
             "group": "monthly"
           },
           {
-            "title": "Pro",
-            "description": "For teams producing prompt variants daily.",
-            "label": "Popular",
-            "features_title": "Everything in Starter, plus",
+            "title": "Studio",
+            "description": "For production and marketing teams running prompt systems at scale.",
+            "features_title": "Everything in Team, plus",
             "features": [
-              "800 credits/month",
-              "Faster generation queue",
-              "Advanced style presets",
-              "Batch-friendly workflow",
-              "Priority support"
-            ],
-            "interval": "year",
-            "amount": 27800,
-            "currency": "USD",
-            "price": "$278",
-            "original_price": "$348",
-            "unit": "/year",
-            "is_featured": true,
-            "tip": "Save 20% · Cancel anytime",
-            "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "pro_yearly",
-            "product_name": "Video to Prompt Pro Yearly",
-            "credits": 800,
-            "group": "yearly"
-          },
-          {
-            "title": "Business",
-            "description": "For agencies and multi-project creative pipelines.",
-            "features_title": "Everything in Pro, plus",
-            "features": [
-              "3000 credits/month",
-              "Team-level throughput",
-              "Workflow consultation",
-              "API-ready roadmap access",
-              "Dedicated support"
+              "1500 prompt packages / month",
+              "Shared workflow operations",
+              "Priority support",
+              "Advanced team usage"
             ],
             "interval": "month",
             "amount": 9900,
             "currency": "USD",
             "price": "$99",
-            "original_price": "$150",
             "unit": "/month",
             "is_featured": false,
-            "tip": "Cancel anytime",
+            "tip": "For high-volume teams",
             "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
+              "title": "Join Waitlist",
+              "url": "/",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "business_monthly",
-            "product_name": "Video to Prompt Business Monthly",
-            "credits": 3000,
+            "product_id": "studio_monthly",
+            "product_name": "Video to Prompt Studio Monthly",
+            "credits": 1500,
             "group": "monthly"
           },
           {
-            "title": "Business",
-            "description": "For agencies and multi-project creative pipelines.",
-            "features_title": "Everything in Pro, plus",
+            "title": "Creator",
+            "description": "For solo creators validating a repeatable prompt workflow.",
+            "features_title": "Includes",
             "features": [
-              "3000 credits/month",
-              "Team-level throughput",
-              "Workflow consultation",
-              "API-ready roadmap access",
-              "Dedicated support"
+              "100 prompt packages / month",
+              "Scene summary + master prompt + short prompt",
+              "Keyword extraction",
+              "Shot list export"
+            ],
+            "interval": "year",
+            "amount": 11500,
+            "currency": "USD",
+            "price": "$115",
+            "original_price": "$144",
+            "unit": "/year",
+            "is_featured": false,
+            "tip": "Save 20%",
+            "button": {
+              "title": "Join Waitlist",
+              "url": "/",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "creator_yearly",
+            "product_name": "Video to Prompt Creator Yearly",
+            "credits": 100,
+            "group": "yearly"
+          },
+          {
+            "title": "Team",
+            "description": "For operators who need a reusable prompt library across projects.",
+            "features_title": "Everything in Creator, plus",
+            "features": [
+              "500 prompt packages / month",
+              "Negative prompt generation",
+              "Reusable prompt library workflow",
+              "Priority processing"
+            ],
+            "interval": "year",
+            "amount": 37500,
+            "currency": "USD",
+            "price": "$375",
+            "original_price": "$468",
+            "unit": "/year",
+            "is_featured": true,
+            "tip": "Save 20%",
+            "button": {
+              "title": "Join Waitlist",
+              "url": "/",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "team_yearly",
+            "product_name": "Video to Prompt Team Yearly",
+            "credits": 500,
+            "group": "yearly"
+          },
+          {
+            "title": "Studio",
+            "description": "For production and marketing teams running prompt systems at scale.",
+            "features_title": "Everything in Team, plus",
+            "features": [
+              "1500 prompt packages / month",
+              "Shared workflow operations",
+              "Priority support",
+              "Advanced team usage"
             ],
             "interval": "year",
             "amount": 95000,
@@ -189,15 +176,15 @@
             "original_price": "$1188",
             "unit": "/year",
             "is_featured": false,
-            "tip": "Save 20% · Cancel anytime",
+            "tip": "Save 20%",
             "button": {
-              "title": "Subscribe",
-              "url": "/#pricing",
+              "title": "Join Waitlist",
+              "url": "/",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "business_yearly",
-            "product_name": "Video to Prompt Business Yearly",
-            "credits": 3000,
+            "product_id": "studio_yearly",
+            "product_name": "Video to Prompt Studio Yearly",
+            "credits": 1500,
             "group": "yearly"
           }
         ]

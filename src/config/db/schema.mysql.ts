@@ -38,6 +38,28 @@ export const user = table(
   ]
 );
 
+export const newsletterSubscriber = table(
+  'newsletter_subscriber',
+  {
+    id: varchar191('id').primaryKey(),
+    email: varchar191('email').notNull().unique(),
+    status: varchar('status', { length: 50 }).notNull().default('active'),
+    source: varchar('source', { length: 80 }).notNull().default(''),
+    locale: varchar('locale', { length: 20 }).notNull().default(''),
+    ip: varchar('ip', { length: 45 }).notNull().default(''),
+    userAgent: text('user_agent'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
+  },
+  (table) => [
+    index('idx_newsletter_subscriber_created_at').on(table.createdAt),
+    index('idx_newsletter_subscriber_status_created_at').on(
+      table.status,
+      table.createdAt
+    ),
+  ]
+);
+
 export const session = table(
   'session',
   {
