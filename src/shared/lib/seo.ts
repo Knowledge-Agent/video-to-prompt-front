@@ -3,14 +3,58 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { envConfigs } from '@/config';
 import { defaultLocale, locales } from '@/config/locale';
 
-// get metadata for page component
+function normalizeRelativePath(pathOrUrl?: string) {
+  let value = (pathOrUrl || '/').trim();
+
+  if (!value) {
+    return '/';
+  }
+
+  if (value.startsWith('http')) {
+    try {
+      value = new URL(value).pathname || '/';
+    } catch {
+      return '/';
+    }
+  }
+
+  if (!value.startsWith('/')) {
+    value = `/${value}`;
+  }
+
+  if (value !== '/' && value.endsWith('/')) {
+    value = value.slice(0, -1);
+  }
+
+  return value || '/';
+}
+
+export function getAlternateLanguageUrls(pathOrUrl?: string) {
+  const normalizedPath = normalizeRelativePath(pathOrUrl);
+  const languages = Object.fromEntries(
+    locales.map((locale) => {
+      const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
+      const localizedPath =
+        normalizedPath === '/'
+          ? `${envConfigs.app_url}${localePrefix || '/'}`
+          : `${envConfigs.app_url}${localePrefix}${normalizedPath}`;
+
+      return [locale, localizedPath];
+    })
+  ) as Record<string, string>;
+
+  languages['x-default'] = languages[defaultLocale];
+
+  return languages;
+}
+
 export function getMetadata(
   options: {
     title?: string;
     description?: string;
     keywords?: string;
     metadataKey?: string;
-    canonicalUrl?: string; // relative path or full url
+    canonicalUrl?: string;
     imageUrl?: string;
     appName?: string;
     noIndex?: boolean;
@@ -24,20 +68,17 @@ export function getMetadata(
     const { locale } = await params;
     setRequestLocale(locale);
 
-    // passed metadata
     const passedMetadata = {
       title: options.title,
       description: options.description,
       keywords: options.keywords,
     };
 
-    // default metadata
     const defaultMetadata = await getTranslatedMetadata(
       defaultMetadataKey,
       locale
     );
 
-    // translated metadata
     let translatedMetadata: any = {};
     if (options.metadataKey) {
       translatedMetadata = await getTranslatedMetadata(
@@ -46,12 +87,10 @@ export function getMetadata(
       );
     }
 
-    // canonical url
     const canonicalUrl = await getCanonicalUrl(
       options.canonicalUrl || '',
       locale || ''
     );
-    const languageAlternates = getLanguageAlternates(options.canonicalUrl || '');
 
     const title =
       passedMetadata.title || translatedMetadata.title || defaultMetadata.title;
@@ -60,38 +99,27 @@ export function getMetadata(
       translatedMetadata.description ||
       defaultMetadata.description;
 
-    // image url
     let imageUrl = options.imageUrl || envConfigs.app_preview_image;
-    if (imageUrl.startsWith('http')) {
-      imageUrl = imageUrl;
-    } else {
+    if (!imageUrl.startsWith('http')) {
       imageUrl = `${envConfigs.app_url}${imageUrl}`;
     }
 
-    // app name
     let appName = options.appName;
     if (!appName) {
-      appName = defaultMetadata.title || envConfigs.app_name || '';
+      appName = envConfigs.app_name || '';
     }
 
     return {
-      title:
-        passedMetadata.title ||
-        translatedMetadata.title ||
-        defaultMetadata.title,
-      description:
-        passedMetadata.description ||
-        translatedMetadata.description ||
-        defaultMetadata.description,
+      title,
+      description,
       keywords:
         passedMetadata.keywords ||
         translatedMetadata.keywords ||
         defaultMetadata.keywords,
       alternates: {
         canonical: canonicalUrl,
-        languages: languageAlternates,
+        languages: getAlternateLanguageUrls(options.canonicalUrl || '/'),
       },
-
       openGraph: {
         type: 'website',
         locale: locale,
@@ -101,7 +129,6 @@ export function getMetadata(
         siteName: appName,
         images: [imageUrl.toString()],
       },
-
       twitter: {
         card: 'summary_large_image',
         title,
@@ -109,7 +136,6 @@ export function getMetadata(
         images: [imageUrl.toString()],
         site: envConfigs.app_url,
       },
-
       robots: {
         index: options.noIndex ? false : true,
         follow: options.noIndex ? false : true,
@@ -131,64 +157,16 @@ async function getTranslatedMetadata(metadataKey: string, locale: string) {
   };
 }
 
-function normalizeRelativeCanonicalPath(canonicalUrl: string) {
-  if (!canonicalUrl || canonicalUrl.startsWith('http')) {
-    return '/';
-  }
-
-  if (!canonicalUrl.startsWith('/')) {
-    return `/${canonicalUrl}`;
-  }
-
-  return canonicalUrl;
-}
-
-function getLocalizedPath(path: string, locale: string) {
-  const normalizedPath = path === '/' ? '' : path;
-
-  if (!locale || locale === defaultLocale) {
-    return normalizedPath || '/';
-  }
-
-  return normalizedPath ? `/${locale}${normalizedPath}` : `/${locale}`;
-}
-
-function getLanguageAlternates(canonicalUrl: string) {
-  if (canonicalUrl.startsWith('http')) {
-    return undefined;
-  }
-
-  const path = normalizeRelativeCanonicalPath(canonicalUrl);
-  const baseUrl = envConfigs.app_url.replace(/\/$/, '');
-
-  const localizedEntries = locales.map((locale) => [
-    locale,
-    `${baseUrl}${getLocalizedPath(path, locale)}`,
-  ]);
-
-  return Object.fromEntries([
-    ...localizedEntries,
-    ['x-default', `${baseUrl}${getLocalizedPath(path, defaultLocale)}`],
-  ]);
-}
-
 async function getCanonicalUrl(canonicalUrl: string, locale: string) {
   if (!canonicalUrl) {
     canonicalUrl = '/';
   }
 
-  if (canonicalUrl.startsWith('http')) {
-    // full url
-    canonicalUrl = canonicalUrl;
-  } else {
-    // relative path
-    if (!canonicalUrl.startsWith('/')) {
-      canonicalUrl = `/${canonicalUrl}`;
-    }
-
+  if (!canonicalUrl.startsWith('http')) {
+    const normalizedPath = normalizeRelativePath(canonicalUrl);
     canonicalUrl = `${envConfigs.app_url}${
       !locale || locale === defaultLocale ? '' : `/${locale}`
-    }${canonicalUrl}`;
+    }${normalizedPath === '/' ? '/' : normalizedPath}`;
 
     if (locale !== defaultLocale && canonicalUrl.endsWith('/')) {
       canonicalUrl = canonicalUrl.slice(0, -1);

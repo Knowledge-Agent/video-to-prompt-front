@@ -12,13 +12,10 @@ check [ShipAny Templates](https://shipany.ai/templates) to buy Business Template
 
 
 
-
 submit your feedbacks on [Github Issues](https://github.com/shipanyai/shipany-template-two/issues)
 
 ## LICENSE
 
 !!! Please do not publicly release ShipAny's Code. Illegal use will be prosecuted
 
-
-
-
+[ShipAny LICENSE](./LICENSE)

@@ -1,10 +1,10 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_APP_URL || 'https://your-domain.com',
-  generateRobotsTxt: false, // 我们已经有了 robots.ts 文件
-  generateIndexSitemap: true, // 生成索引文件
+  siteUrl: process.env.NEXT_PUBLIC_APP_URL || 'https://videotoprompt.ai',
+  generateRobotsTxt: false,
+  generateIndexSitemap: true,
   sitemapSize: 7000,
-  changefreq: 'daily',
+  changefreq: 'weekly',
   priority: 0.7,
   exclude: [
     '/admin/*',
@@ -16,81 +16,29 @@ module.exports = {
     '/verify-email',
     '/no-permission',
     '/chat/*',
+    '/pricing',
+    '/zh/pricing',
   ],
-  // 按 URL 动态生成 alternateRefs，避免路径重复前缀
-  alternateRefs: [],
-  // 自定义路径
-  additionalPaths: async (config) => {
-    const result = [];
-    
-    // 添加博客文章路径
-    const blogPosts = [
-      'video-to-prompt-system-design',
-      'video-prompt-shot-language-framework',
-      'video-to-prompt-quality-checklist',
-    ];
-    
-    blogPosts.forEach(slug => {
-      result.push({
-        loc: `/blog/${slug}`,
-        changefreq: 'weekly',
-        priority: 0.8,
-        lastmod: new Date().toISOString(),
-      });
-      result.push({
-        loc: `/zh/blog/${slug}`,
-        changefreq: 'weekly',
-        priority: 0.8,
-        lastmod: new Date().toISOString(),
-      });
-    });
-    
-    // 添加更新日志路径
-    const updates = ['v1.0', 'v2.0'];
-    updates.forEach(version => {
-      result.push({
-        loc: `/updates/${version}`,
-        changefreq: 'monthly',
-        priority: 0.6,
-        lastmod: new Date().toISOString(),
-      });
-      result.push({
-        loc: `/zh/updates/${version}`,
-        changefreq: 'monthly',
-        priority: 0.6,
-        lastmod: new Date().toISOString(),
-      });
-    });
-    
-    return result;
+  alternateRefs: [
+    {
+      href: process.env.NEXT_PUBLIC_APP_URL || 'https://videotoprompt.ai',
+      hreflang: 'en',
+    },
+    {
+      href: `${process.env.NEXT_PUBLIC_APP_URL || 'https://videotoprompt.ai'}/zh`,
+      hreflang: 'zh',
+    },
+  ],
+  additionalPaths: async () => {
+    return [];
   },
   transform: async (config, path) => {
-    const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://your-domain.com';
-
-    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-
-    const withoutLocalePrefix =
-      normalizedPath === '/zh'
-        ? '/'
-        : normalizedPath.startsWith('/zh/')
-          ? normalizedPath.replace('/zh', '')
-          : normalizedPath;
-
-    const enHref = `${siteUrl}${withoutLocalePrefix}`;
-    const zhHref =
-      withoutLocalePrefix === '/'
-        ? `${siteUrl}/zh`
-        : `${siteUrl}/zh${withoutLocalePrefix}`;
-
     return {
       loc: path,
-      changefreq: config.changefreq,
-      priority: config.priority,
+      changefreq: path === '/' ? 'daily' : config.changefreq,
+      priority: path === '/' ? 1 : config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-      alternateRefs: [
-        { href: enHref, hreflang: 'en' },
-        { href: zhHref, hreflang: 'zh' },
-      ],
+      alternateRefs: config.alternateRefs ?? [],
     };
   },
 };

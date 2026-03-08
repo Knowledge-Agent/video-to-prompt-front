@@ -1,6 +1,7 @@
 import { and, count, desc, eq, inArray } from 'drizzle-orm';
 
 import { db } from '@/core/db';
+import { envConfigs } from '@/config';
 import { taxonomy } from '@/config/db/schema';
 
 export type Taxonomy = typeof taxonomy.$inferSelect;
@@ -13,10 +14,10 @@ export enum TaxonomyType {
 }
 
 export enum TaxonomyStatus {
-  PUBLISHED = 'published', // published and visible to the public
-  PENDING = 'pending', // pending review by admin
-  DRAFT = 'draft', // draft and not visible to the public
-  ARCHIVED = 'archived', // archived means deleted
+  PUBLISHED = 'published',
+  PENDING = 'pending',
+  DRAFT = 'draft',
+  ARCHIVED = 'archived',
 }
 
 export async function addTaxonomy(data: NewTaxonomy) {
@@ -52,6 +53,10 @@ export async function findTaxonomy({
   slug?: string;
   status?: TaxonomyStatus;
 }) {
+  if (!envConfigs.database_url) {
+    return undefined;
+  }
+
   const [result] = await db()
     .select()
     .from(taxonomy)
@@ -80,6 +85,10 @@ export async function getTaxonomies({
   page?: number;
   limit?: number;
 } = {}): Promise<Taxonomy[]> {
+  if (!envConfigs.database_url) {
+    return [];
+  }
+
   const result = await db()
     .select()
     .from(taxonomy)
@@ -104,6 +113,10 @@ export async function getTaxonomiesCount({
   type?: TaxonomyType;
   status?: TaxonomyStatus;
 } = {}): Promise<number> {
+  if (!envConfigs.database_url) {
+    return 0;
+  }
+
   const [result] = await db()
     .select({ count: count() })
     .from(taxonomy)

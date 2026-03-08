@@ -12,45 +12,50 @@ export function FeaturesStep({
   section: Section;
   className?: string;
 }) {
+  const steps = section.items || [];
+
   return (
-    <section id={section.id} className={cn('relative py-20 md:py-28', section.className, className)}>
+    <section
+      id={section.id}
+      className={cn('py-20 md:py-28', section.className, className)}
+    >
       <div className="container">
         <ScrollAnimation>
           <div className="mx-auto max-w-3xl text-center">
-            {section.label && (
-              <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary uppercase">
-                {section.label}
-              </span>
-            )}
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
+            <span className="text-primary text-sm font-medium tracking-wide">
+              {section.label}
+            </span>
+            <h2 className="text-foreground mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
               {section.title}
             </h2>
-            <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-base md:text-lg">
+            <p className="text-muted-foreground mt-4 text-base leading-7 md:text-lg">
               {section.description}
             </p>
           </div>
         </ScrollAnimation>
 
-        <ScrollAnimation delay={0.15}>
-          <div className="relative mx-auto mt-12 grid max-w-6xl gap-5 md:grid-cols-3">
-            <div className="absolute top-9 left-1/2 hidden h-px w-[70%] -translate-x-1/2 bg-gradient-to-r from-primary/0 via-primary/35 to-primary/0 md:block" />
-
-            {section.items?.map((item, idx) => (
+        <ScrollAnimation delay={0.2}>
+          <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-3 md:gap-8">
+            {steps.map((item, idx) => (
               <div
+                className="border-border/60 bg-card/45 relative flex min-h-[280px] flex-col items-center rounded-2xl border px-6 py-8 text-center backdrop-blur-sm"
                 key={idx}
-                className="relative rounded-2xl border border-border/70 bg-card/60 p-6 backdrop-blur"
               >
-                <div className="mb-5 flex items-center gap-3">
-                  <span className="inline-flex size-8 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-xs font-semibold text-primary">
-                    {idx + 1}
-                  </span>
-                  <div className="inline-flex size-10 items-center justify-center rounded-lg bg-primary/15 text-primary">
-                    {item.icon && <SmartIcon name={item.icon as string} size={20} />}
-                  </div>
+                <span className="bg-background/90 text-foreground border-border/70 mb-6 flex size-9 items-center justify-center rounded-full border text-sm font-semibold shadow-sm">
+                  {idx + 1}
+                </span>
+
+                <div className="bg-primary/10 text-primary border-primary/15 mb-6 flex size-14 items-center justify-center rounded-2xl border">
+                  {item.icon && (
+                    <SmartIcon name={item.icon as string} size={24} />
+                  )}
                 </div>
 
-                <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
-                <p className="text-sm leading-6 text-muted-foreground md:text-base">
+                <h3 className="text-foreground max-w-72 text-xl leading-snug font-semibold">
+                  {item.title}
+                </h3>
+
+                <p className="text-muted-foreground mt-4 max-w-72 text-base leading-7">
                   {item.description}
                 </p>
               </div>

@@ -37,18 +37,13 @@
       "show_sign_out": true,
       "items": [
         {
-          "title": "账单",
-          "url": "/settings/billing",
-          "icon": "CreditCard"
-        },
-        {
           "title": "活动",
           "url": "/activity",
           "icon": "Activity"
         }
       ]
     },
-    "show_sign": true,
+    "show_sign": false,
     "show_theme": true,
     "show_locale": true
   },

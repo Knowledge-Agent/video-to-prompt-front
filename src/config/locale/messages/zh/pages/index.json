@@ -1,9 +1,15 @@
 {
+  "metadata": {
+    "title": "Video to Prompt",
+    "description": "把任意视频拆成可直接复用的 AI 提示词包，快速提取场景结构、风格描述、镜头语言与 shot list。",
+    "keywords": "video to prompt, 视频转提示词, ai 提示词生成, shot list 生成, prompt package, ai 视频工作流"
+  },
   "page": {
     "show_sections": [
       "hero-tool",
       "features",
       "use-cases",
+      "usage",
       "faq",
       "cta"
     ],
@@ -11,150 +17,191 @@
       "hero-tool": {
         "block": "hero-tool",
         "id": "hero-tool",
-        "title": "Video to Prompt 生成器：把原始视频变成可直接生产的提示词包",
-        "description": "上传一段参考视频，自动拆解为可直接复制的提示词包，用于仿拍执行。",
-        "badge": "新功能：视频提示词智能解析",
+        "title": "把原始视频拆成可执行的提示词包",
+        "description": "上传一段参考视频，自动生成场景摘要、主提示词、短提示词、负面提示词与镜头清单。",
+        "description2": "系统会拆解视觉语言、镜头运动、主体动作、光线与构图，让团队可以直接复制并复用这套提示词结构。",
+        "tagline": "Video to Prompt · 一次上传，持续复用",
+        "hint": "适用于提示词工程、仿拍执行、AI 视频生成与内部素材标准化。",
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
           "alt": "Video to Prompt 工作台"
-        }
+        },
+        "badge": "新功能 · Prompt Package Generator"
       },
       "features": {
         "id": "features",
-        "title": "专注一件事：快速拆解提示词",
-        "description": "从一段参考视频到一套可复制执行的提示词包，让仿拍流程稳定可复用。",
+        "title": "一条视频，真正能产出什么",
+        "description": "不是模糊的灵感，而是一套团队可以复制到真实工作流里的结构化提示词资产。",
         "items": [
           {
-            "title": "视频结构解析",
-            "description": "自动提取主体、运动、光线、节奏与构图信息。",
-            "icon": "RiMovie2Line"
+            "title": "场景摘要",
+            "description": "先把视频压缩成清晰的场景说明，再进入后续提示词生成。",
+            "icon": "FileText"
           },
           {
-            "title": "提示词包拆解",
-            "description": "一次输出主提示词、短提示词、负面提示词、关键词与镜头清单。",
-            "icon": "RiFileList3Line"
+            "title": "主提示词",
+            "description": "生成高信息密度的基线提示词，用来承接核心视觉意图。",
+            "icon": "Sparkles"
           },
           {
-            "title": "可直接仿拍执行",
-            "description": "复制后即可按镜头顺序执行复现，团队协作更清晰。",
-            "icon": "RiCameraLensLine"
+            "title": "短提示词",
+            "description": "提供更轻量的提示词版本，方便快速试错和多轮迭代。",
+            "icon": "MessageSquareText"
           },
           {
-            "title": "可复用提示词资产",
-            "description": "把有效结果沉淀为后续项目可复用的参考模板。",
-            "icon": "RiFolderOpenLine"
+            "title": "负面提示词",
+            "description": "明确列出不希望出现的元素，减少生成偏移。",
+            "icon": "ShieldAlert"
           },
           {
-            "title": "快速迭代循环",
-            "description": "替换素材后可快速生成新一版拆解提示词包。",
-            "icon": "RiFlashlightLine"
+            "title": "关键词堆栈",
+            "description": "提取风格、氛围、光线、材质、节奏与主体特征等视觉词汇。",
+            "icon": "Tags"
           },
           {
-            "title": "平台无关复制格式",
-            "description": "可粘贴到 Runway、Kling、Pika、Sora 或内部工作流。",
-            "icon": "RiRocketLine"
+            "title": "镜头清单",
+            "description": "把视频拆成可执行的镜头指令，方便生成、仿拍与分镜规划。",
+            "icon": "Clapperboard"
           }
         ]
       },
       "use-cases": {
         "block": "use-cases",
         "id": "use-cases",
-        "title": "用户场景",
-        "description": "围绕 YouTube 场景设计，直接看演示视频。",
+        "title": "Video to Prompt 最适合哪些场景",
+        "description": "用 4 类典型 YouTube 内容场景，快速判断这套 video → prompt workflow 怎么落地。",
         "items": [
           {
-            "title": "YouTube Shorts 开场钩子",
-            "description": "拆解前 3 秒开场结构，快速复用到仿拍执行。",
-            "tag": "Shorts",
+            "tag": "YouTube Shorts",
+            "title": "Shorts 开头拆解",
+            "description": "把高留存 hook 视频拆成节奏、镜头动作与文案导向，快速做仿拍。",
+            "image": {
+              "src": "/videos/use-cases/posters/youtube-shorts-hook.jpg",
+              "alt": "YouTube Shorts hook breakdown poster"
+            },
             "video": "/videos/use-cases/youtube-shorts-hook.mp4",
-            "image": {
-              "src": "/imgs/features/landing-page.png",
-              "alt": "YouTube Shorts 开场钩子"
-            }
+            "highlights": ["强开头", "节奏钩子", "高留存"]
           },
           {
-            "title": "教程片段蓝图",
-            "description": "把讲解段落转成可复用的 A-Roll / B-Roll 提示词包。",
-            "tag": "教程",
+            "tag": "教程内容",
+            "title": "教程片段复用",
+            "description": "把讲解型视频转成结构化提示词，方便稳定复刻口播与演示段落。",
+            "image": {
+              "src": "/videos/use-cases/posters/youtube-tutorial-segment.jpg",
+              "alt": "Tutorial segment breakdown poster"
+            },
             "video": "/videos/use-cases/youtube-tutorial-segment.mp4",
-            "image": {
-              "src": "/imgs/features/1.png",
-              "alt": "教程片段蓝图"
-            }
+            "highlights": ["口播讲解", "画面插入", "步骤清晰"]
           },
           {
-            "title": "产品测评演示",
-            "description": "提取特写与对比镜头，形成可直接复制的提示词。",
-            "tag": "测评",
+            "tag": "产品评测",
+            "title": "评测镜头规划",
+            "description": "抽出评测视频里的特写、转场和节奏，直接生成可执行 shot list。",
+            "image": {
+              "src": "/videos/use-cases/posters/youtube-product-review.jpg",
+              "alt": "Product review shot planning poster"
+            },
             "video": "/videos/use-cases/youtube-product-review.mp4",
-            "image": {
-              "src": "/imgs/features/2.png",
-              "alt": "产品测评演示"
-            }
+            "highlights": ["产品特写", "对比镜头", "卖点节奏"]
           },
           {
-            "title": "Vlog 段落复刻",
-            "description": "保持运动轨迹和情绪转场一致，提升仿拍稳定性。",
             "tag": "Vlog",
-            "video": "/videos/use-cases/youtube-vlog-sequence.mp4",
+            "title": "Vlog 段落整理",
+            "description": "把日常记录拆成可搜索的 prompt assets，后续剪辑和再创作都能复用。",
             "image": {
-              "src": "/imgs/features/3.png",
-              "alt": "Vlog 段落复刻"
-            }
+              "src": "/videos/use-cases/posters/youtube-vlog-sequence.jpg",
+              "alt": "Vlog prompt library poster"
+            },
+            "video": "/videos/use-cases/youtube-vlog-sequence.mp4",
+            "highlights": ["日常段落", "转场连接", "旁白收束"]
+          }
+        ]
+      },
+      "usage": {
+        "block": "features-step",
+        "id": "usage",
+        "label": "3 步工作流",
+        "title": "整个流程怎么跑",
+        "description": "从参考视频到可复用提示词包，只保留 3 个必要动作。",
+        "items": [
+          {
+            "title": "上传参考视频",
+            "description": "选择一条已经包含目标镜头语言和节奏的参考片段。",
+            "icon": "Upload"
+          },
+          {
+            "title": "分析镜头结构",
+            "description": "系统输出场景逻辑、关键词、主提示词与逐镜头说明。",
+            "icon": "ScanSearch"
+          },
+          {
+            "title": "复制提示词包",
+            "description": "直接拿去做仿拍、提示词工程或内部 prompt library。",
+            "icon": "Copy"
           }
         ]
       },
       "faq": {
         "id": "faq",
-        "title": "常见问题",
-        "description": "关于 Video to Prompt 单一仿拍功能的常见问题。",
-        "tip": "需要接入建议？<a href='mailto:support@videotoprompt.ai' class='text-primary hover:underline'>联系我们</a>",
+        "title": "关于 Video to Prompt 的常见问题",
+        "description": "围绕 prompt package、适用场景和实际生产流程的核心解答。",
         "items": [
           {
-            "question": "Video to Prompt 会输出哪些内容？",
-            "answer": "每次生成都会提供完整提示词包：主提示词、短提示词、负面提示词、关键词与镜头清单。"
+            "question": "Video to Prompt 会从一条视频里生成什么？",
+            "answer": "通常会输出场景摘要、主提示词、短提示词、负面提示词、关键词堆栈以及镜头清单，组成一套可复用的提示词包。"
           },
           {
-            "question": "支持哪些输入格式？",
-            "answer": "支持 MP4、WebM、MOV、AVI、MKV，以及公开视频 URL。"
+            "question": "这是用来生成视频，还是用来编辑已有视频？",
+            "answer": "它的核心用途是提示词准备。重点不是直接剪片，而是把参考视频转成适用于生成、仿拍和前期策划的结构化 prompt assets。"
           },
           {
-            "question": "可以生成中文提示词吗？",
-            "answer": "可以。输出语言自动跟随当前站点语言（中文或英文）。"
+            "question": "哪些人最适合使用这个产品？",
+            "answer": "适合提示词工程师、创作者团队、短视频运营、广告团队，以及需要反复把参考视频转成提示词系统的人。"
           },
           {
-            "question": "积分是如何计算的？",
-            "answer": "主要基于视频时长与解析复杂度估算，执行前会显示预计消耗。"
+            "question": "我需要本地 GPU 或复杂剪辑环境吗？",
+            "answer": "不需要。整个流程以云端分析为主，上传视频后即可获取结构化输出。"
           },
           {
-            "question": "可用于其他 AI 工具吗？",
-            "answer": "可以。输出为纯文本结构，适配 Runway、Kling、Pika、Sora 及内部流程。"
+            "question": "它返回的是一句 prompt，还是多层结构？",
+            "answer": "是多层结构。产品强调 prompt package，而不是单句 prompt，这样团队更容易复用、校对和持续迭代。"
           },
           {
-            "question": "适合团队协作吗？",
-            "answer": "非常适合。可用于统一风格语言并提升创意迭代速度。"
+            "question": "可以用于仿拍和镜头规划吗？",
+            "answer": "可以。这正是最实用的场景之一。镜头清单和关键词堆栈能帮助你把参考视频更稳定地转成可执行方向。"
+          },
+          {
+            "question": "可以拿来搭建内部 prompt library 吗？",
+            "answer": "可以。把进入团队的参考视频统一转成结构化提示词资产，是非常典型的使用方式。"
+          },
+          {
+            "question": "现在如何获得使用资格？",
+            "answer": "可以直接使用首页工具，也可以先加入 waitlist。我们会结合真实工作流反馈持续优化产品。"
           }
-        ]
+        ],
+        "tip": "还有问题？<a href='mailto:support@videotoprompt.ai' class='text-primary hover:underline'>联系支持团队</a>。"
       },
       "cta": {
         "id": "cta",
-        "title": "把参考视频变成可复用的仿拍执行手册",
-        "description": "上传、拆解、复制、执行——专注且稳定的仿拍工作流。",
+        "title": "准备把参考视频变成提示词系统了吗？",
+        "description": "上传一条视频，抽取其中的视觉逻辑，并把它沉淀成团队可以持续复用的 prompt package。",
         "buttons": [
           {
-            "title": "立即生成",
-            "url": "#hero-tool",
+            "title": "立即使用生成器",
+            "url": "/ai-video-generator",
             "target": "_self",
-            "icon": "Zap"
+            "icon": "ArrowRight",
+            "variant": "default"
+          },
+          {
+            "title": "阅读系统设计指南",
+            "url": "/blog/video-to-prompt-system-design",
+            "target": "_self",
+            "icon": "BookOpen",
+            "variant": "outline"
           }
-        ],
-        "className": ""
+        ]
       }
     }
-  },
-  "metadata": {
-    "title": "Video to Prompt 生成器 | AI 视频提示词拆解工具",
-    "description": "将参考视频自动拆解为可直接复制的提示词包，输出主提示词、短提示词、负面提示词、关键词与镜头清单。",
-    "keywords": "视频转提示词生成器, AI视频提示词生成, 视频提示词拆解, 镜头清单生成, 仿拍提示词, AI视频工作流, Runway提示词, Kling提示词"
   }
 }

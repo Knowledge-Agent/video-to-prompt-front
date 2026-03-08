@@ -28,13 +28,11 @@ export default async function BlogPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  // load blog data
   const t = await getTranslations('pages.blog');
 
   let posts: PostType[] = [];
   let categories: CategoryType[] = [];
 
-  // current category data
   const currentCategory: CategoryType = {
     id: 'all',
     slug: 'all',
@@ -62,7 +60,6 @@ export default async function BlogPage({
     console.log('getting posts failed:', error);
   }
 
-  // build page sections
   const page: DynamicPage = {
     title: t('page.title'),
     sections: {
@@ -77,14 +74,11 @@ export default async function BlogPage({
     },
   };
 
-  // load page component
   const Page = await getThemePage('dynamic-page');
-
-  const blogListJsonLd = getBlogListJsonLd(locale);
 
   return (
     <>
-      <JsonLd data={blogListJsonLd} />
+      <JsonLd data={getBlogListJsonLd(locale)} />
       <Page locale={locale} page={page} />
     </>
   );

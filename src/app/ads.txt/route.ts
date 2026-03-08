@@ -10,9 +10,6 @@ export async function GET() {
       throw new Error('adsense_code is not set');
     }
 
-
-
-    
     const adsenseCode = configs.adsense_code.replace('ca-', '');
 
     const adsContent = `google.com, ${adsenseCode}, DIRECT, f08c47fec0942fa0`;

@@ -22,10 +22,8 @@ export default async function AiVideoGeneratorPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  // get ai video data
   const t = await getTranslations('ai.video');
 
-  // build page sections
   const page: DynamicPage = {
     sections: {
       hero: {
@@ -33,7 +31,7 @@ export default async function AiVideoGeneratorPage({
         description: t.raw('page.description'),
         background_image: {
           src: '/imgs/bg/tree.jpg',
-          alt: 'hero background',
+          alt: 'Video to Prompt hero background',
         },
       },
       generator: {
@@ -42,14 +40,11 @@ export default async function AiVideoGeneratorPage({
     },
   };
 
-  // load page component
   const Page = await getThemePage('dynamic-page');
-
-  const aiVideoGeneratorJsonLd = getAiVideoGeneratorJsonLd(locale);
 
   return (
     <>
-      <JsonLd data={aiVideoGeneratorJsonLd} />
+      <JsonLd data={getAiVideoGeneratorJsonLd(locale)} />
       <Page locale={locale} page={page} />
     </>
   );

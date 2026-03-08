@@ -1,186 +1,173 @@
 {
   "metadata": {
-    "title": "Video to Prompt 价格",
-    "description": "适用于视频转提示词场景的灵活订阅方案，覆盖个人创作者到团队生产。"
+    "title": "Video to Prompt 定价",
+    "description": "面向创作者与团队的 Video to Prompt 定价方案，围绕 prompt package 生成而设计。"
   },
   "page": {
-    "title": "Video to Prompt 价格",
+    "title": "Video to Prompt 定价",
     "sections": {
       "pricing": {
         "id": "pricing",
-        "title": "简单透明的价格",
-        "description": "根据你的工作流选择方案。积分主要按视频时长与分析复杂度消耗。",
+        "title": "定价",
+        "description": "如果未来重新开放定价页，这些方案会围绕 prompt package 生成，而不是图片修复或泛积分模式。",
         "groups": [
           {
             "name": "monthly",
-            "title": "月付",
-            "is_featured": true
+            "title": "月付"
           },
           {
             "name": "yearly",
             "title": "年付",
-            "description": "省 20%",
-            "is_featured": false
+            "label": "节省 20%"
           }
         ],
         "items": [
           {
-            "title": "入门版",
-            "description": "适合个人创作者体验视频转提示词流程。",
+            "title": "Creator",
+            "description": "适合验证个人 video-to-prompt 工作流的创作者。",
             "features_title": "包含",
             "features": [
-              "200 积分/月",
-              "支持上传与视频链接输入",
-              "中英文提示词输出",
-              "提示词包导出（主/短/负面）",
-              "关键词与镜头清单生成"
+              "每月 100 个 prompt package",
+              "场景摘要 + 主提示词 + 短提示词",
+              "关键词提取",
+              "镜头清单导出"
             ],
             "interval": "month",
-            "amount": 900,
+            "amount": 1200,
             "currency": "USD",
-            "price": "$9",
-            "original_price": "$15",
+            "price": "$12",
             "unit": "/月",
             "is_featured": false,
-            "tip": "随时取消",
+            "tip": "可随时取消",
             "button": {
-              "title": "订阅",
-              "url": "/#pricing",
+              "title": "加入等待名单",
+              "url": "/",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "starter_monthly",
-            "product_name": "Video to Prompt 入门版月付",
-            "credits": 200,
+            "product_id": "creator_monthly",
+            "product_name": "Video to Prompt Creator Monthly",
+            "credits": 100,
             "group": "monthly"
           },
           {
-            "title": "入门版",
-            "description": "适合个人创作者体验视频转提示词流程。",
-            "features_title": "包含",
+            "title": "Team",
+            "description": "适合需要把参考视频沉淀为可复用提示词资产的团队。",
+            "features_title": "包含 Creator 的全部能力，外加",
             "features": [
-              "200 积分/月",
-              "支持上传与视频链接输入",
-              "中英文提示词输出",
-              "提示词包导出（主/短/负面）",
-              "关键词与镜头清单生成"
-            ],
-            "interval": "year",
-            "amount": 8600,
-            "currency": "USD",
-            "price": "$86",
-            "original_price": "$108",
-            "unit": "/年",
-            "is_featured": false,
-            "tip": "省 20% · 随时取消",
-            "button": {
-              "title": "订阅",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter_yearly",
-            "product_name": "Video to Prompt 入门版年付",
-            "credits": 200,
-            "group": "yearly"
-          },
-          {
-            "title": "专业版",
-            "description": "适合需要高频产出提示词的团队。",
-            "label": "热门",
-            "features_title": "入门版全部功能，另加",
-            "features": [
-              "800 积分/月",
-              "更快生成队列",
-              "高级风格预设",
-              "批量友好流程",
-              "优先支持"
+              "每月 500 个 prompt package",
+              "负面提示词生成",
+              "可复用 prompt library 工作流",
+              "优先处理"
             ],
             "interval": "month",
-            "amount": 2900,
+            "amount": 3900,
             "currency": "USD",
-            "price": "$29",
-            "original_price": "$45",
+            "price": "$39",
             "unit": "/月",
             "is_featured": true,
-            "tip": "随时取消",
+            "tip": "适合小团队",
             "button": {
-              "title": "订阅",
-              "url": "/#pricing",
+              "title": "加入等待名单",
+              "url": "/",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "pro_monthly",
-            "product_name": "Video to Prompt 专业版月付",
-            "credits": 800,
+            "product_id": "team_monthly",
+            "product_name": "Video to Prompt Team Monthly",
+            "credits": 500,
             "group": "monthly"
           },
           {
-            "title": "专业版",
-            "description": "适合需要高频产出提示词的团队。",
-            "label": "热门",
-            "features_title": "入门版全部功能，另加",
+            "title": "Studio",
+            "description": "适合大规模运行提示词系统的制作与营销团队。",
+            "features_title": "包含 Team 的全部能力，外加",
             "features": [
-              "800 积分/月",
-              "更快生成队列",
-              "高级风格预设",
-              "批量友好流程",
-              "优先支持"
-            ],
-            "interval": "year",
-            "amount": 27800,
-            "currency": "USD",
-            "price": "$278",
-            "original_price": "$348",
-            "unit": "/年",
-            "is_featured": true,
-            "tip": "省 20% · 随时取消",
-            "button": {
-              "title": "订阅",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "pro_yearly",
-            "product_name": "Video to Prompt 专业版年付",
-            "credits": 800,
-            "group": "yearly"
-          },
-          {
-            "title": "企业版",
-            "description": "适合代理商与多项目并行创意团队。",
-            "features_title": "专业版全部功能，另加",
-            "features": [
-              "3000 积分/月",
-              "团队级并发能力",
-              "流程咨询支持",
-              "API 路线优先接入",
-              "专属支持"
+              "每月 1500 个 prompt package",
+              "团队工作流协同",
+              "优先支持",
+              "更高强度团队使用"
             ],
             "interval": "month",
             "amount": 9900,
             "currency": "USD",
             "price": "$99",
-            "original_price": "$150",
             "unit": "/月",
             "is_featured": false,
-            "tip": "随时取消",
+            "tip": "适合高频团队",
             "button": {
-              "title": "订阅",
-              "url": "/#pricing",
+              "title": "加入等待名单",
+              "url": "/",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "business_monthly",
-            "product_name": "Video to Prompt 企业版月付",
-            "credits": 3000,
+            "product_id": "studio_monthly",
+            "product_name": "Video to Prompt Studio Monthly",
+            "credits": 1500,
             "group": "monthly"
           },
           {
-            "title": "企业版",
-            "description": "适合代理商与多项目并行创意团队。",
-            "features_title": "专业版全部功能，另加",
+            "title": "Creator",
+            "description": "适合验证个人 video-to-prompt 工作流的创作者。",
+            "features_title": "包含",
             "features": [
-              "3000 积分/月",
-              "团队级并发能力",
-              "流程咨询支持",
-              "API 路线优先接入",
-              "专属支持"
+              "每月 100 个 prompt package",
+              "场景摘要 + 主提示词 + 短提示词",
+              "关键词提取",
+              "镜头清单导出"
+            ],
+            "interval": "year",
+            "amount": 11500,
+            "currency": "USD",
+            "price": "$115",
+            "original_price": "$144",
+            "unit": "/年",
+            "is_featured": false,
+            "tip": "节省 20%",
+            "button": {
+              "title": "加入等待名单",
+              "url": "/",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "creator_yearly",
+            "product_name": "Video to Prompt Creator Yearly",
+            "credits": 100,
+            "group": "yearly"
+          },
+          {
+            "title": "Team",
+            "description": "适合需要把参考视频沉淀为可复用提示词资产的团队。",
+            "features_title": "包含 Creator 的全部能力，外加",
+            "features": [
+              "每月 500 个 prompt package",
+              "负面提示词生成",
+              "可复用 prompt library 工作流",
+              "优先处理"
+            ],
+            "interval": "year",
+            "amount": 37500,
+            "currency": "USD",
+            "price": "$375",
+            "original_price": "$468",
+            "unit": "/年",
+            "is_featured": true,
+            "tip": "节省 20%",
+            "button": {
+              "title": "加入等待名单",
+              "url": "/",
+              "icon": "RiFlashlightFill"
+            },
+            "product_id": "team_yearly",
+            "product_name": "Video to Prompt Team Yearly",
+            "credits": 500,
+            "group": "yearly"
+          },
+          {
+            "title": "Studio",
+            "description": "适合大规模运行提示词系统的制作与营销团队。",
+            "features_title": "包含 Team 的全部能力，外加",
+            "features": [
+              "每月 1500 个 prompt package",
+              "团队工作流协同",
+              "优先支持",
+              "更高强度团队使用"
             ],
             "interval": "year",
             "amount": 95000,
@@ -189,15 +176,15 @@
             "original_price": "$1188",
             "unit": "/年",
             "is_featured": false,
-            "tip": "省 20% · 随时取消",
+            "tip": "节省 20%",
             "button": {
-              "title": "订阅",
-              "url": "/#pricing",
+              "title": "加入等待名单",
+              "url": "/",
               "icon": "RiFlashlightFill"
             },
-            "product_id": "business_yearly",
-            "product_name": "Video to Prompt 企业版年付",
-            "credits": 3000,
+            "product_id": "studio_yearly",
+            "product_name": "Video to Prompt Studio Yearly",
+            "credits": 1500,
             "group": "yearly"
           }
         ]
@@ -205,7 +192,7 @@
     }
   },
   "messages": {
-    "current_plan": "当前套餐",
+    "current_plan": "当前方案",
     "processing": "处理中"
   }
 }

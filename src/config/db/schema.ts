@@ -45,6 +45,31 @@ export const user = table(
   ]
 );
 
+export const newsletterSubscriber = table(
+  'newsletter_subscriber',
+  {
+    id: text('id').primaryKey(),
+    email: text('email').notNull().unique(),
+    status: text('status').notNull().default('active'),
+    source: text('source').notNull().default(''),
+    locale: text('locale').notNull().default(''),
+    ip: text('ip').notNull().default(''),
+    userAgent: text('user_agent'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at')
+      .defaultNow()
+      .$onUpdate(() => /* @__PURE__ */ new Date())
+      .notNull(),
+  },
+  (table) => [
+    index('idx_newsletter_subscriber_created_at').on(table.createdAt),
+    index('idx_newsletter_subscriber_status_created_at').on(
+      table.status,
+      table.createdAt
+    ),
+  ]
+);
+
 export const session = table(
   'session',
   {

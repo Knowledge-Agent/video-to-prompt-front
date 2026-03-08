@@ -1,15 +1,14 @@
 {
   "metadata": {
     "title": "Video to Prompt Changelog",
-    "description": "Track product updates for Video to Prompt, including analysis quality improvements, workflow upgrades, and UX refinements.",
-    "keywords": "video to prompt changelog, prompt analysis updates, ai workflow release notes"
+    "description": "Track product updates, workflow improvements, and feature releases for Video to Prompt."
   },
   "page": {
     "sections": {
       "updates": {
         "id": "updates",
         "title": "Changelog",
-        "description": "Track product updates, improvements, and release milestones."
+        "description": "Official product updates for prompt package generation, analysis quality, and workflow improvements."
       }
     }
   }

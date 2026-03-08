@@ -23,6 +23,7 @@ export default async function RootLayout({
   const isProduction = process.env.NODE_ENV === 'production';
   const isDebug = process.env.NEXT_PUBLIC_DEBUG === 'true';
 
+
   // ads components
   let adsMetaTags = null;
   let adsHeadScripts = null;
@@ -84,6 +85,8 @@ export default async function RootLayout({
           href={`${envConfigs.app_favicon}?v=2`}
         />
         <link rel="shortcut icon" href={`${envConfigs.app_favicon}?v=2`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         {/* inject ads meta tags */}
         {adsMetaTags}
         {/* inject ads head scripts */}

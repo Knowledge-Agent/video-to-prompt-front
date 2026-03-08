@@ -1,15 +1,14 @@
 {
   "metadata": {
     "title": "Video to Prompt 更新日志",
-    "description": "查看 Video to Prompt 的功能迭代，包括分析质量提升、工作流优化与体验改进。",
-    "keywords": "Video to Prompt 更新日志, 提示词分析更新, AI工作流版本发布"
+    "description": "查看 Video to Prompt 的产品更新、工作流优化与功能发布。"
   },
   "page": {
     "sections": {
       "updates": {
         "id": "updates",
         "title": "更新日志",
-        "description": "持续跟踪产品版本、能力升级与体验优化。"
+        "description": "跟踪 prompt package 生成、分析质量与工作流能力的持续更新。"
       }
     }
   }

@@ -10,12 +10,6 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-if (process.cwd() !== __dirname) {
-  process.chdir(__dirname);
-}
-
 const withNextIntl = createNextIntlPlugin({
   requestConfig: './src/core/i18n/request.ts',
 });
@@ -34,6 +28,7 @@ const getSchemaAliasTarget = () => {
   return './src/config/db/schema.ts';
 };
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const schemaAliasTarget = getSchemaAliasTarget();
 
 /** @type {import('next').NextConfig} */
