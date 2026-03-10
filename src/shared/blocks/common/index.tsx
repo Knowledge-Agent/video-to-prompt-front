@@ -22,7 +22,6 @@ export * from './lazy-image';
 export * from './markdown-content';
 export * from './markdown-editor';
 export * from './markdown-preview';
-export * from './mdx-content';
 
 export * from '../sign/sign-user';
 
