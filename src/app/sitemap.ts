@@ -71,7 +71,6 @@ function getUpdatePath(slug: string) {
 
   return `/updates/${normalizedSlug}`;
 }
-}
 
 function toValidDate(dateLike?: string | Date | null) {
   if (!dateLike) {
