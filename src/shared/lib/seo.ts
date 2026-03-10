@@ -29,6 +29,26 @@ function normalizeRelativePath(pathOrUrl?: string) {
   return value || '/';
 }
 
+// Backward-compatible helper used by legacy pages and sitemap.
+export function getAlternateLanguageUrls(pathOrUrl?: string) {
+  const normalizedPath = normalizeRelativePath(pathOrUrl);
+  const languages = Object.fromEntries(
+    locales.map((locale) => {
+      const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
+      const localizedPath =
+        normalizedPath === '/'
+          ? `${envConfigs.app_url}${localePrefix || '/'}`
+          : `${envConfigs.app_url}${localePrefix}${normalizedPath}`;
+
+      return [locale, localizedPath];
+    })
+  ) as Record<string, string>;
+
+  languages['x-default'] = languages[defaultLocale];
+
+  return languages;
+}
+
 export function getMetadata(
   options: {
     title?: string;
