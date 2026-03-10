@@ -71,7 +71,7 @@
             "tag": "Shorts",
             "video": "/videos/use-cases/youtube-shorts-hook.mp4",
             "image": {
-              "src": "/imgs/features/landing-page.png",
+              "src": "/imgs/use-cases/tavily/youtube-shorts-hook-1.jpg",
               "alt": "从视频提取 Shorts 开场提示词"
             }
           },
@@ -81,7 +81,7 @@
             "tag": "教程",
             "video": "/videos/use-cases/youtube-tutorial-segment.mp4",
             "image": {
-              "src": "/imgs/features/1.png",
+              "src": "/imgs/use-cases/tavily/tutorial-segment-blueprint-1.webp",
               "alt": "从教程视频生成提示词"
             }
           },
@@ -91,7 +91,7 @@
             "tag": "测评",
             "video": "/videos/use-cases/youtube-product-review.mp4",
             "image": {
-              "src": "/imgs/features/2.png",
+              "src": "/imgs/use-cases/tavily/product-review-demo-1.webp",
               "alt": "视频提示词生成器用于测评视频"
             }
           },
@@ -101,7 +101,7 @@
             "tag": "Vlog",
             "video": "/videos/use-cases/youtube-vlog-sequence.mp4",
             "image": {
-              "src": "/imgs/features/3.png",
+              "src": "/imgs/use-cases/tavily/vlog-sequence-rebuild-1.jpg",
               "alt": "prompt from video 工作流用于 Vlog"
             }
           }
