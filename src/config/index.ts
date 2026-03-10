@@ -21,6 +21,27 @@ export type ConfigMap = Record<string, string>;
 
 const DEFAULT_APP_URL = 'https://www.videotopromptgenerator.com';
 
+function normalizeAppUrl(raw?: string) {
+  if (!raw) {
+    return '';
+  }
+
+  const trimmed = raw.trim().replace(/\/$/, '');
+  if (!trimmed) {
+    return '';
+  }
+
+  if (!/^https?:\/\//i.test(trimmed)) {
+    return `https://${trimmed}`;
+  }
+
+  return trimmed;
+}
+
+function isLocalhostUrl(url: string) {
+  return /(^|\/\/)(localhost|127\.0\.0\.1)([:/]|$)/i.test(url);
+}
+
 function getFallbackAppUrl() {
   const vercelUrl =
     process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || '';
@@ -36,8 +57,15 @@ function getFallbackAppUrl() {
   return `https://${normalized}`;
 }
 
+const explicitAppUrl = normalizeAppUrl(process.env.NEXT_PUBLIC_APP_URL);
+const fallbackAppUrl = getFallbackAppUrl();
+const resolvedAppUrl =
+  explicitAppUrl && !isLocalhostUrl(explicitAppUrl)
+    ? explicitAppUrl
+    : fallbackAppUrl;
+
 export const envConfigs: ConfigMap = {
-  app_url: process.env.NEXT_PUBLIC_APP_URL ?? getFallbackAppUrl(),
+  app_url: resolvedAppUrl,
   app_name: process.env.NEXT_PUBLIC_APP_NAME ?? 'Video to Prompt',
   app_description:
     process.env.NEXT_PUBLIC_APP_DESCRIPTION ??
@@ -68,7 +96,7 @@ export const envConfigs: ConfigMap = {
     process.env.DB_MIGRATIONS_OUT ?? './src/config/db/migrations',
   db_singleton_enabled: process.env.DB_SINGLETON_ENABLED || 'false',
   db_max_connections: process.env.DB_MAX_CONNECTIONS || '1',
-  auth_url: process.env.AUTH_URL || process.env.NEXT_PUBLIC_APP_URL || '',
+  auth_url: process.env.AUTH_URL || resolvedAppUrl || '',
   auth_secret: process.env.AUTH_SECRET ?? '', // openssl rand -base64 32
   version: packageJson.version,
   locale_detect_enabled:
