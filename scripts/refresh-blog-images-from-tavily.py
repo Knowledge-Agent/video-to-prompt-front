@@ -143,6 +143,9 @@ def download_image(url: str, slug: str, idx: int) -> str | None:
             content = resp.read()
             if not content:
                 return None
+            lower = content[:512].lower()
+            if b"<html" in lower or b"<!doctype" in lower or b"<head" in lower:
+                return None
             target.write_bytes(content)
             return f"/imgs/blog/tavily/{filename}"
     except Exception:
