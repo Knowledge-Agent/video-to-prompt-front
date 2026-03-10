@@ -4,14 +4,18 @@ description: "一套可落地的方法：把单条视频转为结构化提示词
 created_at: "2026-02-06"
 author_name: "Video to Prompt 团队"
 author_image: "/imgs/logos/video-to-prompt-logo.svg"
-image: "/imgs/blog/generative-process-diagram.png"
+image: "/imgs/blog/tavily/video-to-prompt-system-design.zh-1.png"
 ---
 
 # Video-to-Prompt 系统设计
 
 如果你的团队还在从零手写提示词，你可能忽略了最重要的数据源：**真实视频参考素材**。
 
+![如果你的团队还在从零手写提示词，你可能忽略了最重要的数据源：**真实视频参考素材**。](/imgs/blog/tavily/video-to-prompt-system-design.zh-2.png)
+
 成熟的 AI 视频工作流，应该把每条可用视频都转成结构化提示词包，至少包含：
+
+![成熟的 AI 视频工作流，应该把每条可用视频都转成结构化提示词包，至少包含：](/imgs/blog/tavily/video-to-prompt-system-design.zh-3.jpg)
 
 - 场景摘要（summary）
 - 主提示词（master prompt）
@@ -24,6 +28,8 @@ image: "/imgs/blog/generative-process-diagram.png"
 
 没有结构，提示词质量很难稳定；有结构，团队可以：
 
+![没有结构，提示词质量很难稳定；有结构，团队可以：](/imgs/blog/tavily/video-to-prompt-system-design.zh-4.jpg)
+
 1. 更快复现风格
 2. 统一创作者与运营之间的语言
 3. 构建可检索提示词库
@@ -32,6 +38,8 @@ image: "/imgs/blog/generative-process-diagram.png"
 ## 推荐输出格式
 
 建议统一 JSON 结构，便于复制、检索和自动化接入：
+
+![建议统一 JSON 结构，便于复制、检索和自动化接入：](/imgs/blog/tavily/video-to-prompt-system-design.zh-5.jpg)
 
 ```json
 {
@@ -55,3 +63,5 @@ image: "/imgs/blog/generative-process-diagram.png"
 ## 总结
 
 把 video-to-prompt 当作**系统能力**而不是单次生成技巧。每条视频都结构化后，整体产能会更稳定、更快、更可规模化。
+
+![把 video-to-prompt 当作**系统能力**而不是单次生成技巧。每条视频都结构化后，整体产能会更稳定、更快、更可规模化。](/imgs/blog/tavily/video-to-prompt-system-design.zh-6.jpg)

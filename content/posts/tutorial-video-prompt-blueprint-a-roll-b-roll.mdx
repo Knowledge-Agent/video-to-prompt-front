@@ -1,0 +1,76 @@
+---
+title: "Tutorial Video Prompt Blueprint: A-Roll and B-Roll"
+description: "A practical blueprint for turning tutorial videos into reusable A-roll and B-roll prompt structures for AI video production."
+created_at: "2026-03-10"
+author_name: "Video to Prompt Team"
+author_image: "/imgs/logos/video-to-prompt-logo.svg"
+image: "/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-1.jpg"
+---
+
+# Tutorial Video Prompt Blueprint: A-Roll and B-Roll
+
+Tutorial content scales better when A-roll and B-roll are planned as a system. This blueprint helps you convert a reference tutorial into reusable **prompt for video generation** assets.
+
+![Tutorial content scales better when A-roll and B-roll are planned as a system. T](/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-2.webp)
+
+## A-roll prompt block
+
+Include:
+
+![Include:](/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-3.webp)
+
+- speaker framing and eye-line
+- gesture pace
+- camera stability
+- tone and energy
+
+## B-roll prompt block
+
+Include:
+
+![Include:](/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-4.webp)
+
+- context action shot
+- detail close-up
+- process demonstration
+- transition bridge
+
+## Sequence model
+
+1. A-roll question framing
+2. B-roll context scene
+3. A-roll explanation
+4. B-roll process detail
+5. A-roll conclusion
+
+## Example output schema
+
+```json
+{
+  "aRollPrompts": ["..."],
+  "bRollPrompts": ["..."],
+  "transitions": ["..."],
+  "negativePrompt": "..."
+}
+```
+
+## FAQ
+
+### Why split prompts by A-roll and B-roll?
+
+Because clarity improves edit speed and shot replacement.
+
+![Because clarity improves edit speed and shot replacement.](/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-5.jpg)
+
+### Can I reuse the same B-roll prompts across episodes?
+
+Yes, if process steps are similar and style is stable.
+
+![Yes, if process steps are similar and style is stable.](/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-6.webp)
+
+## Next reads
+
+- [Run extraction from homepage](/)
+- [System design guide](/blog/video-to-prompt-system-design)
+- [How to get prompt from video](/blog/how-to-get-prompt-from-video)
+- [Camera movement library](/blog/camera-movement-prompt-library-50-examples)

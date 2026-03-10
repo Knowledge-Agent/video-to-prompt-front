@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "title": "Video to Prompt Blog | Prompt Engineering Guides",
-    "description": "Learn repeatable video-to-prompt workflows, scene prompt structure, and shot strategy for better AI video production.",
-    "keywords": "video prompt engineering, shot strategy, ai video workflow, prompt package tutorial, video to prompt guide"
+    "title": "Video to Prompt Blog | Get Prompt from Video Tutorials",
+    "description": "Step-by-step guides on how to get prompt from video, design video generation prompts, and improve prompt quality for AI video tools.",
+    "keywords": "how to get prompt of any video, get prompt from video, generate prompt from video, video to prompt tutorial, video prompt generator from video, prompt for video generation"
   },
   "page": {
     "title": "Video to Prompt Blog",
     "sections": {
       "blog": {
         "id": "blog",
-        "title": "Guides, Frameworks, and Prompt Playbooks",
-        "description": "Actionable articles on scene analysis, prompt structure, and production-ready AI video workflows."
+        "title": "How-To Guides, Frameworks, and Prompt Playbooks",
+        "description": "Answer-first tutorials for extracting prompts from video, structuring scenes, and shipping reproducible AI video workflows."
       }
     }
   },

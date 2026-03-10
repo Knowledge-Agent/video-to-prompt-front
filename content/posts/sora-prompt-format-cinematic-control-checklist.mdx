@@ -1,0 +1,64 @@
+---
+title: "Sora Prompt Format: Cinematic Control Checklist"
+description: "Use this cinematic control checklist to write better Sora prompts with clearer camera logic, pacing, and style consistency."
+created_at: "2026-03-10"
+author_name: "Video to Prompt Team"
+author_image: "/imgs/logos/video-to-prompt-logo.svg"
+image: "/imgs/blog/tavily/sora-prompt-format-cinematic-control-checklist-1.webp"
+---
+
+# Sora Prompt Format: Cinematic Control Checklist
+
+Sora can produce impressive visuals, but consistency requires strict prompt discipline. This checklist is designed for teams that convert **video to prompt** outputs into cinematic Sora prompts.
+
+![Sora can produce impressive visuals, but consistency requires strict prompt disc](/imgs/blog/tavily/sora-prompt-format-cinematic-control-checklist-2.png)
+
+## Cinematic control checklist
+
+- one clear subject and goal per scene
+- one dominant camera move per scene
+- explicit depth/lens intention
+- lighting direction, not just mood words
+- temporal progression (start -> transition -> end)
+
+## Prompt block template
+
+```text
+Scene objective:
+Subject:
+Action:
+Camera and framing:
+Lens/depth:
+Lighting:
+Mood and style:
+Transition:
+Negative constraints:
+```
+
+## Review before generation
+
+1. remove conflicting style tags
+2. verify camera motion is physically plausible
+3. keep negative constraints focused
+4. ensure transitions are readable
+
+## FAQ
+
+### Do I need separate prompts for each scene?
+
+For complex stories, yes. Scene blocks increase controllability.
+
+![For complex stories, yes. Scene blocks increase controllability.](/imgs/blog/tavily/sora-prompt-format-cinematic-control-checklist-3.webp)
+
+### What causes cinematic inconsistency most often?
+
+Ambiguous camera instructions and missing transitions.
+
+![Ambiguous camera instructions and missing transitions.](/imgs/blog/tavily/sora-prompt-format-cinematic-control-checklist-4.jpg)
+
+## Next reads
+
+- [Video to Prompt tool](/)
+- [Shot-language framework](/blog/video-prompt-shot-language-framework)
+- [How to extract prompts from video](/blog/how-to-get-prompt-from-video)
+- [Quality checklist for teams](/blog/video-to-prompt-quality-checklist)

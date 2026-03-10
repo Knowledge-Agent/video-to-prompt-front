@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "title": "Video to Prompt 博客 | 提示词工程实战",
-    "description": "学习可复用的视频转提示词流程、镜头策略与场景提示词写法，提升 AI 视频生产效率。",
-    "keywords": "提示词工程, 视频转提示词教程, 镜头策略, AI视频工作流, 提示词包实战"
+    "title": "Video to Prompt 博客 | 从视频提取提示词教程",
+    "description": "聚焦如何从视频提取提示词、构建 video generation prompts、提升 AI 视频提示词质量的可执行指南。",
+    "keywords": "如何从视频提取提示词, get prompt from video, generate prompt from video, video to prompt 教程, 视频提示词生成流程, prompt for video generation"
   },
   "page": {
     "title": "Video to Prompt 博客",
     "sections": {
       "blog": {
         "id": "blog",
-        "title": "指南、方法论与提示词打法",
-        "description": "聚焦场景解析、提示词结构设计与可落地的 AI 视频生产流程。"
+        "title": "实操教程、框架与提示词打法",
+        "description": "以结果为先的教程内容，帮助你从视频中提取提示词并沉淀可复用工作流。"
       }
     }
   },

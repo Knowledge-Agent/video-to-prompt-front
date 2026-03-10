@@ -3,6 +3,7 @@ import { and, count, desc, eq, like } from 'drizzle-orm';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import moment from 'moment';
 
+import { envConfigs } from '@/config';
 import { db } from '@/core/db';
 import { logsSource, pagesSource, postsSource } from '@/core/docs/source';
 import { generateTOC } from '@/core/docs/toc';
@@ -30,6 +31,20 @@ export enum PostStatus {
   PENDING = 'pending', // pending review by admin
   DRAFT = 'draft', // draft and not visible to the public
   ARCHIVED = 'archived', // archived means deleted
+}
+
+function isRemoteDbConfigured() {
+  const provider = envConfigs.database_provider;
+  if (provider === 'postgresql' || provider === 'mysql') {
+    return Boolean(envConfigs.database_url);
+  }
+
+  if (provider === 'turso') {
+    return Boolean(envConfigs.database_url && envConfigs.database_auth_token);
+  }
+
+  // sqlite can use local file without explicit DATABASE_URL
+  return true;
 }
 
 export async function addPost(data: NewPost) {
@@ -152,6 +167,10 @@ export async function getPost({
   postPrefix?: string;
 }): Promise<BlogPostType | null> {
   let post: BlogPostType | null = null;
+
+  if (!isRemoteDbConfigured()) {
+    return getLocalPost({ slug, locale, postPrefix });
+  }
 
   try {
     // get post from database
@@ -396,6 +415,15 @@ export async function getRemotePostsAndCategories({
   postPrefix?: string;
   categoryPrefix?: string;
 }) {
+  if (!isRemoteDbConfigured()) {
+    return {
+      posts: [],
+      postsCount: 0,
+      categories: [],
+      categoriesCount: 0,
+    };
+  }
+
   const dbPostsList: BlogPostType[] = [];
   const dbCategoriesList: BlogCategoryType[] = [];
 

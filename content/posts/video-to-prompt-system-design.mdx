@@ -4,14 +4,18 @@ description: "A practical system for turning one video into a reusable prompt pa
 created_at: "2026-02-06"
 author_name: "Video to Prompt Team"
 author_image: "/imgs/logos/video-to-prompt-logo.svg"
-image: "/imgs/blog/generative-process-diagram.png"
+image: "/imgs/blog/tavily/video-to-prompt-system-design-1.png"
 ---
 
 # Video-to-Prompt System Design
 
 If your team still writes prompts from scratch, you're wasting your best visual source: **real video references**.
 
+![If your team still writes prompts from scratch, you're wasting your best visual ](/imgs/blog/tavily/video-to-prompt-system-design-2.png)
+
 A modern AI video workflow should convert every useful clip into a reusable prompt package. That package should include:
+
+![A modern AI video workflow should convert every useful clip into a reusable prom](/imgs/blog/tavily/video-to-prompt-system-design-3.jpg)
 
 - A concise **scene summary**
 - A robust **master prompt**
@@ -24,6 +28,8 @@ A modern AI video workflow should convert every useful clip into a reusable prom
 
 Without structure, prompt quality becomes random and hard to scale. With a structured package, teams can:
 
+![Without structure, prompt quality becomes random and hard to scale. With a struc](/imgs/blog/tavily/video-to-prompt-system-design-4.png)
+
 1. Reproduce style faster
 2. Align editors, creators, and operators
 3. Build a searchable prompt library
@@ -32,6 +38,8 @@ Without structure, prompt quality becomes random and hard to scale. With a struc
 ## Recommended package format
 
 Use a fixed schema so every output is directly usable:
+
+![Use a fixed schema so every output is directly usable:](/imgs/blog/tavily/video-to-prompt-system-design-5.png)
 
 ```json
 {
@@ -55,3 +63,5 @@ Use a fixed schema so every output is directly usable:
 ## Final takeaway
 
 Treat video-to-prompt as a **system**, not a one-off generation trick. Once every clip becomes structured prompt data, your creative output becomes faster, more consistent, and easier to scale.
+
+![Treat video-to-prompt as a **system**, not a one-off generation trick. Once ever](/imgs/blog/tavily/video-to-prompt-system-design-6.png)

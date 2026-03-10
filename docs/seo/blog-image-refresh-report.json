@@ -1,0 +1,727 @@
+{
+  "updated": [
+    {
+      "file": "content/posts/camera-movement-prompt-library-50-examples.mdx",
+      "title": "Camera Movement Prompt Library: 50 Useful Patterns",
+      "cover_image": "/imgs/blog/tavily/camera-movement-prompt-library-50-examples-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "Most **ai video prompts** fail because they describe content but not camera beha",
+          "from": "https://i.ytimg.com/vi/HOjCT6TxlHM/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/camera-movement-prompt-library-50-examples-2.jpg"
+        },
+        {
+          "alt": "Use these as modules and combine with subject + lighting + mood.",
+          "from": "https://i.pinimg.com/736x/e6/4b/8a/e64b8a8b902fe1abbb7796f87df44f0c.jpg",
+          "to": "/imgs/blog/tavily/camera-movement-prompt-library-50-examples-3.jpg"
+        },
+        {
+          "alt": "One dominant movement is usually enough.",
+          "from": "https://i.pinimg.com/736x/84/31/c3/8431c3059b0382c96dfff803605f06ba.jpg",
+          "to": "/imgs/blog/tavily/camera-movement-prompt-library-50-examples-4.jpg"
+        },
+        {
+          "alt": "Yes, but specify sequence and speed clearly.",
+          "from": "https://magichour.ai/payload/api/media/file/ai-image-gen---2026-01-18t225643.259-1200x630.jpg",
+          "to": "/imgs/blog/tavily/camera-movement-prompt-library-50-examples-5.jpg"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/ethical-style-referencing-in-ai-video.mdx",
+      "title": "Ethical Style Referencing in AI Video",
+      "cover_image": "/imgs/blog/tavily/ethical-style-referencing-in-ai-video-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "Teams often ask: how do we use reference videos without crossing ethical lines? ",
+          "from": "https://imgv2-1-f.scribdassets.com/img/document/909380795/original/e2fc9b747b/1?v=1",
+          "to": "/imgs/blog/tavily/ethical-style-referencing-in-ai-video-2.jpg"
+        },
+        {
+          "alt": "Use:",
+          "from": "https://aosars.com/wp-content/uploads/2025/05/ETHICAL-AI-3-1024x577.png",
+          "to": "/imgs/blog/tavily/ethical-style-referencing-in-ai-video-3.png"
+        },
+        {
+          "alt": "Avoid:",
+          "from": "https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/206783/images/Citing_Chat_GPT.png",
+          "to": "/imgs/blog/tavily/ethical-style-referencing-in-ai-video-4.png"
+        },
+        {
+          "alt": "Yes, with clear policy boundaries and review.",
+          "from": "https://cdn.labellerr.com/EthicAI/ethics-in-ai-2.webp",
+          "to": "/imgs/blog/tavily/ethical-style-referencing-in-ai-video-5.webp"
+        },
+        {
+          "alt": "It prevents legal risk and keeps creative workflows scalable.",
+          "from": "https://aosars.com/wp-content/uploads/2025/05/ETHICAL-AI-3-1024x577.png",
+          "to": "/imgs/blog/tavily/ethical-style-referencing-in-ai-video-6.png"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/how-to-get-prompt-from-video.mdx",
+      "title": "How to Get Prompt from Video: A Practical 6-Step Workflow",
+      "cover_image": "/imgs/blog/tavily/how-to-get-prompt-from-video-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "If you want to **get prompt from video** reliably, do not start by writing promp",
+          "from": "https://www.slidekit.com/wp-content/uploads/2025/01/PowerPoint-Template-for-6-Step-Process-Presentation.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-2.jpg"
+        },
+        {
+          "alt": "The fastest way to **generate prompt from video** is:",
+          "from": "https://opengraph.githubassets.com/5f25ee70535bc3ef6dcbc8c5ae7b62d90639e80c82b3875bda8bc38dea9c90b2/visual-workflow/visual-workflow-demo",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-3.jpg"
+        },
+        {
+          "alt": "This gives you controllable **video generation prompts** instead of random outpu",
+          "from": "https://magichour.ai/payload/api/media/file/ai-image-gen---2026-01-18t225643.259-1200x630.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-4.jpg"
+        },
+        {
+          "alt": "Video to prompt workflow for extracting prompt from video",
+          "from": "https://opengraph.githubassets.com/5f25ee70535bc3ef6dcbc8c5ae7b62d90639e80c82b3875bda8bc38dea9c90b2/visual-workflow/visual-workflow-demo",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-5.jpg"
+        },
+        {
+          "alt": "Use this workflow when you need to:",
+          "from": "https://www.slidekit.com/wp-content/uploads/2025/01/PowerPoint-Template-for-6-Step-Process-Presentation.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-6.jpg"
+        },
+        {
+          "alt": "If your team asks for \"make it feel like this reference,\" a **prompt from video*",
+          "from": "https://magichour.ai/payload/api/media/file/ai-image-gen---2026-01-18t225643.259-1200x630.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-7.jpg"
+        },
+        {
+          "alt": "Pick a clip with one clear purpose: hook, product close-up, or transition. Avoid",
+          "from": "https://ezxwn6h7w36.exactdn.com/wp-content/uploads/2026/03/10-prompt-engineering-hacks-for-Grok-with-workflow-icons-for-res-118ab79fdd35ef8211905189da8095ff.jpg?strip=all",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-8.jpg"
+        },
+        {
+          "alt": "Mark shot boundaries and label each unit with:",
+          "from": "https://cdn.prod.website-files.com/62cd5ce03261cb3e98188470/6926abbb91ff4d50301860fb_1.%20Illustration%20of%20different%20video%20segmentation%20and%20propagation%20techniques-min.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-9.jpg"
+        },
+        {
+          "alt": "This is where most **video prompts AI** quality is decided.",
+          "from": "https://www.thebigger.com/wp-content/uploads/2025/06/AI-Image-Prompts-1.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-10.webp"
+        },
+        {
+          "alt": "For each shot, use one sentence pattern:",
+          "from": "https://www.slidekit.com/wp-content/uploads/2025/01/PowerPoint-Template-for-6-Step-Process-Presentation.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-12.jpg"
+        },
+        {
+          "alt": "`Subject + Setting + Camera Action + Lens/Depth + Lighting + Mood + Timing`",
+          "from": "https://slidemodel.com/wp-content/uploads/23409-01-6-step-process-workflow-infographic-powerpoint-template-16x9-1.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-13.jpg"
+        },
+        {
+          "alt": "Combine all shot lines into one coherent paragraph. Keep temporal order explicit",
+          "from": "https://magichour.ai/payload/api/media/file/ai-image-gen---2026-01-18t225643.259-1200x630.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-14.jpg"
+        },
+        {
+          "alt": "Store 5-12 tags for each package, such as \"neon alley\", \"handheld tracking\", \"sl",
+          "from": "https://i.ytimg.com/vi/l-rkDKWItsc/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-15.jpg"
+        },
+        {
+          "alt": "Prompt package structure for video to prompt generator output",
+          "from": "https://mikulskibartosz.name/images/2025-01-13-ai-workflow-design-patterns/prompt_chaining.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-16.png"
+        },
+        {
+          "alt": "The goal is not to write longer prompts. The goal is to produce reusable prompts",
+          "from": "https://www.slidekit.com/wp-content/uploads/2025/01/PowerPoint-Template-for-6-Step-Process-Presentation.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-17.jpg"
+        },
+        {
+          "alt": "Yes. Text-to-video starts from imagination. **Get prompt from video** starts fro",
+          "from": "https://www.slidekit.com/wp-content/uploads/2025/01/PowerPoint-Template-for-6-Step-Process-Presentation.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-18.jpg"
+        },
+        {
+          "alt": "Yes, but adjust length and wording for each tool. Keep one shared master prompt ",
+          "from": "https://framerusercontent.com/images/nIp46Jgow1229Ebpxpj4bj8wkk.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-19.png"
+        },
+        {
+          "alt": "For most workflows, 8-30 seconds is enough to capture style and shot logic witho",
+          "from": "https://www.slidekit.com/wp-content/uploads/2025/01/PowerPoint-Template-for-6-Step-Process-Presentation.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-20.jpg"
+        },
+        {
+          "alt": "If you want to operationalize this workflow:",
+          "from": "https://www.slidekit.com/wp-content/uploads/2025/01/PowerPoint-Template-for-6-Step-Process-Presentation.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video-21.jpg"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/how-to-get-prompt-from-video.zh.mdx",
+      "title": "如何从视频提取提示词：6 步可复用工作流",
+      "cover_image": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-1.png",
+      "inline_changes": [
+        {
+          "alt": "如果你想稳定地 **get prompt from video**，不要从零空想提示词。更高效的方法是先选一段参考视频，拆解场景逻辑，再转成结构化提示词包。这样",
+          "from": "https://magichour.ai/payload/api/media/file/ai-image-gen---2026-01-18t225643.259-1200x630.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-2.jpg"
+        },
+        {
+          "alt": "最快的 **generate prompt from video** 路径是：",
+          "from": "https://p6-volc-community-sign.byteimg.com/tos-cn-i-tlddhu82om/210c348370d94bfd94a4290bbe68dc96~tplv-tlddhu82om-image.image?=&rk3s=8031ce6d&x-expires=1772964665&x-signature=x1Jd57H%2BJq09PgfqfvoeGIGN7no%3D",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-3.png"
+        },
+        {
+          "alt": "这样得到的是可执行的 **video generation prompts**，而不是随机结果。",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2025/05/11-1160x653.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-5.png"
+        },
+        {
+          "alt": "从视频提取提示词的工作流示意图",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2024/12/%E7%BF%94%E5%AE%87Make-n8n%E6%95%99%E7%A8%8B.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-6.jpg"
+        },
+        {
+          "alt": "以下场景特别适合：",
+          "from": "https://help.apiyi.com/wp-content/uploads/2025/12/z-image-beginner-complete-guide-image-0.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-7.png"
+        },
+        {
+          "alt": "当团队经常说“按这个参考视频来”，`prompt from video` 工作流通常是把主观需求转成可执行指令的最好方法。",
+          "from": "https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9152752571/p982654.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-8.png"
+        },
+        {
+          "alt": "优先选择目标单一的片段，如开场钩子、产品特写、转场段落。避免信息过杂的视频。",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2025/05/11-1160x653.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-9.png"
+        },
+        {
+          "alt": "每个镜头至少标注：",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2024/12/%E7%BF%94%E5%AE%87Make-n8n%E6%95%99%E7%A8%8B.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-10.jpg"
+        },
+        {
+          "alt": "这是决定 **video prompts ai** 质量的关键环节。",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2025/05/11-1160x653.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-11.png"
+        },
+        {
+          "alt": "推荐统一句式：",
+          "from": "https://blog.cnbang.net/wp-content/uploads/2025/03/image.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-12.png"
+        },
+        {
+          "alt": "`主体 + 场景 + 相机动作 + 镜头/景深 + 光线 + 情绪 + 时间推进`",
+          "from": "https://pic1.zhimg.com/v2-d4c5847248cc787df691013f8da003d2_1440w.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-13.jpg"
+        },
+        {
+          "alt": "把镜头句按时间顺序串成一段可执行描述，明确“先远景，再推进，最后近景”等变化。",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2024/12/%E7%BF%94%E5%AE%87Make-n8n%E6%95%99%E7%A8%8B.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-14.jpg"
+        },
+        {
+          "alt": "每条提示词包建议保留 5-12 个标签，如 `neon alley`、`handheld tracking`、`slow push-in`，便于后续检索复用。",
+          "from": "https://oldorange.biolab.si/workflows/images/text-keyword-extraction.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-15.png"
+        },
+        {
+          "alt": "Video to Prompt 输出结构示意图",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2024/12/%E7%BF%94%E5%AE%87Make-n8n%E6%95%99%E7%A8%8B.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-16.jpg"
+        },
+        {
+          "alt": "重点不是把提示词写得更长，而是让结果更可预测、可复用。",
+          "from": "https://help.apiyi.com/wp-content/uploads/2025/10/sora-2-workflow-guide-image-0.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-17.png"
+        },
+        {
+          "alt": "有区别。text-to-video 更偏“从想象出发”，而 **get prompt from video** 是“从参考素材出发”，更适合做风格复现。",
+          "from": "https://videotoprompt.co/preview.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-18.png"
+        },
+        {
+          "alt": "通常可以，但要按平台长度和语法做微调。建议保留一份统一主提示词作为基准。",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2025/05/AI-%E4%BB%A3%E7%90%86%EF%BC%88AI-Agent%EF%BC%89-1160x870.png",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-19.png"
+        },
+        {
+          "alt": "多数场景下，8-30 秒足够提取风格和镜头逻辑，同时避免噪声信息过多。",
+          "from": "https://xiangyugongzuoliu.com/wp-content/uploads/2024/12/%E7%BF%94%E5%AE%87Make-n8n%E6%95%99%E7%A8%8B.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-20.jpg"
+        },
+        {
+          "alt": "如果你要把这套流程落到团队：",
+          "from": "https://fastly.jsdelivr.net/gh/bucketio/img8@main/2026/03/05/1772715584482-701ea69a-a59e-43e7-a45d-44e20137baab.jpg",
+          "to": "/imgs/blog/tavily/how-to-get-prompt-from-video.zh-21.jpg"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/kling-prompt-format-shot-language-patterns.mdx",
+      "title": "Kling Prompt Format: Shot-Language Patterns",
+      "cover_image": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "If your Kling output feels unstable, the issue is usually prompt structure. Klin",
+          "from": "https://i.ytimg.com/vi/3fPrVb5XXes/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-2.jpg"
+        },
+        {
+          "alt": "Use one sentence per shot:",
+          "from": "https://ageofllms.com/img/2024/08/kling-keyframes-prompt-463x469.jpg",
+          "to": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-3.jpg"
+        },
+        {
+          "alt": "`Subject + Setting + Camera Action + Lens/Depth + Lighting + Mood + Timing`",
+          "from": "https://public-files.gumroad.com/f7rqssmj1sk5pk2x90esz4vp5r95",
+          "to": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-4.jpg"
+        },
+        {
+          "alt": "Fast entry, clear motion, one visual payoff.",
+          "from": "https://blog.fal.ai/content/images/size/w2000/2026/02/klingprompt.png",
+          "to": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-5.png"
+        },
+        {
+          "alt": "Stable framing, readable gesture, minimal movement.",
+          "from": "https://blog.fal.ai/content/images/size/w2000/2026/02/klingprompt.png",
+          "to": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-6.png"
+        },
+        {
+          "alt": "Close-up or emotional climax with controlled lighting.",
+          "from": "https://blog.fal.ai/content/images/size/w2000/2026/02/klingprompt.png",
+          "to": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-7.png"
+        },
+        {
+          "alt": "Yes. Motion verbs and timing cues strongly affect results.",
+          "from": "https://framerusercontent.com/images/xWWAwu5VkptHvVmwDzFTFXw4E.jpg?width=896&height=1200",
+          "to": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-8.jpg"
+        },
+        {
+          "alt": "Always. Keep them short and tied to your failure patterns.",
+          "from": "https://blog.segmind.com/content/images/size/w1200/2024/12/bEST.png",
+          "to": "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-9.png"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/lighting-prompt-library-for-product-ads.mdx",
+      "title": "Lighting Prompt Library for Product Ads",
+      "cover_image": "/imgs/blog/tavily/lighting-prompt-library-for-product-ads-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "In product videos, lighting drives perceived quality more than almost any other ",
+          "from": "https://imgv2-1-f.scribdassets.com/img/document/864873562/original/bfa0db3b47/1?v=1",
+          "to": "/imgs/blog/tavily/lighting-prompt-library-for-product-ads-2.jpg"
+        },
+        {
+          "alt": "Only when consistency is critical across many assets.",
+          "from": "https://accessglobal.media.clients.ellingtoncms.com/uploads/froala_editor/images/1771641187088.jpeg",
+          "to": "/imgs/blog/tavily/lighting-prompt-library-for-product-ads-3.jpg"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/negative-prompt-library-for-ai-video.mdx",
+      "title": "Negative Prompt Library for AI Video",
+      "cover_image": "/imgs/blog/tavily/negative-prompt-library-for-ai-video-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "A good negative prompt is not a random list. It should map to real failure modes",
+          "from": "https://filmdaft.com/wp-content/uploads/2026/01/What-are-AI-failure-modes-definition-examples-featured-image.jpg",
+          "to": "/imgs/blog/tavily/negative-prompt-library-for-ai-video-2.jpg"
+        },
+        {
+          "alt": "No. Long lists can dilute signal. Keep only relevant constraints.",
+          "from": "https://magichour.ai/payload/api/media/file/ai-image-gen---2026-01-18t225643.259-1200x630.jpg",
+          "to": "/imgs/blog/tavily/negative-prompt-library-for-ai-video-3.jpg"
+        },
+        {
+          "alt": "Weekly is a good cadence for active teams.",
+          "from": "https://www.aiarty.com/images/ai-image-generator/leonardo-ai-negtive-prompts.jpg",
+          "to": "/imgs/blog/tavily/negative-prompt-library-for-ai-video-4.jpg"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/runway-prompt-format-scene-by-scene-templates.mdx",
+      "title": "Runway Prompt Format: Scene-by-Scene Templates",
+      "cover_image": "/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-1.png",
+      "inline_changes": [
+        {
+          "alt": "Teams often fail in Runway because prompts are descriptive but not operational. ",
+          "from": "https://img.freepik.com/premium-photo/fashion-runway-scene-featuring-models-versace-vibrant-colors-elegant-designs_1254193-1809.jpg?w=2000",
+          "to": "/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-2.jpg"
+        },
+        {
+          "alt": "Use this order:",
+          "from": "https://filmart.ai/wp-content/uploads/2025/04/Mastering-Runway-Gen-4-prompts-1024x538.jpg",
+          "to": "/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-3.jpg"
+        },
+        {
+          "alt": "Multiple scenes with clear boundaries are easier to control.",
+          "from": "https://img.freepik.com/premium-photo/fashion-runway-scene-featuring-models-versace-vibrant-colors-elegant-designs_1254193-1809.jpg?w=2000",
+          "to": "/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-4.jpg"
+        },
+        {
+          "alt": "Yes. Keep the structure, swap subject and mood blocks.",
+          "from": "https://filmart.ai/wp-content/uploads/2025/04/Mastering-Runway-Gen-4-prompts-1024x538.jpg",
+          "to": "/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-5.jpg"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/sora-prompt-format-cinematic-control-checklist.mdx",
+      "title": "Sora Prompt Format: Cinematic Control Checklist",
+      "cover_image": "/imgs/blog/tavily/sora-prompt-format-cinematic-control-checklist-1.webp",
+      "inline_changes": [
+        {
+          "alt": "Sora can produce impressive visuals, but consistency requires strict prompt disc",
+          "from": "https://wp.glbgpt.com/wp-content/uploads/2025/11/ultimate-sora-2-prompt-guide.webp",
+          "to": "/imgs/blog/tavily/sora-prompt-format-cinematic-control-checklist-2.png"
+        },
+        {
+          "alt": "For complex stories, yes. Scene blocks increase controllability.",
+          "from": "https://help.apiyi.com/wp-content/uploads/2025/10/sora-2-prompt-basic-guide-10min-en-image-0.png",
+          "to": "/imgs/blog/tavily/sora-prompt-format-cinematic-control-checklist-4.png"
+        },
+        {
+          "alt": "Ambiguous camera instructions and missing transitions.",
+          "from": "https://stepsy.co/wp-content/uploads/2024/07/The-reasons-why-step-by-step-instructions-are-so-useful-1568x882.png",
+          "to": "/imgs/blog/tavily/sora-prompt-format-cinematic-control-checklist-5.png"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/tutorial-video-prompt-blueprint-a-roll-b-roll.mdx",
+      "title": "Tutorial Video Prompt Blueprint: A-Roll and B-Roll",
+      "cover_image": "/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "Tutorial content scales better when A-roll and B-roll are planned as a system. T",
+          "from": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/5532be95-5b54-4496-9687-5a0c1e692ab4/generate-professional-ai-b-roll-footage-2026-blueprint.png?t=1769020482",
+          "to": "/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-2.png"
+        },
+        {
+          "alt": "Include:",
+          "from": "https://localeyesit.com/wp-content/uploads/2025/04/A-Roll-vs.-B-Roll.jpg",
+          "to": "/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-3.jpg"
+        },
+        {
+          "alt": "Include:",
+          "from": "https://localeyesit.com/wp-content/uploads/2025/04/A-Roll-vs.-B-Roll.jpg",
+          "to": "/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-4.jpg"
+        },
+        {
+          "alt": "Because clarity improves edit speed and shot replacement.",
+          "from": "https://i.ytimg.com/vi/rbWA1NDl65s/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgVyhUMA8=&rs=AOn4CLAozbh9hz9t9P7xjc-WDVGZl5aMqA",
+          "to": "/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-5.jpg"
+        },
+        {
+          "alt": "Yes, if process steps are similar and style is stable.",
+          "from": "https://sendshort.ai/wp-content/uploads/2024/05/B-Roll-Explanation-1024x576.webp",
+          "to": "/imgs/blog/tavily/tutorial-video-prompt-blueprint-a-roll-b-roll-6.webp"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/video-prompt-shot-language-framework.mdx",
+      "title": "A Shot-Language Framework for Better Video Prompts",
+      "cover_image": "/imgs/blog/tavily/video-prompt-shot-language-framework-1.png",
+      "inline_changes": [
+        {
+          "alt": "Many prompts fail because they describe \"what\" but not \"how\". Shot language solv",
+          "from": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2205.01308/gradient.png",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework-2.png"
+        },
+        {
+          "alt": "A useful prompt should not only say the subject and environment. It should also ",
+          "from": "https://i0.wp.com/stealthesethoughts.com/wp-content/uploads/2024/07/Blog-Images_New2025-2.png?resize=580%2C344&ssl=1",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework-3.png"
+        },
+        {
+          "alt": "Use this sentence pattern:",
+          "from": "https://paper-assets.alphaxiv.org/image/2501.02385v2.png",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework-5.png"
+        },
+        {
+          "alt": "Example:",
+          "from": "https://media.cybernews.com/2025/04/how-few-shot-prompting-works.jpg",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework-6.png"
+        },
+        {
+          "alt": "Shot language is the bridge between reference footage and controllable generatio",
+          "from": "https://paper-assets.alphaxiv.org/image/2501.02385v2.png",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework-8.png"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/video-prompt-shot-language-framework.zh.mdx",
+      "title": "提升提示词质量的镜头语言框架",
+      "cover_image": "/imgs/blog/tavily/video-prompt-shot-language-framework.zh-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "很多提示词失败，不是因为“内容不对”，而是因为只写了“拍什么”，没写“怎么拍”。",
+          "from": "https://sf1-scmcdn-cn.feishucdn.com/obj/lark-reaction-cn/blue_time.png",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework.zh-2.png"
+        },
+        {
+          "alt": "高质量提示词应同时覆盖：",
+          "from": "https://help.apiyi.com/wp-content/uploads/2025/12/z-image-prompt-engineering-guide-image-0.png",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework.zh-3.png"
+        },
+        {
+          "alt": "建议使用：",
+          "from": "https://help.apiyi.com/wp-content/uploads/2025/12/z-image-prompt-engineering-guide-image-0.png",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework.zh-4.png"
+        },
+        {
+          "alt": "示例：",
+          "from": "https://help.apiyi.com/wp-content/uploads/2025/12/z-image-prompt-engineering-guide-image-0.png",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework.zh-5.png"
+        },
+        {
+          "alt": "镜头语言是“参考视频”到“可控生成”之间的关键桥梁。写清镜头逻辑，结果可控性会显著提高。",
+          "from": "https://i-blog.csdnimg.cn/img_convert/ec30ddf9c39ec4fbd87fd6f2884b5fda.webp?x-oss-process=image/format,png",
+          "to": "/imgs/blog/tavily/video-prompt-shot-language-framework.zh-6.webp"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/video-to-prompt-generator-complete-workflow-2026.mdx",
+      "title": "Video to Prompt Generator: Complete Workflow (2026)",
+      "cover_image": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "If you are searching for a practical **video to prompt generator** workflow, the",
+          "from": "https://img.videoweb.ai/online/2026/1/6/3249b075-bb03-4db7-a5d6-cbaa66ad47c1_1638540.jpeg",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-2.jpg"
+        },
+        {
+          "alt": "Choose one clear goal: hook, product close-up, tutorial segment, or emotional tr",
+          "from": "https://i.ytimg.com/vi/VhifPj4R4-0/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-3.jpg"
+        },
+        {
+          "alt": "For each shot, record:",
+          "from": "https://promptbuilder.cc/assets/blog/gemini-prompt-generator-2026.webp",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-4.webp"
+        },
+        {
+          "alt": "Merge shot notes into one temporal narrative: start, transition, end. Be explici",
+          "from": "https://seedance-2ai.org/images/blog/ai-music-video-generator/ai-video-audio-evolution-timeline.webp",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-5.webp"
+        },
+        {
+          "alt": "Compress the master prompt into one concise version for fast iteration.",
+          "from": "https://n8n.io/n8n-og-image.png",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-6.png"
+        },
+        {
+          "alt": "Add failure guards such as face distortion, flicker, hand artifacts, and backgro",
+          "from": "https://static.vecteezy.com/system/resources/previews/066/175/448/non_2x/tv-glitch-effect-digital-pixel-noise-and-error-texture-retro-80s-vhs-screen-glitchy-distortion-with-static-flicker-and-line-pixelated-artifacts-glitches-set-vector.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-7.jpg"
+        },
+        {
+          "alt": "Attach 5-12 tags so the package can be found and reused later.",
+          "from": "https://promptbuilder.cc/assets/blog/gemini-prompt-generator-2026.webp",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-9.webp"
+        },
+        {
+          "alt": "For style reproduction, yes. Reference-first workflows are more controllable.",
+          "from": "https://i.ytimg.com/vi/v2GXMLbDWt4/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-10.jpg"
+        },
+        {
+          "alt": "Most clips work well with 3-8 shots.",
+          "from": "https://i.ytimg.com/vi/v2GXMLbDWt4/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-generator-complete-workflow-2026-11.jpg"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/video-to-prompt-quality-checklist.mdx",
+      "title": "Video-to-Prompt Quality Checklist for Teams",
+      "cover_image": "/imgs/blog/tavily/video-to-prompt-quality-checklist-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "When teams scale prompt generation, quality drift is inevitable without a review",
+          "from": "https://www.slideteam.net/media/catalog/product/cache/1280x720/q/u/quality_improvement_process_testing_checklist_slide01.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist-2.jpg"
+        },
+        {
+          "alt": "Use this quick QA before accepting a prompt package.",
+          "from": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10163414419510053",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist-3.jpg"
+        },
+        {
+          "alt": "Rate each package on three axes (1-5):",
+          "from": "https://images.examples.com/wp-content/uploads/2017/06/Quality-Checklist.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist-4.jpg"
+        },
+        {
+          "alt": "Only ship packages scoring 4+ on all three.",
+          "from": "https://slidemodel.com/wp-content/uploads/FF0379-01-visual-checklist-slide-template-16x9-5.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist-5.jpg"
+        },
+        {
+          "alt": "High-performing teams don't rely on inspiration alone. They standardize prompt q",
+          "from": "https://convergentph.com/wp-content/uploads/2024/05/CEMCI-Lead-Magnet-High-Performing-Teams-Checklist-Cover.png",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist-6.png"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/video-to-prompt-quality-checklist.zh.mdx",
+      "title": "团队可用的 Video-to-Prompt 质量检查清单",
+      "cover_image": "/imgs/blog/tavily/video-to-prompt-quality-checklist.zh-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "当团队开始规模化生成提示词，若没有统一评审标准，质量很容易漂移。",
+          "from": "https://magichour.ai/payload/api/media/file/ai-image-gen---2026-01-18t225643.259-1200x630.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist.zh-2.jpg"
+        },
+        {
+          "alt": "上线前，建议先过一遍以下 QA 清单。",
+          "from": "https://opengraph.githubassets.com/e0560a65bce0e304482c2f381fcfd3d17af0bd39ae4132918b8ec4e8919289ac/tingaicompass/AI-Compass",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist.zh-3.jpg"
+        },
+        {
+          "alt": "按三项各 1-5 分打分：",
+          "from": "https://opengraph.githubassets.com/0af6bcff7191113ef34e853a32b19211a9eea1507768d284a927bac665989768/GitHubDaily/GitHubDaily",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist.zh-4.jpg"
+        },
+        {
+          "alt": "三项都达到 4 分以上再进入生产。",
+          "from": "https://opengraph.githubassets.com/89eee52ee7da1ddc0d3b4c9227290ea1aa2aed01a73e53e647429855685dac37/GitHubDaily/GitHubDaily",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist.zh-5.jpg"
+        },
+        {
+          "alt": "高质量团队不会只靠灵感，而是通过可复用的检查机制稳定输出。清单化评审，会让提示词能力变成真正的生产优势。",
+          "from": "https://help.apiyi.com/wp-content/uploads/2026/01/qwen-image-2512-prompt-guide-test-cases-image-0.png",
+          "to": "/imgs/blog/tavily/video-to-prompt-quality-checklist.zh-6.png"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/video-to-prompt-system-design.mdx",
+      "title": "Video-to-Prompt System Design: From Raw Clip to Reusable Prompt Package",
+      "cover_image": "/imgs/blog/tavily/video-to-prompt-system-design-1.png",
+      "inline_changes": [
+        {
+          "alt": "If your team still writes prompts from scratch, you're wasting your best visual ",
+          "from": "https://image2.aistage.net/2025-07/video-to-prompt-a2d1483d-0353-469a-994a-4b4c34c2ac1d.png?width=3840",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design-2.png"
+        },
+        {
+          "alt": "A modern AI video workflow should convert every useful clip into a reusable prom",
+          "from": "https://magichour.ai/payload/api/media/file/ai-image-gen---2026-01-18t225643.259-900x506.jpg",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design-3.jpg"
+        },
+        {
+          "alt": "Without structure, prompt quality becomes random and hard to scale. With a struc",
+          "from": "https://image2.aistage.net/2025-07/video-to-prompt-a2d1483d-0353-469a-994a-4b4c34c2ac1d.png?width=3840",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design-4.png"
+        },
+        {
+          "alt": "Use a fixed schema so every output is directly usable:",
+          "from": "https://www.listyourtool.com/assets/tools/videotopromptonline-1756115909340.png",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design-5.png"
+        },
+        {
+          "alt": "Treat video-to-prompt as a **system**, not a one-off generation trick. Once ever",
+          "from": "https://www.listyourtool.com/assets/tools/videotopromptonline-1756115909340.png",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design-6.png"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/video-to-prompt-system-design.zh.mdx",
+      "title": "Video-to-Prompt 系统设计：从原始视频到可复用提示词包",
+      "cover_image": "/imgs/blog/tavily/video-to-prompt-system-design.zh-1.png",
+      "inline_changes": [
+        {
+          "alt": "如果你的团队还在从零手写提示词，你可能忽略了最重要的数据源：**真实视频参考素材**。",
+          "from": "https://image2.aistage.net/2025-07/video-to-prompt-a2d1483d-0353-469a-994a-4b4c34c2ac1d.png?width=3840",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design.zh-2.png"
+        },
+        {
+          "alt": "成熟的 AI 视频工作流，应该把每条可用视频都转成结构化提示词包，至少包含：",
+          "from": "https://preview.redd.it/use-this-ai-video-prompt-to-create-cinematic-viral-videos-v0-wdtwj8i9mfeg1.jpeg?auto=webp&s=448bcba721ac5d61b8fbe2b31dc059ce59ff701e",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design.zh-3.jpg"
+        },
+        {
+          "alt": "没有结构，提示词质量很难稳定；有结构，团队可以：",
+          "from": "https://inews.gtimg.com/news_bt/OusJ4UjQroJTYFoiLU26-TCUh2VglABVkna-Rzb7C6mLMAA/0",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design.zh-4.jpg"
+        },
+        {
+          "alt": "建议统一 JSON 结构，便于复制、检索和自动化接入：",
+          "from": "https://mpgone.com/wp-content/uploads/2025/08/JSON-Prompt.jpeg",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design.zh-5.jpg"
+        },
+        {
+          "alt": "把 video-to-prompt 当作**系统能力**而不是单次生成技巧。每条视频都结构化后，整体产能会更稳定、更快、更可规模化。",
+          "from": "https://www.listyourtool.com/assets/tools/videotopromptonline-1756115909340.png",
+          "to": "/imgs/blog/tavily/video-to-prompt-system-design.zh-6.jpg"
+        }
+      ]
+    },
+    {
+      "file": "content/posts/youtube-shorts-hook-prompt-templates.mdx",
+      "title": "YouTube Shorts Hook Prompt Templates (First 3 Seconds)",
+      "cover_image": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-1.jpg",
+      "inline_changes": [
+        {
+          "alt": "For Shorts, the first 3 seconds decide retention. These templates are designed f",
+          "from": "https://i.ytimg.com/vi/CLNb5GOREVo/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-2.jpg"
+        },
+        {
+          "alt": "`Pattern Interrupt + Subject Action + Camera Move + Visual Payoff`",
+          "from": "https://sendshort.ai/wp-content/uploads/2024/06/YouTube-Shorts-Ideas-1536x896.jpg",
+          "to": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-3.jpg"
+        },
+        {
+          "alt": "Start obscured, then reveal product/person in one clean motion.",
+          "from": "https://sendshort.ai/wp-content/uploads/2024/06/YouTube-Shorts-Ideas-1024x597.jpg",
+          "to": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-4.jpg"
+        },
+        {
+          "alt": "No text overlay. Visual contradiction creates curiosity.",
+          "from": "https://virvid.ai/_next/image?url=%2Fimages%2Fposts%2Fai-shorts-script-hook-ultimate-guide-2026.webp&w=3840&q=75",
+          "to": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-5.jpg"
+        },
+        {
+          "alt": "One-frame contrast cue then immediate hero shot.",
+          "from": "https://i.ytimg.com/vi/GFx8b1U8Jos/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-6.jpg"
+        },
+        {
+          "alt": "Emotion-first face shot, then context reveal.",
+          "from": "https://www.dreamhost.com/blog/wp-content/uploads/2026/01/03_the_anatomy_of_a_good_video_prompt.webp",
+          "to": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-7.webp"
+        },
+        {
+          "alt": "Not always. Slow hooks can work if tension is clear from frame one.",
+          "from": "https://i.ytimg.com/vi/ZjYaRf4EQKE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB0HPSkVEJdpxdeiWW7PAGXGTWq_w",
+          "to": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-8.jpg"
+        },
+        {
+          "alt": "Start with 5-8 structured variants per concept.",
+          "from": "https://i.ytimg.com/vi/GFx8b1U8Jos/maxresdefault.jpg",
+          "to": "/imgs/blog/tavily/youtube-shorts-hook-prompt-templates-9.jpg"
+        }
+      ]
+    }
+  ],
+  "skipped": [],
+  "errors": []
+}

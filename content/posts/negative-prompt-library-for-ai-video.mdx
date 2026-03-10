@@ -1,0 +1,76 @@
+---
+title: "Negative Prompt Library for AI Video"
+description: "A reusable negative prompt library for AI video workflows, with practical categories to reduce artifacts and improve prompt reliability."
+created_at: "2026-03-10"
+author_name: "Video to Prompt Team"
+author_image: "/imgs/logos/video-to-prompt-logo.svg"
+image: "/imgs/blog/tavily/negative-prompt-library-for-ai-video-1.jpg"
+---
+
+# Negative Prompt Library for AI Video
+
+A good negative prompt is not a random list. It should map to real failure modes in your footage. If you use a **video to prompt generator**, keep a reusable negative prompt library alongside your master prompts.
+
+![A good negative prompt is not a random list. It should map to real failure modes](/imgs/blog/tavily/negative-prompt-library-for-ai-video-2.jpg)
+
+## Core categories
+
+### 1) Anatomy and face stability
+
+- distorted face
+- broken hands
+- extra limbs
+- asymmetrical eyes
+
+### 2) Motion and temporal stability
+
+- flicker
+- jitter
+- ghosting
+- inconsistent trajectory
+
+### 3) Environment cleanliness
+
+- noisy background
+- random text artifacts
+- object melting
+- inconsistent shadows
+
+### 4) Style consistency
+
+- style drift
+- random palette change
+- unstable grain pattern
+
+## How to use the library
+
+- start with a short base list
+- append scene-specific negatives
+- review failures and update library weekly
+
+## Example
+
+```text
+Negative prompt: distorted face, broken hands, extra limbs, temporal flicker, ghosting trails, noisy background, random text artifacts, style drift, inconsistent shadows
+```
+
+## FAQ
+
+### Should negative prompts be very long?
+
+No. Long lists can dilute signal. Keep only relevant constraints.
+
+![No. Long lists can dilute signal. Keep only relevant constraints.](/imgs/blog/tavily/negative-prompt-library-for-ai-video-3.jpg)
+
+### How often should I update the library?
+
+Weekly is a good cadence for active teams.
+
+![Weekly is a good cadence for active teams.](/imgs/blog/tavily/negative-prompt-library-for-ai-video-4.webp)
+
+## Next reads
+
+- [Run the workflow on homepage](/)
+- [System design for reusable packages](/blog/video-to-prompt-system-design)
+- [How to get prompt from video](/blog/how-to-get-prompt-from-video)
+- [Team QA checklist](/blog/video-to-prompt-quality-checklist)

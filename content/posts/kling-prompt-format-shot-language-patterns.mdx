@@ -1,0 +1,77 @@
+---
+title: "Kling Prompt Format: Shot-Language Patterns"
+description: "A practical Kling prompt format using shot-language patterns to make AI video outputs more predictable and easier to iterate."
+created_at: "2026-03-10"
+author_name: "Video to Prompt Team"
+author_image: "/imgs/logos/video-to-prompt-logo.svg"
+image: "/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-1.jpg"
+---
+
+# Kling Prompt Format: Shot-Language Patterns
+
+If your Kling output feels unstable, the issue is usually prompt structure. Kling performs better when prompts encode shot language clearly. This is where **video prompt engineering** matters.
+
+![If your Kling output feels unstable, the issue is usually prompt structure. Klin](/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-2.jpg)
+
+## Shot-language pattern
+
+Use one sentence per shot:
+
+![Use one sentence per shot:](/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-3.png)
+
+`Subject + Setting + Camera Action + Lens/Depth + Lighting + Mood + Timing`
+
+![`Subject + Setting + Camera Action + Lens/Depth + Lighting + Mood + Timing`](/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-4.jpg)
+
+## 3 pattern types
+
+### Pattern A: Hook shot
+
+Fast entry, clear motion, one visual payoff.
+
+![Fast entry, clear motion, one visual payoff.](/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-5.jpg)
+
+### Pattern B: Explain shot
+
+Stable framing, readable gesture, minimal movement.
+
+![Stable framing, readable gesture, minimal movement.](/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-6.png)
+
+### Pattern C: Payoff shot
+
+Close-up or emotional climax with controlled lighting.
+
+![Close-up or emotional climax with controlled lighting.](/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-7.jpg)
+
+## Example package for Kling
+
+- Hook: moving handheld medium shot
+- Explain: locked medium shot with clean background
+- Payoff: slow push-in close-up with shallow depth
+
+## Common Kling prompt errors
+
+- too many style tags with no camera info
+- conflicting timing cues ("fast" and "slow cinematic drift")
+- missing transition instruction between shots
+
+## FAQ
+
+### Is Kling more sensitive to motion wording?
+
+Yes. Motion verbs and timing cues strongly affect results.
+
+![Yes. Motion verbs and timing cues strongly affect results.](/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-8.png)
+
+### Should I include negative prompts?
+
+Always. Keep them short and tied to your failure patterns.
+
+![Always. Keep them short and tied to your failure patterns.](/imgs/blog/tavily/kling-prompt-format-shot-language-patterns-9.jpg)
+
+## Next reads
+
+- [Start from reference video](/)
+- [System design for prompt packages](/blog/video-to-prompt-system-design)
+- [How to get prompt from video](/blog/how-to-get-prompt-from-video)
+- [Prompt QA checklist](/blog/video-to-prompt-quality-checklist)

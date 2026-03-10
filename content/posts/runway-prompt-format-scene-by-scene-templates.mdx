@@ -1,0 +1,81 @@
+---
+title: "Runway Prompt Format: Scene-by-Scene Templates"
+description: "Learn a practical Runway prompt format with scene-by-scene templates that improve control, consistency, and speed in AI video generation."
+created_at: "2026-03-10"
+author_name: "Video to Prompt Team"
+author_image: "/imgs/logos/video-to-prompt-logo.svg"
+image: "/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-1.png"
+---
+
+# Runway Prompt Format: Scene-by-Scene Templates
+
+Teams often fail in Runway because prompts are descriptive but not operational. A better approach is to use a scene-by-scene template derived from **prompt from video** workflows.
+
+![Teams often fail in Runway because prompts are descriptive but not operational. ](/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-2.jpg)
+
+## Core Runway prompt structure
+
+Use this order:
+
+![Use this order:](/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-3.jpg)
+
+1. subject and action
+2. environment and time
+3. camera motion
+4. lens/depth clue
+5. lighting and mood
+6. temporal transition
+
+## Scene template you can copy
+
+```text
+[Scene Goal]
+Subject:
+Environment:
+Camera:
+Lens/Depth:
+Lighting:
+Mood:
+Transition:
+```
+
+## Example
+
+```text
+Scene Goal: Product hero reveal
+Subject: A matte-black smartwatch rotates on a glass block
+Environment: Minimal studio at dusk
+Camera: Slow dolly-in from medium to close-up
+Lens/Depth: 50mm feel, shallow depth
+Lighting: Soft rim light with subtle blue fill
+Mood: Premium, precise, quiet confidence
+Transition: End on logo focus and fade to black
+```
+
+## Optimization rules for Runway
+
+- keep one dominant camera action per scene
+- avoid mixing documentary and ad-style in one line
+- keep transitions explicit between scenes
+- keep negative prompt short and specific
+
+## FAQ
+
+### Should I write one long prompt or multiple scenes?
+
+Multiple scenes with clear boundaries are easier to control.
+
+![Multiple scenes with clear boundaries are easier to control.](/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-4.png)
+
+### Can I reuse one template for different products?
+
+Yes. Keep the structure, swap subject and mood blocks.
+
+![Yes. Keep the structure, swap subject and mood blocks.](/imgs/blog/tavily/runway-prompt-format-scene-by-scene-templates-5.jpg)
+
+## Next reads
+
+- [Video to Prompt home](/)
+- [Shot-language framework](/blog/video-prompt-shot-language-framework)
+- [How to get prompt from video](/blog/how-to-get-prompt-from-video)
+- [Team quality checklist](/blog/video-to-prompt-quality-checklist)
